@@ -141,7 +141,7 @@
         
         .nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; gap: 4rem; max-width: 1000px; margin: 0 auto;
             align-items: center;
         }
         
@@ -632,7 +632,7 @@
         
         .pricing-item {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; gap: 4rem; max-width: 1000px; margin: 0 auto;
             align-items: flex-start;
             padding: 20px 0;
             border-bottom: 1px solid var(--glass-border);
@@ -712,7 +712,7 @@
         
         .faq-question {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; gap: 4rem; max-width: 1000px; margin: 0 auto;
             align-items: center;
             font-weight: 600;
             font-size: 1.0625rem;
@@ -997,6 +997,7 @@
                     <li><a href="#demos">Demos</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#service-tiers">Services</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1009,10 +1010,10 @@
         <div class="container">
             <div class="hero-content">
                 <!-- EDITABLE: Main headline -->
-                <h1>Never Miss Another Call. <span class="gradient-text">Never Lose Another Customer.</span></h1>
+                <h1>Never Miss Another Call. <span class="gradient-text">Never Lose Another 50% on Deliveryer.</span></h1>
                 
                 <!-- EDITABLE: Subheadline -->
-                <p>Your AI voice agent answers every incoming call, qualifies leads instantly, and books appointments directly into your calendar—24/7, so you can focus on delivering great service.</p>
+                <p>Your complete customer acquisition machine generates qualified leads AND handles every call perfectly—24/7 lead generation plus AI receptionist that books appointments directly into your calendar.</p>
                 
                 <div class="btn-group">
                     <!-- EDITABLE: CTA button links use CALENDLY_URL variable (set in script below) -->
@@ -1266,7 +1267,7 @@
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
                     </div>
-                    <h3>Custom Workflows</h3>
+                    <h3>50% on Delivery Workflows</h3>
                     <p>Tailor the AI's conversation flow, questions, and responses to match your business needs and brand voice.</p>
                 </div>
             </div>
@@ -1332,54 +1333,140 @@
         </div>
     </section>
 
+    <!-- ========== SERVICE TIERS ========== -->
+    <section id="service-tiers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Growth Strategy</h2>
+                <p>Due to overwhelming client success, we now offer two proven approaches to scale your business</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 32px; margin-top: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <!-- Complete 50% on Deliveryer Acquisition Machine -->
+                <div class="glass-card" style="text-align: center; position: relative; border: 2px solid var(--primary-blue);">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-primary); color: white; padding: 8px 24px; border-radius: 20px; font-size: 0.875rem; font-weight: 600;">MOST POPULAR</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px; color: var(--text-primary);">Complete 50% on Deliveryer Acquisition Machine</h3>
+                    <div style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.9375rem;">Maximum growth with automated lead generation + AI receptionist</div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <div style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">$3,500 Setup</div>
+                        <div style="font-size: 2rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px;">$550</div>
+                        <div style="color: var(--text-muted); font-size: 0.875rem;">per month</div>
+                    </div>
+                    
+                    <div style="background: rgba(74, 143, 245, 0.1); border: 1px solid rgba(74, 143, 245, 0.2); border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--primary-blue); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">PERFECT FOR:</h4>
+                        <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0;">Businesses wanting to scale rapidly with automated lead generation</p>
+                    </div>
+                    
+                    <div style="text-align: left; margin-bottom: 24px;">
+                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">Complete System Includes:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>24/7 AI phone coverage</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Professional appointment booking</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Lead qualification & screening</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Targeted LinkedIn outreach campaigns</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Professional email sequences</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Lead research & qualification automation</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Advanced reporting & analytics</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 12px; margin-bottom: 24px;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Delivery Time:</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">7-14 business days</p>
+                    </div>
+                    
+                    <a href="https://calendly.com/arturo-viora" class="btn btn-primary" style="width: 100%; text-align: center; display: inline-block;">Get Complete System</a>
+                </div>
+
+                <!-- AI Receptionist Only -->
+                <div class="glass-card" style="text-align: center;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px; color: var(--text-primary);">AI Receptionist Only</h3>
+                    <div style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.9375rem;">Perfect for busy businesses with strong call volume</div>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <div style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">$1,500 Setup</div>
+                        <div style="font-size: 2rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px;">$250</div>
+                        <div style="color: var(--text-muted); font-size: 0.875rem;">per month</div>
+                    </div>
+                    
+                    <div style="background: rgba(74, 143, 245, 0.1); border: 1px solid rgba(74, 143, 245, 0.2); border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--primary-blue); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">PERFECT FOR:</h4>
+                        <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0;">Businesses that get plenty of calls but miss opportunities</p>
+                    </div>
+                    
+                    <div style="text-align: left; margin-bottom: 24px;">
+                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">What's Included:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>24/7 AI phone coverage</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Professional appointment booking</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Lead qualification & screening</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Calendar integration & confirmations</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>Real-time call reports</li>
+                            <li style="padding: 6px 0; font-size: 0.9375rem; color: var(--text-secondary); position: relative; padding-left: 24px;"><span style="position: absolute; left: 0; color: var(--primary-blue); font-weight: bold;">✓</span>50% on Delivery scripts for your business</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 12px; margin-bottom: 24px;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Delivery Time:</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">5-7 business days</p>
+                    </div>
+                    
+                    <a href="https://calendly.com/arturo-viora" class="btn btn-secondary" style="width: 100%; text-align: center; display: inline-block;">Get AI Receptionist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== PRICING ========== -->
     <section id="pricing">
         <div class="container">
             <div class="section-header">
                 <!-- EDITABLE: Section title -->
-                <h2>Simple, Transparent Pricing</h2>
+                <h2>Investment Simple, Transparent Pricing Payment Terms</h2>
                 <!-- EDITABLE: Section description -->
-                <p>No hidden fees. No surprises. Just results.</p>
+                <p>Transparent pricing structure with no hidden fees</p>
             </div>
             
             <div class="glass-card pricing-card">
                 <div class="pricing-header">
-                    <h3>Complete Setup + Platform</h3>
+                    <h3>Payment Structure Complete Setup + Platform Terms</h3>
                 </div>
                 
                 <div class="pricing-item">
                     <div class="pricing-label">
                         <!-- EDITABLE: Setup fee label and description -->
-                        <h4>Setup Fee</h4>
-                        <p>One-time AI configuration and calendar integration</p>
+                        <h4>Upfront Payment</h4>
+                        <p>50% of total setup fee due to begin work</p>
                     </div>
                     <!-- EDITABLE: Setup fee value -->
-                    <div class="pricing-value">$2,500</div>
+                    <div class="pricing-value">50% Upfront</div>
                 </div>
                 
                 <div class="pricing-item">
                     <div class="pricing-label">
                         <!-- EDITABLE: Monthly platform fee label -->
-                        <h4>Monthly Platform</h4>
-                        <p>Based on your call volume</p>
+                        <h4>Completion Payment</h4>
+                        <p>50% due after system delivery and testing</p>
                     </div>
                     <!-- EDITABLE: Monthly platform fee value -->
-                    <div class="pricing-value">Custom</div>
+                    <div class="pricing-value">50% on Delivery</div>
                 </div>
                 
                 <div class="pricing-item">
                     <div class="pricing-label">
                         <!-- EDITABLE: Usage fee label -->
-                        <h4>Usage Fee</h4>
-                        <p>Per-minute billing for active calls</p>
+                        <h4>Monthly Service</h4>
+                        <p>Ongoing system operations and support</p>
                     </div>
                     <!-- EDITABLE: Usage fee value -->
-                    <div class="pricing-value">Pay as you go</div>
+                    <div class="pricing-value">Starting at $250/mo</div>
                 </div>
                 
                 <!-- EDITABLE: Pricing note -->
                 <div class="pricing-note">
-                    <p><strong>Setup Payment:</strong> $1,250 upfront + $1,250 after successful launch. Monthly platform and usage fees vary based on call volume. We'll provide a custom quote during your demo.</p>
+                    <p><strong>ROI Guarantee: Most clients see their investment returned within 30-60 days through captured leads that would have been lost. Choose your service tier above, then schedule your demo to get started.</p>
                 </div>
             </div>
         </div>
