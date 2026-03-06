@@ -1,0 +1,40 @@
+<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="premiumGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5B9BF3;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#A674D9;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#E57BA6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5B9BF3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circuitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#E57BA6;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circuit background elements -->
+  <g fill="none" stroke="url(#circuitGlow)" stroke-width="1" opacity="0.4">
+    <!-- Connection lines -->
+    <path d="M20,30 L35,20 M35,20 L50,30 M50,30 L65,20" stroke-linecap="round"/>
+    <path d="M135,20 L150,30 M150,30 L165,20 M165,20 L180,30" stroke-linecap="round"/>
+    
+    <!-- Circuit nodes -->
+    <circle cx="35" cy="20" r="2" fill="url(#circuitGlow)" opacity="0.8"/>
+    <circle cx="50" cy="30" r="1.5" fill="url(#circuitGlow)" opacity="0.6"/>
+    <circle cx="65" cy="20" r="2" fill="url(#circuitGlow)" opacity="0.8"/>
+    <circle cx="135" cy="20" r="2" fill="url(#circuitGlow)" opacity="0.8"/>
+    <circle cx="150" cy="30" r="1.5" fill="url(#circuitGlow)" opacity="0.6"/>
+    <circle cx="165" cy="20" r="2" fill="url(#circuitGlow)" opacity="0.8"/>
+  </g>
+  
+  <!-- Main VIORA text -->
+  <text x="100" y="38" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="28" font-weight="300" text-anchor="middle" 
+        fill="url(#premiumGradient)" letter-spacing="2px">VIORA</text>
+  
+  <!-- Subtle glow effect -->
+  <text x="100" y="38" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="28" font-weight="300" text-anchor="middle" 
+        fill="url(#premiumGradient)" letter-spacing="2px" 
+        opacity="0.3" stroke="url(#premiumGradient)" stroke-width="0.5"/>
+</svg>
