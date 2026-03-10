@@ -165,7 +165,7 @@
         }
         
         .logo img {
-            height: 32px;
+            height: 52px;
             width: auto;
             display: block;
         }
@@ -620,7 +620,7 @@
         
         .use-case-icon svg {
             width: 32px;
-            height: 32px;
+            height: 52px;
             fill: white;
         }
         
@@ -1009,6 +1009,66 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ========== VIDEO MODAL ========== */
+        .video-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        .video-modal-overlay.active {
+            display: flex;
+        }
+        .video-modal-inner {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: #0B0B0F;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+        }
+        .video-modal-inner iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            display: block;
+        }
+        .video-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 1.75rem;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: background 0.2s;
+        }
+        .video-modal-close:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .video-thumbnail {
+            cursor: pointer;
+        }
+        .video-thumbnail:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
     </style>
 </head>
 <body>
@@ -1085,7 +1145,7 @@
             <div class="video-grid">
                 <!-- EDITABLE: Demo Video 1 -->
                 <div class="video-card fade-in">
-                    <div class="video-thumbnail" onclick="window.open('https://drive.google.com/file/d/19jd4crQd4-PA-C9pdEVp1AtC90SQzglQ/view', '_blank')">
+                    <div class="video-thumbnail" onclick="openVideoModal('19jd4crQd4-PA-C9pdEVp1AtC90SQzglQ')">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0B0B0F 0%, #1A1A2E 50%, #2E1A3D 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #5B9BF3, #A674D9); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🏠</div><div style="font-size: 0.875rem; font-weight: 600; color: #B4B4C6; margin-bottom: 4px;">ENTERPRISE DEMO</div><div style="font-size: 0.75rem; color: #6E6E80;">HVAC Service AI</div><div style="position: absolute; bottom: 12px; right: 12px; background: rgba(91, 155, 243, 0.2); color: #5B9BF3; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">3:24</div></div>
                         <div class="play-button"></div>
                     </div>
@@ -1097,7 +1157,7 @@
                 
                 <!-- EDITABLE: Demo Video 2 -->
                 <div class="video-card fade-in">
-                    <div class="video-thumbnail" onclick="window.open('https://drive.google.com/file/d/10YN0rP46Es_kC7CBORGjRA093raJSF3K/view', '_blank')">
+                    <div class="video-thumbnail" onclick="openVideoModal('10YN0rP46Es_kC7CBORGjRA093raJSF3K')">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0B0B0F 0%, #2E1A3D 50%, #1A1A2E 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #A674D9, #E57BA6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">💆</div><div style="font-size: 0.875rem; font-weight: 600; color: #B4B4C6; margin-bottom: 4px;">ENTERPRISE DEMO</div><div style="font-size: 0.75rem; color: #6E6E80;">Med Spa AI Agent</div><div style="position: absolute; bottom: 12px; right: 12px; background: rgba(166, 116, 217, 0.2); color: #A674D9; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">2:47</div></div>
                         <div class="play-button"></div>
                     </div>
@@ -1109,7 +1169,7 @@
                 
                 <!-- EDITABLE: Demo Video 3 -->
                 <div class="video-card fade-in">
-                    <div class="video-thumbnail" onclick="window.open('https://drive.google.com/file/d/1jgLzXJ_Q5yK5kTHJpD0ehFuejxO3pqIt/view', '_blank')">
+                    <div class="video-thumbnail" onclick="openVideoModal('1jgLzXJ_Q5yK5kTHJpD0ehFuejxO3pqIt')">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1A1A2E 0%, #0B0B0F 50%, #2E1A3D 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #E57BA6, #5B9BF3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🏗️</div><div style="font-size: 0.875rem; font-weight: 600; color: #B4B4C6; margin-bottom: 4px;">ENTERPRISE DEMO</div><div style="font-size: 0.75rem; color: #6E6E80;">Construction AI</div><div style="position: absolute; bottom: 12px; right: 12px; background: rgba(229, 123, 166, 0.2); color: #E57BA6; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">4:12</div></div>
                         <div class="play-button"></div>
                     </div>
@@ -1135,7 +1195,7 @@
             <div class="video-grid">
                 <!-- EDITABLE: Testimonial Video 1 -->
                 <div class="video-card fade-in">
-                    <div class="video-thumbnail" onclick="window.open('https://drive.google.com/file/d/1I0uB9UimR4oh4GEdO_EKRxXaR6qHQmug/view', '_blank')">
+                    <div class="video-thumbnail" onclick="openVideoModal('1I0uB9UimR4oh4GEdO_EKRxXaR6qHQmug')">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0B0B0F 0%, #1A1A2E 50%, #2E1A3D 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #5B9BF3, #A674D9); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">✂️</div><div style="font-size: 0.875rem; font-weight: 600; color: #B4B4C6; margin-bottom: 4px;">CLIENT TESTIMONIAL</div><div style="font-size: 0.75rem; color: #6E6E80;">Barbershop Success</div><div style="position: absolute; bottom: 12px; right: 12px; background: rgba(91, 155, 243, 0.2); color: #5B9BF3; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">1:38</div></div>
                         <div class="play-button"></div>
                     </div>
@@ -1147,7 +1207,7 @@
                 
                 <!-- EDITABLE: Testimonial Video 2 -->
                 <div class="video-card fade-in">
-                    <div class="video-thumbnail" onclick="window.open('https://drive.google.com/file/d/1--0I-IWnC7-KemTNV6z4SfVvmPkou2mr/view', '_blank')">
+                    <div class="video-thumbnail" onclick="openVideoModal('1--0I-IWnC7-KemTNV6z4SfVvmPkou2mr')">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2E1A3D 0%, #0B0B0F 50%, #1A1A2E 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #A674D9, #E57BA6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🏡</div><div style="font-size: 0.875rem; font-weight: 600; color: #B4B4C6; margin-bottom: 4px;">CLIENT TESTIMONIAL</div><div style="font-size: 0.75rem; color: #6E6E80;">Real Estate Success</div><div style="position: absolute; bottom: 12px; right: 12px; background: rgba(166, 116, 217, 0.2); color: #A674D9; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">2:15</div></div>
                         <div class="play-button"></div>
                     </div>
@@ -1734,11 +1794,41 @@
         </div>
     </footer>
 
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal-overlay" id="videoModal" onclick="closeVideoModal(event)">
+        <div class="video-modal-inner">
+            <div class="video-modal-close" onclick="closeVideoModal()">&#x2715;</div>
+            <iframe id="videoModalFrame" src="" allowfullscreen allow="autoplay"></iframe>
+        </div>
+    </div>
+
     <script>
         // ========== CONFIGURATION ==========
         // EDITABLE: Set your booking URL here
         const CALENDLY_URL = "https://calendly.com/arturo-viora";
         
+
+        // ========== VIDEO MODAL ==========
+        function openVideoModal(driveId) {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoModalFrame');
+            frame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeVideoModal(e) {
+            if (e && e.target !== document.getElementById('videoModal') && !e.target.classList.contains('video-modal-close')) return;
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoModalFrame');
+            modal.classList.remove('active');
+            frame.src = '';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeVideoModal({target: document.getElementById('videoModal')});
+        });
+
         // ========== CALENDLY BUTTON SETUP ==========
         document.addEventListener('DOMContentLoaded', function() {
             const bookDemoButtons = document.querySelectorAll('.book-demo-btn');
