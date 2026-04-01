@@ -28,23 +28,24 @@
   .lang-btn.active { background: var(--gradient); color: #fff; }
   .lang-btn:hover:not(.active) { color: var(--text); }
 
-  /* Default: hide all language-specific elements */
-  .en, .es { display: none; }
-  /* Show correct language based on body class */
-  body.lang-en .en { display: revert; }
-  body.lang-es .es { display: revert; }
-  /* For inline elements */
-  body.lang-en span.en { display: inline; }
-  body.lang-es span.es { display: inline; }
-  /* For block elements */
-  body.lang-en p.en, body.lang-en h1.en, body.lang-en h2.en, body.lang-en h3.en, body.lang-en h4.en, body.lang-en li.en { display: block; }
-  body.lang-es p.es, body.lang-es h1.es, body.lang-es h2.es, body.lang-es h3.es, body.lang-es h4.es, body.lang-es li.es { display: block; }
-  /* For flex children */
-  body.lang-en div.en { display: flex; }
-  body.lang-es div.es { display: flex; }
-  /* For links/buttons */
-  body.lang-en a.en { display: inline-block; }
-  body.lang-es a.es { display: inline-block; }
+  /* Default: hide ALL language-specific elements */
+  .en, .es { display: none !important; }
+
+  /* ENGLISH MODE — show only .en */
+  body.lang-en span.en { display: inline !important; }
+  body.lang-en p.en { display: block !important; }
+  body.lang-en h1.en, body.lang-en h2.en, body.lang-en h3.en, body.lang-en h4.en { display: block !important; }
+  body.lang-en li.en { display: list-item !important; }
+  body.lang-en div.en { display: flex !important; }
+  body.lang-en a.en { display: inline-block !important; }
+
+  /* SPANISH MODE — show only .es */
+  body.lang-es span.es { display: inline !important; }
+  body.lang-es p.es { display: block !important; }
+  body.lang-es h1.es, body.lang-es h2.es, body.lang-es h3.es, body.lang-es h4.es { display: block !important; }
+  body.lang-es li.es { display: list-item !important; }
+  body.lang-es div.es { display: flex !important; }
+  body.lang-es a.es { display: inline-block !important; }
 
   .wrapper { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
   header { text-align: center; padding: 80px 0 40px; }
