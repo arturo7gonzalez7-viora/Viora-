@@ -22,13 +22,29 @@
   body::before { width: 600px; height: 600px; background: var(--accent-1); top: -200px; left: -100px; }
   body::after { width: 500px; height: 500px; background: var(--accent-2); bottom: -150px; right: -100px; }
 
+  /* Language toggle buttons - always visible */
   .lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 999; display: flex; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
   .lang-btn { padding: 8px 16px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; cursor: pointer; border: none; background: transparent; color: var(--text-muted); transition: all 0.2s; font-family: 'Inter', sans-serif; }
   .lang-btn.active { background: var(--gradient); color: #fff; }
   .lang-btn:hover:not(.active) { color: var(--text); }
-  [data-lang="en"], [data-lang="es"] { display: none; }
-  body.lang-en [data-lang="en"] { display: revert; }
-  body.lang-es [data-lang="es"] { display: revert; }
+
+  /* Default: hide all language-specific elements */
+  .en, .es { display: none; }
+  /* Show correct language based on body class */
+  body.lang-en .en { display: revert; }
+  body.lang-es .es { display: revert; }
+  /* For inline elements */
+  body.lang-en span.en { display: inline; }
+  body.lang-es span.es { display: inline; }
+  /* For block elements */
+  body.lang-en p.en, body.lang-en h1.en, body.lang-en h2.en, body.lang-en h3.en, body.lang-en h4.en, body.lang-en li.en { display: block; }
+  body.lang-es p.es, body.lang-es h1.es, body.lang-es h2.es, body.lang-es h3.es, body.lang-es h4.es, body.lang-es li.es { display: block; }
+  /* For flex children */
+  body.lang-en div.en { display: flex; }
+  body.lang-es div.es { display: flex; }
+  /* For links/buttons */
+  body.lang-en a.en { display: inline-block; }
+  body.lang-es a.es { display: inline-block; }
 
   .wrapper { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
   header { text-align: center; padding: 80px 0 40px; }
@@ -72,6 +88,15 @@
   .guarantee h3 { font-size: 1.1rem; margin-bottom: 8px; }
   .guarantee p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
+  /* CTA Section */
+  .cta-section { text-align: center; padding: 40px 0 20px; }
+  .cta-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 10px; }
+  .cta-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
+  .pay-btn { display: inline-block; padding: 18px 40px; border-radius: 14px; font-weight: 700; font-size: 1.15rem; text-decoration: none; background: var(--gradient); color: white; box-shadow: 0 4px 30px rgba(124,58,237,0.35); transition: all 0.2s; letter-spacing: 0.02em; }
+  .pay-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 50px rgba(124,58,237,0.5); }
+  .book-call { display: inline-block; margin-top: 16px; font-size: 0.9rem; color: var(--text-muted); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); transition: all 0.2s; }
+  .book-call:hover { color: var(--text); border-color: var(--accent-1); }
+
   footer { text-align: center; padding: 60px 0 40px; border-top: 1px solid var(--border); margin-top: 40px; }
   .f-contact { font-size: 0.9rem; color: var(--text-muted); line-height: 2; }
   .f-contact a { color: var(--text); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
@@ -84,161 +109,170 @@
   }
 </style>
 </head>
-<body class="lang-en">
+<body>
 
 <div class="lang-toggle">
-  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
 </div>
 
 <div class="wrapper">
   <header>
     <img src="viora-new-logo.png" alt="Viora AI" class="logo-img">
-    <h1 data-lang="en">Choose Your AI System</h1>
-    <h1 data-lang="es">Elige Tu Sistema de IA</h1>
-    <p data-lang="en">You've seen what Viora can do. Now pick the plan that fits your business — we handle the rest.</p>
-    <p data-lang="es">Ya viste lo que Viora puede hacer. Ahora elige el plan que se ajuste a tu negocio — nosotros nos encargamos del resto.</p>
+    <h1 class="en">Choose Your AI System</h1>
+    <h1 class="es">Elige Tu Sistema de IA</h1>
+    <p class="en">You've seen what Viora can do. Now pick the plan that fits your business — we handle the rest.</p>
+    <p class="es">Ya viste lo que Viora puede hacer. Ahora elige el plan que se ajuste a tu negocio — nosotros nos encargamos del resto.</p>
     <div class="header-line"></div>
   </header>
 
   <!-- PRICING TIERS -->
   <div class="pricing-grid">
 
-    <!-- Tier 1 -->
+    <!-- Tier 1: AI Receptionist -->
     <div class="tier-card">
-      <div class="t-name" data-lang="en">AI Receptionist</div>
-      <div class="t-name" data-lang="es">Recepcionista IA</div>
-      <div class="t-desc" data-lang="en">Never miss a call again. Your AI answers 24/7, qualifies callers, and books appointments.</div>
-      <div class="t-desc" data-lang="es">Nunca pierdas otra llamada. Tu IA contesta 24/7, califica clientes y agenda citas.</div>
-      <div class="t-label" data-lang="en">Setup Fee</div>
-      <div class="t-label" data-lang="es">Costo de Instalación</div>
-      <div class="t-price">$1,500</div>
-      <div class="t-mo">$350<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);">/mo</span></div>
-      <div class="t-mo-label" data-lang="en">after launch</div>
-      <div class="t-mo-label" data-lang="es">después del lanzamiento</div>
+      <div class="t-name"><span class="en">AI Receptionist</span><span class="es">Recepcionista IA</span></div>
+      <div class="t-desc"><span class="en">Never miss a call again. Your AI answers 24/7, qualifies callers, and books appointments.</span><span class="es">Nunca pierdas otra llamada. Tu IA contesta 24/7, califica clientes y agenda citas.</span></div>
+      <div class="t-label"><span class="en">Setup Fee</span><span class="es">Costo de Configuración</span></div>
+      <div class="t-price">$1,500 <span style="font-size:0.7rem;font-weight:400;-webkit-text-fill-color:var(--text-muted);"><span class="en">one-time</span><span class="es">único</span></span></div>
+      <div class="t-mo">$350<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);">/<span class="en">mo</span><span class="es">mes</span></span></div>
+      <div class="t-mo-label"><span class="en">per month after launch</span><span class="es">por mes después del lanzamiento</span></div>
+      <div class="t-label" style="margin-bottom:10px;"><span class="en">What's Included</span><span class="es">Qué Incluye</span></div>
       <ul class="t-feat">
-        <li data-lang="en"><span class="ck">✓</span> AI answers every call 24/7</li>
-        <li data-lang="en"><span class="ck">✓</span> Qualifies callers &amp; books into Google Calendar</li>
-        <li data-lang="en"><span class="ck">✓</span> English + Spanish</li>
-        <li data-lang="en"><span class="ck">✓</span> Custom trained on your business</li>
-        <li data-lang="en"><span class="ck">✓</span> Weekly call summary report</li>
-        <li data-lang="en"><span class="ck">✓</span> 30-day optimization call</li>
-        <li data-lang="es"><span class="ck">✓</span> IA contesta cada llamada 24/7</li>
-        <li data-lang="es"><span class="ck">✓</span> Califica y agenda en Google Calendar</li>
-        <li data-lang="es"><span class="ck">✓</span> Inglés + Español</li>
-        <li data-lang="es"><span class="ck">✓</span> Entrenada para tu negocio</li>
-        <li data-lang="es"><span class="ck">✓</span> Reporte semanal de llamadas</li>
-        <li data-lang="es"><span class="ck">✓</span> Llamada de optimización a 30 días</li>
+        <li class="en"><span class="ck">✓</span> AI answers every call 24/7</li>
+        <li class="en"><span class="ck">✓</span> Qualifies callers &amp; books into Google Calendar</li>
+        <li class="en"><span class="ck">✓</span> English + Spanish</li>
+        <li class="en"><span class="ck">✓</span> Custom trained on your business</li>
+        <li class="en"><span class="ck">✓</span> Weekly call summary report</li>
+        <li class="en"><span class="ck">✓</span> 30-day optimization call</li>
+        <li class="es"><span class="ck">✓</span> IA contesta cada llamada 24/7</li>
+        <li class="es"><span class="ck">✓</span> Califica y agenda en Google Calendar</li>
+        <li class="es"><span class="ck">✓</span> Inglés + Español</li>
+        <li class="es"><span class="ck">✓</span> Entrenada para tu negocio</li>
+        <li class="es"><span class="ck">✓</span> Reporte semanal de llamadas</li>
+        <li class="es"><span class="ck">✓</span> Llamada de optimización a 30 días</li>
       </ul>
-      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" class="sel-btn sel-secondary" data-lang="en">Select This Plan →</a>
-      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" class="sel-btn sel-secondary" data-lang="es">Elegir Este Plan →</a>
+      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" target="_blank" class="sel-btn sel-secondary">
+        <span class="en">Select This Plan →</span><span class="es">Seleccionar Este Plan →</span>
+      </a>
     </div>
 
-    <!-- Tier 2 -->
+    <!-- Tier 2: AI Receptionist + Follow-Up -->
     <div class="tier-card popular">
-      <div class="pop-badge" data-lang="en">MOST POPULAR</div>
-      <div class="pop-badge" data-lang="es">MÁS POPULAR</div>
-      <div class="t-name" data-lang="en">AI Receptionist + Follow-Up</div>
-      <div class="t-name" data-lang="es">Recepcionista IA + Seguimiento</div>
-      <div class="t-desc" data-lang="en">Everything in Tier 1 plus automated SMS &amp; email follow-up so no lead ever goes cold.</div>
-      <div class="t-desc" data-lang="es">Todo en el Tier 1 más seguimiento automático por SMS y email para que ningún lead se enfríe.</div>
-      <div class="t-label" data-lang="en">Setup Fee</div>
-      <div class="t-label" data-lang="es">Costo de Instalación</div>
-      <div class="t-price">$2,500</div>
-      <div class="t-mo">$750<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);">/mo</span></div>
-      <div class="t-mo-label" data-lang="en">after launch</div>
-      <div class="t-mo-label" data-lang="es">después del lanzamiento</div>
+      <div class="pop-badge"><span class="en">MOST POPULAR</span><span class="es">MÁS POPULAR</span></div>
+      <div class="t-name"><span class="en">AI Receptionist + Follow-Up</span><span class="es">Recepcionista IA + Seguimiento</span></div>
+      <div class="t-desc"><span class="en">Everything in Tier 1 plus automated SMS &amp; email follow-up so no lead ever goes cold.</span><span class="es">Todo en el Tier 1 más seguimiento automático por SMS y email para que ningún lead se enfríe.</span></div>
+      <div class="t-label"><span class="en">Setup Fee</span><span class="es">Costo de Configuración</span></div>
+      <div class="t-price">$2,500 <span style="font-size:0.7rem;font-weight:400;-webkit-text-fill-color:var(--text-muted);"><span class="en">one-time</span><span class="es">único</span></span></div>
+      <div class="t-mo">$750<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);">/<span class="en">mo</span><span class="es">mes</span></span></div>
+      <div class="t-mo-label"><span class="en">per month after launch</span><span class="es">por mes después del lanzamiento</span></div>
+      <div class="t-label" style="margin-bottom:10px;"><span class="en">What's Included</span><span class="es">Qué Incluye</span></div>
       <ul class="t-feat">
-        <li data-lang="en"><span class="ck">✓</span> Everything in AI Receptionist</li>
-        <li data-lang="en"><span class="ck">✓</span> Automated SMS + email follow-up</li>
-        <li data-lang="en"><span class="ck">✓</span> 3-touch sequence (Day 1, 3, 7)</li>
-        <li data-lang="en"><span class="ck">✓</span> Lead tracking CRM</li>
-        <li data-lang="en"><span class="ck">✓</span> Monthly performance report</li>
-        <li data-lang="es"><span class="ck">✓</span> Todo en Recepcionista IA</li>
-        <li data-lang="es"><span class="ck">✓</span> Seguimiento automático SMS + email</li>
-        <li data-lang="es"><span class="ck">✓</span> Secuencia de 3 toques (Día 1, 3, 7)</li>
-        <li data-lang="es"><span class="ck">✓</span> CRM de seguimiento de leads</li>
-        <li data-lang="es"><span class="ck">✓</span> Reporte mensual de rendimiento</li>
+        <li class="en"><span class="ck">✓</span> Everything in AI Receptionist</li>
+        <li class="en"><span class="ck">✓</span> Automated SMS + email follow-up</li>
+        <li class="en"><span class="ck">✓</span> 3-touch sequence (Day 1, 3, 7)</li>
+        <li class="en"><span class="ck">✓</span> Lead tracking CRM</li>
+        <li class="en"><span class="ck">✓</span> Monthly performance report</li>
+        <li class="es"><span class="ck">✓</span> Todo en Recepcionista IA</li>
+        <li class="es"><span class="ck">✓</span> Seguimiento automático SMS + email</li>
+        <li class="es"><span class="ck">✓</span> Secuencia de 3 toques (Día 1, 3, 7)</li>
+        <li class="es"><span class="ck">✓</span> CRM de seguimiento de leads</li>
+        <li class="es"><span class="ck">✓</span> Reporte mensual de rendimiento</li>
       </ul>
-      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" class="sel-btn sel-primary" data-lang="en">Select This Plan →</a>
-      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" class="sel-btn sel-primary" data-lang="es">Elegir Este Plan →</a>
+      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" target="_blank" class="sel-btn sel-primary">
+        <span class="en">Select This Plan →</span><span class="es">Seleccionar Este Plan →</span>
+      </a>
     </div>
 
-    <!-- Tier 3 -->
+    <!-- Tier 3: Full AI Business System -->
     <div class="tier-card">
-      <div class="t-name" data-lang="en">Full AI Business System</div>
-      <div class="t-name" data-lang="es">Sistema Completo de IA</div>
-      <div class="t-desc" data-lang="en">Your entire growth engine on autopilot — lead gen, reviews, strategy sessions, and priority support.</div>
-      <div class="t-desc" data-lang="es">Tu motor de crecimiento en autopiloto — generación de leads, reseñas, sesiones estratégicas y soporte prioritario.</div>
-      <div class="t-label" data-lang="en">Setup Fee</div>
-      <div class="t-label" data-lang="es">Costo de Instalación</div>
-      <div class="t-price">$3,500</div>
-      <div class="t-mo">$1,500<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);">/mo</span></div>
-      <div class="t-mo-label" data-lang="en">after launch</div>
-      <div class="t-mo-label" data-lang="es">después del lanzamiento</div>
+      <div class="t-name"><span class="en">Full AI Business System</span><span class="es">Sistema Completo de IA</span></div>
+      <div class="t-desc"><span class="en">Your entire growth engine on autopilot — lead gen, reviews, strategy sessions, and priority support.</span><span class="es">Tu motor de crecimiento en autopiloto — generación de leads, reseñas, sesiones estratégicas y soporte prioritario.</span></div>
+      <div class="t-label"><span class="en">Setup Fee</span><span class="es">Costo de Configuración</span></div>
+      <div class="t-price">$3,500 <span style="font-size:0.7rem;font-weight:400;-webkit-text-fill-color:var(--text-muted);"><span class="en">one-time</span><span class="es">único</span></span></div>
+      <div class="t-mo">$1,500<span style="font-size:0.8rem;font-weight:400;color:var(--text-muted);">/<span class="en">mo</span><span class="es">mes</span></span></div>
+      <div class="t-mo-label"><span class="en">per month after launch</span><span class="es">por mes después del lanzamiento</span></div>
+      <div class="t-label" style="margin-bottom:10px;"><span class="en">What's Included</span><span class="es">Qué Incluye</span></div>
       <ul class="t-feat">
-        <li data-lang="en"><span class="ck">✓</span> Everything in Tier 1 + 2</li>
-        <li data-lang="en"><span class="ck">✓</span> Outbound AI lead generation</li>
-        <li data-lang="en"><span class="ck">✓</span> Automated review request system</li>
-        <li data-lang="en"><span class="ck">✓</span> Monthly AI optimization session</li>
-        <li data-lang="en"><span class="ck">✓</span> Quarterly strategy call</li>
-        <li data-lang="en"><span class="ck">✓</span> Priority same-day support</li>
-        <li data-lang="en"><span class="ck">✓</span> Full monthly revenue report</li>
-        <li data-lang="es"><span class="ck">✓</span> Todo en Tier 1 + 2</li>
-        <li data-lang="es"><span class="ck">✓</span> Generación de leads con IA</li>
-        <li data-lang="es"><span class="ck">✓</span> Sistema automático de reseñas</li>
-        <li data-lang="es"><span class="ck">✓</span> Sesión mensual de optimización</li>
-        <li data-lang="es"><span class="ck">✓</span> Llamada estratégica trimestral</li>
-        <li data-lang="es"><span class="ck">✓</span> Soporte prioritario mismo día</li>
-        <li data-lang="es"><span class="ck">✓</span> Reporte mensual de ingresos</li>
+        <li class="en"><span class="ck">✓</span> Everything in Tier 1 + 2</li>
+        <li class="en"><span class="ck">✓</span> Outbound AI lead generation</li>
+        <li class="en"><span class="ck">✓</span> Automated review request system</li>
+        <li class="en"><span class="ck">✓</span> Monthly AI optimization session</li>
+        <li class="en"><span class="ck">✓</span> Quarterly strategy call</li>
+        <li class="en"><span class="ck">✓</span> Priority same-day support</li>
+        <li class="en"><span class="ck">✓</span> Full monthly revenue report</li>
+        <li class="es"><span class="ck">✓</span> Todo en Tier 1 + 2</li>
+        <li class="es"><span class="ck">✓</span> Generación de leads con IA</li>
+        <li class="es"><span class="ck">✓</span> Sistema automático de reseñas</li>
+        <li class="es"><span class="ck">✓</span> Sesión mensual de optimización</li>
+        <li class="es"><span class="ck">✓</span> Llamada estratégica trimestral</li>
+        <li class="es"><span class="ck">✓</span> Soporte prioritario mismo día</li>
+        <li class="es"><span class="ck">✓</span> Reporte mensual de ingresos</li>
       </ul>
-      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" class="sel-btn sel-secondary" data-lang="en">Select This Plan →</a>
-      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" class="sel-btn sel-secondary" data-lang="es">Elegir Este Plan →</a>
+      <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" target="_blank" class="sel-btn sel-secondary">
+        <span class="en">Select This Plan →</span><span class="es">Seleccionar Este Plan →</span>
+      </a>
     </div>
   </div>
 
   <!-- GUARANTEE -->
   <div class="guarantee">
-    <h3 data-lang="en">🛡️ No Long-Term Contracts</h3>
-    <h3 data-lang="es">🛡️ Sin Contratos a Largo Plazo</h3>
-    <p data-lang="en">Cancel anytime with 30 days notice. You own your phone number and all your data. We keep clients because they love the results — not because they're locked in.</p>
-    <p data-lang="es">Cancela cuando quieras con 30 días de aviso. Tú eres dueño de tu número y todos tus datos. Mantenemos clientes porque aman los resultados — no porque estén atrapados.</p>
+    <h3><span class="en">🛡️ No Long-Term Contracts</span><span class="es">🛡️ Sin Contratos a Largo Plazo</span></h3>
+    <p class="en">Cancel anytime with 30 days notice. You own your phone number and all your data. We keep clients because they love the results — not because they're locked in.</p>
+    <p class="es">Cancela cuando quieras con 30 días de aviso. Tú eres dueño de tu número y todos tus datos. Mantenemos clientes porque aman los resultados — no porque estén atrapados.</p>
   </div>
 
   <!-- WHAT HAPPENS NEXT -->
   <div class="next-section">
-    <h2 data-lang="en">What Happens After You Select a Plan</h2>
-    <h2 data-lang="es">Qué Pasa Después de Elegir Tu Plan</h2>
+    <h2 class="en">Get Started in 3 Steps</h2>
+    <h2 class="es">Comienza en 3 Pasos</h2>
     <div class="timeline">
       <div class="tl-step">
         <div class="tl-dot"></div>
-        <h4 data-lang="en">Day 1 — Payment & Onboarding</h4>
-        <h4 data-lang="es">Día 1 — Pago e Incorporación</h4>
-        <p data-lang="en">You pay 50% of the setup fee. We send you a short onboarding form — business info, services, hours, and access to your calendar.</p>
-        <p data-lang="es">Pagas el 50% del costo de instalación. Te enviamos un formulario corto — información del negocio, servicios, horarios y acceso a tu calendario.</p>
+        <h4 class="en">Day 1 — Payment &amp; Onboarding</h4>
+        <h4 class="es">Día 1 — Pago e Incorporación</h4>
+        <p class="en">You pay 50% of the setup fee. We send you a short onboarding form — business info, services, hours, and access to your calendar.</p>
+        <p class="es">Pagas el 50% del costo de configuración. Te enviamos un formulario corto — información del negocio, servicios, horarios y acceso a tu calendario.</p>
       </div>
       <div class="tl-step">
         <div class="tl-dot"></div>
-        <h4 data-lang="en">Days 2–10 — We Build Your AI</h4>
-        <h4 data-lang="es">Días 2–10 — Construimos Tu IA</h4>
-        <p data-lang="en">We build and train your custom AI system. You don't touch anything. We handle the phone number, the AI configuration, the calendar integration — everything.</p>
-        <p data-lang="es">Construimos y entrenamos tu sistema de IA personalizado. Tú no tocas nada. Nosotros nos encargamos del número, la configuración, la integración del calendario — todo.</p>
+        <h4 class="en">Days 2–10 — We Build Your AI</h4>
+        <h4 class="es">Días 2–10 — Construimos Tu IA</h4>
+        <p class="en">We build and train your custom AI system. You don't touch anything. We handle the phone number, the AI configuration, the calendar integration — everything.</p>
+        <p class="es">Construimos y entrenamos tu sistema de IA personalizado. Tú no tocas nada. Nosotros nos encargamos del número, la configuración, la integración del calendario — todo.</p>
       </div>
       <div class="tl-step">
         <div class="tl-dot"></div>
-        <h4 data-lang="en">Days 11–14 — Testing & Launch</h4>
-        <h4 data-lang="es">Días 11–14 — Pruebas y Lanzamiento</h4>
-        <p data-lang="en">We test everything internally, then go live. You pay the remaining 50%. Your AI starts answering calls immediately.</p>
-        <p data-lang="es">Probamos todo internamente, luego lanzamos. Pagas el 50% restante. Tu IA empieza a contestar llamadas de inmediato.</p>
+        <h4 class="en">Days 11–14 — Testing &amp; Launch</h4>
+        <h4 class="es">Días 11–14 — Pruebas y Lanzamiento</h4>
+        <p class="en">We test everything internally, then go live. You pay the remaining 50%. Your AI starts answering calls immediately.</p>
+        <p class="es">Probamos todo internamente, luego lanzamos. Pagas el 50% restante. Tu IA empieza a contestar llamadas de inmediato.</p>
       </div>
       <div class="tl-step">
         <div class="tl-dot"></div>
-        <h4 data-lang="en">Month 1+ — Ongoing Optimization</h4>
-        <h4 data-lang="es">Mes 1+ — Optimización Continua</h4>
-        <p data-lang="en">Your AI gets smarter every month. We review performance, optimize the system, and send you reports showing exactly what it's doing for your business.</p>
-        <p data-lang="es">Tu IA se vuelve más inteligente cada mes. Revisamos el rendimiento, optimizamos el sistema y te enviamos reportes mostrando exactamente qué está haciendo por tu negocio.</p>
+        <h4 class="en">Month 1+ — Ongoing Optimization</h4>
+        <h4 class="es">Mes 1+ — Optimización Continua</h4>
+        <p class="en">Your AI gets smarter every month. We review performance, optimize the system, and send you reports showing exactly what it's doing for your business.</p>
+        <p class="es">Tu IA se vuelve más inteligente cada mes. Revisamos el rendimiento, optimizamos el sistema y te enviamos reportes mostrando exactamente qué está haciendo por tu negocio.</p>
       </div>
     </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section">
+    <h2 class="en">Ready to get started?</h2>
+    <h2 class="es">¿Listo para comenzar?</h2>
+    <p class="en">Your spot is reserved when you pay today</p>
+    <p class="es">Tu lugar se reserva cuando pagas hoy</p>
+    <a href="https://buy.stripe.com/14A9AS4J2eusc5F0ZQes00p" target="_blank" class="pay-btn">
+      <span class="en">💳 Pay $765 &amp; Let's Get Started →</span>
+      <span class="es">💳 Pagar $765 y Comenzar →</span>
+    </a>
+    <br>
+    <a href="mailto:arturo@viora.team" class="book-call">
+      <span class="en">Book a Free Call Instead</span>
+      <span class="es">Reservar una Llamada Gratuita</span>
+    </a>
   </div>
 </div>
 
@@ -246,9 +280,9 @@
 <footer>
   <div class="wrapper">
     <div class="f-contact">
-      <div data-lang="en">Questions? Reach out anytime.</div>
-      <div data-lang="es">¿Preguntas? Contáctanos cuando quieras.</div>
-      <br>
+      <span class="en">Questions? Reach out anytime.</span>
+      <span class="es">¿Preguntas? Contáctanos cuando quieras.</span>
+      <br><br>
       <a href="mailto:arturo@viora.team">arturo@viora.team</a><br>
       <a href="https://viora-co.com">viora-co.com</a>
     </div>
@@ -259,9 +293,13 @@
 <script>
 function setLang(lang) {
   document.body.className = 'lang-' + lang;
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector('[data-lang="' + lang + '"]').classList.add('active');
+  // Update page title
+  document.title = lang === 'es' ? 'Viora AI — Elige Tu Plan' : 'Viora AI — Choose Your Plan';
 }
+// Default to English on load
+document.addEventListener('DOMContentLoaded', () => setLang('en'));
 </script>
 </body>
 </html>
