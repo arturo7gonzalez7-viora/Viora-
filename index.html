@@ -359,6 +359,7 @@
             .compare-grid { grid-template-columns: 1fr; max-width: 400px; }
             .ind-grid { grid-template-columns: repeat(3, 1fr); }
             .ind-recs { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+            #roi-calculator .glass-card > div:first-child { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
             :root { --section-padding: 60px; }
@@ -368,6 +369,7 @@
             .btn-group { flex-direction: column; align-items: center; }
             .btn { width: 100%; max-width: 300px; text-align: center; }
             .steps-grid, .results-grid, .video-grid { grid-template-columns: 1fr; }
+            #roi-calculator .glass-card > div:first-child { grid-template-columns: 1fr !important; }
             .ind-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .ind-emoji { font-size: 1.75rem; }
             .ind-recs { grid-template-columns: 1fr; }
@@ -496,6 +498,72 @@
             </div>
         </div>
     </section>
+
+    <!-- ========== ROI CALCULATOR ========== -->
+    <section id="roi-calculator">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">ROI Calculator</div>
+                <h2>How Much Is Your Business Actually Losing?</h2>
+                <p>Enter your numbers below — most business owners are shocked by the result.</p>
+            </div>
+            <div class="glass-card fade-in" style="max-width:640px;margin:0 auto;padding:40px 36px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+                    <div>
+                        <label style="display:block;font-size:0.85rem;font-weight:600;color:var(--text-secondary);margin-bottom:8px;">How many calls per week?</label>
+                        <input type="number" id="roiCalls" value="30" min="1" style="width:100%;padding:14px 16px;background:rgba(0,0,0,0.4);border:1px solid var(--glass-border);border-radius:10px;color:white;font-size:1.25rem;font-weight:700;font-family:inherit;" oninput="calcROI()">
+                    </div>
+                    <div>
+                        <label style="display:block;font-size:0.85rem;font-weight:600;color:var(--text-secondary);margin-bottom:8px;">Avg job / appointment value ($)</label>
+                        <input type="number" id="roiValue" value="300" min="1" style="width:100%;padding:14px 16px;background:rgba(0,0,0,0.4);border:1px solid var(--glass-border);border-radius:10px;color:white;font-size:1.25rem;font-weight:700;font-family:inherit;" oninput="calcROI()">
+                    </div>
+                </div>
+                <div style="background:rgba(0,0,0,0.3);border:1px solid var(--glass-border);border-radius:14px;padding:28px;margin-bottom:28px;">
+                    <div style="display:grid;gap:16px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:var(--text-secondary);font-size:0.95rem;">Calls you're probably missing/week</span>
+                            <span id="roiMissed" style="color:#ef4444;font-weight:700;font-size:1.1rem;">9</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:var(--text-secondary);font-size:0.95rem;">Monthly revenue you're losing</span>
+                            <span id="roiLost" style="color:#ef4444;font-weight:700;font-size:1.1rem;">$11,610</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:var(--text-secondary);font-size:0.95rem;">Your cost with Viora AI</span>
+                            <span style="color:var(--text-primary);font-weight:700;font-size:1.1rem;">$360/mo</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span style="color:var(--text-secondary);font-size:0.95rem;">Your monthly ROI</span>
+                            <span id="roiNet" style="font-weight:800;font-size:1.1rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$11,250</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-bottom:28px;">
+                    <div style="font-size:0.9rem;color:var(--text-muted);margin-bottom:8px;">For every $1 you spend with Viora, you get back</div>
+                    <div id="roiMultiplier" style="font-size:clamp(3rem,6vw,4.5rem);font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;">$32</div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://calendar.app.google/V5Facsr8nXZQRrdQ8" target="_blank" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">Stop Losing Money → Book a Free Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    function calcROI(){
+        var calls=Math.max(1,parseInt(document.getElementById('roiCalls').value)||1);
+        var val=Math.max(1,parseInt(document.getElementById('roiValue').value)||1);
+        var missed=Math.round(calls*0.3);
+        var lostMonthly=Math.round(missed*val*4.3);
+        var vioraCost=360;
+        var roi=lostMonthly-vioraCost;
+        var mult=Math.round(lostMonthly/vioraCost);
+        document.getElementById('roiMissed').textContent=missed;
+        document.getElementById('roiLost').textContent='$'+lostMonthly.toLocaleString();
+        document.getElementById('roiNet').textContent=(roi>=0?'$':'-$')+Math.abs(roi).toLocaleString();
+        document.getElementById('roiMultiplier').textContent='$'+Math.max(0,mult);
+    }
+    calcROI();
+    </script>
 
     <!-- ========== INDUSTRY SELECTOR ========== -->
     <section id="industry-selector">
