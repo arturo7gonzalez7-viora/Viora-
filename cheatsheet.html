@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viora AI — Viora Build Cheatsheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Inter,sans-serif;background:#0a0a0f;color:#e8e8ed;line-height:1.7;padding:40px 24px;}
+.wrap{max-width:800px;margin:0 auto;}
+.logo{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#7c3aed,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.15em;margin-bottom:40px;display:block;}
+h1{font-size:2rem;font-weight:700;margin:32px 0 16px;background:linear-gradient(135deg,#7c3aed,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+h2{font-size:1.4rem;font-weight:600;margin:28px 0 12px;color:#a78bfa;}
+h3{font-size:1.1rem;font-weight:600;margin:20px 0 8px;color:#e8e8ed;}
+p{color:#c0c0cc;margin:8px 0;}
+li{color:#c0c0cc;margin:4px 0 4px 20px;list-style:disc;}
+strong{color:#e8e8ed;}
+hr{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:24px 0;}
+.back{display:inline-block;margin-bottom:32px;color:#a78bfa;text-decoration:none;font-size:0.9rem;}
+.back:hover{color:#7c3aed;}
+pre{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:16px;overflow-x:auto;font-size:0.85rem;color:#c0c0cc;margin:12px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="logo">VIORA</span>
+<a href="/" class="back">← Back to website</a>
+<h1>VIORA BUILD CHEATSHEET</h1>
+<h2>The Complete Guide to Building & Delivering Every Tier</h2>
+<br>
+<p><strong>Last Updated:</strong> March 2026</p>
+<p><strong>Stack:</strong> Retell AI + Twilio + n8n + Google Calendar + Google Sheets/Airtable</p>
+<br>
+<hr>
+<br>
+<h2>📋 MASTER TOOLS LIST</h2>
+<br>
+<p>| Tool | What It Does | Free Tier? | Paid Cost | Sign Up |</p>
+<p>|------|-------------|-----------|-----------|---------|</p>
+<p>| <strong>Retell AI</strong> | AI voice agent — the brain that answers calls | Free trial (limited mins) | ~$0.07–0.12/min | [retell.ai](https://www.retell.ai) |</p>
+<p>| <strong>Twilio</strong> | Phone number + call routing | Free trial ($15 credit) | ~$1/mo per number + $0.013/min | [twilio.com](https://www.twilio.com) |</p>
+<p>| <strong>n8n Cloud</strong> | Automation workflows (connects everything) | Free (5 workflows) | $24/mo (starter) | [n8n.io](https://n8n.io) |</p>
+<p>| <strong>Google Calendar</strong> | Appointment booking | Free | Free | Already have it |</p>
+<p>| <strong>Google Sheets</strong> | Lead tracking CRM (Tier 2+) | Free | Free | Already have it |</p>
+<p>| <strong>Airtable</strong> | Advanced CRM (optional upgrade) | Free (1000 records) | $20/mo | [airtable.com](https://www.airtable.com) |</p>
+<p>| <strong>SendGrid</strong> | Email sending for follow-ups | Free (100/day) | $15/mo (50k emails) | [sendgrid.com](https://sendgrid.com) |</p>
+<p>| <strong>Twilio SMS</strong> | SMS follow-ups (same Twilio account) | Included in trial | ~$0.0079/SMS | Same Twilio account |</p>
+<br>
+<h3>Which Tools for Which Tier?</h3>
+<br>
+<p>| Tool | Tier 1 | Tier 2 | Tier 3 |</p>
+<p>|------|--------|--------|--------|</p>
+<p>| Retell AI | ✓ | ✓ | ✓ |</p>
+<p>| Twilio (phone) | ✓ | ✓ | ✓ |</p>
+<p>| n8n | ✓ | ✓ | ✓ |</p>
+<p>| Google Calendar | ✓ | ✓ | ✓ |</p>
+<p>| Google Sheets | — | ✓ | ✓ |</p>
+<p>| SendGrid | — | ✓ | ✓ |</p>
+<p>| Twilio SMS | — | ✓ | ✓ |</p>
+<br>
+<hr>
+<br>
+<h2>💰 YOUR COST PER CLIENT (Margins)</h2>
+<br>
+<h3>Tier 1 — AI Receptionist</h3>
+<p>| | Setup | Monthly |</p>
+<p>|--|-------|---------|</p>
+<p>| <strong>Client pays</strong> | $1,500 | $350/mo |</p>
+<p>| Retell AI | — | ~$15–40/mo (depends on call volume) |</p>
+<p>| Twilio number | — | ~$2/mo |</p>
+<p>| Twilio minutes | — | ~$5–15/mo |</p>
+<p>| n8n Cloud | — | ~$5/mo (shared across clients) |</p>
+<p>| <strong>Your cost</strong> | ~$0 | <strong>~$27–62/mo</strong> |</p>
+<p>| <strong>Your profit</strong> | <strong>$1,500</strong> | <strong>~$288–323/mo</strong> |</p>
+<br>
+<h3>Tier 2 — AI Receptionist + Follow-Up</h3>
+<p>| | Setup | Monthly |</p>
+<p>|--|-------|---------|</p>
+<p>| <strong>Client pays</strong> | $2,500 | $750/mo |</p>
+<p>| Retell AI | — | ~$15–40/mo |</p>
+<p>| Twilio (calls + SMS) | — | ~$10–25/mo |</p>
+<p>| SendGrid | — | ~$5/mo (shared) |</p>
+<p>| n8n Cloud | — | ~$8/mo |</p>
+<p>| Google Sheets | — | Free |</p>
+<p>| <strong>Your cost</strong> | ~$0 | <strong>~$38–78/mo</strong> |</p>
+<p>| <strong>Your profit</strong> | <strong>$2,500</strong> | <strong>~$672–712/mo</strong> |</p>
+<br>
+<h3>Tier 3 — Full AI Business System</h3>
+<p>| | Setup | Monthly |</p>
+<p>|--|-------|---------|</p>
+<p>| <strong>Client pays</strong> | $3,500 | $1,500/mo |</p>
+<p>| Retell AI | — | ~$20–50/mo |</p>
+<p>| Twilio (calls + SMS) | — | ~$15–35/mo |</p>
+<p>| SendGrid | — | ~$8/mo |</p>
+<p>| n8n Cloud | — | ~$12/mo |</p>
+<p>| Lead scraping tools | — | ~$20–50/mo |</p>
+<p>| <strong>Your cost</strong> | ~$0 | <strong>~$75–155/mo</strong> |</p>
+<p>| <strong>Your profit</strong> | <strong>$3,500</strong> | <strong>~$1,345–1,425/mo</strong> |</p>
+<br>
+<hr>
+<br>
+<h2>🏗️ TIER 1 BUILD: AI RECEPTIONIST</h2>
+<br>
+<p><strong>Estimated Build Time:</strong> 4–6 hours</p>
+<p><strong>What client gets:</strong> AI answers every call 24/7, qualifies, books into Google Calendar</p>
+<br>
+<h3>Step-by-Step Build Process</h3>
+<br>
+<p>#### Step 1: Set Up Twilio Phone Number (15 min)</p>
+<p>1. Go to [twilio.com](https://www.twilio.com) → Sign up / Log in</p>
+<p>2. Go to <strong>Phone Numbers</strong> → <strong>Buy a Number</strong></p>
+<p>3. Search for a local number in the client's area code</p>
+<p>4. Buy it (~$1.15/mo)</p>
+<p>5. Note the phone number — you'll give this to Retell</p>
+<p>6. <strong>Important:</strong> Go to <strong>Phone Numbers</strong> → click the number → under <strong>Voice</strong>, set "Configure With" to <strong>Webhook</strong> (we'll add the Retell webhook URL in step 3)</p>
+<br>
+<p>#### Step 2: Create a Retell AI Agent (60 min)</p>
+<p>1. Go to [retell.ai](https://www.retell.ai) → Sign up / Log in</p>
+<p>2. Click <strong>Create Agent</strong></p>
+<p>3. <strong>Agent Name:</strong> "[Client Business Name] Receptionist"</p>
+<p>4. <strong>Voice:</strong> Pick a natural-sounding voice (test a few — "Rachel" or "Mark" work well for service businesses)</p>
+<p>5. <strong>Language:</strong> Enable both English and Spanish</p>
+<p>6. <strong>System Prompt</strong> — This is the brain. Write it like this:</p>
+<br>
+<p>```</p>
+<p>You are the AI receptionist for [Business Name], a [type of business] located in [City, State].</p>
+<br>
+<p>Your job:</p>
+<li>Answer incoming calls professionally and warmly</li>
+<li>Answer common questions about the business (services, hours, pricing, location)</li>
+<li>Qualify callers by asking: What service do you need? When would you like to come in? What's your name and phone number?</li>
+<li>Book appointments into the calendar</li>
+<li>If you can't answer something, say "Let me have [Owner Name] call you back about that. What's the best number to reach you?"</li>
+<br>
+<p>Business Info:</p>
+<li>Name: [Business Name]</li>
+<li>Hours: [Hours]</li>
+<li>Services: [List main services and prices]</li>
+<li>Location: [Address]</li>
+<li>Owner: [Name]</li>
+<br>
+<p>Rules:</p>
+<li>Always be friendly, professional, and efficient</li>
+<li>Never make up information you don't have</li>
+<li>Always confirm the appointment details before ending the call</li>
+<li>If someone is upset, empathize and offer to have the owner call back</li>
+<li>Speak Spanish if the caller speaks Spanish</li>
+<p>```</p>
+<br>
+<p>7. <strong>Knowledge Base:</strong> Upload any documents about the business (menu, service list, pricing sheet, FAQ)</p>
+<p>8. Save the agent</p>
+<br>
+<p>#### Step 3: Connect Retell to Twilio (15 min)</p>
+<p>1. In Retell dashboard → <strong>Phone Numbers</strong> → <strong>Import Twilio Number</strong></p>
+<p>2. Enter your Twilio Account SID and Auth Token (found in Twilio Console dashboard)</p>
+<p>3. Enter the Twilio phone number you bought</p>
+<p>4. Retell will automatically configure the Twilio webhook</p>
+<p>5. <strong>Test it:</strong> Call the number from your phone. The AI should answer!</p>
+<br>
+<p>#### Step 4: Set Up Google Calendar Integration via n8n (45 min)</p>
+<p>1. Go to [n8n.io](https://n8n.io) → Sign up for n8n Cloud (free tier works)</p>
+<p>2. Create a new workflow: <strong>"[Client] - Appointment Booking"</strong></p>
+<p>3. Add these nodes in order:</p>
+<br>
+<strong>Node 1: Webhook (Trigger)</strong>
+<li>Type: Webhook</li>
+<li>HTTP Method: POST</li>
+<li>Copy the webhook URL — you'll add this to Retell</li>
+<br>
+<strong>Node 2: Parse Call Data</strong>
+<li>Type: Code (JavaScript)</li>
+<li>Code:</li>
+<p>```javascript</p>
+<p>const data = $input.first().json;</p>
+<p>return [{</p>
+<p>  json: {</p>
+<p>    callerName: data.caller_name || 'Unknown',</p>
+<p>    callerPhone: data.caller_phone || data.from_number,</p>
+<p>    service: data.service_requested || 'General',</p>
+<p>    preferredDate: data.preferred_date,</p>
+<p>    preferredTime: data.preferred_time,</p>
+<p>    notes: data.call_summary || ''</p>
+<p>  }</p>
+<p>}];</p>
+<p>```</p>
+<br>
+<strong>Node 3: Google Calendar — Create Event</strong>
+<li>Type: Google Calendar</li>
+<li>Connect your Google account (OAuth)</li>
+<li>Calendar: Select the client's calendar</li>
+<li>Event Title: `{{$json.service}} - {{$json.callerName}}`</li>
+<li>Start Time: `{{$json.preferredDate}} {{$json.preferredTime}}`</li>
+<li>Duration: 60 minutes (adjust per business)</li>
+<li>Description: `Phone: {{$json.callerPhone}}\nService: {{$json.service}}\nNotes: {{$json.notes}}`</li>
+<br>
+<strong>Node 4: Send Notification Email</strong>
+<li>Type: Send Email (or Gmail)</li>
+<li>To: [client's email]</li>
+<li>Subject: "New Appointment Booked: {{$json.callerName}}"</li>
+<li>Body: Include all the appointment details</li>
+<br>
+<p>4. <strong>Activate the workflow</strong></p>
+<p>5. Go back to Retell → Agent Settings → <strong>Custom Functions</strong> → Add a function that sends a POST to your n8n webhook with the appointment data</p>
+<br>
+<p>#### Step 5: Configure Retell Custom Function for Booking (20 min)</p>
+<p>1. In Retell → your agent → <strong>Functions</strong></p>
+<p>2. Create function: `book_appointment`</p>
+<p>3. Description: "Book an appointment for the caller"</p>
+<p>4. Parameters:</p>
+<p>   - `caller_name` (string, required)</p>
+<p>   - `caller_phone` (string, required)</p>
+<p>   - `service_requested` (string, required)</p>
+<p>   - `preferred_date` (string, required)</p>
+<p>   - `preferred_time` (string, required)</p>
+<p>5. Webhook URL: Paste your n8n webhook URL</p>
+<p>6. Method: POST</p>
+<br>
+<p>#### Step 6: Set Up Weekly Summary Report via n8n (30 min)</p>
+<p>1. Create new n8n workflow: <strong>"[Client] - Weekly Call Summary"</strong></p>
+<p>2. <strong>Trigger:</strong> Schedule → Every Monday at 9am</p>
+<p>3. <strong>Node:</strong> Retell API → Get call logs for past 7 days</p>
+<p>4. <strong>Node:</strong> Code → Summarize (total calls, booked appointments, common questions)</p>
+<p>5. <strong>Node:</strong> Send Email → Client gets a clean summary</p>
+<br>
+<p>#### Step 7: Test Everything (30 min)</p>
+<p>1. Call the Twilio number → AI should answer</p>
+<p>2. Go through a full booking conversation</p>
+<p>3. Check Google Calendar → appointment should appear</p>
+<p>4. Check client's email → notification should arrive</p>
+<p>5. Test in Spanish</p>
+<p>6. Test edge cases: "Can I talk to a person?" / wrong number / spam</p>
+<br>
+<h3>✅ Tier 1 Launch Checklist</h3>
+<li>[ ] Twilio number bought and configured</li>
+<li>[ ] Retell agent created with business-specific prompt</li>
+<li>[ ] English + Spanish tested</li>
+<li>[ ] n8n webhook receives call data</li>
+<li>[ ] Google Calendar creates appointments correctly</li>
+<li>[ ] Client gets email notifications for new bookings</li>
+<li>[ ] Weekly summary workflow active</li>
+<li>[ ] Client's existing number forwarded to Twilio number</li>
+<li>[ ] 3 test calls completed successfully</li>
+<li>[ ] Client shown how to check their calendar</li>
+<br>
+<hr>
+<br>
+<h2>🏗️ TIER 2 BUILD: AI RECEPTIONIST + FOLLOW-UP SYSTEM</h2>
+<br>
+<p><strong>Estimated Build Time:</strong> 7–10 hours (includes Tier 1)</p>
+<p><strong>What client gets:</strong> Everything in Tier 1 + automated SMS/email follow-up + lead CRM</p>
+<br>
+<h3>Additional Steps (on top of Tier 1)</h3>
+<br>
+<p>#### Step 8: Set Up Lead Tracking CRM — Google Sheets (30 min)</p>
+<p>1. Create a Google Sheet: <strong>"[Client] Lead Tracker"</strong></p>
+<p>2. Column headers:</p>
+<p>   - A: Date | B: Name | C: Phone | D: Email | E: Service | F: Call Outcome (Booked/Missed/Inquiry) | G: Follow-Up Status | H: Notes</p>
+<p>3. In your n8n booking workflow, add a node BEFORE the calendar node:</p>
+<p>   - <strong>Google Sheets → Append Row</strong> → writes every call to the sheet</p>
+<p>4. This becomes the CRM — client can see every lead in real time</p>
+<br>
+<p>#### Step 9: Build Follow-Up SMS Sequence in n8n (60 min)</p>
+<br>
+<p>Create new n8n workflow: <strong>"[Client] - Lead Follow-Up"</strong></p>
+<br>
+<p>This triggers for missed calls or calls that didn't result in a booking.</p>
+<br>
+<strong>The 3-Touch Sequence:</strong>
+<br>
+<strong>Touch 1 — Same Day (within 1 hour of missed call):</strong>
+<p>```</p>
+<p>Hi [Name], this is [Business Name]! We noticed we missed your call. </p>
+<p>We'd love to help — reply to this text or call us back at [number]. </p>
+<p>We have availability this week! 😊</p>
+<p>```</p>
+<br>
+<strong>Touch 2 — Day 3:</strong>
+<p>```</p>
+<p>Hey [Name]! Just following up from [Business Name]. </p>
+<p>We still have openings this week if you'd like to schedule. </p>
+<p>Reply YES and we'll get you booked! 📅</p>
+<p>```</p>
+<br>
+<strong>Touch 3 — Day 7:</strong>
+<p>```</p>
+<p>Hi [Name], last check-in from [Business Name]! </p>
+<p>We don't want you to miss out. Book anytime at [booking link] </p>
+<p>or reply to this text. We're here when you're ready! 🙌</p>
+<p>```</p>
+<br>
+<strong>n8n Workflow Structure:</strong>
+<p>1. <strong>Trigger:</strong> Webhook from Retell (when call outcome = missed or no booking)</p>
+<p>2. <strong>Node: Wait 1 hour</strong> → then send Touch 1 via Twilio SMS</p>
+<p>3. <strong>Node: Wait 3 days</strong> → then send Touch 2 via Twilio SMS</p>
+<p>4. <strong>Node: Wait 4 more days</strong> → then send Touch 3 via Twilio SMS</p>
+<p>5. <strong>Node: Update Google Sheet</strong> → mark follow-up status after each touch</p>
+<br>
+<strong>Setting up Twilio SMS in n8n:</strong>
+<p>1. In n8n, add a <strong>Twilio</strong> node</p>
+<p>2. Connect with your Twilio Account SID + Auth Token</p>
+<p>3. From: Your Twilio number</p>
+<p>4. To: `{{$json.callerPhone}}`</p>
+<p>5. Body: The follow-up message</p>
+<br>
+<p>#### Step 10: Build Follow-Up Email Sequence (30 min)</p>
+<br>
+<p>Same logic as SMS, but via email. In the same n8n workflow:</p>
+<p>1. Add <strong>SendGrid</strong> nodes (or Gmail nodes) parallel to SMS</p>
+<p>2. <strong>Email 1 (Day 1):</strong> "We missed your call — here's how to book"</p>
+<p>3. <strong>Email 2 (Day 3):</strong> "Still interested? We have openings this week"</p>
+<p>4. <strong>Email 3 (Day 7):</strong> "Last chance to grab this week's availability"</p>
+<br>
+<p>Keep emails SHORT. 3-4 sentences max. Big "BOOK NOW" button linking to Google Calendar booking or the Twilio number.</p>
+<br>
+<p>#### Step 11: Monthly Performance Report (30 min)</p>
+<br>
+<p>Create n8n workflow: <strong>"[Client] - Monthly Report"</strong></p>
+<p>1. <strong>Trigger:</strong> Schedule → 1st of every month at 9am</p>
+<p>2. <strong>Node:</strong> Google Sheets → Read all rows from past month</p>
+<p>3. <strong>Node:</strong> Code → Calculate:</p>
+<p>   - Total inbound calls</p>
+<p>   - Calls that booked an appointment</p>
+<p>   - Conversion rate</p>
+<p>   - Missed calls recovered via follow-up</p>
+<p>   - Total follow-up messages sent</p>
+<p>4. <strong>Node:</strong> Send Email → Beautiful HTML email to client with these stats</p>
+<br>
+<h3>✅ Tier 2 Launch Checklist (in addition to Tier 1)</h3>
+<li>[ ] Google Sheet CRM created and receiving data</li>
+<li>[ ] 3-touch SMS sequence tested (send to your own phone first!)</li>
+<li>[ ] 3-touch email sequence tested</li>
+<li>[ ] Wait/delay timers working correctly in n8n</li>
+<li>[ ] Follow-up only triggers for missed/unbooked calls (not already-booked)</li>
+<li>[ ] Monthly report workflow scheduled and tested</li>
+<li>[ ] Client shown how to view their CRM sheet</li>
+<br>
+<hr>
+<br>
+<h2>🏗️ TIER 3 BUILD: FULL AI BUSINESS SYSTEM</h2>
+<br>
+<p><strong>Estimated Build Time:</strong> 12–16 hours (includes Tier 1 + 2)</p>
+<p><strong>What client gets:</strong> Everything in T1 + T2 + outbound lead gen + review automation + strategy sessions</p>
+<br>
+<h3>Additional Steps (on top of Tier 1 + 2)</h3>
+<br>
+<p>#### Step 12: Outbound Lead Generation System (2-3 hours)</p>
+<br>
+<p><strong>What it does:</strong> Scrapes potential customers → finds their email → sends personalized cold email</p>
+<br>
+<strong>n8n Workflow: "[Client] - Outbound Lead Gen"</strong>
+<br>
+<p>1. <strong>Trigger:</strong> Schedule → runs daily or weekly</p>
+<p>2. <strong>Node: HTTP Request</strong> → Google Maps API or a scraping tool to find local businesses that could be clients OF your client</p>
+<p>   - Example: If client is an HVAC company, scrape real estate agents who might refer HVAC services</p>
+<p>   - Or: Scrape local businesses in the client's service area</p>
+<p>3. <strong>Node: Code</strong> → Clean and format the data</p>
+<p>4. <strong>Node: HTTP Request</strong> → Use an email finder API (Hunter.io, Apollo.io) to find emails</p>
+<p>5. <strong>Node: SendGrid</strong> → Send personalized outreach email:</p>
+<br>
+<p>```</p>
+<p>Subject: Quick question about [Their Business]</p>
+<br>
+<p>Hi [Name],</p>
+<br>
+<p>I noticed [Their Business] is doing great work in [City]. </p>
+<p>I work with [Client Business Name] — we handle [service] </p>
+<p>in the area and wanted to see if there's an opportunity </p>
+<p>to help each other out.</p>
+<br>
+<p>Would you be open to a quick 5-minute chat?</p>
+<br>
+<p>Best,</p>
+<p>[Client Name]</p>
+<p>[Client Business]</p>
+<p>```</p>
+<br>
+<p>6. <strong>Node: Google Sheets</strong> → Log every outreach + response</p>
+<br>
+<p>#### Step 13: Automated Review Request System (60 min)</p>
+<br>
+<strong>n8n Workflow: "[Client] - Review Requests"</strong>
+<br>
+<strong>Trigger options:</strong>
+<li>Option A: After every completed appointment (check Google Calendar for past events)</li>
+<li>Option B: Manual trigger — client marks a job as complete in Google Sheet</li>
+<br>
+<strong>Workflow:</strong>
+<p>1. <strong>Trigger:</strong> Schedule (daily at 6pm) → check Google Calendar for today's completed appointments</p>
+<p>2. <strong>Node: Twilio SMS</strong> → Send review request:</p>
+<p>```</p>
+<p>Hi [Name]! Thanks for choosing [Business Name] today! 🙏</p>
+<br>
+<p>If you had a great experience, we'd really appreciate a quick </p>
+<p>Google review — it helps us a ton!</p>
+<br>
+<p>Leave a review here: [Google Review Link]</p>
+<br>
+<p>Thanks so much!</p>
+<p>```</p>
+<p>3. <strong>Node: Wait 3 days</strong> → If no review, send a gentle reminder</p>
+<p>4. <strong>Node: Google Sheets</strong> → Track who was asked and who reviewed</p>
+<br>
+<strong>Getting the Google Review Link:</strong>
+<p>1. Search for the business on Google Maps</p>
+<p>2. Click "Write a review" → copy that URL</p>
+<p>3. Or use: `https://search.google.com/local/writereview?placeid=[PLACE_ID]`</p>
+<br>
+<p>#### Step 14: Monthly AI Optimization Session (ongoing)</p>
+<li>Review call transcripts in Retell dashboard</li>
+<li>Identify common questions the AI struggled with</li>
+<li>Update the system prompt with better answers</li>
+<li>Add new services/pricing as the business changes</li>
+<li>Adjust the voice or tone based on feedback</li>
+<li>This is a 30-60 min task per client per month</li>
+<br>
+<p>#### Step 15: Quarterly Strategy Call (ongoing)</p>
+<li>Review 3 months of data</li>
+<li>Present: total calls, bookings, follow-up conversions, reviews generated, leads generated</li>
+<li>Discuss: what's working, what needs improvement, new opportunities</li>
+<li>Plan: next quarter's focus areas</li>
+<br>
+<h3>✅ Tier 3 Launch Checklist (in addition to Tier 1 + 2)</h3>
+<li>[ ] Outbound lead gen workflow built and tested</li>
+<li>[ ] Review request SMS workflow active</li>
+<li>[ ] Google Review link tested and working</li>
+<li>[ ] Monthly optimization process documented</li>
+<li>[ ] Quarterly strategy call template ready</li>
+<li>[ ] Full monthly report includes all Tier 3 metrics</li>
+<li>[ ] Client has priority support channel (WhatsApp/text)</li>
+<br>
+<hr>
+<br>
+<h2>📅 MONTHLY CLIENT MANAGEMENT</h2>
+<br>
+<h3>Month 1 (Launch Month)</h3>
+<li>[ ] Days 1–7: Build everything</li>
+<li>[ ] Days 8–10: Internal testing (call 10+ times, test every scenario)</li>
+<li>[ ] Day 11: Soft launch — forward 50% of calls to AI</li>
+<li>[ ] Day 14: Full launch — all calls go to AI</li>
+<li>[ ] Day 15: Check-in call with client — "How's it going?"</li>
+<li>[ ] Day 21: Review first week of live data, make adjustments</li>
+<li>[ ] Day 30: 30-day optimization call — show results, make improvements</li>
+<br>
+<h3>Month 2</h3>
+<li>[ ] Review all call transcripts from month 1</li>
+<li>[ ] Update AI prompt based on common issues</li>
+<li>[ ] Send monthly report (Tier 2+)</li>
+<li>[ ] Check follow-up sequence performance (Tier 2+)</li>
+<li>[ ] Optimize SMS/email copy if needed</li>
+<li>[ ] Quick check-in message to client</li>
+<br>
+<h3>Month 3+</h3>
+<li>[ ] Monthly report + optimization (always)</li>
+<li>[ ] Quarterly strategy call (Tier 3)</li>
+<li>[ ] Review and update AI knowledge base</li>
+<li>[ ] Check for new services/pricing changes</li>
+<li>[ ] Look for upsell opportunities (Tier 1 → Tier 2, etc.)</li>
+<br>
+<h3>What the Monthly Report Looks Like</h3>
+<br>
+<strong>Subject: "[Business Name] AI Performance Report — [Month Year]"</strong>
+<br>
+<p>Include:</p>
+<p>1. <strong>Total Calls Handled:</strong> X</p>
+<p>2. <strong>Appointments Booked:</strong> X (Y% conversion)</p>
+<p>3. <strong>Missed Calls Recovered (Tier 2+):</strong> X</p>
+<p>4. <strong>Follow-Up Messages Sent (Tier 2+):</strong> X SMS, X emails</p>
+<p>5. <strong>Reviews Requested (Tier 3):</strong> X → Y new reviews</p>
+<p>6. <strong>Leads Generated (Tier 3):</strong> X outreach → Y responses</p>
+<p>7. <strong>Top Questions Asked:</strong> List the 5 most common questions</p>
+<p>8. <strong>Recommendations:</strong> What to improve next month</p>
+<br>
+<h3>How to Handle Issues/Complaints</h3>
+<br>
+<p>1. <strong>"The AI said something wrong"</strong></p>
+<p>   - Pull the call transcript from Retell</p>
+<p>   - Fix the prompt immediately</p>
+<p>   - Apologize to client, show the fix</p>
+<p>   - Follow up in 48 hours to confirm it's resolved</p>
+<br>
+<p>2. <strong>"It's not booking appointments correctly"</strong></p>
+<p>   - Check n8n workflow logs for errors</p>
+<p>   - Test the webhook manually</p>
+<p>   - Check Google Calendar permissions</p>
+<p>   - Fix and re-test</p>
+<br>
+<p>3. <strong>"I want to cancel"</strong></p>
+<p>   - Ask why — most issues are fixable</p>
+<p>   - Offer a free month of optimization</p>
+<p>   - If they insist: process cancellation per contract (30 days)</p>
+<p>   - Keep it professional — they might come back or refer someone</p>
+<br>
+<hr>
+<br>
+<h2>🚀 DAILY LEAD GENERATION SYSTEM</h2>
+<br>
+<h3>The Pipeline That Gets You to $20K/Month</h3>
+<br>
+<p>You have TWO lead generation channels running simultaneously:</p>
+<br>
+<hr>
+<br>
+<h3>Channel 1: Automated Cold Email (VPS Outreach Machine)</h3>
+<br>
+<p><strong>What's running:</strong> Your VPS scrapes Google Maps for service businesses → finds owner emails → sends personalized cold email sequences automatically at 8am Mon-Fri.</p>
+<br>
+<p><strong>Daily output:</strong> 12-16 emails/day (60-80/week)</p>
+<p><strong>Expected response rate:</strong> 3-5%</p>
+<p><strong>Expected demo calls from email:</strong> 2-4/week</p>
+<br>
+<strong>The email sequence (3-touch):</strong>
+<br>
+<strong>Email 1 (Day 1):</strong>
+<p>```</p>
+<p>Subject: [Business Name] — are you losing calls after hours?</p>
+<br>
+<p>Hi [Name],</p>
+<br>
+<p>I checked out [Business Name] and it looks like you're doing </p>
+<p>great work. Quick question — do you know how many calls you </p>
+<p>miss when you're busy or after hours?</p>
+<br>
+<p>Most [industry] businesses lose 30-40% of inbound calls. </p>
+<p>We built an AI system that answers every call 24/7 and books </p>
+<p>appointments directly into your calendar.</p>
+<br>
+<p>Would you be open to a quick 15-min call to see if it'd </p>
+<p>work for [Business Name]?</p>
+<br>
+<p>— Arturo</p>
+<p>Viora AI | viora-co.com</p>
+<p>```</p>
+<br>
+<strong>Email 2 (Day 3):</strong>
+<p>```</p>
+<p>Subject: Re: [Business Name] — are you losing calls after hours?</p>
+<br>
+<p>Hey [Name], just bumping this up. </p>
+<br>
+<p>We recently helped a barbershop capture 70+ appointments in </p>
+<p>30 days from calls they were already missing.</p>
+<br>
+<p>Happy to show you a quick demo — takes 15 min.</p>
+<br>
+<p>Book a time here: [booking link]</p>
+<br>
+<p>— Arturo</p>
+<p>```</p>
+<br>
+<strong>Email 3 (Day 7):</strong>
+<p>```</p>
+<p>Subject: Re: [Business Name] — last one from me</p>
+<br>
+<p>[Name] — don't want to be annoying, so this is my last note.</p>
+<br>
+<p>If you ever want to see how AI can answer your calls and </p>
+<p>book appointments 24/7, the offer stands: [booking link]</p>
+<br>
+<p>Either way, wishing you a great rest of the week! 🙌</p>
+<br>
+<p>— Arturo</p>
+<p>```</p>
+<br>
+<hr>
+<br>
+<h3>Channel 2: LinkedIn DMs (Manual — 40/day)</h3>
+<br>
+<p><strong>Daily target:</strong> 40 DMs per day, Mon-Fri</p>
+<p><strong>Weekly total:</strong> 200 DMs</p>
+<p><strong>Expected response rate:</strong> 8-12%</p>
+<p><strong>Expected demo calls from LinkedIn:</strong> 3-5/week</p>
+<br>
+<strong>DM Template:</strong>
+<p>```</p>
+<p>Hey [Name]! I saw you run [Business Name] — looks great.</p>
+<br>
+<p>Quick question: do you know roughly how many calls you </p>
+<p>miss when you're on a job or after hours?</p>
+<br>
+<p>I help service businesses like yours set up AI that </p>
+<p>answers every call 24/7 and books appointments automatically. </p>
+<br>
+<p>No pressure — just curious if that's something you'd </p>
+<p>find useful?</p>
+<p>```</p>
+<br>
+<strong>Follow-up DM (Day 3 if no response):</strong>
+<p>```</p>
+<p>Hey [Name], no worries if you're busy! Just wanted to </p>
+<p>mention — we helped a barbershop capture 70+ extra </p>
+<p>appointments in a month from calls they were already missing.</p>
+<br>
+<p>Happy to do a quick 15-min call to see if it'd work </p>
+<p>for you. Either way, keep crushing it! 💪</p>
+<p>```</p>
+<br>
+<strong>Who to target:</strong>
+<li>Barbershop owners</li>
+<li>HVAC company owners</li>
+<li>Plumbing company owners</li>
+<li>Med spa owners</li>
+<li>Real estate agents</li>
+<li>Dental practice managers</li>
+<li>Fitness center owners</li>
+<li>Any service business with a phone number</li>
+<br>
+<hr>
+<br>
+<h3>📊 PIPELINE MATH: How You Get to $20K/Month</h3>
+<br>
+<strong>Weekly Activity:</strong>
+<p>| Channel | Volume | Response Rate | Demo Calls |</p>
+<p>|---------|--------|--------------|------------|</p>
+<p>| Cold Email | 60-80/week | 3-5% | 2-4 |</p>
+<p>| LinkedIn DMs | 200/week | 8-12% | 3-5 |</p>
+<p>| <strong>Total</strong> | <strong>260-280/week</strong> | — | <strong>5-9 demo calls/week</strong> |</p>
+<br>
+<strong>Conversion Funnel:</strong>
+<p>| Stage | Number | Rate |</p>
+<p>|-------|--------|------|</p>
+<p>| Demo calls/week | 5-9 | — |</p>
+<p>| Close rate | 20-30% | — |</p>
+<p>| <strong>New clients/week</strong> | <strong>1-2</strong> | — |</p>
+<p>| <strong>New clients/month</strong> | <strong>4-8</strong> | — |</p>
+<br>
+<strong>Revenue Build-Up (Conservative — all Tier 1 at $350/mo + $1,500 setup):</strong>
+<br>
+<p>| Month | New Clients | Total Clients | Monthly Recurring | Setup Revenue | Total Revenue |</p>
+<p>|-------|------------|---------------|-------------------|---------------|---------------|</p>
+<p>| Month 1 | 4 | 4 | $1,400 | $6,000 | $7,400 |</p>
+<p>| Month 2 | 4 | 8 | $2,800 | $6,000 | $8,800 |</p>
+<p>| Month 3 | 5 | 13 | $4,550 | $7,500 | $12,050 |</p>
+<p>| Month 4 | 5 | 18 | $6,300 | $7,500 | $13,800 |</p>
+<p>| Month 5 | 5 | 23 | $8,050 | $7,500 | $15,550 |</p>
+<p>| Month 6 | 5 | 28 | $9,800 | $7,500 | $17,300 |</p>
+<p>| <strong>Month 7</strong> | <strong>5</strong> | <strong>33</strong> | <strong>$11,550</strong> | <strong>$7,500</strong> | <strong>$19,050</strong> |</p>
+<p>| <strong>Month 8</strong> | <strong>5</strong> | <strong>38</strong> | <strong>$13,300</strong> | <strong>$7,500</strong> | <strong>$20,800</strong> ✅ |</p>
+<br>
+<strong>With Tier Mix (more realistic — some Tier 2 and 3):</strong>
+<br>
+<p>| Month | New Clients | Avg Setup | Avg Monthly | Recurring Base | Total |</p>
+<p>|-------|------------|-----------|-------------|----------------|-------|</p>
+<p>| Month 1 | 4 | $2,000 avg | $550 avg | $2,200 | $10,200 |</p>
+<p>| Month 2 | 4 | $2,000 avg | $550 avg | $4,400 | $12,400 |</p>
+<p>| Month 3 | 5 | $2,000 avg | $550 avg | $7,150 | $17,150 |</p>
+<p>| <strong>Month 4</strong> | <strong>5</strong> | <strong>$2,000</strong> | <strong>$550</strong> | <strong>$9,900</strong> | <strong>$19,900</strong> ✅ |</p>
+<br>
+<p><strong>$20K/month is realistic by month 4-8</strong> depending on tier mix.</p>
+<br>
+<p><strong>Key insight:</strong> Every client you close is RECURRING revenue. Month over month, your base grows while your effort stays the same. By month 8, even if you stop selling, you're collecting $13K+/mo from existing clients.</p>
+<br>
+<hr>
+<br>
+<h3>🎯 Daily Schedule for Lead Gen</h3>
+<br>
+<strong>Monday - Friday:</strong>
+<p>| Time | Activity |</p>
+<p>|------|----------|</p>
+<p>| 8:00 AM | Automated emails send (already running on VPS) |</p>
+<p>| 9:00-10:00 AM | Send 40 LinkedIn DMs |</p>
+<p>| 10:00-10:30 AM | Reply to yesterday's responses (email + LinkedIn) |</p>
+<p>| 10:30 AM-12:00 PM | Demo calls (book these in the 10:30-12 window) |</p>
+<p>| 1:00-2:00 PM | Client work (building, optimizing) |</p>
+<p>| 2:00-2:30 PM | Follow up on any warm leads |</p>
+<br>
+<p><strong>Saturday-Sunday:</strong> Rest. Automated emails don't send on weekends. Let LinkedIn DMs marinate.</p>
+<br>
+<hr>
+<br>
+<h2>🏆 HOW TO OVERDELIVER (What to Do Each Month)</h2>
+<br>
+<h3>Month 1 — First Impressions Matter</h3>
+<li>Send a "welcome package" email (use onboarding doc)</li>
+<li>Call them on day 7 to check in (even if everything's fine)</li>
+<li>Send a screenshot of the first few AI-handled calls</li>
+<li>Send the 30-day optimization report with enthusiasm</li>
+<br>
+<h3>Month 2+ — Be the Partner, Not the Vendor</h3>
+<li>Send monthly report without being asked</li>
+<li>Proactively suggest improvements ("I noticed callers keep asking about X — I updated the AI to handle that")</li>
+<li>Share a quick tip or industry insight</li>
+<li>Ask for a Google review after month 2 (they're happy by now)</li>
+<li>Ask for referrals — "Know anyone else who could use this?"</li>
+<br>
+<h3>Tier 3 Extras</h3>
+<li>Monthly strategy call — come prepared with data and recommendations</li>
+<li>Quarterly deep dive — present a full ROI analysis</li>
+<li>Priority response — reply to their messages within 2 hours during business hours</li>
+<br>
+<hr>
+<br>
+<h2>🔧 TROUBLESHOOTING</h2>
+<br>
+<h3>"Retell agent isn't answering calls"</h3>
+<p>1. Check Twilio → is the webhook URL pointing to Retell?</p>
+<p>2. Check Retell → is the agent active and the phone number connected?</p>
+<p>3. Test: call the number from a different phone</p>
+<p>4. Check Retell dashboard → look at call logs for errors</p>
+<br>
+<h3>"n8n workflow isn't triggering"</h3>
+<p>1. Check if the workflow is <strong>activated</strong> (toggle at top)</p>
+<p>2. Check the webhook URL matches what's in Retell</p>
+<p>3. Look at n8n execution logs for errors</p>
+<p>4. Test the webhook manually with Postman or curl</p>
+<br>
+<h3>"Google Calendar isn't creating events"</h3>
+<p>1. Check Google Calendar OAuth connection in n8n</p>
+<p>2. Make sure the date/time format matches what Google expects</p>
+<p>3. Check Calendar permissions — is n8n allowed to create events?</p>
+<p>4. Test with a hardcoded date first to isolate the issue</p>
+<br>
+<h3>"SMS not sending"</h3>
+<p>1. Check Twilio balance (needs funds)</p>
+<p>2. Check the "From" number is SMS-capable</p>
+<p>3. Check phone number format (+1XXXXXXXXXX)</p>
+<p>4. Look at Twilio logs for error messages</p>
+<br>
+<hr>
+<br>
+<p><em>This cheat sheet is your bible. Follow it step by step and you can't go wrong. When in doubt, test everything with your own phone number first before going live with a client.</em></p>
+<br>
+</div>
+</body>
+</html>
