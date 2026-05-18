@@ -1,0 +1,14 @@
+{
+  "created": "2026-02-12T20:02:46.216971+00:00",
+  "data": [
+    {
+      "is_image_safe": true,
+      "prompt": "A minimalist balance scale icon with rounded corners. The scale is in equilibrium, with two white circles on either side. The background is a white circle with a red gradient (#dc2626 to #991b1b). The icon has a professional, geometric style and is centered. The icon has a 64x64px feel and is scalable.",
+      "resolution": "1024x1024",
+      "seed": 1886758357,
+      "style_type": "GENERAL",
+      "upscaled_resolution": null,
+      "url": "https://ideogram.ai/api/images/ephemeral/AlTXs_13TwiOKKyHGBC4mg.png?exp=1771012985&sig=3cda9e187c11c3b7ab7635f3999aa89341734097289bafbcdc25f2941ded3e33"
+    }
+  ]
+}

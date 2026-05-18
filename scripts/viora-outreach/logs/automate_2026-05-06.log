@@ -1,0 +1,215 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-06 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-06 14:00:03,527 🔄 Auto-rotation day 126: auto detailing in Austin, TX
+2026-05-06 14:00:03,528 
+🔍 Searching: auto detailing in Austin, TX
+2026-05-06 14:00:04,371   ✅ SHWASH Mobile Car Detailing Austin — (512) 309-0531 — https://www.shwash.co/
+2026-05-06 14:00:04,672   ✅ Taurus Auto Detailing, Paint Protection Film & Ceramic Coating — (512) 337-2879 — https://taurusautodetailing.com/
+2026-05-06 14:00:04,948   ✅ Auto Detailing Austin LLC — (512) 910-7227 — https://autodetailingtx.com/standard-detailing-tx/
+2026-05-06 14:00:05,219   ✅ Complete Auto Detail & Car Wash — (512) 436-8222 — https://www.completeautodetail.com/
+2026-05-06 14:00:05,461   ✅ Perfection Auto Detailing — (512) 745-1071 — https://perfectionautodetailing.weebly.com/
+2026-05-06 14:00:05,726   ✅ Brightside Detailing — (512) 890-2414 — https://brightsidedetailing.com/
+2026-05-06 14:00:06,009   ✅ Raw Vision Auto Detailing — (512) 800-8850 — http://www.rawvisiondetailing.com/
+2026-05-06 14:00:06,255   ✅ The Wax Shack Auto Detailing Austin — (512) 407-8000 — http://www.thewaxshackdetailing.com/
+2026-05-06 14:00:06,510   ✅ TOP OF THE LINE DETAILING LLC — (512) 652-8272 — http://www.topofthelinedetailing.com/
+2026-05-06 14:00:06,677   ✅ Amexi Detailing — (512) 621-8816 — http://www.amexidetailing.com/
+2026-05-06 14:00:06,919   ✅ Centex Mobile Detailing — (512) 882-0748 — https://centexshinycars.com/locations/austin
+2026-05-06 14:00:07,072   ✅ Xtreme Auto Detail, Inc. — (512) 487-4873 — https://xadetail.com/
+2026-05-06 14:00:07,246   ✅ Sponges: Mobile Car Wash and Detailing — (512) 576-0837 — https://sponges.app/
+2026-05-06 14:00:07,381   ✅ Premium Touch Car Detailing Austin — (646) 283-0011 — no website
+2026-05-06 14:00:07,510   ✅ OCDetailing — (512) 920-2683 — https://www.ocdetailing.square.site/
+2026-05-06 14:00:08,200   ✅ Keep clean ATX Mobile Detailing Services — (512) 888-5554 — http://keepcleanatx.com/
+2026-05-06 14:00:08,338   ✅ Royal Auto Finishes — (512) 888-9949 — https://www.royal-auto-finishes.com/
+2026-05-06 14:00:08,565   ✅ The Daily Detail Mobile Car Detailing — (512) 488-6414 — https://thedailydetail.com/
+2026-05-06 14:00:08,725   ✅ Hall of Fame Detail - Mobile Window Tinting & Mobile Car Detailing — (877) 384-2520 — http://halloffamedetail.com/
+2026-05-06 14:00:11,335   ✅ LuxeLine Detailing — (512) 658-7084 — https://luxelinedetail.net/
+2026-05-06 14:00:11,501   ✅ Authentic Details — (512) 296-0183 — https://www.authenticdetails.com/
+2026-05-06 14:00:11,643   ✅ Shynex Mobile Detailing — (832) 262-9679 — no website
+2026-05-06 14:00:11,839   ✅ GENETIC DETAILING — (512) 985-0704 — http://www.geneticdetailing.com/
+2026-05-06 14:00:12,119   ✅ Two Brothers Hand Wash & Detailing — (737) 333-0336 — https://twobrothershandwash.weebly.com/
+2026-05-06 14:00:12,354   ✅ Washaroo Hand Car Wash & Detailing — (512) 428-9274 — https://www.washarooatx.com/south-austin-car-wash
+2026-05-06 14:00:12,614   ✅ A & H Car Wash and Detailing — (512) 554-7233 — no website
+2026-05-06 14:00:12,850   ✅ No Mediocre Auto Detailing — (737) 245-4376 — http://ceramicautocoatings.com/
+2026-05-06 14:00:12,998   ✅ Angel’s Touch Detailing — (512) 767-3143 — no website
+2026-05-06 14:00:13,157   ✅ Washaroo Hand Car Wash - East Austin — (512) 394-6077 — https://www.washarooatx.com/east-austin-car-wash
+2026-05-06 14:00:13,368   ✅ Austin Auto Finishes — (512) 716-1431 — https://www.austinautofinishes.com/
+2026-05-06 14:00:13,577   ✅ Pristine Auto Detailing — (512) 948-1506 — http://padtx.com/
+2026-05-06 14:00:13,700   ✅ Shine Car Spa — (737) 382-2764 — no website
+2026-05-06 14:00:16,326   ✅ 210 Mobile Detailing of Austin — (210) 488-4566 — https://210mobiledetailing.com/
+2026-05-06 14:00:16,444   ✅ Austin Auto Detailing — (956) 624-8146 — no website
+2026-05-06 14:00:16,603   ✅ Torque Car Detailing — (737) 221-2752 — https://torquecardetailing.site/
+2026-05-06 14:00:16,731   ✅ Barton Springs Car Wash — (512) 236-9274 — no website
+2026-05-06 14:00:16,852   ✅ ALSET Auto — (512) 991-5981 — http://alsetauto.com/austin
+2026-05-06 14:00:17,045   ✅ Car Detailing West Lake Hills — (512) 361-5948 — no website
+2026-05-06 14:00:17,169   ✅ Nice - N - Clean — (512) 517-2778 — https://www.nicencleanatx.com/
+2026-05-06 14:00:17,194   📊 Found 39, 39 new (rest were duplicates)
+2026-05-06 14:00:18,195 
+==================================================
+2026-05-06 14:00:18,195 ✅ Scraping complete
+2026-05-06 14:00:18,195    Total found:  39
+2026-05-06 14:00:18,195    New leads:    39
+2026-05-06 14:00:18,195    Duplicates:   0
+2026-05-06 14:00:18,199    DB total:     1076 leads (690 with emails)
+2026-05-06 14:00:18,199 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-06 14:00:18,405 🔍 Finding emails for 50 leads...
+2026-05-06 14:00:18,823 Hunter.io rate limited — pausing 60s
+2026-05-06 14:01:19,198 🔮 Guessed: info@kcoralsurgeryandimplants.com — Kansas City Oral Surgery & Implant Center
+2026-05-06 14:01:19,964 Hunter.io rate limited — pausing 60s
+2026-05-06 14:02:20,310 🔮 Guessed: info@drbeyer.org — Andrew S. Beyer, DMD
+2026-05-06 14:02:21,294 Hunter.io rate limited — pausing 60s
+2026-05-06 14:03:21,631 🔮 Guessed: info@villagesalonatoberlin.com — Village Salon & Dry Bar
+2026-05-06 14:03:22,513 Hunter.io rate limited — pausing 60s
+2026-05-06 14:04:22,991 🔮 Guessed: info@maneraleigh.com — Mane Salon
+2026-05-06 14:04:23,800 Hunter.io rate limited — pausing 60s
+2026-05-06 14:05:24,237 🔮 Guessed: info@douglascarrollsalon.com — Douglas Carroll Salon, Spa and Boutique
+2026-05-06 14:05:25,075 Hunter.io rate limited — pausing 60s
+2026-05-06 14:06:25,454 🔮 Guessed: info@alteregoraleigh.com — Alter EGO Salon
+2026-05-06 14:06:26,374 Hunter.io rate limited — pausing 60s
+2026-05-06 14:07:27,528 🔮 Guessed: info@skyparlorsalon.com — Sky Parlor Salon
+2026-05-06 14:07:28,426 Hunter.io rate limited — pausing 60s
+2026-05-06 14:08:28,788 🔮 Guessed: info@junctionsalon.com — The Junction Salon and Bar
+2026-05-06 14:08:29,493 Hunter.io rate limited — pausing 60s
+2026-05-06 14:09:29,820 🔮 Guessed: info@rcasparsalon.com — R. Caspar Salon
+2026-05-06 14:09:30,546 Hunter.io rate limited — pausing 60s
+2026-05-06 14:10:30,945 🔮 Guessed: info@reveriehairco.com — Reverie Hair Co.
+2026-05-06 14:10:31,647 Hunter.io rate limited — pausing 60s
+2026-05-06 14:11:32,230 🔮 Guessed: info@samuelcole.com — Samuel Cole Salon
+2026-05-06 14:11:33,081 Hunter.io rate limited — pausing 60s
+2026-05-06 14:12:33,420 🔮 Guessed: info@menagerienc.com — Menagerie Style House
+2026-05-06 14:12:34,267 Hunter.io rate limited — pausing 60s
+2026-05-06 14:13:34,665 🔮 Guessed: info@thehightidesalon.com — The Hightide Salon and Suites
+2026-05-06 14:13:35,501 Hunter.io rate limited — pausing 60s
+2026-05-06 14:14:35,848 🔮 Guessed: info@alteregoraleigh.com — Salon Deux
+2026-05-06 14:14:36,587 Hunter.io rate limited — pausing 60s
+2026-05-06 14:15:36,951 🔮 Guessed: info@hush.hair — Hush Raleigh
+2026-05-06 14:15:37,854 Hunter.io rate limited — pausing 60s
+2026-05-06 14:16:38,391 🔮 Guessed: info@luxsalonspa.net — LUX Salon - Lafayette Village
+2026-05-06 14:16:39,274 Hunter.io rate limited — pausing 60s
+2026-05-06 14:17:39,656 🔮 Guessed: info@salon21raleigh.com — Salon 21
+2026-05-06 14:17:40,363 Hunter.io rate limited — pausing 60s
+2026-05-06 14:18:40,706 🔮 Guessed: info@sweettsalon.com — Sweet T Salon
+2026-05-06 14:18:41,430 Hunter.io rate limited — pausing 60s
+2026-05-06 14:19:41,767 🔮 Guessed: info@justblo.com — Blo
+2026-05-06 14:19:42,603 Hunter.io rate limited — pausing 60s
+2026-05-06 14:20:43,275 🔮 Guessed: info@salonlavie.us — Salon La Vie Raleigh
+2026-05-06 14:20:44,074 Hunter.io rate limited — pausing 60s
+2026-05-06 14:21:44,499 🔮 Guessed: info@luxsalonspa.net — Lux Salon - Towne North
+2026-05-06 14:21:45,204 Hunter.io rate limited — pausing 60s
+2026-05-06 14:22:45,532 🔮 Guessed: info@atlantishairsalon.com — Atlantis Salon
+2026-05-06 14:22:46,400 Hunter.io rate limited — pausing 60s
+2026-05-06 14:23:46,762 🔮 Guessed: info@thelooksalonsuites.com — The Look Salon Suites
+2026-05-06 14:23:47,487 Hunter.io rate limited — pausing 60s
+2026-05-06 14:24:47,863 🔮 Guessed: info@mossraleigh.com — Moss Raleigh Salon • Master Colorist • Gray Blending • Color Corrections • Balayage • Vivids
+2026-05-06 14:24:48,596 Hunter.io rate limited — pausing 60s
+2026-05-06 14:25:48,966 🔮 Guessed: info@thelegacysalonraleigh.com — The Legacy Salon
+2026-05-06 14:25:49,835 Hunter.io rate limited — pausing 60s
+2026-05-06 14:26:50,186 🔮 Guessed: info@salonbluhair.com — Salon Blu
+2026-05-06 14:26:51,052 Hunter.io rate limited — pausing 60s
+2026-05-06 14:27:51,401 🔮 Guessed: info@tonehairsalon.com — Tone Hair Salon
+2026-05-06 14:27:52,231 Hunter.io rate limited — pausing 60s
+2026-05-06 14:28:52,519 Hunter domain-search failed for ritualhairco.com: Expecting value: line 1 column 1 (char 0)
+2026-05-06 14:28:52,521 🔮 Guessed: info@ritualhairco.com — RITUAL Hair Company
+2026-05-06 14:28:53,323 Hunter domain-search failed for dsparada.com: Expecting value: line 1 column 1 (char 0)
+2026-05-06 14:28:53,325 🔮 Guessed: info@dsparada.com — dsparada Color Salon
+2026-05-06 14:28:54,035 Hunter.io rate limited — pausing 60s
+2026-05-06 14:29:54,413 🔮 Guessed: info@vagaro.com — Atmosphere Salon Raleigh....Janet Shacklette
+2026-05-06 14:29:55,315 Hunter.io rate limited — pausing 60s
+2026-05-06 14:30:55,784 🔮 Guessed: info@samandbills.com — Sam and Bill's Hair Color & Design
+2026-05-06 14:30:56,712 Hunter.io rate limited — pausing 60s
+2026-05-06 14:31:57,050 🔮 Guessed: info@asuitesalon.com — A Suite Salon
+2026-05-06 14:31:57,778 Hunter.io rate limited — pausing 60s
+2026-05-06 14:32:58,116 🔮 Guessed: info@salonveritas.com — Salon Veritas
+2026-05-06 14:32:58,866 Hunter.io rate limited — pausing 60s
+2026-05-06 14:33:59,869 🔮 Guessed: info@pointhairsalon.com — The Point Salon
+2026-05-06 14:34:00,696 Hunter.io rate limited — pausing 60s
+2026-05-06 14:35:01,211 🔮 Guessed: info@smithcosalon.com — SMITH & CO. Hair Salon LLC
+2026-05-06 14:35:02,228 Hunter.io rate limited — pausing 60s
+2026-05-06 14:36:02,583 🔮 Guessed: info@salonalchemyhair.com — Salon Alchemy
+2026-05-06 14:36:03,520 Hunter.io rate limited — pausing 60s
+2026-05-06 14:37:03,857 🔮 Guessed: info@vagaro.com — Tres Hair Company
+2026-05-06 14:37:04,729 Hunter.io rate limited — pausing 60s
+2026-05-06 14:38:05,170 🔮 Guessed: info@salonbluhair.com — Salon Blu
+2026-05-06 14:38:05,955 Hunter.io rate limited — pausing 60s
+2026-05-06 14:39:06,326 🔮 Guessed: info@eawellshair.com — EA Wells Hair Design
+2026-05-06 14:39:07,206 Hunter.io rate limited — pausing 60s
+2026-05-06 14:40:07,422 🔮 Guessed: info@solasalonstudios.com — Sola Salons
+2026-05-06 14:40:08,159 Hunter.io rate limited — pausing 60s
+2026-05-06 14:41:08,379 🔮 Guessed: info@salonlofts.com — Salon Lofts
+2026-05-06 14:41:08,884 
+==================================================
+2026-05-06 14:41:08,884 ✅ Email finder complete
+2026-05-06 14:41:08,884    API found:  0
+2026-05-06 14:41:08,884    Guessed:    41
+2026-05-06 14:41:08,884    Total:      41
+2026-05-06 14:41:08,884 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-06.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Wed May 06** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1076 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Wed May  6 14:41:09 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-06.log

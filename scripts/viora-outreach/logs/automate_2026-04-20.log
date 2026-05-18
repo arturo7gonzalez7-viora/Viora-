@@ -1,0 +1,229 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-20 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-20 14:00:04,458 🔄 Auto-rotation day 110: law office in Chicago, IL
+2026-04-20 14:00:04,458 
+🔍 Searching: law office in Chicago, IL
+2026-04-20 14:00:05,619   ✅ Malman Law — (312) 629-0099 — https://www.malmanlaw.com/
+2026-04-20 14:00:05,872   ✅ Donald Kiolbassa Attorney At Law — (773) 744-9567 — http://www.chicagorealestateatty.com/
+2026-04-20 14:00:06,176   ✅ Zayed Law Offices — (312) 815-7074 — https://zayedlawoffices.com/chicago-personal-injury-lawyer/?utm_medium=local&utm_source=gmb&utm_campaign=chicago
+2026-04-20 14:00:06,434   ✅ The Law Offices of Haytham Faraj — (312) 635-0800 — https://farajlaw.com/chicago
+2026-04-20 14:00:06,757   ✅ Law Offices of Joseph Younes — (312) 802-1122 — https://www.thechicagoaccidentattorney.net/
+2026-04-20 14:00:06,961   ✅ Attorneys of Chicago Personal Injury Lawyers — (872) 253-6829 — https://attorneysofchicago.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb-chicago
+2026-04-20 14:00:07,181   ✅ The Illinois Hammer Injury Law Firm Dworkin & Maciariello — (312) 857-7777 — https://illinoishammer.com/?utm_source=gmb&utm_medium=organic&utm_campaign=gbp
+2026-04-20 14:00:07,399   ✅ Phillips Law Offices — (312) 346-4262 — https://phillipslawoffices.com/
+2026-04-20 14:00:07,652   ✅ Disparti Law Group — (312) 506-5511 — https://www.dispartilaw.com/
+2026-04-20 14:00:07,932   ✅ Mark Silverman Law Office Ltd. — (312) 775-1015 — http://www.depositlaw.com/
+2026-04-20 14:00:08,089   ✅ Morgan & Morgan — (312) 706-0550 — https://www.forthepeople.com/office-locations/illinois/chicago/?utm_source=GMB&utm_medium=local&utm_campaign=ChicagoILGMB
+2026-04-20 14:00:08,340   ✅ Levin & Perconti — (312) 847-2615 — https://www.levinperconti.com/medical-malpractice/?utm_source=google&utm_medium=organic&utm_campaign=gbp-chicago
+2026-04-20 14:00:08,509   ✅ Clifford Law Offices PC — (312) 899-9090 — https://www.cliffordlaw.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-20 14:00:08,679   ✅ River North Law Group — (312) 944-2224 — https://rivernorthlawgroup.com/
+2026-04-20 14:00:08,830   ✅ Law Office of Michael A. Perez — (773) 772-8989 — https://www.lomap.com/
+2026-04-20 14:00:09,011   ✅ The Law Office of Sean Brown, LLC — (312) 675-6116 — http://www.attorneyseanbrown.com/
+2026-04-20 14:00:09,252   ✅ Ankin Law — (312) 500-7866 — https://ankinlaw.com/?utm_source=google&utm_medium=GBP&utm_city=chicago
+2026-04-20 14:00:09,457   ✅ Sherwood Law Group — (312) 627-1650 — http://www.sherwoodlawgroup.com/
+2026-04-20 14:00:09,632   ✅ Saper Law I Intellectual Property I Entertainment I Social Media I Business — (312) 527-4100 — https://saperlaw.com/
+2026-04-20 14:00:09,818   ✅ Law Offices of Katrina M. Barnett, P.C. — (312) 725-0085 — http://www.kmbarnettlaw.com/
+2026-04-20 14:00:12,418   ✅ Ivan Rueda & Associates – Personal Injury Attorney — (773) 252-9800 — https://www.ivanrueda.com/
+2026-04-20 14:00:12,578   ✅ The Thiel Law Group, P.C. — (773) 732-6297 — https://www.thiel.law/
+2026-04-20 14:00:12,773   ✅ CTM Legal Group — (312) 818-6700 — http://www.ctmlegalgroup.com/
+2026-04-20 14:00:12,983   ✅ Foutris Law Office, Ltd. — (312) 212-1200 — https://www.civilrightsattorneychicago.com/
+2026-04-20 14:00:13,145   ✅ The Horwitz Law Group — (312) 641-9200 — https://chicago-personal-injury-lawyers.us/
+2026-04-20 14:00:13,341   ✅ Robson & Lopez LLC — (312) 523-2166 — http://www.robsonlopez.com/
+2026-04-20 14:00:13,554   ✅ The Blake Horwitz Law Firm, Ltd. — (312) 676-2100 — https://theblakehorwitzlawfirm.com/
+2026-04-20 14:00:13,682   ✅ Abels & Annes, P.C. — (312) 924-7575 — https://www.daveabels.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB-Chicago
+2026-04-20 14:00:13,824   ✅ Keating Law Offices, P.C. — (312) 239-6787 — https://keatinglegal.com/
+2026-04-20 14:00:14,011   ✅ Chicago Family Attorneys, LLC — (312) 971-2581 — https://www.chiattorney.com/
+2026-04-20 14:00:14,229   ✅ Chicago Trusted Attorneys — (312) 519-3171 — https://www.chicagotrustedattorneys.com/?utm_source=GMB&utm_medium=organic&utm_campaign=WestLakeStreet
+2026-04-20 14:00:14,379   ✅ Illinois Lawyers — (312) 346-5320 — http://www.illinoislawyers.com/
+2026-04-20 14:00:14,556   ✅ JRQ & Associates, LLC — (312) 561-5063 — http://www.jrqlaw.com/
+2026-04-20 14:00:14,746   ✅ The Davis Law Group, P.C. — (847) 834-7112 — https://www.illinoisdriverslicensereinstatementlawyer.com/?utm_source=google&utm_medium=organic&utm_campaign=chicagoGMB
+2026-04-20 14:00:14,905   ✅ Michael H. Wasserman, PC — (312) 726-1512 — http://www.mhwasserman.com/?utm_source=gmb&utm_medium=organic&utm_content=listing&utm_campaign=google-posts
+2026-04-20 14:00:15,065   ✅ Zimmerman Law Offices — (312) 440-0020 — https://www.attorneyzim.com/
+2026-04-20 14:00:15,223   ✅ Aaron Krolik Law Office, LLC — (312) 925-4090 — https://www.securitydepositlaw.com/
+2026-04-20 14:00:15,398   ✅ Mark Sciblo Law Office — (773) 775-5050 — http://www.sciblolawoffice.com/
+2026-04-20 14:00:15,563   ✅ Washington Law Offices — (888) 586-4441 — https://www.ilwashingtonlaw.com/
+2026-04-20 14:00:15,753   ✅ Lerner and Rowe Injury Attorneys — (708) 222-2222 — https://lernerandrowe.com/illinois/chicago/
+2026-04-20 14:00:18,851   ✅ The Duron Law Firm PC — (773) 697-7650 — http://www.duronlaw.com/
+2026-04-20 14:00:19,004   ✅ Herbert Law Firm — (312) 655-7660 — https://danherbertlaw.com/
+2026-04-20 14:00:19,157   ✅ Law Office of Anselmo Duran P.C. — (773) 376-7000 — https://www.anselmoduranlaw.com/?utm_source=google-local&utm_medium=organic&utm_campaign=706
+2026-04-20 14:00:19,490   ✅ Stoltmann Law Offices — (312) 332-4200 — https://www.stoltmannlaw.com/
+2026-04-20 14:00:19,653   ✅ Patterson Law Firm — (312) 223-1699 — http://pattersonlawfirm.com/
+2026-04-20 14:00:19,819   ✅ DiTommaso Lubin, PC — (630) 333-0333 — https://www.thebusinesslitigators.com/
+2026-04-20 14:00:20,009   ✅ Bradford Miller Law, P.C. — (312) 238-9298 — http://www.bradfordmillerlaw.com/
+2026-04-20 14:00:20,167   ✅ The Law Office of Matthew Prengaman — (773) 598-4696 — http://www.chicago-criminal-dui.com/
+2026-04-20 14:00:20,331   ✅ Law Offices of R. Tamara de Silva — (312) 500-8424 — https://www.desilvalawoffices.com/
+2026-04-20 14:00:20,517   ✅ Lento Law Firm Student Defense and Title IX Attorneys — (872) 327-9716 — https://www.studentdisciplinedefense.com/?utm_campaign=GMB&utm_source=organic+search&utm_medium=Yext&utm_id=Yext
+2026-04-20 14:00:20,542   📊 Found 50, 21 new (rest were duplicates)
+2026-04-20 14:00:21,542 
+==================================================
+2026-04-20 14:00:21,542 ✅ Scraping complete
+2026-04-20 14:00:21,543    Total found:  50
+2026-04-20 14:00:21,543    New leads:    21
+2026-04-20 14:00:21,543    Duplicates:   29
+2026-04-20 14:00:21,544    DB total:     636 leads (190 with emails)
+2026-04-20 14:00:21,544 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-20 14:00:21,733 🔍 Finding emails for 50 leads...
+2026-04-20 14:00:22,745 Hunter.io rate limited — pausing 60s
+2026-04-20 14:01:23,081 🔮 Guessed: info@omniluxmedspa.com — Omni Lux Med Spa
+2026-04-20 14:01:23,940 Hunter.io rate limited — pausing 60s
+2026-04-20 14:02:24,289 🔮 Guessed: info@lilacmedspa.com — Lilac med spa
+2026-04-20 14:02:24,980 Hunter.io rate limited — pausing 60s
+2026-04-20 14:03:25,318 🔮 Guessed: info@glowmedspaok.com — Glow Med Spa
+2026-04-20 14:03:26,220 Hunter.io rate limited — pausing 60s
+2026-04-20 14:04:26,575 🔮 Guessed: info@stilnovaco.com — Stilnova & Co.
+2026-04-20 14:04:27,412 Hunter.io rate limited — pausing 60s
+2026-04-20 14:05:27,810 🔮 Guessed: info@h-md.com — Ideal Image Oklahoma City
+2026-04-20 14:05:28,718 Hunter.io rate limited — pausing 60s
+2026-04-20 14:06:29,061 🔮 Guessed: info@laseraway.com — LaserAway Oklahoma City
+2026-04-20 14:06:30,024 Hunter.io rate limited — pausing 60s
+2026-04-20 14:07:30,430 🔮 Guessed: info@thewanderingclay.com — The Wandering Clay
+2026-04-20 14:07:31,379 Hunter.io rate limited — pausing 60s
+2026-04-20 14:08:31,739 🔮 Guessed: info@csaok.com — Cosmetic Surgery Affiliates
+2026-04-20 14:08:32,459 Hunter.io rate limited — pausing 60s
+2026-04-20 14:09:32,800 🔮 Guessed: info@injectableaesthetics.com — Injectable Aesthetics
+2026-04-20 14:09:33,683 Hunter.io rate limited — pausing 60s
+2026-04-20 14:10:34,066 🔮 Guessed: info@glowtheoryokc.glossgenius.com — Glow Theory Spa
+2026-04-20 14:10:34,760 Hunter.io rate limited — pausing 60s
+2026-04-20 14:11:35,119 🔮 Guessed: info@fourseasonsheatingcooling.com — Four Seasons Heating, Air Conditioning, Plumbing, & Electric
+2026-04-20 14:11:35,874 Hunter.io rate limited — pausing 60s
+2026-04-20 14:12:36,245 🔮 Guessed: info@alltemp.com — All Temp Heating and Air Conditioning
+2026-04-20 14:12:36,963 Hunter.io rate limited — pausing 60s
+2026-04-20 14:13:37,363 🔮 Guessed: info@chicagoheatingandcooling.com — Chicago Heating & Cooling
+2026-04-20 14:13:38,255 Hunter.io rate limited — pausing 60s
+2026-04-20 14:14:38,602 🔮 Guessed: info@deljoheating.com — Deljo Heating, Cooling & Plumbing
+2026-04-20 14:14:39,307 Hunter.io rate limited — pausing 60s
+2026-04-20 14:15:39,709 🔮 Guessed: info@modernhvactech.com — MODERN HVAC TECHNOLOGY
+2026-04-20 14:15:40,653 Hunter.io rate limited — pausing 60s
+2026-04-20 14:16:41,002 🔮 Guessed: info@bescoair.net — Besco Air Inc.
+2026-04-20 14:16:41,869 Hunter.io rate limited — pausing 60s
+2026-04-20 14:17:42,218 🔮 Guessed: info@chicagocomforthvac.com — Chicago Comfort HVAC Services
+2026-04-20 14:17:42,925 Hunter.io rate limited — pausing 60s
+2026-04-20 14:18:43,315 🔮 Guessed: info@oasisheating.com — Oasis Plumbing, Heating & Cooling
+2026-04-20 14:18:44,171 Hunter.io rate limited — pausing 60s
+2026-04-20 14:19:44,531 🔮 Guessed: info@chicagotdhmechanical.com — TDH Mechanical, Heating and Cooling Contractors
+2026-04-20 14:19:45,415 Hunter.io rate limited — pausing 60s
+2026-04-20 14:20:45,846 🔮 Guessed: info@brownshvac.net — Browns Heating & Cooling
+2026-04-20 14:20:46,721 Hunter.io rate limited — pausing 60s
+2026-04-20 14:21:47,076 🔮 Guessed: info@globalheatingcooling.us — Global Heating and Cooling | HVAC
+2026-04-20 14:21:47,971 Hunter.io rate limited — pausing 60s
+2026-04-20 14:22:48,505 🔮 Guessed: info@citysuburbanheating.com — City & Suburban Heating & Cooling
+2026-04-20 14:22:49,391 Hunter.io rate limited — pausing 60s
+2026-04-20 14:23:49,774 🔮 Guessed: info@guardianheatingandcooling.com — Guardian Heating & Cooling Service
+2026-04-20 14:23:50,668 Hunter.io rate limited — pausing 60s
+2026-04-20 14:24:51,090 🔮 Guessed: info@fivestar247.com — Five Star HVAC Services, Inc.
+2026-04-20 14:24:51,940 Hunter.io rate limited — pausing 60s
+2026-04-20 14:25:52,335 🔮 Guessed: info@chicagohvacrepairdr.com — Chicago HVAC Repair Doctor
+2026-04-20 14:25:53,153 Hunter.io rate limited — pausing 60s
+2026-04-20 14:26:53,616 🔮 Guessed: info@heatmasters.com — Heatmasters
+2026-04-20 14:26:54,683 Hunter.io rate limited — pausing 60s
+2026-04-20 14:27:55,340 🔮 Guessed: info@ecotemphvac.com — Eco Temp HVAC
+2026-04-20 14:27:56,219 Hunter.io rate limited — pausing 60s
+2026-04-20 14:28:56,573 🔮 Guessed: info@aircorheatingcooling.com — Aircor HVAC air conditioning and heating
+2026-04-20 14:28:57,591 Hunter.io rate limited — pausing 60s
+2026-04-20 14:29:58,077 🔮 Guessed: info@airflowschicago.com — Air Flows Chicago
+2026-04-20 14:29:59,025 Hunter.io rate limited — pausing 60s
+2026-04-20 14:30:59,398 🔮 Guessed: info@tccmechanical.com — Tabor's Complete Comfort Mechanical
+2026-04-20 14:31:00,126 Hunter.io rate limited — pausing 60s
+2026-04-20 14:32:00,501 🔮 Guessed: info@mironhvac.com — MIRON Heating & Cooling, Inc
+2026-04-20 14:32:01,216 Hunter.io rate limited — pausing 60s
+2026-04-20 14:33:01,595 🔮 Guessed: info@phdheatingcooling.com — PhD Heating & Cooling
+2026-04-20 14:33:02,462 Hunter.io rate limited — pausing 60s
+2026-04-20 14:34:02,829 🔮 Guessed: info@chicagowaterheaterrepair.com — HVAC Furnace AC Repair
+2026-04-20 14:34:03,726 Hunter.io rate limited — pausing 60s
+2026-04-20 14:35:04,106 🔮 Guessed: info@elitehvacs.com — Elite HVACs Furnace, Ac & Plumbing Repair
+2026-04-20 14:35:04,815 Hunter.io rate limited — pausing 60s
+2026-04-20 14:36:05,178 🔮 Guessed: info@myheroair.com — Hero Air
+2026-04-20 14:36:06,034 Hunter.io rate limited — pausing 60s
+2026-04-20 14:37:06,386 🔮 Guessed: info@shavitz.com — Shavitz Heating and Air Conditioning
+2026-04-20 14:37:07,318 Hunter.io rate limited — pausing 60s
+2026-04-20 14:38:07,658 🔮 Guessed: info@cosmicair.today — Cosmic HVAC Inc.
+2026-04-20 14:38:08,547 Hunter.io rate limited — pausing 60s
+2026-04-20 14:39:08,899 🔮 Guessed: info@sensationalheating.com — Sensational Heating And Air LLC
+2026-04-20 14:39:09,786 Hunter.io rate limited — pausing 60s
+2026-04-20 14:40:10,151 🔮 Guessed: info@kingheating.com — King Heating, Cooling & Plumbing
+2026-04-20 14:40:10,910 Hunter.io rate limited — pausing 60s
+2026-04-20 14:41:11,272 🔮 Guessed: info@ralphsheating.net — Ralph's Heating and Air conditioning Services
+2026-04-20 14:41:12,144 Hunter.io rate limited — pausing 60s
+2026-04-20 14:42:12,499 🔮 Guessed: info@arzethvac.com — Arzet Heating & Air Conditioning, Inc.
+2026-04-20 14:42:13,352 Hunter.io rate limited — pausing 60s
+2026-04-20 14:43:13,692 🔮 Guessed: info@furnaceservicechicago.com — Chicago Furnace & AC Repair
+2026-04-20 14:43:14,570 Hunter.io rate limited — pausing 60s
+2026-04-20 14:44:14,910 🔮 Guessed: info@midcityhvac.com — Mid-City Heating, Ventilation & Air Conditioning Inc.
+2026-04-20 14:44:15,415 
+==================================================
+2026-04-20 14:44:15,416 ✅ Email finder complete
+2026-04-20 14:44:15,416    API found:  0
+2026-04-20 14:44:15,416    Guessed:    43
+2026-04-20 14:44:15,416    Total:      43
+2026-04-20 14:44:15,416 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-20.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Mon Apr 20** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 636 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Mon Apr 20 14:44:15 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-20.log

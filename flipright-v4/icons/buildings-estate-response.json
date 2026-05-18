@@ -1,0 +1,14 @@
+{
+  "created": "2026-02-12T20:03:28.615359+00:00",
+  "data": [
+    {
+      "is_image_safe": true,
+      "prompt": "A minimalist icon of multiple buildings with rounded corners. The buildings have a red gradient (#dc2626 to #991b1b). The icon is set against a white background. The style is professional and geometric. The icon is centered and has a 64x64px feel. The icon is scalable.",
+      "resolution": "1024x1024",
+      "seed": 809388211,
+      "style_type": "GENERAL",
+      "upscaled_resolution": null,
+      "url": "https://ideogram.ai/api/images/ephemeral/dmYEGYvdQDGI7eSuOg0sHw.png?exp=1771013027&sig=27f848fc275d7a54259bd39674462d057e784a09ecbed0907e8da4ac813ced23"
+    }
+  ]
+}

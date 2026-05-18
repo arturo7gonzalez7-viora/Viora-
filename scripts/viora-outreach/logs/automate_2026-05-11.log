@@ -1,0 +1,221 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-11 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-11 14:00:04,027 🔄 Auto-rotation day 131: physical therapy in Columbus, OH
+2026-05-11 14:00:04,028 
+🔍 Searching: physical therapy in Columbus, OH
+2026-05-11 14:00:04,958   ✅ NovaCare Rehabilitation in partnership with OhioHealth - Columbus - Downtown — (614) 897-0449 — https://www.novacare.com/contact/find-a-location/oh/columbus/columbus-downtown/?ty=xt
+2026-05-11 14:00:05,263   ✅ Athletes' Potential Columbus — (470) 355-2106 — https://www.athletespotential.com/columbus
+2026-05-11 14:00:05,582   ✅ Ohio State Physical Therapy Outpatient Care East — (614) 293-2001 — https://wexnermedical.osu.edu/locations/outpatient-care-east/physical-therapy?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:05,873   ✅ NovaCare Rehabilitation in partnership with OhioHealth - Metro — (614) 224-1090 — https://www.novacare.com/contact/find-a-location/oh/columbus/metro/?ty=xt
+2026-05-11 14:00:06,124   ✅ Central Ohio Primary Care Physical Therapy - Northwest — (614) 339-8081 — https://www.copcp.com/practices/northwest-physical-therapy/
+2026-05-11 14:00:06,430   ✅ Fyzical Therapy & Balance Centers Upper Arlington — (614) 642-4497 — https://physicaltherapycolumbusoh.com/
+2026-05-11 14:00:06,696   ✅ Columbus Pain & Performance — (614) 779-0721 — http://www.columbuspainandperformance.com/
+2026-05-11 14:00:07,012   ✅ Ohio State Outpatient Rehabilitation Martha Morehouse Outpatient Care — (614) 293-2001 — https://wexnermedical.osu.edu/locations/martha-morehouse-outpatient-care/outpatient-rehabilitation?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:07,274   ✅ OrthoAlliance Physical Therapy — (614) 324-7330 — https://orthoalliance.com/physical-therapy/
+2026-05-11 14:00:07,559   ✅ Fit For Life Physical Therapy - Lane Avenue — (614) 981-1979 — http://www.fitforlifephysicaltherapy.com/
+2026-05-11 14:00:07,728   ✅ Resolve Physio — (614) 636-3555 — https://resolve-physio.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=17550051404732438606
+2026-05-11 14:00:07,895   ✅ Central Ohio Primary Care Physical Therapy - Eastside — (614) 865-3142 — https://www.copcp.com/practices/eastside-physical-therapy/
+2026-05-11 14:00:08,052   ✅ Affiliate Physical Therapy at Crossfit Grandview — (614) 304-1769 — http://affiliatept.com/
+2026-05-11 14:00:08,282   ✅ Ohio State Sports Medicine Therapy Jameson Crane Sports Medicine Institute — (614) 293-2001 — https://wexnermedical.osu.edu/locations/jameson-crane-sports-medicine-institute/sports-medicine-therapy?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:08,426   ✅ Central Ohio Primary Care Physical Therapy - Polaris — (614) 259-0906 — https://www.copcp.com/Practices/Details/140-polaris-physical-therapy
+2026-05-11 14:00:08,588   ✅ Sole Physical Therapy LLC — (614) 289-8909 — https://www.solephysicaltherapy.com/
+2026-05-11 14:00:08,851   ✅ Athletico Physical Therapy - Columbus (Hilliard) — (614) 345-0370 — https://www.athletico.com/locations/columbus-hilliard/?utm_source=google-hilliard&utm_medium=web&utm_campaign=google-listings
+2026-05-11 14:00:09,019   ✅ Arsenal Performance and Rehabilitation — (614) 285-4186 — https://www.arsenalrehab.com/
+2026-05-11 14:00:09,211   ✅ OSU Sports Medicine and Rehabilitation- Campus — (614) 293-3600 — https://wexnermedical.osu.edu/sports-medicine
+2026-05-11 14:00:11,862   ✅ Peak Physiotherapy and Performance — (614) 467-0285 — https://p3physio.com/
+2026-05-11 14:00:12,015   ✅ NovaCare Rehabilitation in partnership with OhioHealth - Grandview Heights — (614) 591-0791 — https://www.novacare.com/contact/find-a-location/oh/grandview-heights/grandview-heights/?ty=xt
+2026-05-11 14:00:12,299   ✅ Columbus Pelvic Floor Physical Therapy — (614) 706-2579 — http://www.614pelvicfloor.com/
+2026-05-11 14:00:12,468   ✅ Ohio State Sports Medicine Rehabilitation RPAC — (614) 293-2001 — https://wexnermedical.osu.edu/locations/sports-medicine-rehabilitation-rpac?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:12,606   ✅ Botkin Rehab Services — (614) 559-8677 — https://www.botkinrehabservices.com/
+2026-05-11 14:00:12,814   ✅ Ohio State Sports Medicine Rehabilitation Jewish Community Center — (614) 293-2001 — https://wexnermedical.osu.edu/locations/sports-medicine-rehabilitation-jewish-community-center?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:12,970   ✅ Fitness Matters - Worthington — (614) 841-3900 — https://fm2us.com/location/physical-therapy-clinic-columbus-oh-worthington/
+2026-05-11 14:00:13,119   ✅ Fitness Matters - Grandview — (614) 487-9715 — https://fm2us.com/location/physical-therapy-clinic-columbus-oh-grandview/
+2026-05-11 14:00:13,330   ✅ Athletic Advantage Physical Therapy and Wellness Center — (740) 549-7041 — https://ptadvantage.com/
+2026-05-11 14:00:13,601   ✅ Ohio State Physical Medicine and Rehabilitation Martha Morehouse Outpatient Care — (614) 366-9211 — https://wexnermedical.osu.edu/locations/martha-morehouse-outpatient-care/physical-medicine-and-rehabilitation?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:13,844   ✅ Gray Performance Physio — (614) 204-6731 — https://www.graypt.com/
+2026-05-11 14:00:13,992   ✅ Ohio State Pelvic Health Physical Therapy Outpatient Care Gahanna — (614) 293-2001 — https://wexnermedical.osu.edu/locations/outpatient-care-gahanna/pelvic-health-physical-therapy?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:14,138   ✅ McConnell Spine, Sport And Joint Center — (614) 566-3810 — https://www.ohiohealth.com/locations/orthopedics/mcconnell-spine-sport-and-joint-center/?utm_source=yext&utm_medium=listings&utm_campaign=websiteclicksfacility
+2026-05-11 14:00:14,366   ✅ Ohio State Orthopedic Urgent Care Jameson Crane Sports Medicine Institute — (614) 293-3600 — https://wexnermedical.osu.edu/locations/jameson-crane-sports-medicine-institute/orthopedic-urgent-care?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:14,512   ✅ Ohiohealth Physical Therapy — (614) 566-1111 — https://www.ohiohealth.com/
+2026-05-11 14:00:14,655   ✅ Sports Physical Therapy - Dr. Dominic Caruso, PT, DPT, SCS, CSCS - Sports Rehab — (717) 574-2064 — no website
+2026-05-11 14:00:14,917   ✅ Ohio State Sports Medicine Outpatient Care East — (614) 293-3600 — https://wexnermedical.osu.edu/locations/outpatient-care-east/sports-medicine?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:15,228   ✅ Athletico Physical Therapy - Westerville — (614) 791-8015 — https://www.athletico.com/locations/westerville/?utm_source=google-westerville&utm_medium=web&utm_campaign=google-listings
+2026-05-11 14:00:17,777   ✅ Central Ohio Physical Therapy — (740) 363-4373 — https://faawc.com/services/physical-therapy
+2026-05-11 14:00:17,950   ✅ Orthopedic ONE Westerville — (614) 839-2300 — http://www.orthopedicone.com/?utm_source=GMBSocialClimb&utm_medium=OrthopedicONEWesterville
+2026-05-11 14:00:18,133   ✅ Meyer Sports Therapy — (614) 401-6240 — https://www.meyersportstherapy.com/
+2026-05-11 14:00:18,306   ✅ Core Moves Pelvic Floor PT and Pilates — (614) 500-3498 — https://coremovespt.com/
+2026-05-11 14:00:18,496   ✅ The Modern Physio — (614) 705-6304 — https://www.modernphysioohio.com/
+2026-05-11 14:00:18,632   ✅ Orthopedic Foot & Ankle Center — (614) 895-8747 — https://orthofootankle.com/locations/worthington/?utm_source=gmb&utm_medium=referral
+2026-05-11 14:00:18,786   ✅ Foot & Ankle Specialty Therapy — (614) 505-8920 — https://orthofootankle.com/services/physical-therapy/?utm_source=gmb&utm_medium=referral
+2026-05-11 14:00:19,058   ✅ Elevate Human Performance — (740) 508-5968 — https://elevateptperformance.com/
+2026-05-11 14:00:19,233   ✅ Starr MFR PT & Wellness — (614) 594-2400 — https://starrmfr.com/
+2026-05-11 14:00:19,412   ✅ Athletico Physical Therapy - Dublin — (614) 961-4966 — https://www.athletico.com/locations/dublin/?utm_source=google-dublin&utm_medium=web&utm_campaign=google-listings
+2026-05-11 14:00:19,543   ✅ Orthopedic ONE Upper Arlington — (614) 827-8700 — no website
+2026-05-11 14:00:19,715   ✅ OSU Outpatient Rehab — (614) 293-1068 — https://wexnermedical.osu.edu/physical-therapy-rehabilitation/outpatient-rehabilitation
+2026-05-11 14:00:19,912   ✅ Ohio State Outpatient Care East — (614) 688-6400 — https://wexnermedical.osu.edu/locations/outpatient-care-east?utm_campaign=med_general-awareness-evergreen_corp&utm_source=googlemybusiness&utm_medium=organic&utm_content=gmb_listing
+2026-05-11 14:00:19,936   📊 Found 50, 50 new (rest were duplicates)
+2026-05-11 14:00:20,936 
+==================================================
+2026-05-11 14:00:20,936 ✅ Scraping complete
+2026-05-11 14:00:20,936    Total found:  50
+2026-05-11 14:00:20,936    New leads:    50
+2026-05-11 14:00:20,936    Duplicates:   0
+2026-05-11 14:00:20,940    DB total:     1222 leads (810 with emails)
+2026-05-11 14:00:20,940 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-11 14:00:21,168 🔍 Finding emails for 50 leads...
+2026-05-11 14:00:21,780 Hunter.io rate limited — pausing 60s
+2026-05-11 14:01:22,162 🔮 Guessed: info@decodenversalon.com — DECO Denver Salon
+2026-05-11 14:01:23,037 Hunter.io rate limited — pausing 60s
+2026-05-11 14:02:23,401 🔮 Guessed: info@theorganicsalondenver.com — The Organic Salon Denver
+2026-05-11 14:02:24,282 Hunter.io rate limited — pausing 60s
+2026-05-11 14:03:24,676 🔮 Guessed: info@letemhaveitsalon.com — Let Em Have It Salon ✂
+2026-05-11 14:03:25,436 Hunter.io rate limited — pausing 60s
+2026-05-11 14:04:25,791 🔮 Guessed: info@villagesalonden.com — Village Salon
+2026-05-11 14:04:26,680 Hunter.io rate limited — pausing 60s
+2026-05-11 14:05:27,057 🔮 Guessed: info@liftedsalonandspa.com — Lifted Salon and Spa
+2026-05-11 14:05:27,781 Hunter.io rate limited — pausing 60s
+2026-05-11 14:06:28,113 🔮 Guessed: info@blondiessalondenver.com — Blondies Beauty Bar
+2026-05-11 14:06:29,028 Hunter.io rate limited — pausing 60s
+2026-05-11 14:07:29,420 🔮 Guessed: info@islasalon.com — Isla Salon ✂
+2026-05-11 14:07:30,284 Hunter.io rate limited — pausing 60s
+2026-05-11 14:08:30,927 🔮 Guessed: info@threecutters.com — Three Cutters Capitol Hill
+2026-05-11 14:08:31,778 Hunter.io rate limited — pausing 60s
+2026-05-11 14:09:31,977 🔮 Guessed: info@thefactoryhairsalon.com — The Factory Hair Salon ✂
+2026-05-11 14:09:32,824 Hunter.io rate limited — pausing 60s
+2026-05-11 14:10:33,195 🔮 Guessed: info@theparlour.net — The Parlour Wash Park
+2026-05-11 14:10:34,037 Hunter.io rate limited — pausing 60s
+2026-05-11 14:11:34,428 🔮 Guessed: info@adorndenver.com — Adorn Salon Denver ✂
+2026-05-11 14:11:35,128 Hunter.io rate limited — pausing 60s
+2026-05-11 14:12:35,501 🔮 Guessed: info@thelookbeautymedspadenver.com — THE LOOK Beauty and Med Spa
+2026-05-11 14:12:36,241 Hunter.io rate limited — pausing 60s
+2026-05-11 14:13:36,569 🔮 Guessed: info@junodenver.com — Juno Salon ✂
+2026-05-11 14:13:37,427 Hunter.io rate limited — pausing 60s
+2026-05-11 14:14:37,770 🔮 Guessed: info@salonmodacapellidenver.com — Salon Moda Capelli Denver ✂
+2026-05-11 14:14:38,648 Hunter.io rate limited — pausing 60s
+2026-05-11 14:15:39,003 🔮 Guessed: info@cultofmane.salon — Cult of Mane
+2026-05-11 14:15:39,917 Hunter.io rate limited — pausing 60s
+2026-05-11 14:16:40,266 🔮 Guessed: info@3littlebirdssalon.com — 3 Little Birds Salon ✂
+2026-05-11 14:16:41,145 Hunter.io rate limited — pausing 60s
+2026-05-11 14:17:41,512 🔮 Guessed: info@myhairtrip.com — My Hair Trip ✂
+2026-05-11 14:17:42,432 Hunter.io rate limited — pausing 60s
+2026-05-11 14:18:42,774 🔮 Guessed: info@flauntsalondenver.com — Flaunt Salon ✂
+2026-05-11 14:18:43,676 Hunter.io rate limited — pausing 60s
+2026-05-11 14:19:44,194 🔮 Guessed: info@envoguesalondenver.com — Envogue Salon ✂
+2026-05-11 14:19:44,930 Hunter.io rate limited — pausing 60s
+2026-05-11 14:20:45,285 🔮 Guessed: info@fluffbar.com — Fluff Colour Salon
+2026-05-11 14:20:46,262 Hunter.io rate limited — pausing 60s
+2026-05-11 14:21:46,892 🔮 Guessed: info@altardbeauty.glossgenius.com — Altar'd Beauty Luxury Hair Salon
+2026-05-11 14:21:47,612 Hunter.io rate limited — pausing 60s
+2026-05-11 14:22:48,076 🔮 Guessed: info@rebelsalondenver.com — Rebel Salon
+2026-05-11 14:22:48,783 Hunter.io rate limited — pausing 60s
+2026-05-11 14:23:49,206 🔮 Guessed: info@synergysalonanddayspa.com — Synergy Salon & Day Spa
+2026-05-11 14:23:50,097 Hunter.io rate limited — pausing 60s
+2026-05-11 14:24:50,465 🔮 Guessed: info@thebadkittiesalon.com — The Bad Kittie Salon
+2026-05-11 14:24:51,369 Hunter.io rate limited — pausing 60s
+2026-05-11 14:25:51,774 🔮 Guessed: info@salonsopris.com — Salon Sopris
+2026-05-11 14:25:52,469 Hunter.io rate limited — pausing 60s
+2026-05-11 14:26:52,845 🔮 Guessed: info@holisticsalon.co — Holistic Salon
+2026-05-11 14:26:53,557 Hunter.io rate limited — pausing 60s
+2026-05-11 14:27:53,898 🔮 Guessed: info@primeconstructiongc.com — Prime Construction & General Contractors LLC
+2026-05-11 14:27:54,792 Hunter.io rate limited — pausing 60s
+2026-05-11 14:28:55,133 🔮 Guessed: info@eliteconstructionusa.com — ELITE Construction
+2026-05-11 14:28:55,978 Hunter.io rate limited — pausing 60s
+2026-05-11 14:29:56,336 🔮 Guessed: info@icodallas.com — ICO Construction & Remodeling Dallas TX
+2026-05-11 14:29:57,227 Hunter.io rate limited — pausing 60s
+2026-05-11 14:30:57,591 🔮 Guessed: info@callspecialty.com — Specialty Contractors Inc.
+2026-05-11 14:30:58,451 Hunter.io rate limited — pausing 60s
+2026-05-11 14:31:58,813 🔮 Guessed: info@ongroupconstructions.com — ON Group Remodeling & Construction
+2026-05-11 14:31:59,674 Hunter.io rate limited — pausing 60s
+2026-05-11 14:33:00,096 🔮 Guessed: info@bodnarconstruction.net — Bodnar Construction LLC
+2026-05-11 14:33:00,946 Hunter.io rate limited — pausing 60s
+2026-05-11 14:34:01,283 🔮 Guessed: info@ccrbarry.com — Creative Construction Remodeling
+2026-05-11 14:34:02,175 Hunter.io rate limited — pausing 60s
+2026-05-11 14:35:02,550 🔮 Guessed: info@rbconstructionusa.com — RB Construction USA LLC
+2026-05-11 14:35:03,288 Hunter.io rate limited — pausing 60s
+2026-05-11 14:36:03,675 🔮 Guessed: info@luckyconstruction.com — Lucky Construction Inc
+2026-05-11 14:36:04,423 Hunter.io rate limited — pausing 60s
+2026-05-11 14:37:04,771 🔮 Guessed: info@unitedroofers.co — United Roofing & General Contractors
+2026-05-11 14:37:05,503 Hunter.io rate limited — pausing 60s
+2026-05-11 14:38:05,870 🔮 Guessed: info@unitedblackcontractors.com — United Black Contractors Inc.
+2026-05-11 14:38:06,575 Hunter.io rate limited — pausing 60s
+2026-05-11 14:39:06,942 🔮 Guessed: info@triarc-llc.com — TriArc Construction
+2026-05-11 14:39:07,819 Hunter.io rate limited — pausing 60s
+2026-05-11 14:40:08,196 🔮 Guessed: info@vertexroofers.com — Vertex Roofers and General Contractors
+2026-05-11 14:40:08,704 
+==================================================
+2026-05-11 14:40:08,704 ✅ Email finder complete
+2026-05-11 14:40:08,704    API found:  0
+2026-05-11 14:40:08,705    Guessed:    39
+2026-05-11 14:40:08,705    Total:      39
+2026-05-11 14:40:08,705 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-11.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Mon May 11** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1222 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Mon May 11 14:40:09 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-11.log

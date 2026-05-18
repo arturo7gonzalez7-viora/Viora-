@@ -1,0 +1,276 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-14 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-14 14:00:03,208 file_cache is only supported with oauth2client<4.0.0
+2026-04-14 14:00:03,216 🔍 Checking for replies...
+2026-04-14 14:00:03,899 📬 Found 46 inbox messages to check
+2026-04-14 14:00:14,281 
+==================================================
+2026-04-14 14:00:14,282 ✅ Reply check complete
+2026-04-14 14:00:14,282    New replies:    0
+2026-04-14 14:00:14,282    Positive:       0 ← RESPOND TO THESE!
+2026-04-14 14:00:14,282    Unsubscribes:   0
+2026-04-14 14:00:14,282    Bounces:        0
+2026-04-14 14:00:14,282 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-14 14:00:14,531 🔄 Auto-rotation day 104: spa in Seattle, WA
+2026-04-14 14:00:14,531 
+🔍 Searching: spa in Seattle, WA
+2026-04-14 14:00:15,267   ✅ Soak & Sage - A Social Wellness Spa — (425) 657-3659 — http://www.soakandsagespa.com/
+2026-04-14 14:00:15,512   ✅ The Spa at Four Seasons Hotel Seattle — (206) 749-7000 — https://www.fourseasons.com/seattle/spa/?utm_source=google&utm_medium=organicsearch&utm_campaign=tor-sew-spa-mid-seo-na&utm_content=na-na&utm_term=na
+2026-04-14 14:00:15,807   ✅ Salish Lodge & Spa — (425) 888-2556 — http://www.salishlodge.com/
+2026-04-14 14:00:16,038   ✅ Ananya Spa — (206) 217-1744 — http://www.ananyaspaseattle.com/
+2026-04-14 14:00:16,215   ✅ Little Red Day Spa — (206) 963-0633 — http://www.littlereddayspa.com/
+2026-04-14 14:00:16,473   ✅ Banya 5 — (206) 262-1234 — http://www.banya5.com/
+2026-04-14 14:00:16,716   ✅ Hothouse Spa & Sauna — (206) 568-3240 — http://www.hothousespa.com/
+2026-04-14 14:00:16,967   ✅ Elaia Spa — (206) 676-4500 — https://www.hyatt.com/en-US/spas/Elaia-Spa/home?utm_source=google&utm_medium=lastmile&utm_campaign=seahs-s-elai
+2026-04-14 14:00:17,215   ✅ Spa Noir — (206) 448-7600 — http://spanoir.net/
+2026-04-14 14:00:17,440   ✅ Dana Head Spa — (425) 725-2884 — https://www.danaheadspa.com/
+2026-04-14 14:00:17,659   ✅ Olympus Spa — (425) 697-3000 — http://www.olympusspa.com/
+2026-04-14 14:00:17,838   ✅ Healing Spa — (206) 670-8098 — https://healingspa.onbuildhealth.com/
+2026-04-14 14:00:18,063   ✅ The Ladies Room — (206) 466-2374 — http://ladiesroom206.com/
+2026-04-14 14:00:18,305   ✅ Seattle Head Spa — (206) 889-7778 — no website
+2026-04-14 14:00:18,516   ✅ Q Sauna & Spa — (425) 361-7547 — https://qspalynnwood.com/
+2026-04-14 14:00:18,743   ✅ Yuan Spa - Bellevue — (425) 449-8788 — http://www.yuanspa.com/
+2026-04-14 14:00:18,973   ✅ The Spa at Hotel 1000 — (206) 357-9490 — https://www.hotel1000seattle.com/spa.htm
+2026-04-14 14:00:19,141   ✅ Penelope & The Beauty Bar — (206) 438-1750 — http://www.penelopeandthebeautybar.com/
+2026-04-14 14:00:19,344   ✅ Olympic Spa — (206) 456-3799 — https://olympicspa.com/
+2026-04-14 14:00:19,519   ✅ Four Seasons Hotel Seattle — (206) 749-7000 — https://www.fourseasons.com/seattle/?utm_source=google&utm_medium=organicsearch&utm_campaign=tor-sew-hre-mid-seo-na&utm_content=na-na&utm_term=na
+2026-04-14 14:00:22,246   ✅ Cedarbrook Lodge — (206) 901-9268 — http://www.cedarbrooklodge.com/
+2026-04-14 14:00:22,463   ✅ Spavia Day Spa - Greenlake — (206) 701-5050 — https://seattlewa.spaviadayspa.com/
+2026-04-14 14:00:22,660   ✅ Sacred Rain Healing Center — (206) 789-6288 — http://sacredrainhealing.com/
+2026-04-14 14:00:22,850   ✅ Le SPA de l’hôtel LOTTE — (206) 486-8648 — https://www.lespalotte.com/
+2026-04-14 14:00:23,001   ✅ Urban Calm Spa Massage — (206) 702-1880 — http://seattleurbancalmspa.com/
+2026-04-14 14:00:23,178   ✅ Antonio Spa — (206) 448-2684 — http://antoniothespa.com/
+2026-04-14 14:00:23,411   ✅ Kate's Day Spa — (206) 322-3350 — http://katesdayspa.com/
+2026-04-14 14:00:23,603   ✅ Head To Toe Day Spa — (206) 938-9300 — https://head2toedayspa.com/?y_source=1_MjcxMDYzMzgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-04-14 14:00:23,784   ✅ Steamworks Baths Seattle — (206) 388-4818 — https://www.swbaths.com/
+2026-04-14 14:00:23,961   ✅ Skin & Sage — (206) 786-5499 — http://skinandsagespa.com/
+2026-04-14 14:00:24,116   ✅ Urban Yoga Spa — (206) 420-0222 — https://www.urbanyogaspa.com/
+2026-04-14 14:00:24,279   ✅ Mulan Spa — (206) 708-6696 — https://www.mulanspaseattle.com/
+2026-04-14 14:00:24,451   ✅ Classique Spa - The Vintage — (206) 216-9800 — http://www.classiquespa.com/
+2026-04-14 14:00:24,639   ✅ Sublime Spa Seattle — (206) 735-1152 — http://sublimespaseattle.com/
+2026-04-14 14:00:24,848   ✅ Massage Envy — (206) 283-1199 — https://locations.massageenvy.com/washington/seattle/4-west-crockett-street.html?utm_source=GMB&utm_medium=useractions&utm_campaign=website
+2026-04-14 14:00:25,011   ✅ Surya Spa — (206) 261-7478 — http://www.suryaspa.net/
+2026-04-14 14:00:25,147   ✅ Spa Nordstrom - Downtown Seattle — (206) 628-1670 — https://www.nordstrom.com/browse/beauty/services/spa?utm_source=google&utm_medium=organic&utm_campaign=spas&utm_content=8001&utm_channel=low_nd_seo_local&sp_source=google&sp_campaign=spas
+2026-04-14 14:00:25,374   ✅ Calmed Soul Holistic Spa — (206) 799-4303 — http://www.vagaro.com/calmedsoul
+2026-04-14 14:00:25,572   ✅ Washington Athletic Club — (206) 622-7900 — https://www.wac.net/
+2026-04-14 14:00:25,752   ✅ Frenchy's Day Spa — (206) 325-9582 — http://frenchysdayspa.com/
+2026-04-14 14:00:28,412   ✅ Green Lake SPA — (206) 670-5077 — https://www.manta.com/c/m1rvhmg/green-lake-spa
+2026-04-14 14:00:28,596   ✅ Hyatt at Olive 8 — (206) 695-1234 — https://www.hyatt.com/en-US/hotel/washington/hyatt-at-olive-8/seahs?src=corp_lclb_google_seo_seahs&utm_source=google&utm_medium=organic&utm_campaign=lmr
+2026-04-14 14:00:28,753   ✅ Celsius — (206) 922-3861 — http://celsiusmedspa.com/seattle
+2026-04-14 14:00:28,964   ✅ Grand Hyatt Seattle — (206) 774-1234 — https://www.hyatt.com/grand-hyatt/en-US/seagh-grand-hyatt-seattle?src=corp_lclb_google_seo_seagh&utm_source=google&utm_medium=organic&utm_campaign=lmr
+2026-04-14 14:00:29,139   ✅ Massage MDB — (206) 687-7020 — http://www.massagemdb.com/
+2026-04-14 14:00:29,339   ✅ Luscious Skin Spa — (206) 706-4977 — http://www.lusciousskinspa.com/
+2026-04-14 14:00:29,521   ✅ Dream spa — (206) 251-7077 — no website
+2026-04-14 14:00:29,909   ✅ The Canal Day Spa — (206) 688-1559 — http://www.thecanaldayspa.com/
+2026-04-14 14:00:30,069   ✅ Intermezzo Salon & Spa — (206) 281-7833 — https://www.intermezzosalon.com/
+2026-04-14 14:00:30,224   ✅ Sheraton Grand Seattle — (206) 621-9000 — https://www.marriott.com/en-us/hotels/seasi-sheraton-grand-seattle/overview/?cid=NAT_google_hotel_url
+2026-04-14 14:00:30,244   📊 Found 50, 50 new (rest were duplicates)
+2026-04-14 14:00:31,245 
+==================================================
+2026-04-14 14:00:31,245 ✅ Scraping complete
+2026-04-14 14:00:31,246    Total found:  50
+2026-04-14 14:00:31,246    New leads:    50
+2026-04-14 14:00:31,246    Duplicates:   0
+2026-04-14 14:00:31,249    DB total:     680 leads (558 with emails)
+2026-04-14 14:00:31,249 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-14 14:00:31,442 🔍 Finding emails for 50 leads...
+2026-04-14 14:00:31,907 Hunter.io rate limited — pausing 60s
+2026-04-14 14:01:32,300 🔮 Guessed: info@tremblylaw.com — Trembly Law Firm
+2026-04-14 14:01:33,151 Hunter.io rate limited — pausing 60s
+2026-04-14 14:02:33,529 🔮 Guessed: info@dlelawyers.com — DLE Lawyers | Abogados De Accidentes Miami
+2026-04-14 14:02:34,261 Hunter.io rate limited — pausing 60s
+2026-04-14 14:03:34,606 🔮 Guessed: info@aronfeld.com — Aronfeld Trial Lawyers
+2026-04-14 14:03:35,321 Hunter.io rate limited — pausing 60s
+2026-04-14 14:04:35,651 🔮 Guessed: info@lonnielawyer.com — Lonnie Lawyer LLC
+2026-04-14 14:04:36,364 Hunter.io rate limited — pausing 60s
+2026-04-14 14:05:36,760 🔮 Guessed: info@injuryattorneyfla.com — Gerson and Schwartz Accident & Injury Lawyers
+2026-04-14 14:05:37,617 Hunter.io rate limited — pausing 60s
+2026-04-14 14:06:37,981 🔮 Guessed: info@thepathtojustice.com — Miami Divorce & Criminal Defense Attorney At Law, Ramie Altawil
+2026-04-14 14:06:38,730 Hunter.io rate limited — pausing 60s
+2026-04-14 14:07:39,103 🔮 Guessed: info@xanderlawgroup.com — Xander Law Group, P.A.
+2026-04-14 14:07:39,812 Hunter.io rate limited — pausing 60s
+2026-04-14 14:08:40,154 🔮 Guessed: info@voguenailspaindianapolis.com — Vogue Nail Spa
+2026-04-14 14:08:40,849 Hunter.io rate limited — pausing 60s
+2026-04-14 14:09:41,264 🔮 Guessed: info@madamebeauteindianapolis.com — Madame Beaute
+2026-04-14 14:09:41,964 Hunter.io rate limited — pausing 60s
+2026-04-14 14:10:42,335 🔮 Guessed: info@luxespanails.com — LuXe Nails
+2026-04-14 14:10:43,206 Hunter.io rate limited — pausing 60s
+2026-04-14 14:11:43,543 🔮 Guessed: info@inspirenailbarindianapolis.com — Inspire Nail Bar
+2026-04-14 14:11:44,396 Hunter.io rate limited — pausing 60s
+2026-04-14 14:12:44,756 🔮 Guessed: info@diamondnailsindianapolis.com — Diamond Nails
+2026-04-14 14:12:45,466 Hunter.io rate limited — pausing 60s
+2026-04-14 14:13:45,845 🔮 Guessed: info@mycitynailbar.com — City Nail Bar
+2026-04-14 14:13:46,694 Hunter.io rate limited — pausing 60s
+2026-04-14 14:14:47,054 🔮 Guessed: info@mycitynailbar.com — City Nail Bar
+2026-04-14 14:14:47,916 Hunter.io rate limited — pausing 60s
+2026-04-14 14:15:48,335 🔮 Guessed: info@infinitynailsspaindianapolis.com — Infinity Nails Spa (15% OFF New Customers)
+2026-04-14 14:15:49,252 Hunter.io rate limited — pausing 60s
+2026-04-14 14:16:49,594 🔮 Guessed: info@castlenailsandspain.com — Castle Nails & Spa
+2026-04-14 14:16:50,294 Hunter.io rate limited — pausing 60s
+2026-04-14 14:17:50,646 🔮 Guessed: info@labrisenaillounge.com — La Brise Nail Lounge
+2026-04-14 14:17:51,415 Hunter.io rate limited — pausing 60s
+2026-04-14 14:18:51,771 🔮 Guessed: info@purnailspamononcarmel.com — PUR Nail Spa
+2026-04-14 14:18:52,638 Hunter.io rate limited — pausing 60s
+2026-04-14 14:19:52,989 🔮 Guessed: info@luxnailsin.com — Lux Nail
+2026-04-14 14:19:53,712 Hunter.io rate limited — pausing 60s
+2026-04-14 14:20:54,061 🔮 Guessed: info@ninanailsindianapolis.com — Nina Nails
+2026-04-14 14:20:54,802 Hunter.io rate limited — pausing 60s
+2026-04-14 14:21:55,153 🔮 Guessed: info@royalnailsspath.com — Royal Nails & Spa 88
+2026-04-14 14:21:56,104 Hunter.io rate limited — pausing 60s
+2026-04-14 14:22:56,475 🔮 Guessed: info@polishminailbar.com — Polish Mi Nail Bar
+2026-04-14 14:22:57,358 Hunter.io rate limited — pausing 60s
+2026-04-14 14:23:57,729 🔮 Guessed: info@luxxnaillounge.com — Luxx Nail Lounge
+2026-04-14 14:23:58,596 Hunter.io rate limited — pausing 60s
+2026-04-14 14:24:58,965 🔮 Guessed: info@minailandspaindianapolis.com — Mi Nail Salon
+2026-04-14 14:24:59,726 Hunter.io rate limited — pausing 60s
+2026-04-14 14:26:00,076 🔮 Guessed: info@booksy.com — The Nail Paige
+2026-04-14 14:26:00,812 Hunter.io rate limited — pausing 60s
+2026-04-14 14:27:01,170 🔮 Guessed: info@thewnailbar.com — The W Nail Bar Bottleworks
+2026-04-14 14:27:02,065 Hunter.io rate limited — pausing 60s
+2026-04-14 14:28:02,548 🔮 Guessed: info@perfectnailsnow.com — Perfect Nails Now
+2026-04-14 14:28:03,415 Hunter.io rate limited — pausing 60s
+2026-04-14 14:29:03,752 🔮 Guessed: info@linktr.ee — The Coven Room - The Nail Witch Dani
+2026-04-14 14:29:04,631 Hunter.io rate limited — pausing 60s
+2026-04-14 14:30:05,047 🔮 Guessed: info@fashionnailspaindiana.com — Fashion Nail Spa
+2026-04-14 14:30:06,004 Hunter.io rate limited — pausing 60s
+2026-04-14 14:31:06,389 🔮 Guessed: info@vnail-lounge.com — V Nail Lounge
+2026-04-14 14:31:07,118 Hunter.io rate limited — pausing 60s
+2026-04-14 14:32:07,537 🔮 Guessed: info@missynailsalonandspa.com — MISSY NAIL AND SPA
+2026-04-14 14:32:08,290 Hunter.io rate limited — pausing 60s
+2026-04-14 14:33:08,693 🔮 Guessed: info@lanailsspas.com — L A NAILS SPA
+2026-04-14 14:33:09,611 Hunter.io rate limited — pausing 60s
+2026-04-14 14:34:09,975 🔮 Guessed: info@24knailspainc.com — 24K Nail Spa
+2026-04-14 14:34:10,820 Hunter.io rate limited — pausing 60s
+2026-04-14 14:35:11,193 🔮 Guessed: info@locations.woodhousespas.com — Woodhouse Spa - Bottleworks
+2026-04-14 14:35:12,148 Hunter.io rate limited — pausing 60s
+2026-04-14 14:36:12,491 🔮 Guessed: info@perfectdayspa.net — A Perfect Day Spa
+2026-04-14 14:36:13,413 Hunter.io rate limited — pausing 60s
+2026-04-14 14:37:13,777 🔮 Guessed: info@nailandloungeindianapolis.com — Nails & Lounge
+2026-04-14 14:37:14,630 Hunter.io rate limited — pausing 60s
+2026-04-14 14:38:14,996 🔮 Guessed: info@nailobsessionbeyond.glossgenius.com — Nail Obsession & Beyond
+2026-04-14 14:38:15,837 Hunter.io rate limited — pausing 60s
+2026-04-14 14:39:16,186 🔮 Guessed: info@havennaillounge.us — Haven Nail Lounge
+2026-04-14 14:39:17,044 Hunter.io rate limited — pausing 60s
+2026-04-14 14:40:17,458 🔮 Guessed: info@littlenailshop.com — Little Nail Shop
+2026-04-14 14:40:18,180 Hunter.io rate limited — pausing 60s
+2026-04-14 14:41:18,535 🔮 Guessed: info@worldnailspaindianapolis.com — World Nail Spa
+2026-04-14 14:41:19,599 Hunter.io rate limited — pausing 60s
+2026-04-14 14:42:21,322 🔮 Guessed: info@revivenailsindy.com — Revive Nails
+2026-04-14 14:42:21,829 
+==================================================
+2026-04-14 14:42:21,829 ✅ Email finder complete
+2026-04-14 14:42:21,829    API found:  0
+2026-04-14 14:42:21,829    Guessed:    41
+2026-04-14 14:42:21,829    Total:      41
+2026-04-14 14:42:21,829 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-14 14:42:21,983 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-14 14:42:21,983 INFO    Already sent today: 0, remaining: 40
+2026-04-14 14:42:22,169 INFO file_cache is only supported with oauth2client<4.0.0
+2026-04-14 14:42:22,697 INFO ✅ Email 1 → rhatcher@aireserv.com (Aire Serv of Houston Midtown)
+2026-04-14 14:42:37,906 INFO ✅ Email 1 → jon.blitz@temperaturepro.com (TemperaturePro)
+2026-04-14 14:42:44,407 INFO ✅ Email 1 → info@premieracandheat.com (Premier Air Conditioning & Heating)
+2026-04-14 14:42:50,451 INFO ✅ Email 1 → dean.revering@hts.com (HTS Texas)
+2026-04-14 14:43:05,015 INFO ✅ Email 1 → info@callblueleafhvac.com (Blueleaf Air Conditioning & Heating)
+2026-04-14 14:43:11,538 INFO ✅ Email 1 → nleyva@alcocklaw.com (The Law Offices Of Alcock & Associates P.C.)
+2026-04-14 14:43:20,733 INFO ✅ Email 1 → tyler@allenlawaz.com (Tyler Allen Law Firm)
+2026-04-14 14:43:32,599 INFO ✅ Email 1 → johnkelly@jkphoenixpersonalinjuryattorney.com (Kelly Law Team Phoenix)
+2026-04-14 14:43:50,462 INFO ✅ Email 1 → michael@mcordova.com (Michael Cordova)
+2026-04-14 14:44:03,865 INFO ✅ Email 1 → ebull@bcattorneys.com (Burch & Cracchiolo, P.A.)
+2026-04-14 14:44:20,511 INFO ✅ Email 1 → info@husbandandwifelawteam.com (The Husband & Wife Law Team)
+2026-04-14 14:44:32,682 INFO ✅ Email 1 → sara@bigchadlaw.com (Big Chad Law)
+2026-04-14 14:44:42,481 INFO ✅ Email 1 → mpearson@azlaw.com (Curry Pearson & Wooten PLC)
+2026-04-14 14:44:58,456 INFO ✅ Email 1 → terrie@shapirolawaz.com (Shapiro Law Team)
+2026-04-14 14:45:11,901 INFO ✅ Email 1 → luisr@phillipslaw.com (Phillips Law Group - Injury Lawyers)
+2026-04-14 14:45:17,692 INFO ✅ Email 1 → juana@adelayolaw.com (Adelayo Law Firm PLLC)
+2026-04-14 14:45:30,967 INFO ✅ Email 1 → cody@dumondlawaz.com (DuMond Law Firm, PLLC)
+2026-04-14 14:45:48,897 INFO ✅ Email 1 → info@azcriminalandfamilylaw.com (Law Office of Daniel Hutto, PLLC)
+2026-04-14 14:45:58,536 INFO ✅ Email 1 → info@husbandandwifelawteam.com (The Husband & Wife Law Team)
+2026-04-14 14:46:05,095 INFO ✅ Email 1 → apeschke@weilerlaw.com (Weiler Law PLLC)
+2026-04-14 14:46:14,657 INFO ✅ Email 1 → damaris@belenlawfirm.com (Belen Law Firm, PLLC)
+2026-04-14 14:46:25,064 INFO ✅ Email 1 → info@robinsonlawoffices.com (Robinson Law Offices)
+2026-04-14 14:46:32,744 INFO ✅ Email 1 → info@rileyplc.com (Riley Law Firm, PLC)
+2026-04-14 14:46:38,711 INFO ✅ Email 1 → n.lugo@dmcantor.com (DM Cantor)
+2026-04-14 14:46:46,566 INFO ✅ Email 1 → david@dbphoenixcriminallawyer.com (Law Offices of David A. Black)
+2026-04-14 14:46:56,784 INFO ✅ Email 1 → jwilliams@litwaklawgroup.com (Litwak Law Group)
+2026-04-14 14:47:12,905 INFO ✅ Email 1 → kchana@forthepeople.com (Morgan & Morgan)
+2026-04-14 14:47:24,196 INFO ✅ Email 1 → wmartinez@torgensonlaw.com (Torgenson Law)
+2026-04-14 14:47:38,310 INFO ✅ Email 1 → info@jaburgwilk.com (Jaburg Wilk)
+2026-04-14 14:47:47,945 INFO ✅ Email 1 → info@arjashahlaw.com (Shah Law Firm, PLLC)
+2026-04-14 14:47:55,513 INFO ✅ Email 1 → info@barberlawgroup.com (Barber Law Group)
+2026-04-14 14:48:13,680 INFO ✅ Email 1 → info@cavanaghlaw.com (The Cavanagh Law Firm, P.A.)
+2026-04-14 14:48:29,308 INFO ✅ Email 1 → info@enaralaw.com (Enara Law)
+2026-04-14 14:48:46,605 INFO ✅ Email 1 → info@the-plf.com (The People's Law Firm, PLC)
+2026-04-14 14:48:53,397 INFO ✅ Email 1 → info@ongarolawoffices.com (Salvador Ongaro Law Offices)
+2026-04-14 14:49:05,316 INFO ✅ Email 1 → info@arizonalawgroup.com (Arizona Law Group, Phoenix Divorce Lawyer & Family Law Attorneys)
+2026-04-14 14:49:11,311 INFO ✅ Email 1 → info@criminallawaz.com (Gaxiola Law Group)
+2026-04-14 14:49:17,674 INFO ✅ Email 1 → info@arizdui.com (Law Offices of Brian D Sloan)
+2026-04-14 14:49:26,393 INFO ✅ Email 1 → info@lanceentrekin.com (The Entrekin Law Firm)
+2026-04-14 14:49:32,444 INFO ✅ Email 1 → info@spmoellerlaw.com (Law Offices of Samuel P. Moeller, PLLC)
+2026-04-14 14:49:49,522 INFO 
+==================================================
+2026-04-14 14:49:49,523 INFO ✅ Email sender complete [SENT]
+2026-04-14 14:49:49,523 INFO    Emails sent:     40
+2026-04-14 14:49:49,523 INFO    Daily limit:     40
+2026-04-14 14:49:49,523 INFO    Already today:   0
+2026-04-14 14:49:49,523 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-04-14.log
+2026-04-14 14:49:49,523 INFO ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-14.txt
+✅ LinkedIn DMs posted to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue Apr 14** (Day 2)
+
+**📋 YOUR TODO:**
+1️⃣ Send 20 LinkedIn DMs (posted above or in output/)
+3️⃣ Check calendar for demo calls
+
+**📧 Today:** 40 emails sent · 20 LinkedIn DMs
+**📊 Funnel:** 680 leads → 137 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+**💼 20 LinkedIn DMs** queued — check Discord or output/ folder
+
+✅ Report sent to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue Apr 14 14:49:51 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-14.log

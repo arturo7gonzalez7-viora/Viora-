@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lustere Cleaning Co. — Denver's most trusted professional cleaning service. Residential, commercial, deep cleaning & more. Fully insured & bonded. Get a free quote today!">
+    <title>Lustere Cleaning Co. | Denver's Most Trusted Cleaning Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1F2937;
+            line-height: 1.6;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* ===== COLORS ===== */
+        :root {
+            --deep-blue: #1E3A8A;
+            --medium-blue: #2563EB;
+            --light-blue: #DBEAFE;
+            --white: #FFFFFF;
+            --grey: #6B7280;
+            --light-grey: #F3F4F6;
+            --dark: #111827;
+        }
+
+        /* ===== UTILITIES ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 100px 0; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--medium-blue);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--grey);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .fade-in-delay-4 { transition-delay: 0.4s; }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--medium-blue); }
+        .logo-svg { width: 36px; height: 36px; flex-shrink: 0; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--grey);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--deep-blue); }
+        .nav-cta {
+            background: var(--medium-blue) !important;
+            color: var(--white) !important;
+            padding: 10px 24px !important;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: background 0.2s, transform 0.2s !important;
+        }
+        .nav-cta:hover { background: var(--deep-blue) !important; transform: translateY(-1px); }
+        .mobile-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--dark); transition: 0.3s; }
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--light-grey);
+            border-radius: 8px;
+            padding: 4px;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+        .lang-btn {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: transparent;
+            color: var(--grey);
+            letter-spacing: 0.5px;
+        }
+        .lang-btn.active {
+            background: var(--deep-blue);
+            color: white;
+        }
+        /* Family section */
+        .family-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .family-section::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            border: 60px solid rgba(255,255,255,0.03);
+        }
+        .family-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+        .family-image-wrap {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+        }
+        .family-image-wrap img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+        .family-flag {
+            position: absolute;
+            top: 20px; left: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+        .family-content { position: relative; z-index: 1; }
+        .family-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #60A5FA;
+            margin-bottom: 16px;
+        }
+        .family-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+        .family-title em { font-style: normal; color: #60A5FA; }
+        .family-story {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .family-story strong { color: white; font-weight: 700; }
+        .family-values {
+            display: flex;
+            gap: 20px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+        }
+        .family-value {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: white;
+        }
+        .family-value .fv-icon { font-size: 1.1rem; }
+        @media (max-width: 768px) {
+            .family-inner { grid-template-columns: 1fr; gap: 40px; }
+            .family-title { font-size: 1.9rem; }
+            .family-image-wrap img { height: 280px; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 160px 0 0;
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-bottom: 80px; }
+        .hero-content { max-width: 600px; }
+        .hero-image-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 32px 80px rgba(30,58,138,0.18); }
+        .hero-image-wrap img { width: 100%; height: 480px; object-fit: cover; display: block; }
+        .hero-image-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: white;
+            border-radius: 14px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .hero-image-badge .badge-icon { font-size: 1.5rem; }
+        .hero-image-badge .badge-text strong { display: block; font-size: 0.9rem; color: var(--deep-blue); font-weight: 700; }
+        .hero-image-badge .badge-text span { font-size: 0.75rem; color: var(--grey); }
+        /* Photo gallery section */
+        .photo-gallery { background: var(--white); padding: 80px 0; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 260px 260px;
+            gap: 16px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .gallery-item { overflow: hidden; position: relative; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-item.tall { grid-row: span 2; }
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30,58,138,0.5) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover .overlay { opacity: 1; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--medium-blue);
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(37, 99, 235, 0.1);
+        }
+        .hero h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--grey);
+            max-width: 540px;
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--medium-blue);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+        }
+        .btn-primary:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--deep-blue);
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid rgba(30, 58, 138, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: var(--medium-blue);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(30, 58, 138, 0.1);
+        }
+        .hero-stat h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+        }
+        .hero-stat p {
+            font-size: 0.875rem;
+            color: var(--grey);
+            margin-bottom: 0;
+        }
+
+        /* ===== TRUST / WHY CHOOSE US ===== */
+        .trust { background: var(--white); }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .trust-card {
+            background: var(--light-grey);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .trust-card:hover {
+            background: var(--white);
+            border-color: var(--light-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.08);
+        }
+        .trust-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--light-blue);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 20px;
+        }
+        .trust-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+        .trust-card p {
+            font-size: 0.875rem;
+            color: var(--grey);
+            line-height: 1.6;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--light-grey); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        }
+        .service-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--grey);
+            line-height: 1.6;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works { background: var(--white); }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            position: relative;
+        }
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 16.67%;
+            right: 16.67%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--light-blue), var(--medium-blue), var(--light-blue));
+        }
+        .step { text-align: center; position: relative; }
+        .step-number {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+        }
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+        .step p {
+            font-size: 0.9rem;
+            color: var(--grey);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: var(--deep-blue); color: var(--white); }
+        .testimonials .section-label { color: var(--light-blue); }
+        .testimonials .section-title { color: var(--white); }
+        .testimonials .section-subtitle { color: rgba(255, 255, 255, 0.6); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 36px;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+        }
+        .stars { font-size: 1.1rem; margin-bottom: 16px; color: #FBBF24; }
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--medium-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .testimonial-loc {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== PRICING ===== */
+        .pricing { background: var(--light-grey); }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 44px 36px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+        }
+        .pricing-card.featured {
+            border-color: var(--medium-blue);
+            box-shadow: 0 16px 48px rgba(37, 99, 235, 0.12);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--medium-blue);
+            color: var(--white);
+            padding: 4px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .pricing-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 8px;
+        }
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            margin-bottom: 4px;
+        }
+        .pricing-card .price-note {
+            font-size: 0.85rem;
+            color: var(--grey);
+            margin-bottom: 28px;
+        }
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .pricing-features li {
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: #374151;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--medium-blue);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 2px solid var(--medium-blue);
+            color: var(--medium-blue);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .pricing-btn:hover, .pricing-card.featured .pricing-btn {
+            background: var(--medium-blue);
+            color: var(--white);
+        }
+        .pricing-card.featured .pricing-btn:hover {
+            background: var(--deep-blue);
+            border-color: var(--deep-blue);
+        }
+
+        /* ===== CONTACT / QUOTE FORM ===== */
+        .contact { background: var(--white); }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 16px;
+        }
+        .contact-info p {
+            color: var(--grey);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .contact-detail-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--light-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .contact-detail-text h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+        }
+        .contact-detail-text p {
+            font-size: 0.9rem;
+            color: var(--grey);
+            margin-bottom: 0;
+        }
+        .quote-form {
+            background: var(--light-grey);
+            padding: 44px;
+            border-radius: 20px;
+        }
+        .quote-form h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 24px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark);
+            background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--medium-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--medium-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ===== FAMILY SECTION MOBILE ===== */
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 64px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-brand .logo { color: var(--white); margin-bottom: 12px; display: inline-flex; }
+        .footer-brand p { font-size: 0.875rem; line-height: 1.7; max-width: 300px; }
+        .footer h4 {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a {
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .footer ul li a:hover { color: var(--white); }
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 72px 0; }
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 24px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+                gap: 16px;
+            }
+            .mobile-toggle { display: flex; }
+            .hero { padding: 120px 0 80px; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero .container { grid-template-columns: 1fr; }
+        .hero-image-wrap { display: none; }
+        .hero-stats { flex-direction: column; gap: 24px; }
+            .section-title { font-size: 2rem; }
+            .trust-grid,
+            .services-grid,
+            .testimonials-grid,
+            .pricing-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; gap: 36px; }
+            .steps::before { display: none; }
+            .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .quote-form { padding: 28px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .hero-buttons { flex-direction: column; }
+            .btn-primary, .btn-secondary { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- House shape -->
+                  <path d="M22 6 L38 20 L35 20 L35 38 L27 38 L27 28 L17 28 L17 38 L9 38 L9 20 L6 20 Z" fill="#1E3A8A"/>
+                  <!-- Roof shine -->
+                  <path d="M22 6 L38 20 L6 20 Z" fill="#2563EB"/>
+                  <!-- Door -->
+                  <rect x="18.5" y="28" width="7" height="10" rx="1" fill="#BFDBFE"/>
+                  <!-- Sparkle top-right -->
+                  <path d="M36 8 L37 11 L40 12 L37 13 L36 16 L35 13 L32 12 L35 11 Z" fill="#60A5FA"/>
+                </svg>
+                Lustere<span>.</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+                <a href="#how-it-works" data-en="How It Works" data-es="Cómo Funciona">How It Works</a>
+                <a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+                <a href="#testimonials" data-en="Reviews" data-es="Reseñas">Reviews</a>
+                <a href="#contact" class="nav-cta" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
+            </div>
+            <div class="lang-toggle" id="langToggle">
+                <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge fade-in" data-en="✨ Family-Owned &amp; Serving Colorado Since Day One" data-es="✨ Negocio Familiar desde el Primer Día en Colorado">✨ Family-Owned &amp; Serving Colorado Since Day One</div>
+                <h1 class="fade-in" data-en="Denver's Most Trusted Cleaning Service" data-es="El Servicio de Limpieza más Confiable de Denver">Denver's Most Trusted Cleaning Service</h1>
+                <p class="fade-in" data-en="Professional, reliable, and eco-friendly cleaning for your home or business. We treat every space like it's our own because your satisfaction is our reputation." data-es="Limpieza profesional, confiable y ecológica para tu hogar o negocio. Tratamos cada espacio como si fuera nuestro porque tu satisfacción es nuestra reputación.">Professional, reliable, and eco-friendly cleaning for your home or business. We treat every space like it's our own because your satisfaction is our reputation.</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#contact" class="btn-primary" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
+                    <a href="#services" class="btn-secondary" data-en="Our Services" data-es="Nuestros Servicios">Our Services</a>
+                </div>
+                <div class="hero-stats fade-in">
+                    <div class="hero-stat">
+                        <h3>500+</h3>
+                        <p>Homes Cleaned</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>4.9★</h3>
+                        <p>Google Rating</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>100%</h3>
+                        <p data-en="Satisfaction Guaranteed" data-es="Satisfacción Garantizada">Satisfaction Guaranteed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrap fade-in">
+                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80" alt="Professional house cleaning service" loading="lazy">
+                <div class="hero-image-badge">
+                    <div class="badge-icon">✨</div>
+                    <div class="badge-text">
+                        <strong data-en="Just Finished" data-es="Recién Terminamos">Just Finished</strong>
+                        <span>Highlands Ranch, CO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANGUAGE NOTICE BANNER -->
+    <div id="langBanner" style="display:none; background:#1E3A8A; color:white; text-align:center; padding:12px 24px; font-size:0.85rem; font-weight:500;">
+        🌐 <span data-en="This site is also available in Spanish. Click" data-es="Este sitio también está disponible en inglés. Haz clic en">This site is also available in Spanish. Click</span> <strong>ES</strong> <span data-en="in the top right to switch." data-es="en la esquina superior derecha para cambiar.">in the top right to switch.</span>
+    </div>
+
+    <!-- PHOTO GALLERY -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div style="text-align:center; margin-bottom: 48px;">
+                <span class="section-label fade-in">Our Work</span>
+                <h2 class="section-title fade-in">A Clean You Can See</h2>
+                <p class="section-subtitle mx-auto fade-in">Before and after transformations across Denver homes and businesses.</p>
+            </div>
+            <div class="gallery-grid fade-in">
+                <div class="gallery-item tall">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80" alt="Professional cleaner wiping countertop">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&q=80" alt="Sparkling clean bathroom after service">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=700&q=80" alt="Spotless clean kitchen after deep clean">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Spotless clean living room after service">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=700&q=80" alt="Professional home cleaning">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLARES FAMILY SECTION -->
+    <section class="family-section" id="our-story">
+        <div class="container">
+            <div class="family-inner">
+                <div class="family-image-wrap fade-in">
+                    <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80" alt="The Solares Family" style="object-position: center top;">
+                    <div class="family-flag">🇬🇹 Orgullosamente Guatemaltecos</div>
+                </div>
+                <div class="family-content fade-in">
+                    <div class="family-eyebrow" data-en="Our Story" data-es="Nuestra Historia">Our Story</div>
+                    <h2 class="family-title" data-en="The Solares Family.<br>Built on <em>Pride,</em> Trust &amp; Hard Work." data-es="La Familia Solares.<br>Construida con <em>Orgullo,</em> Confianza y Trabajo.">The Solares Family.<br>Built on <em>Pride,</em> Trust &amp; Hard Work.</h2>
+                    <p class="family-story" data-en="We came from Guatemala with a simple belief: <strong>if you work hard and treat people right, good things follow.</strong> That belief became Lustere Cleaning Co." data-es="Llegamos desde Guatemala con una creencia simple: <strong>si trabajás duro y tratás bien a las personas, las cosas buenas llegan.</strong> Esa creencia se convirtió en Lustere Cleaning Co.">We came from Guatemala with a simple belief: <strong>if you work hard and treat people right, good things follow.</strong> That belief became Lustere Cleaning Co.</p>
+                    <p class="family-story" data-en="Every home we clean, we pour our hearts into. We know what it means to work for something, to build something from nothing. That's why we treat your home with the same care and respect we'd give our own." data-es="En cada hogar que limpiamos, ponemos el corazón. Sabemos lo que significa trabajar por algo, construir algo de la nada. Por eso tratamos tu hogar con el mismo cuidado y respeto que le daríamos al nuestro.">Every home we clean, we pour our hearts into. We know what it means to work for something, to build something from nothing. That's why we treat your home with the same care and respect we'd give our own.</p>
+                    <p class="family-story" data-en="Our clients don't just hire us. They <strong>trust us with their most personal space.</strong> They refer us to their friends. They leave us reviews that make our whole family proud. That means everything to us." data-es="Nuestros clientes no solo nos contratan. Nos <strong>confían su espacio más personal.</strong> Nos recomiendan a sus amigos. Nos dejan reseñas que llenan de orgullo a toda nuestra familia. Eso lo es todo para nosotros.">Our clients don't just hire us. They <strong>trust us with their most personal space.</strong> They refer us to their friends. They leave us reviews that make our whole family proud. That means everything to us.</p>
+                    <div class="family-values">
+                        <div class="family-value"><span class="fv-icon">🇬🇹</span> <span data-en="Guatemalan Roots" data-es="Raíces Guatemaltecas">Guatemalan Roots</span></div>
+                        <div class="family-value"><span class="fv-icon">❤️</span> <span data-en="Family Operated" data-es="Operado en Familia">Family Operated</span></div>
+                        <div class="family-value"><span class="fv-icon">🏆</span> <span data-en="500+ Happy Clients" data-es="500+ Clientes Felices">500+ Happy Clients</span></div>
+                        <div class="family-value"><span class="fv-icon">🌟</span> <span data-en="4.9 Star Rated" data-es="Calificación de 4.9 Estrellas">4.9 Star Rated</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section trust" id="why-us">
+        <div class="container text-center">
+            <span class="section-label fade-in" data-en="Why Choose Us" data-es="Por Qué Elegirnos">Why Choose Us</span>
+            <h2 class="section-title fade-in" data-en="A Clean You Can Trust" data-es="Una Limpieza en la que Confiar">A Clean You Can Trust</h2>
+            <p class="section-subtitle mx-auto fade-in" data-en="We go beyond clean. Every detail, every corner, every time." data-es="Vamos más allá de la limpieza. Cada detalle, cada rincón, siempre.">We go beyond clean. Every detail, every corner, every time.</p>
+            <div class="trust-grid">
+                <div class="trust-card fade-in fade-in-delay-1">
+                    <div class="trust-icon">🛡️</div>
+                    <h3 data-en="Fully Insured &amp; Bonded" data-es="Totalmente Asegurados">Fully Insured &amp; Bonded</h3>
+                    <p data-en="Complete peace of mind. Your home and belongings are protected by our comprehensive insurance coverage." data-es="Tranquilidad total. Tu hogar y tus pertenencias están protegidos por nuestra cobertura de seguro integral.">Complete peace of mind. Your home and belongings are protected by our comprehensive insurance coverage.</p>
+                </div>
+                <div class="trust-card fade-in fade-in-delay-2">
+                    <div class="trust-icon">🌿</div>
+                    <h3 data-en="Eco-Friendly Products" data-es="Productos Ecológicos">Eco-Friendly Products</h3>
+                    <p data-en="Safe for your family, pets, and the planet. We use only non-toxic, environmentally responsible cleaning products." data-es="Seguros para tu familia, mascotas y el planeta. Usamos solo productos no tóxicos y responsables con el medio ambiente.">Safe for your family, pets, and the planet. We use only non-toxic, environmentally responsible cleaning products.</p>
+                </div>
+                <div class="trust-card fade-in fade-in-delay-3">
+                    <div class="trust-icon">✅</div>
+                    <h3 data-en="Satisfaction Guaranteed" data-es="Satisfacción Garantizada">Satisfaction Guaranteed</h3>
+                    <p data-en="Not happy? We'll come back and make it right, free of charge. That's our promise to every client." data-es="¿No estás contento? Regresamos y lo corregimos sin costo. Esa es nuestra promesa a cada cliente.">Not happy? We'll come back and make it right, free of charge. That's our promise to every client.</p>
+                </div>
+                <div class="trust-card fade-in fade-in-delay-4">
+                    <div class="trust-icon">👤</div>
+                    <h3 data-en="Background-Checked Team" data-es="Equipo Verificado">Background-Checked Team</h3>
+                    <p data-en="Every team member passes thorough background checks. You can trust the people we send into your home." data-es="Cada miembro del equipo pasa verificaciones exhaustivas. Podés confiar en las personas que enviamos a tu hogar.">Every team member passes thorough background checks. You can trust the people we send into your home.</p>
+                </div>
+            </div>
+            <div style="margin-top: 60px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(30,58,138,0.12); position: relative;" class="fade-in">
+                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200&q=80" alt="Lustere Cleaning Co. professional team" style="width:100%; height: 380px; object-fit: cover; object-position: center; display: block;">
+                <div style="position:absolute; inset:0; background: linear-gradient(to right, rgba(30,58,138,0.7) 0%, transparent 60%); display:flex; align-items:center; padding: 48px;">
+                    <div style="color:white; max-width: 400px;">
+                        <div style="font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#93C5FD; margin-bottom:12px;">Our Team</div>
+                        <h3 style="font-size:2rem; font-weight:800; margin-bottom:12px; line-height:1.2;">People You Can Trust In Your Home</h3>
+                        <p style="font-size:1rem; opacity:0.85; line-height:1.6;">Every Lustere team member is background-checked, trained, and genuinely cares about your space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+        <div class="container text-center">
+            <span class="section-label fade-in" data-en="Our Services" data-es="Nuestros Servicios">Our Services</span>
+            <h2 class="section-title fade-in" data-en="Everything Your Space Needs" data-es="Todo lo que tu Espacio Necesita">Everything Your Space Needs</h2>
+            <p class="section-subtitle mx-auto fade-in" data-en="From routine cleans to specialized deep cleaning, we have you covered." data-es="Desde limpiezas de rutina hasta limpieza profunda especializada, te tenemos cubierto.">From routine cleans to specialized deep cleaning, we have you covered.</p>
+            <div class="services-grid">
+                <div class="service-card fade-in fade-in-delay-1" style="overflow:hidden; padding: 0;">
+                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=500&q=70" alt="Residential Cleaning" style="width:100%;height:180px;object-fit:cover;display:block;">
+                    <div style="padding:28px 28px 32px;">
+                    <div class="service-emoji">🏠</div>
+                    <h3>Residential Cleaning</h3>
+                    <p>Regular maintenance cleaning to keep your home fresh, tidy, and welcoming. Weekly, bi-weekly, or monthly schedules available.</p>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-2" style="overflow:hidden; padding: 0;">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500&q=70" alt="Deep Cleaning" style="width:100%;height:180px;object-fit:cover;display:block;">
+                    <div style="padding:28px 28px 32px;">
+                    <div class="service-emoji">🧹</div>
+                    <h3>Deep Cleaning</h3>
+                    <p>A thorough top-to-bottom clean that reaches every corner, baseboard, and hidden surface. Perfect for seasonal refreshes.</p>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-3" style="overflow:hidden; padding: 0;">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&q=70" alt="Move In Move Out Cleaning" style="width:100%;height:180px;object-fit:cover;display:block;">
+                    <div style="padding:28px 28px 32px;">
+                    <div class="service-emoji">📦</div>
+                    <h3>Move In / Move Out</h3>
+                    <p>Start fresh in your new space or leave your old one spotless. We handle cabinets, appliances, and everything in between.</p>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-1">
+                    <div class="service-emoji">🏢</div>
+                    <h3>Commercial Cleaning</h3>
+                    <p>Professional cleaning for offices, retail spaces, and commercial properties. Create a productive environment your team deserves.</p>
+                </div>
+                <div class="service-card fade-in fade-in-delay-2">
+                    <div class="service-emoji">🔨</div>
+                    <h3>Post-Construction</h3>
+                    <p>Dust, debris, and construction mess gone. We make your newly built or renovated space move-in ready.</p>
+                </div>
+                <div class="service-card fade-in fade-in-delay-3">
+                    <div class="service-emoji">🔄</div>
+                    <h3>Recurring Service Plans</h3>
+                    <p>Set it and forget it. Enjoy exclusive pricing and priority scheduling with our weekly, biweekly, or monthly plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container text-center">
+            <span class="section-label fade-in" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
+            <h2 class="section-title fade-in" data-en="Sparkling Clean in 3 Easy Steps" data-es="Limpieza Impecable en 3 Pasos">Sparkling Clean in 3 Easy Steps</h2>
+            <p class="section-subtitle mx-auto fade-in" data-en="We've made booking a professional clean as simple as possible." data-es="Hemos hecho que reservar una limpieza profesional sea lo más sencillo posible.">We've made booking a professional clean as simple as possible.</p>
+            <div class="steps">
+                <div class="step fade-in fade-in-delay-1">
+                    <div class="step-number">1</div>
+                    <h3 data-en="Book Online" data-es="Reserva en Línea">Book Online</h3>
+                    <p data-en="Tell us about your space and choose a date that works for you. Get an instant estimate with no surprises." data-es="Cuéntanos sobre tu espacio y elige una fecha. Obtén un presupuesto instantáneo sin sorpresas.">Tell us about your space and choose a date that works for you. Get an instant estimate with no surprises.</p>
+                </div>
+                <div class="step fade-in fade-in-delay-2">
+                    <div class="step-number">2</div>
+                    <h3 data-en="We Clean" data-es="Nosotros Limpiamos">We Clean</h3>
+                    <p data-en="Our vetted, professional team arrives on time with everything needed to make your space shine." data-es="Nuestro equipo profesional llega a tiempo con todo lo necesario para dejar tu espacio brillando.">Our vetted, professional team arrives on time with everything needed to make your space shine.</p>
+                </div>
+                <div class="step fade-in fade-in-delay-3">
+                    <div class="step-number">3</div>
+                    <h3 data-en="You Relax" data-es="Tú Descansas">You Relax</h3>
+                    <p data-en="Come home to a spotless space. Love it or we'll come back and make it right, guaranteed." data-es="Llega a un hogar impecable. Si no te encanta, regresamos y lo corregimos, garantizado.">Come home to a spotless space. Love it or we'll come back and make it right, guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container text-center">
+            <span class="section-label fade-in" data-en="Testimonials" data-es="Testimonios">Testimonials</span>
+            <h2 class="section-title fade-in" data-en="What Our Clients Say" data-es="Lo que Dicen Nuestros Clientes">What Our Clients Say</h2>
+            <p class="section-subtitle mx-auto fade-in" data-en="Don't just take our word for it. Hear from the families we serve." data-es="No te quedes solo con nuestra palabra. Escucha a las familias que servimos.">Don't just take our word for it. Hear from the families we serve.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in fade-in-delay-1">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"I've tried three cleaning services in Denver and Lustere is by far the best. They're thorough, consistent, and I love that they use eco-friendly products. My allergies have never been better!"</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div>
+                            <div class="testimonial-name">Sarah K.</div>
+                            <div class="testimonial-loc">Highlands Ranch, CO</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-2">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"We hired Lustere for our move-out clean and our landlord said it was the cleanest unit he'd ever received back. Got our full deposit returned! Highly recommend."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div>
+                            <div class="testimonial-name">Marcus R.</div>
+                            <div class="testimonial-loc">Capitol Hill, Denver</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-3">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"As a working mom, Lustere has been a game-changer. They show up on time every two weeks and my house is always perfect when I get home. The team is so friendly and trustworthy."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JT</div>
+                        <div>
+                            <div class="testimonial-name">Jennifer T.</div>
+                            <div class="testimonial-loc">Aurora, CO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section pricing" id="pricing">
+        <div class="container text-center">
+            <span class="section-label fade-in" data-en="Pricing" data-es="Precios">Pricing</span>
+            <h2 class="section-title fade-in" data-en="Simple, Transparent Pricing" data-es="Precios Simples y Transparentes">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle mx-auto fade-in" data-en="No hidden fees. No surprises. Just honest pricing for an honest clean." data-es="Sin tarifas ocultas. Sin sorpresas. Solo precios honestos para una limpieza honesta.">No hidden fees. No surprises. Just honest pricing for an honest clean.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in fade-in-delay-1">
+                    <h3>Basic Clean</h3>
+                    <div class="price">$99</div>
+                    <div class="price-note">Starting price · up to 1,200 sq ft</div>
+                    <ul class="pricing-features">
+                        <li>Kitchen &amp; bathroom wipe-down</li>
+                        <li>Vacuuming all floors</li>
+                        <li>Dusting surfaces &amp; fixtures</li>
+                        <li>Trash removal</li>
+                        <li>General tidying</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+                </div>
+                <div class="pricing-card featured fade-in fade-in-delay-2">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Standard Clean</h3>
+                    <div class="price">$149</div>
+                    <div class="price-note">Starting price · up to 2,000 sq ft</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Basic</li>
+                        <li>Inside appliance wipe-down</li>
+                        <li>Baseboard &amp; door frame dusting</li>
+                        <li>Mirror &amp; glass polishing</li>
+                        <li>Bed making &amp; linen change</li>
+                        <li>Detailed bathroom scrub</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+                </div>
+                <div class="pricing-card fade-in fade-in-delay-3">
+                    <h3>Premium Deep Clean</h3>
+                    <div class="price">$199</div>
+                    <div class="price-note">Starting price · up to 2,500 sq ft</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Standard</li>
+                        <li>Inside oven &amp; fridge cleaning</li>
+                        <li>Window sill &amp; track cleaning</li>
+                        <li>Light fixture &amp; fan cleaning</li>
+                        <li>Cabinet exterior wipe-down</li>
+                        <li>Wall spot cleaning</li>
+                        <li>Vent cover dusting</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / QUOTE FORM -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 56px;">
+                <span class="section-label fade-in">Contact Us</span>
+                <h2 class="section-title fade-in">Ready for a Spotless Space?</h2>
+                <p class="section-subtitle mx-auto fade-in">Get your free, no-obligation quote in under 2 minutes.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info fade-in">
+                    <h3>Let's Talk Clean</h3>
+                    <p>Whether you need a one-time deep clean or a recurring service plan, we're here to help. Reach out and we'll get back to you within a few hours.</p>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📞</div>
+                        <div class="contact-detail-text">
+                            <h4>Phone</h4>
+                            <p>(720) 000-0000</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">✉️</div>
+                        <div class="contact-detail-text">
+                            <h4>Email</h4>
+                            <p>hello@lusterecleaning.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📍</div>
+                        <div class="contact-detail-text">
+                            <h4>Service Area</h4>
+                            <p>Denver Metro &amp; Front Range, Colorado</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">🕐</div>
+                        <div class="contact-detail-text">
+                            <h4>Hours</h4>
+                            <p data-en="Mon to Sat: 7:00 AM to 6:00 PM" data-es="Lun a Sáb: 7:00 AM a 6:00 PM">Mon to Sat: 7:00 AM to 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="quote-form fade-in" onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch shortly.');">
+                    <h3>Get Your Free Quote</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(720) 000-0000" required>
+                        </div>
+                        <div class="form-group full">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group full">
+                            <label for="service">Service Type</label>
+                            <select id="service" required>
+                                <option value="" disabled selected>Select a service…</option>
+                                <option>Residential Cleaning</option>
+                                <option>Deep Cleaning</option>
+                                <option>Move In / Move Out</option>
+                                <option>Commercial Cleaning</option>
+                                <option>Post-Construction</option>
+                                <option>Recurring Service Plan</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" placeholder="Tell us about your space, sq footage, special requests…"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="form-submit">Send My Free Quote Request →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo">
+                        <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22 6 L38 20 L35 20 L35 38 L27 38 L27 28 L17 28 L17 38 L9 38 L9 20 L6 20 Z" fill="#3B82F6"/>
+                          <path d="M22 6 L38 20 L6 20 Z" fill="#60A5FA"/>
+                          <rect x="18.5" y="28" width="7" height="10" rx="1" fill="#DBEAFE"/>
+                          <path d="M36 8 L37 11 L40 12 L37 13 L36 16 L35 13 L32 12 L35 11 Z" fill="white"/>
+                        </svg>
+                        Lustere<span>.</span>
+                    </span>
+                    <p>A Spotless Home. Every Time. Family-owned professional cleaning for Denver and the Front Range.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Residential Cleaning</a></li>
+                        <li><a href="#services">Deep Cleaning</a></li>
+                        <li><a href="#services">Move In/Out</a></li>
+                        <li><a href="#services">Commercial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#why-us">About Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:7200000000">(720) 000-0000</a></li>
+                        <li><a href="mailto:hello@lusterecleaning.com">hello@lusterecleaning.com</a></li>
+                        <li><a href="#">www.lusterecleaning.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Lustere Cleaning Co. All rights reserved.</p>
+                <p>Proudly serving Denver, CO and surrounding areas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // ── Language Toggle ──
+        let currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+            document.getElementById('btnES').classList.toggle('active', lang === 'es');
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.innerHTML = text;
+            });
+
+            // Toggle family section image alt & aria
+            document.documentElement.lang = lang;
+        }
+
+        // Show the language banner once on load
+        setTimeout(() => {
+            const banner = document.getElementById('langBanner');
+            if (banner) { banner.style.display = 'block'; }
+        }, 1500);
+
+        // Auto-detect Spanish browser preference
+        if (navigator.language && navigator.language.startsWith('es')) {
+            setLang('es');
+        }
+    </script>
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

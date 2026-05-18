@@ -1,0 +1,11 @@
+2026-03-24 21:05:03,104 INFO 📧 Email sender starting — daily limit: 5 (bounce rate: 0.0%)
+2026-03-24 21:05:03,106 INFO    Already sent today: 0, remaining: 5
+2026-03-24 21:05:03,107 INFO 
+==================================================
+2026-03-24 21:05:03,107 INFO ✅ Email sender complete [DRY RUN]
+2026-03-24 21:05:03,107 INFO    Emails sent:     5
+2026-03-24 21:05:03,107 INFO    Daily limit:     5
+2026-03-24 21:05:03,107 INFO    Already today:   0
+2026-03-24 21:05:03,107 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-03-24.log
+2026-03-24 21:05:03,107 INFO ==================================================
+

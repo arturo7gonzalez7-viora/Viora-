@@ -1,0 +1,24 @@
+{
+  "kalshi": {
+    "base_url": "https://kalshi.com/api/",
+    "username": "",
+    "password": "",
+    "demo_mode": true
+  },
+  "alerts": {
+    "discord_channel_id": "1473537385567486005",
+    "discord_webhook": "",
+    "telegram_bot_token": "",
+    "telegram_chat_id": ""
+  },
+  "monitoring": {
+    "check_interval": 60,
+    "min_volume": 10000,
+    "min_probability_change": 0.05
+  },
+  "strategy": {
+    "max_position_size": 0.1,
+    "stop_loss": 0.2,
+    "take_profit": 0.3
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "campaign_settings": {
+    "campaign_name": "Steven_Colorado_Cash_Buyers",
+    "objective": "LEAD_GENERATION",
+    "budget_daily": 50,
+    "bid_strategy": "COST_PER_RESULT"
+  },
+  
+  "targeting": {
+    "location": {
+      "countries": ["US"],
+      "regions": ["Colorado"],
+      "cities": ["Denver", "Colorado Springs", "Aurora", "Fort Collins", "Lakewood", "Thornton", "Arvada", "Westminster", "Pueblo", "Centennial"]
+    },
+    "age_range": {
+      "min": 35,
+      "max": 70
+    },
+    "demographics": {
+      "home_ownership": ["Own home"],
+      "home_value": ["$100K+"],
+      "life_events": ["Recently moved", "Recently divorced"]
+    },
+    "interests": [
+      "Real estate",
+      "Home improvement", 
+      "Property investment",
+      "Foreclosure",
+      "Debt relief"
+    ],
+    "behaviors": [
+      "Likely to move",
+      "Financial stress indicators",
+      "Home equity loan seekers"
+    ]
+  },
+  
+  "ad_creative": {
+    "headlines": [
+      "Need to Sell Your House Fast?",
+      "Get a Cash Offer in 24 Hours",
+      "Sell Your Colorado Home - No Repairs Needed",
+      "Fair Cash Offers on Any House"
+    ],
+    "descriptions": [
+      "No repairs, no realtor fees, no waiting. We buy houses in any condition across Colorado. Fair cash offers, close on your timeline.",
+      "Skip the hassle of traditional selling. Get a fair cash offer today and close when it works for you.",
+      "Colorado's trusted home buyers. Any condition, any situation. Fast, fair, and hassle-free."
+    ],
+    "call_to_action": "Get My Cash Offer"
+  },
+  
+  "lead_form_questions": [
+    {
+      "question": "What's the property address?",
+      "type": "SHORT_ANSWER",
+      "required": true
+    },
+    {
+      "question": "What's your situation?",
+      "type": "MULTIPLE_CHOICE",
+      "options": ["Moving", "Divorce", "Inherited property", "Financial hardship", "Just want to sell quickly"],
+      "required": true
+    },
+    {
+      "question": "How quickly do you need to sell?",
+      "type": "MULTIPLE_CHOICE", 
+      "options": ["ASAP", "1-3 months", "6+ months", "Just exploring options"],
+      "required": true
+    },
+    {
+      "question": "What condition is the property in?",
+      "type": "MULTIPLE_CHOICE",
+      "options": ["Move-in ready", "Needs minor work", "Needs major work", "Poor condition"],
+      "required": true
+    },
+    {
+      "question": "Best phone number?",
+      "type": "PHONE",
+      "required": true
+    },
+    {
+      "question": "Preferred contact method?",
+      "type": "MULTIPLE_CHOICE",
+      "options": ["Call", "Text", "Messenger"],
+      "required": false
+    }
+  ]
+}

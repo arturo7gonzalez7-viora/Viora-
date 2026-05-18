@@ -1,0 +1,52 @@
+2026-04-13 14:43:25,692 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-13 14:43:25,693 INFO    Already sent today: 0, remaining: 40
+2026-04-13 14:43:25,861 INFO file_cache is only supported with oauth2client<4.0.0
+2026-04-13 14:43:26,555 INFO ✅ Email 1 → info@vivifyaesthetics.com (Vivify Aesthetic Medspa)
+2026-04-13 14:43:34,750 INFO ✅ Email 1 → info@ckeskincare.com (CKE SKINCARE)
+2026-04-13 14:43:52,894 INFO ✅ Email 1 → info@beyondskinmedspa.com (BeyondSkin MedSpa)
+2026-04-13 14:44:06,633 INFO ✅ Email 1 → vdodd@airtechofhouston.com (Air Tech of Houston AC & Plumbing)
+2026-04-13 14:44:19,030 INFO ✅ Email 1 → rmiller@bellaireair.com (Bellaire Air Conditioning)
+2026-04-13 14:44:31,553 INFO ✅ Email 1 → info@becoolachouston.com (Be Cool AC & Heating)
+2026-04-13 14:44:44,020 INFO ✅ Email 1 → info@callhoustonhvac.com (Houston HVAC)
+2026-04-13 14:44:59,717 INFO ✅ Email 1 → info@75degreeac.com (75 Degree AC- Houston)
+2026-04-13 14:45:10,231 INFO ✅ Email 1 → marreguin@excelairconditioning.com (Excel Air)
+2026-04-13 14:45:19,384 INFO ✅ Email 1 → ruben@masteracandheat.com (Master AC and Heat, LLC- The Heights)
+2026-04-13 14:45:36,862 INFO ✅ Email 1 → abram@acecomfort-tx.com (Ace Comfort Air Conditioning & Heating)
+2026-04-13 14:45:54,740 INFO ✅ Email 1 → info@htownacrepair.com (H-Town AC Repair HVAC services Houston)
+2026-04-13 14:46:01,167 INFO ✅ Email 1 → alanoneill@abacusplumbing.net (Abacus Plumbing, Air Conditioning, & Electrical)
+2026-04-13 14:46:12,849 INFO ✅ Email 1 → info@baker-jones.com (Baker-Jones Co. Inc)
+2026-04-13 14:46:27,808 INFO ✅ Email 1 → info@callsoutherncomfort.com (Southern Comfort Heating & Air Services)
+2026-04-13 14:46:34,243 INFO ✅ Email 1 → info@airspecialist.com (Air Specialist Air Conditioning & Plumbing)
+2026-04-13 14:46:47,291 INFO ✅ Email 1 → info@airtechofhumble.com (Air Tech of Humble - Elite Comfort)
+2026-04-13 14:46:56,610 INFO ✅ Email 1 → info@ethanclark.com (Ethan Clark Air Conditioning)
+2026-04-13 14:47:14,723 INFO ✅ Email 1 → info@houstonsmartair.com (Houston Smart Air Cooling and Heating)
+2026-04-13 14:47:27,927 INFO ✅ Email 1 → angel@bayoucityac.com (Bayou City Aire, LLC)
+2026-04-13 14:47:41,921 INFO ✅ Email 1 → john@vibrantmechanical.com (Vibrant Mechanical)
+2026-04-13 14:47:53,399 INFO ✅ Email 1 → richard@nicksplumbing.com (Nick's Plumbing & Air Conditioning)
+2026-04-13 14:47:59,289 INFO ✅ Email 1 → rdume@houkac.com (Houk Air Conditioning Houston)
+2026-04-13 14:48:11,549 INFO ✅ Email 1 → rhatcher@aireserv.com (Aire Serv of Central & West Houston)
+2026-04-13 14:48:29,409 INFO ✅ Email 1 → bryan@revairtx.com (Revolution Air)
+2026-04-13 14:48:45,088 INFO ✅ Email 1 → info@punbarair.com (Punbar Air)
+2026-04-13 14:48:50,625 INFO ✅ Email 1 → info@hvac-houston-tx.com (Elite Air Conditioning & Heating Houston)
+2026-04-13 14:48:59,689 INFO ✅ Email 1 → info@asapairhoustonac.com (ASAP AIR A/C and Heating)
+2026-04-13 14:49:13,777 INFO ✅ Email 1 → info@mykellysac.com (My Kelly's AC)
+2026-04-13 14:49:22,368 INFO ✅ Email 1 → info@bsiairhouston.com (Bodensteiner Service Inc)
+2026-04-13 14:49:36,888 INFO ✅ Email 1 → nc@optimalairsolutions.com (Optimal Air Solutions)
+2026-04-13 14:49:55,066 INFO ✅ Email 1 → info@usmapid.org (HVAC Repair Champions)
+2026-04-13 14:50:08,525 INFO ✅ Email 1 → andrew@thechillbrothers.com (The Chill Brothers)
+2026-04-13 14:50:14,716 INFO ✅ Email 1 → info@aadheatingairconditioning.xyz (AAD Heating & Air Conditioning)
+2026-04-13 14:50:26,159 INFO ✅ Email 1 → info@airconditioningandheatingofhoustonco.com (Houston Air Conditioning AC & Heating Repair Co.)
+2026-04-13 14:50:38,311 INFO ✅ Email 1 → info@jordensac.com (Jorden's Air Conditioning & Heating)
+2026-04-13 14:50:50,959 INFO ✅ Email 1 → info@strivehvac.com (Strive HVAC & Construction)
+2026-04-13 14:51:06,052 INFO ✅ Email 1 → info@tempertechac.com (TEMPERTECH A/C & HEATING LLC)
+2026-04-13 14:51:22,332 INFO ✅ Email 1 → info@hvacofhouston.com (HVAC Of Houston - AC Repair Service)
+2026-04-13 14:51:40,452 INFO ✅ Email 1 → info@newmarkac.com (Newmark Air Conditioning)
+2026-04-13 14:51:50,504 INFO 
+==================================================
+2026-04-13 14:51:50,504 INFO ✅ Email sender complete [SENT]
+2026-04-13 14:51:50,504 INFO    Emails sent:     40
+2026-04-13 14:51:50,504 INFO    Daily limit:     40
+2026-04-13 14:51:50,504 INFO    Already today:   0
+2026-04-13 14:51:50,504 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-04-13.log
+2026-04-13 14:51:50,504 INFO ==================================================
+

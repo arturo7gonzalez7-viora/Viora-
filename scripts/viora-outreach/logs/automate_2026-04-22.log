@@ -1,0 +1,228 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-22 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-22 14:00:04,308 🔄 Auto-rotation day 112: HVAC company in San Francisco, CA
+2026-04-22 14:00:04,312 
+🔍 Searching: HVAC company in San Francisco, CA
+2026-04-22 14:00:05,575   ✅ Cabrillo Plumbing, Heating & Air — (415) 360-0560 — https://discovercabrillo.com/?utm_source=gmb&utm_medium=organic
+2026-04-22 14:00:05,816   ✅ San Francisco Expert Heating and Air — (415) 371-9413 — http://sanfranciscoexprethvac.com/
+2026-04-22 14:00:06,102   ✅ Acosta Heating & Sheet Metal — (415) 751-0732 — https://acostaheatingandair.com/
+2026-04-22 14:00:06,369   ✅ Next HVAC and Appliance repair — (628) 303-0533 — https://nexthvacrepair.com/?utm_source=gmb&utm_medium=site
+2026-04-22 14:00:06,623   ✅ Schmitt Heating & Air Conditioning — (415) 522-0966 — https://www.schmittheating.com/
+2026-04-22 14:00:06,912   ✅ Hometown Heating and Air Conditioning — (925) 933-9333 — http://www.hometownheatingandair.com/
+2026-04-22 14:00:07,218   ✅ Associated Heating of San Francisco — (415) 585-0145 — http://www.associatedheatingsf.com/
+2026-04-22 14:00:07,473   ✅ Magic Plumbing Heating & Cooling — (415) 441-2255 — https://www.magicplumbing.com/
+2026-04-22 14:00:07,771   ✅ Jazz Heating, Air Conditioning and Plumbing — (925) 678-5456 — https://www.calljazz.com/?utm_source=google-gbp&utm_medium=organic&utm_campaign=*284*jazz-heating-ac-pleasanton
+2026-04-22 14:00:07,989   ✅ Same Day Air Conditioning & Heating — (510) 887-5571 — https://samedayhvachayward.com/
+2026-04-22 14:00:08,168   ✅ Mitch & Sons HVAC — (415) 358-8923 — no website
+2026-04-22 14:00:08,313   ✅ Around The Clock HVAC — (628) 900-2040 — no website
+2026-04-22 14:00:08,501   ✅ Heise's Plumbing — (415) 333-0704 — https://www.heisesplumbing.com/
+2026-04-22 14:00:08,803   ✅ Perfect Star Heating, Cooling, & Electrical — (925) 550-0505 — https://www.perfectstarhvac.com/
+2026-04-22 14:00:08,963   ✅ Galaxy Heating & Air Conditioning — (925) 578-3379 — https://galaxyservices.com/
+2026-04-22 14:00:09,194   ✅ Air Flow Pros Heating and Air Conditioning — (415) 400-5140 — https://www.afpheating.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-22 14:00:09,449   ✅ San Francisco Heating & Air Conditioning Services — (415) 935-8149 — no website
+2026-04-22 14:00:09,618   ✅ Sunrun Heating & AC Repair San Francisco — (415) 855-3351 — no website
+2026-04-22 14:00:09,795   ✅ AC Heating and Cooling Service Inc. — (415) 333-9903 — https://www.acheatingandair.net/
+2026-04-22 14:00:10,002   ✅ Heating & Cooling San Francisco — (415) 825-6649 — no website
+2026-04-22 14:00:15,338   ✅ Freon HVAC & Electrical Service — (415) 915-9945 — https://freonhvacservice.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb&utm_content=sf
+2026-04-22 14:00:15,552   ✅ Inner Sunset Top Heating and Air — (415) 592-6313 — http://innersunsettophvacrepair.com/
+2026-04-22 14:00:15,801   ✅ Albert Nahman Plumbing, Heating, and Cooling — (510) 408-7879 — https://albertnahmanplumbing.com/
+2026-04-22 14:00:15,998   ✅ Heating & Cooling San Francisco — (415) 855-7160 — no website
+2026-04-22 14:00:16,180   ✅ Heating & Air Conditioning San Francisco — (415) 942-9881 — no website
+2026-04-22 14:00:16,354   ✅ Best AC Service San Francisco — (415) 534-2170 — no website
+2026-04-22 14:00:16,585   ✅ Galaxy Heating & Air Conditioning — (415) 918-6892 — https://galaxyservices.com/
+2026-04-22 14:00:16,777   ✅ AAA HVAC Repair San Francisco — (628) 287-9296 — http://aaahvacrepairsanfrancisco.com/
+2026-04-22 14:00:16,973   ✅ BEST CHOICE HVAC, INC — (415) 251-1736 — http://bestchoicehvac.shop/
+2026-04-22 14:00:17,175   ✅ San Francisco Heating And Air Conditioning — (628) 253-9611 — no website
+2026-04-22 14:00:17,370   ✅ Alpha HVAC Repair San Francisco — (628) 287-9298 — http://alphahvacrepairsanfrancisco.com/
+2026-04-22 14:00:17,500   ✅ Hassler Heating and Air Conditioning, LLC — (510) 210-0857 — https://www.hasslerheating.com/
+2026-04-22 14:00:17,676   ✅ Horizon HVAC Repair San Francisco — (628) 303-3605 — http://horizonhvacrepairsanfrancisco.com/
+2026-04-22 14:00:17,858   ✅ San Francisco Heating & Air Conditioning Contractors — (415) 825-6632 — no website
+2026-04-22 14:00:18,078   ✅ Comfy Heating & Air Conditioning Inc. — (510) 317-7375 — https://www.comfyhvac.com/service-areas/san-leandro-ca-hvac
+2026-04-22 14:00:18,261   ✅ A2Z HVAC Services San Francisco CA — (628) 229-3748 — no website
+2026-04-22 14:00:21,247   ✅ Art of Comfort — (925) 230-3952 — https://www.artofcomfort.com/?UTM_source=GMB_PLlisting&UTM_medium=organic
+2026-04-22 14:00:21,422   ✅ Pacific Radiant Heat & Construction — (415) 757-0159 — https://www.pacificradiantheat.com/
+2026-04-22 14:00:21,547   ✅ Heating & Cooling San Francisco — (415) 825-6828 — no website
+2026-04-22 14:00:21,788   ✅ Gold HVAC Repair San Francisco — (628) 287-9704 — http://goldhvacrepairsanfrancisco.com/
+2026-04-22 14:00:21,931   ✅ HVAC Services: Heating & Air Conditioning San Francisco — (415) 684-1966 — no website
+2026-04-22 14:00:22,066   ✅ Carol Flynn Heating & Cooling — (650) 697-1535 — https://www.carolflynn.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-brisbane&utm_id=local&utm_content=brisbane
+2026-04-22 14:00:22,315   ✅ Heating & Cooling South San Francisco — (650) 392-3515 — no website
+2026-04-22 14:00:22,547   ✅ Arch Plumbing Inc. — (415) 325-2547 — http://archplumbinginc.com/
+2026-04-22 14:00:22,665   ✅ San Francisco Heating and Air Conditioning Inc.. — (628) 229-3860 — no website
+2026-04-22 14:00:22,875   ✅ Qualtech Heating & Cooling — (925) 261-4487 — https://www.qualtechhvac.com/
+2026-04-22 14:00:23,011   ✅ SmartHome Appliances & HVAC — (415) 877-3277 — https://smarthome-appliance.com/
+2026-04-22 14:00:23,170   ✅ Galaxy Heating & Air Conditioning — (415) 918-6892 — https://galaxyservices.com/
+2026-04-22 14:00:23,314   ✅ Heating & Air Conditioning San Francisco — (415) 825-6648 — no website
+2026-04-22 14:00:23,331   📊 Found 49, 48 new (rest were duplicates)
+2026-04-22 14:00:24,332 
+==================================================
+2026-04-22 14:00:24,332 ✅ Scraping complete
+2026-04-22 14:00:24,332    Total found:  49
+2026-04-22 14:00:24,333    New leads:    48
+2026-04-22 14:00:24,333    Duplicates:   1
+2026-04-22 14:00:24,334    DB total:     684 leads (276 with emails)
+2026-04-22 14:00:24,334 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-22 14:00:24,516 🔍 Finding emails for 50 leads...
+2026-04-22 14:00:24,945 Hunter.io rate limited — pausing 60s
+2026-04-22 14:01:25,341 🔮 Guessed: info@dispartilaw.com — Disparti Law Group
+2026-04-22 14:01:26,416 Hunter.io rate limited — pausing 60s
+2026-04-22 14:02:26,847 🔮 Guessed: info@sherwoodlawgroup.com — Sherwood Law Group
+2026-04-22 14:02:27,727 Hunter.io rate limited — pausing 60s
+2026-04-22 14:03:28,301 🔮 Guessed: info@forthepeople.com — Morgan & Morgan
+2026-04-22 14:03:29,208 Hunter.io rate limited — pausing 60s
+2026-04-22 14:04:29,612 🔮 Guessed: info@saperlaw.com — Saper Law I Intellectual Property I Entertainment I Social Media I Business
+2026-04-22 14:04:30,513 Hunter.io rate limited — pausing 60s
+2026-04-22 14:05:30,887 🔮 Guessed: info@ctmlegalgroup.com — CTM Legal Group
+2026-04-22 14:05:31,732 Hunter.io rate limited — pausing 60s
+2026-04-22 14:06:32,212 🔮 Guessed: info@mhwasserman.com — Michael H. Wasserman, PC
+2026-04-22 14:06:33,343 Hunter.io rate limited — pausing 60s
+2026-04-22 14:07:33,709 🔮 Guessed: info@chicagotrustedattorneys.com — Chicago Trusted Attorneys
+2026-04-22 14:07:35,206 Hunter.io rate limited — pausing 60s
+2026-04-22 14:08:35,571 🔮 Guessed: info@shealawgroup.com — Shea Law Group
+2026-04-22 14:08:37,160 Hunter.io rate limited — pausing 60s
+2026-04-22 14:09:38,160 🔮 Guessed: info@rivernorthlawgroup.com — River North Law Group
+2026-04-22 14:09:39,759 Hunter.io rate limited — pausing 60s
+2026-04-22 14:10:40,199 🔮 Guessed: info@attorneysofchicago.com — Attorneys of Chicago Personal Injury Lawyers
+2026-04-22 14:10:41,870 Hunter.io rate limited — pausing 60s
+2026-04-22 14:11:42,225 🔮 Guessed: info@chicagocriminaldefenselawyer.net — Luisi Legal Group
+2026-04-22 14:11:42,943 Hunter.io rate limited — pausing 60s
+2026-04-22 14:12:43,328 🔮 Guessed: info@illinoishammer.com — The Illinois Hammer Injury Law Firm Dworkin & Maciariello
+2026-04-22 14:12:44,186 Hunter.io rate limited — pausing 60s
+2026-04-22 14:13:44,552 🔮 Guessed: info@consumerlaw.com — Consumer Law Group
+2026-04-22 14:13:45,408 Hunter.io rate limited — pausing 60s
+2026-04-22 14:14:45,819 🔮 Guessed: info@attorneyseanbrown.com — The Law Office of Sean Brown, LLC
+2026-04-22 14:14:46,676 Hunter.io rate limited — pausing 60s
+2026-04-22 14:15:47,181 🔮 Guessed: info@bradfordmillerlaw.com — Bradford Miller Law, P.C.
+2026-04-22 14:15:48,073 Hunter.io rate limited — pausing 60s
+2026-04-22 14:16:48,428 🔮 Guessed: info@kryderlaw.com — The Kryder Law Group, LLC Accident and Injury Lawyers
+2026-04-22 14:16:49,135 Hunter.io rate limited — pausing 60s
+2026-04-22 14:17:49,531 🔮 Guessed: info@lernerandrowe.com — Lerner and Rowe Injury Attorneys
+2026-04-22 14:17:50,388 Hunter.io rate limited — pausing 60s
+2026-04-22 14:18:50,744 🔮 Guessed: info@prinz-lawfirm.com — The Prinz Law Firm
+2026-04-22 14:18:51,751 Hunter.io rate limited — pausing 60s
+2026-04-22 14:19:52,137 🔮 Guessed: info@jenner.com — Jenner & Block LLP
+2026-04-22 14:19:53,029 Hunter.io rate limited — pausing 60s
+2026-04-22 14:20:53,436 🔮 Guessed: info@robsonlopez.com — Robson & Lopez LLC
+2026-04-22 14:20:54,160 Hunter.io rate limited — pausing 60s
+2026-04-22 14:21:54,559 🔮 Guessed: info@phillipslawoffices.com — Phillips Law Offices
+2026-04-22 14:21:55,428 Hunter.io rate limited — pausing 60s
+2026-04-22 14:22:55,808 🔮 Guessed: info@getechlaw.com — Getech Law
+2026-04-22 14:22:56,808 Hunter.io rate limited — pausing 60s
+2026-04-22 14:23:57,220 🔮 Guessed: info@windycitylawfirm.com — Fabbrini Law Group
+2026-04-22 14:23:58,110 Hunter.io rate limited — pausing 60s
+2026-04-22 14:24:58,500 🔮 Guessed: info@depositlaw.com — Mark Silverman Law Office Ltd.
+2026-04-22 14:24:59,230 Hunter.io rate limited — pausing 60s
+2026-04-22 14:25:59,598 🔮 Guessed: info@illinoisdriverslicensereinstatementlawyer.com — The Davis Law Group, P.C.
+2026-04-22 14:26:00,470 Hunter.io rate limited — pausing 60s
+2026-04-22 14:27:00,859 🔮 Guessed: info@chicago-personal-injury-lawyers.us — The Horwitz Law Group
+2026-04-22 14:27:01,738 Hunter.io rate limited — pausing 60s
+2026-04-22 14:28:02,153 🔮 Guessed: info@lawkasan.com — Kasan Law
+2026-04-22 14:28:02,927 Hunter.io rate limited — pausing 60s
+2026-04-22 14:29:03,288 🔮 Guessed: info@justresultslaw.com — Just Results Law Group
+2026-04-22 14:29:04,149 Hunter.io rate limited — pausing 60s
+2026-04-22 14:30:04,748 🔮 Guessed: info@demidchiklawfirm.com — Demidchik Law Firm 安娜律师楼 (Chicago)
+2026-04-22 14:30:05,684 Hunter.io rate limited — pausing 60s
+2026-04-22 14:31:06,235 🔮 Guessed: info@thiel.law — The Thiel Law Group, P.C.
+2026-04-22 14:31:07,144 Hunter.io rate limited — pausing 60s
+2026-04-22 14:32:07,537 🔮 Guessed: info@securitydepositlaw.com — Aaron Krolik Law Office, LLC
+2026-04-22 14:32:08,671 Hunter.io rate limited — pausing 60s
+2026-04-22 14:33:09,075 🔮 Guessed: info@drroof.com — Dr Roof Atlanta
+2026-04-22 14:33:09,978 Hunter.io rate limited — pausing 60s
+2026-04-22 14:34:10,364 🔮 Guessed: info@castleroofing.us — Castle Roofing Atlanta, GA
+2026-04-22 14:34:11,333 Hunter.io rate limited — pausing 60s
+2026-04-22 14:35:11,698 🔮 Guessed: info@garoofingandrepair.com — Georgia Roofing & Repair
+2026-04-22 14:35:12,619 Hunter.io rate limited — pausing 60s
+2026-04-22 14:36:13,035 🔮 Guessed: info@bellroofingco.com — Bell Roofing
+2026-04-22 14:36:13,936 Hunter.io rate limited — pausing 60s
+2026-04-22 14:37:14,296 🔮 Guessed: info@bumbleroofing.com — Bumble Roofing of North Atlanta
+2026-04-22 14:37:15,028 Hunter.io rate limited — pausing 60s
+2026-04-22 14:38:15,560 🔮 Guessed: info@fraserroofingllc.com — Fraser Roofing, LLC
+2026-04-22 14:38:16,427 Hunter.io rate limited — pausing 60s
+2026-04-22 14:39:16,969 🔮 Guessed: info@atlantaroofingspecialists.com — Atlanta Roofing Specialists
+2026-04-22 14:39:17,977 Hunter.io rate limited — pausing 60s
+2026-04-22 14:40:18,379 🔮 Guessed: info@mrrooferatlanta.com — Mr. Roofer of Atlanta
+2026-04-22 14:40:19,150 Hunter.io rate limited — pausing 60s
+2026-04-22 14:41:19,521 🔮 Guessed: info@mosaicroofingcompany.com — Mosaic Roofing Company LLC
+2026-04-22 14:41:20,457 Hunter.io rate limited — pausing 60s
+2026-04-22 14:42:20,815 🔮 Guessed: info@eliteroofpro.com — Elite Roofing LLC
+2026-04-22 14:42:21,543 Hunter.io rate limited — pausing 60s
+2026-04-22 14:43:21,903 🔮 Guessed: info@findlayroofing.com — Findlay Roofing
+2026-04-22 14:43:22,815 Hunter.io rate limited — pausing 60s
+2026-04-22 14:44:23,201 🔮 Guessed: info@georgiainhomeservices.com — Georgia In Home Services
+2026-04-22 14:44:23,707 
+==================================================
+2026-04-22 14:44:23,708 ✅ Email finder complete
+2026-04-22 14:44:23,708    API found:  0
+2026-04-22 14:44:23,708    Guessed:    43
+2026-04-22 14:44:23,708    Total:      43
+2026-04-22 14:44:23,708 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-22.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Wed Apr 22** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 684 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Wed Apr 22 14:44:24 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-22.log

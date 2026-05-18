@@ -1,0 +1,221 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-08 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-08 14:00:03,905 🔄 Auto-rotation day 128: fitness center in San Jose, CA
+2026-05-08 14:00:03,905 
+🔍 Searching: fitness center in San Jose, CA
+2026-05-08 14:00:04,856   ✅ Vim + Vigor Fitness — (408) 580-0819 — https://vnvfit.com/locations/san-jose
+2026-05-08 14:00:05,086   ✅ 24 Hour Fitness — (408) 457-6866 — https://www.24hourfitness.com/gyms/san-jose-ca/east-side-san-jose-super-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:05,413   ✅ The Plex Athletic Club — (408) 226-8080 — https://theplexathleticclub.com/
+2026-05-08 14:00:05,697   ✅ Anytime Fitness — (408) 827-4994 — https://www.anytimefitness.com/locations/san-jose-california-5039
+2026-05-08 14:00:05,887   ✅ YBX Fitness — (669) 282-5383 — https://ybxfitness.com/
+2026-05-08 14:00:06,128   ✅ Villa Sport Athletic Club — (408) 785-0320 — https://www.villasport.com/san-jose/
+2026-05-08 14:00:06,399   ✅ Forma Gym San Jose - Personal Training & Fitness Classes — (408) 363-1010 — https://formagym.com/locations/san-jose/
+2026-05-08 14:00:06,710   ✅ 24 Hour Fitness — (408) 490-3019 — https://www.24hourfitness.com/gyms/san-jose-ca/san-jose-super-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:06,978   ✅ Crunch Fitness - San Jose — (669) 400-0411 — https://www.crunch.com/locations/san-jose
+2026-05-08 14:00:07,272   ✅ Anytime Fitness — (408) 790-1790 — https://www.anytimefitness.com/locations/san-jose-california-4922/
+2026-05-08 14:00:07,440   ✅ 24 Hour Fitness — (408) 513-3124 — https://www.24hourfitness.com/gyms/san-jose-ca/eastridge-super-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:07,630   ✅ Focus Fitness Club — (408) 224-2700 — https://focusfitnessclub.com/
+2026-05-08 14:00:07,927   ✅ WESTCA — (408) 564-0705 — http://www.westcasj.com/?y_source=1_MjQ5NTUzNzQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-05-08 14:00:08,162   ✅ Elite Spartans Gym — (408) 624-7479 — https://www.elitespartans.com/
+2026-05-08 14:00:08,403   ✅ Elite Pro Fitness — (408) 444-9197 — https://www.eliteprofitca.com/
+2026-05-08 14:00:08,592   ✅ City Sports Club — (408) 490-2164 — https://citysportsfitness.com/Pages/clubhome.aspx?clubid=906&utm_source=google&utm_medium=googlemaps&utm_campaign=maps
+2026-05-08 14:00:08,752   ✅ 24 Hour Fitness — (408) 295-6666 — https://www.24hourfitness.com/gyms/san-jose-ca/parkmoor-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:08,902   ✅ Hyper Strength and Conditioning — (669) 238-2262 — https://www.hscgym.com/?y_source=1_MzYyMzUxNjMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-05-08 14:00:09,125   ✅ 24 Hour Fitness — (408) 513-3398 — https://www.24hourfitness.com/gyms/san-jose-ca/willow-glen-super-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:09,291   ✅ 24 Hour Fitness — (408) 723-2639 — https://www.24hourfitness.com/gyms/san-jose-ca/hillsdale-super-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:12,126   ✅ The Plex — (408) 225-1843 — http://www.gotoplex.com/
+2026-05-08 14:00:12,407   ✅ Student Union, Inc. Spartan Recreation and Aquatic Center — (408) 924-6368 — https://www.spartanrecreation.com/
+2026-05-08 14:00:12,605   ✅ Pacific Spin & Strength — (408) 506-1995 — https://spinstrength.com/
+2026-05-08 14:00:12,751   ✅ Crunch Fitness - Winchester — (408) 478-2800 — https://www.crunch.com/locations/winchester
+2026-05-08 14:00:12,888   ✅ The Camp Transformation Center — (408) 389-7697 — https://thecamptc.com/locations/san-jose-california
+2026-05-08 14:00:13,026   ✅ City Sports Club — (408) 273-7185 — https://citysportsfitness.com/Pages/clubhome.aspx?clubid=662&utm_source=google&utm_medium=googlemaps&utm_campaign=maps
+2026-05-08 14:00:13,236   ✅ Brick House Fitness — (408) 444-6940 — http://www.brickhousesj.com/
+2026-05-08 14:00:13,437   ✅ WarFitness Bay Area — (408) 704-0204 — https://linktr.ee/warfitnessbayarea
+2026-05-08 14:00:13,643   ✅ Gym Strength Pro — (408) 510-4530 — https://www.gymcheckpro.com/
+2026-05-08 14:00:13,902   ✅ Planet Fitness — (408) 532-1215 — https://www.planetfitness.com/gyms/san-jose-aborn-ca?utm_medium=organic&utm_source=extnet
+2026-05-08 14:00:14,071   ✅ Unbound Fitness & Wellness — (408) 320-9323 — https://www.unboundfitlife.com/
+2026-05-08 14:00:14,220   ✅ Red Dot Fitness — (408) 242-9442 — http://www.reddotfitness.net/
+2026-05-08 14:00:14,361   ✅ Planet Fitness — (408) 248-1566 — https://www.planetfitness.com/gyms/san-jose-saratoga-ave-ca?utm_medium=organic&utm_source=extnet
+2026-05-08 14:00:14,531   ✅ 24 Hour Fitness — (408) 223-4411 — https://www.24hourfitness.com/gyms/san-jose-ca/capitol-expressway-sport?Adb_id=GGL_LOC_ACQ_CDP
+2026-05-08 14:00:14,708   ✅ Barry's Santana Row — (408) 345-0382 — https://www.barrys.com/studio/santana-row
+2026-05-08 14:00:14,894   ✅ Lift Pro Fitness — (408) 726-5107 — http://www.liftprofitness.com/
+2026-05-08 14:00:15,125   ✅ American Barbell Clubs — (408) 271-2416 — http://www.americanbarbellclubs.com/
+2026-05-08 14:00:15,259   ✅ Planet Fitness — (669) 317-1180 — https://www.planetfitness.com/gyms/san-jose-gould-plaza-ca?utm_medium=organic&utm_source=extnet
+2026-05-08 14:00:15,408   ✅ X-treme Athletics — (408) 443-3251 — http://maddoxmethod.com/
+2026-05-08 14:00:18,060   ✅ Thunder Fitness San Jose — (408) 691-8951 — https://www.thunderfitnesssanjose.com/
+2026-05-08 14:00:18,280   ✅ BARBELL ATHLETIC — (669) 216-9263 — https://www.barbellathletic.com/
+2026-05-08 14:00:18,414   ✅ Hills Training — (408) 600-7602 — https://m.facebook.com/Hillstraining1/
+2026-05-08 14:00:18,715   ✅ Timpany Center — (408) 283-9036 — https://www.sjsu.edu/timpany/
+2026-05-08 14:00:18,870   ✅ Planet Fitness — (408) 786-2410 — https://www.planetfitness.com/gyms/san-jose-sun-garden-ca?utm_medium=yext&utm_source=extnet
+2026-05-08 14:00:19,077   ✅ Croga Fitness - Gym — (408) 351-2149 — http://crogafitness.com/
+2026-05-08 14:00:19,210   ✅ Orangetheory Fitness — (408) 912-1992 — https://www.orangetheory.com/en-us/locations/san-jose-california-0434?utm_medium=seo&utm_source=gg&utm_term=corporate&utm_campaign=soci
+2026-05-08 14:00:19,476   ✅ Bascom Community Center — (408) 794-6289 — https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/16/2040
+2026-05-08 14:00:19,619   ✅ Hella Strength — (408) 772-4234 — http://www.hella-strength.com/
+2026-05-08 14:00:19,813   ✅ HOTWORX - San Jose, CA - Downtown — (408) 320-1030 — https://www.hotworx.net/studio/sanjose-downtown?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-05-08 14:00:20,025   ✅ Roosevelt Community Center — (408) 794-7555 — https://www.sanjoseca.gov/home/components/facilitydirectory/facilitydirectory/76/2028
+2026-05-08 14:00:20,043   📊 Found 50, 50 new (rest were duplicates)
+2026-05-08 14:00:21,043 
+==================================================
+2026-05-08 14:00:21,043 ✅ Scraping complete
+2026-05-08 14:00:21,043    Total found:  50
+2026-05-08 14:00:21,043    New leads:    50
+2026-05-08 14:00:21,043    Duplicates:   0
+2026-05-08 14:00:21,046    DB total:     1172 leads (771 with emails)
+2026-05-08 14:00:21,047 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-08 14:00:21,252 🔍 Finding emails for 50 leads...
+2026-05-08 14:00:21,719 Hunter.io rate limited — pausing 60s
+2026-05-08 14:01:22,094 🔮 Guessed: info@hardins-barbershop.square.site — Hardin's Barbershop
+2026-05-08 14:01:22,976 Hunter.io rate limited — pausing 60s
+2026-05-08 14:02:23,565 🔮 Guessed: info@getsqr.co — PROJECT CUTZ
+2026-05-08 14:02:24,287 Hunter.io rate limited — pausing 60s
+2026-05-08 14:03:24,722 🔮 Guessed: info@bureaubarbershop.com — The Bureau Barber and Shop
+2026-05-08 14:03:25,582 Hunter.io rate limited — pausing 60s
+2026-05-08 14:04:25,940 🔮 Guessed: info@bobacutz.com — Boba Cutz Barber shop💈
+2026-05-08 14:04:26,730 Hunter.io rate limited — pausing 60s
+2026-05-08 14:05:27,122 🔮 Guessed: info@jedsbarbershop.com — Jed's Barber Shop💈
+2026-05-08 14:05:27,997 Hunter.io rate limited — pausing 60s
+2026-05-08 14:06:28,356 🔮 Guessed: info@krakenbarbers.com — Kraken Barbers
+2026-05-08 14:06:29,196 Hunter.io rate limited — pausing 60s
+2026-05-08 14:07:29,614 🔮 Guessed: info@getsquire.com — Pacific Barber Studio
+2026-05-08 14:07:30,321 Hunter.io rate limited — pausing 60s
+2026-05-08 14:08:30,671 🔮 Guessed: info@imadthebarber.com — IT.B Studios - Private Barbershop
+2026-05-08 14:08:31,416 Hunter.io rate limited — pausing 60s
+2026-05-08 14:09:31,775 🔮 Guessed: info@evesandsonsbarbers.com — Eves & Sons Barbers
+2026-05-08 14:09:32,609 Hunter.io rate limited — pausing 60s
+2026-05-08 14:10:32,988 🔮 Guessed: info@luxslc.com — Lux Barber lounge
+2026-05-08 14:10:33,940 Hunter.io rate limited — pausing 60s
+2026-05-08 14:11:34,429 🔮 Guessed: info@cleancutslc.com — Clean Cut Barber Shop
+2026-05-08 14:11:35,370 Hunter.io rate limited — pausing 60s
+2026-05-08 14:12:35,769 🔮 Guessed: info@salons.greatclips.com — Great Clips
+2026-05-08 14:12:36,504 Hunter.io rate limited — pausing 60s
+2026-05-08 14:13:36,844 🔮 Guessed: info@fadehousepixies.glossgenius.com — Fadehouse Barber and Pixies
+2026-05-08 14:13:37,732 Hunter.io rate limited — pausing 60s
+2026-05-08 14:14:38,206 🔮 Guessed: info@perrysbarbershop.net — Perry's Barber Shop
+2026-05-08 14:14:39,043 Hunter.io rate limited — pausing 60s
+2026-05-08 14:15:39,411 🔮 Guessed: info@saltcitybarber.com — Salt City Barbershop – Midvale, UT
+2026-05-08 14:15:40,103 Hunter.io rate limited — pausing 60s
+2026-05-08 14:16:40,452 🔮 Guessed: info@grand-salon.com — Grand Salon & MedSpa ✂
+2026-05-08 14:16:41,200 Hunter.io rate limited — pausing 60s
+2026-05-08 14:17:41,568 🔮 Guessed: info@deseosalondenver.com — Deseo Salon & BlowDry
+2026-05-08 14:17:42,482 Hunter.io rate limited — pausing 60s
+2026-05-08 14:18:42,877 🔮 Guessed: info@studiosalondenver.com — Studio: A Collective Of Stylists
+2026-05-08 14:18:43,672 Hunter.io rate limited — pausing 60s
+2026-05-08 14:19:44,071 🔮 Guessed: info@matthewmorrissalon.com — Matthew Morris Salon and Skincare - Broadway
+2026-05-08 14:19:44,800 Hunter.io rate limited — pausing 60s
+2026-05-08 14:20:45,182 🔮 Guessed: info@clementinesdenver.com — Clementines A Boutique Salon
+2026-05-08 14:20:46,062 Hunter.io rate limited — pausing 60s
+2026-05-08 14:21:46,424 🔮 Guessed: info@theglamhouse.com — The Glam House
+2026-05-08 14:21:47,315 Hunter.io rate limited — pausing 60s
+2026-05-08 14:22:47,713 🔮 Guessed: info@salonlofts.com — Salon Lofts
+2026-05-08 14:22:48,606 Hunter.io rate limited — pausing 60s
+2026-05-08 14:23:48,942 🔮 Guessed: info@thestationhairstudio.com — The Station Hair Studio ✂
+2026-05-08 14:23:49,779 Hunter.io rate limited — pausing 60s
+2026-05-08 14:24:50,135 🔮 Guessed: info@bellohavenhairextensions.com — Bello Haven Salon + Extensions at Cherry Creek North ✂
+2026-05-08 14:24:51,116 Hunter.io rate limited — pausing 60s
+2026-05-08 14:25:51,515 🔮 Guessed: info@avedainspiregreatness.com — Aveda Institute Denver
+2026-05-08 14:25:52,401 Hunter.io rate limited — pausing 60s
+2026-05-08 14:26:52,895 🔮 Guessed: info@formacollectivesalon.com — Forma Collective Salon
+2026-05-08 14:26:53,797 Hunter.io rate limited — pausing 60s
+2026-05-08 14:27:54,206 🔮 Guessed: info@vagaro.com — SALON VO | Hair Salon Denver ✂
+2026-05-08 14:27:54,968 Hunter.io rate limited — pausing 60s
+2026-05-08 14:28:55,302 🔮 Guessed: info@berenicesdenver.com — berenices ✂
+2026-05-08 14:28:56,022 Hunter.io rate limited — pausing 60s
+2026-05-08 14:29:56,412 🔮 Guessed: info@fiftytwoeightysalon.com — Fifty Two Eighty Salon ✂
+2026-05-08 14:29:57,316 Hunter.io rate limited — pausing 60s
+2026-05-08 14:30:57,753 🔮 Guessed: info@303salons.com — 303 Salon Lohi
+2026-05-08 14:30:58,628 Hunter.io rate limited — pausing 60s
+2026-05-08 14:31:59,017 🔮 Guessed: info@onyxandcosalon.com — Onyx and Co Salon ✂
+2026-05-08 14:31:59,919 Hunter.io rate limited — pausing 60s
+2026-05-08 14:33:00,296 🔮 Guessed: info@jadedbeauty.com — Jaded Beauty
+2026-05-08 14:33:01,208 Hunter.io rate limited — pausing 60s
+2026-05-08 14:34:01,565 🔮 Guessed: info@indigosalondenver.com — Indigo Salon
+2026-05-08 14:34:02,443 Hunter.io rate limited — pausing 60s
+2026-05-08 14:35:02,843 🔮 Guessed: info@fleursalon.com — Fleur Salon ✂
+2026-05-08 14:35:03,600 Hunter.io rate limited — pausing 60s
+2026-05-08 14:36:03,959 🔮 Guessed: info@hairbynatalia.com — Hair by Natalia ✂
+2026-05-08 14:36:04,654 Hunter.io rate limited — pausing 60s
+2026-05-08 14:37:05,000 🔮 Guessed: info@salonthirtyeight.com — Salon Thirty Eight
+2026-05-08 14:37:05,859 Hunter.io rate limited — pausing 60s
+2026-05-08 14:38:06,210 🔮 Guessed: info@arrowbeautydenver.com — Arrow Beauty Denver ✂
+2026-05-08 14:38:07,052 Hunter.io rate limited — pausing 60s
+2026-05-08 14:39:07,379 🔮 Guessed: info@theblakedenver.com — The Blake Denver
+2026-05-08 14:39:08,227 Hunter.io rate limited — pausing 60s
+2026-05-08 14:40:08,600 🔮 Guessed: info@linktr.ee — Luxe de Vil Salon
+2026-05-08 14:40:09,104 
+==================================================
+2026-05-08 14:40:09,104 ✅ Email finder complete
+2026-05-08 14:40:09,104    API found:  0
+2026-05-08 14:40:09,104    Guessed:    39
+2026-05-08 14:40:09,104    Total:      39
+2026-05-08 14:40:09,104 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-08.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Fri May 08** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1172 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Fri May  8 14:40:09 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-08.log

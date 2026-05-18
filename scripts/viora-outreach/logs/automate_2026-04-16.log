@@ -1,0 +1,226 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-16 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-16 14:00:04,747 🔄 Auto-rotation day 106: medical spa in Oklahoma City, OK
+2026-04-16 14:00:04,747 
+🔍 Searching: medical spa in Oklahoma City, OK
+2026-04-16 14:00:05,614   ✅ H-MD Medical Spa — (405) 463-5700 — https://h-md.com/?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-listing&utm_content=oklahoma
+2026-04-16 14:00:05,872   ✅ LOU LOU Med Spa — (405) 774-1989 — https://louloumedspa.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-16 14:00:06,109   ✅ Wheeler Med Spa — (405) 464-1655 — https://www.wheelermedspa.com/
+2026-04-16 14:00:06,471   ✅ Radiance Medical Aesthetics Of Oklahoma — (405) 807-6265 — http://rmaok.com/
+2026-04-16 14:00:06,692   ✅ Bliss Medical Spa — (405) 708-9552 — https://blissmedicalspaokc.com/
+2026-04-16 14:00:06,917   ✅ Renew Wellness & Aesthetics — (405) 810-5944 — http://renewoklahoma.com/
+2026-04-16 14:00:07,191   ✅ Longevity OKC — (405) 703-4990 — http://longevityok.com/
+2026-04-16 14:00:07,454   ✅ Upscale Wellness & MedSpa — (405) 593-0277 — https://www.upscale-wellness.com/
+2026-04-16 14:00:07,624   ✅ Sculpted Medical Spa at Midtown — (405) 803-8155 — http://sculptedmedspas.com/
+2026-04-16 14:00:07,840   ✅ Bella Luce Med Spa — (405) 486-7450 — https://bellaluceokc.com/
+2026-04-16 14:00:08,115   ✅ RefineU Med Spa — (405) 369-8840 — https://www.refineuokc.com/
+2026-04-16 14:00:08,347   ✅ The Medspa @50th — (405) 930-3772 — https://www.m50medspa.com/
+2026-04-16 14:00:08,532   ✅ Revive Aesthetics Medical Spa — (405) 830-8119 — http://www.revivemedspaokc.com/
+2026-04-16 14:00:08,742   ✅ Belle Âme Med Spa — (405) 679-2660 — https://belleamemedspa.com/
+2026-04-16 14:00:09,014   ✅ The Treatment Room — (405) 921-0585 — https://thetreatmentroomokc.com/
+2026-04-16 14:00:09,199   ✅ Elysian Wellness & Aesthetics — (405) 506-0300 — https://elysianwellnessokc.com/
+2026-04-16 14:00:09,371   ✅ Mariposa Aesthetics & Laser Center — (405) 759-7546 — https://mariposaokc.com/
+2026-04-16 14:00:09,585   ✅ Bliss Medical Spa — (405) 607-6077 — https://blissmedicalspaokc.com/
+2026-04-16 14:00:09,851   ✅ CLAREBELLA Aesthetics Medspa — (405) 516-6140 — https://clarebellaokc.com/
+2026-04-16 14:00:10,139   ✅ Beaut Medical Spa — (405) 493-9585 — https://beautmedspa.com/
+2026-04-16 14:00:12,869   ✅ Exquisite Med Spa — (405) 967-4560 — http://www.exquisitemedspaok.com/
+2026-04-16 14:00:13,023   ✅ Sculpted Med Spa — (405) 259-9127 — https://sculptedmedspas.com/
+2026-04-16 14:00:13,229   ✅ Advanced Aesthetics — (405) 751-3424 — http://www.advancedaesthetics.com/
+2026-04-16 14:00:13,397   ✅ Radian Medical Spa — (405) 242-6040 — https://radianmedicalspa.com/products/
+2026-04-16 14:00:13,570   ✅ Skinlab Injectables — (405) 436-1000 — http://skinlabinjectables.com/
+2026-04-16 14:00:13,865   ✅ Zen Aesthetics & Wellness — (405) 888-5614 — https://www.zenaestheticsandwellness.com/
+2026-04-16 14:00:13,997   ✅ Aesthetic Center of Excellence (ACE) — (405) 452-0055 — https://acemedspa.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-16 14:00:14,140   ✅ Gudgel Aesthetics — (405) 306-5800 — https://www.normanmedspa.com/
+2026-04-16 14:00:14,313   ✅ Lara Clinic — (405) 446-9850 — https://laraclinic.com/
+2026-04-16 14:00:14,470   ✅ West Medical Aesthetics — (405) 562-3044 — https://www.westmedspa.com/
+2026-04-16 14:00:14,637   ✅ Restorative Injectables — (405) 849-9373 — https://restorativeinjectables.com/?utm_source=GMB&utm_medium=OKC&utm_campaign=Website
+2026-04-16 14:00:14,813   ✅ Purity Day Spa — (405) 724-9700 — http://www.puritydayspaokc.com/
+2026-04-16 14:00:15,011   ✅ Omni Lux Med Spa — (405) 237-9915 — https://www.omniluxmedspa.com/
+2026-04-16 14:00:15,165   ✅ Reverse Med Spa OKC — (405) 534-4609 — https://www.okcmedspa.com/
+2026-04-16 14:00:15,460   ✅ Lilac med spa — (580) 649-9632 — http://lilacmedspa.com/
+2026-04-16 14:00:15,617   ✅ Belle Rose Aesthetics — (405) 591-5059 — https://www.belleroseaesthetics.net/
+2026-04-16 14:00:15,822   ✅ Restore Hyper Wellness — (405) 849-6651 — https://www.restore.com/locations/ok-oklahoma-city-classen-curve-ok001?utm_source=gmb&utm_medium=Yext&y_source=1_MzE2Mjk5MDQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-04-16 14:00:16,151   ✅ Glow Med Spa — (405) 551-7623 — https://glowmedspaok.com/
+2026-04-16 14:00:16,293   ✅ Stilnova & Co. — (405) 237-5633 — https://www.stilnovaco.com/
+2026-04-16 14:00:18,983   ✅ The Plaza Aesthetics — (405) 822-0785 — https://www.theplazaaesthetics.com/
+2026-04-16 14:00:19,154   ✅ Ideal Image Oklahoma City — (405) 633-3988 — https://h-md.com/our-locations/chisholm-creek/?utm_source=gbp&utm_medium=organic&utm_campaign=hmd_chisholm&utm_content=listing
+2026-04-16 14:00:19,300   ✅ Rejuvena Cosmetic Medical Center — (405) 842-1100 — https://www.rejuvenaclinic.com/
+2026-04-16 14:00:19,447   ✅ LaserAway Oklahoma City — (405) 876-8500 — https://www.laseraway.com/locations/ok/oklahoma-city/?utm_source=google&utm_medium=organic&utm_campaign=website-link
+2026-04-16 14:00:19,612   ✅ The Wandering Clay — (405) 343-1432 — http://www.thewanderingclay.com/
+2026-04-16 14:00:19,757   ✅ Cosmetic Surgery Affiliates — (405) 842-6677 — https://csaok.com/
+2026-04-16 14:00:19,904   ✅ Injectable Aesthetics — (405) 285-0625 — https://www.injectableaesthetics.com/
+2026-04-16 14:00:20,047   ✅ Revive Clinic — (405) 703-8882 — https://www.reviveokc.com/
+2026-04-16 14:00:20,256   ✅ A New Beginning Healthcare and Spa — (405) 735-3041 — https://www.facebook.com/anbhealth/
+2026-04-16 14:00:20,441   ✅ Skin Studio OKC — (405) 266-1800 — http://skinstudiookc.com/
+2026-04-16 14:00:20,599   ✅ Glow Theory Spa — (572) 358-8268 — https://glowtheoryokc.glossgenius.com/
+2026-04-16 14:00:20,623   📊 Found 50, 50 new (rest were duplicates)
+2026-04-16 14:00:21,623 
+==================================================
+2026-04-16 14:00:21,623 ✅ Scraping complete
+2026-04-16 14:00:21,623    Total found:  50
+2026-04-16 14:00:21,623    New leads:    50
+2026-04-16 14:00:21,624    Duplicates:   0
+2026-04-16 14:00:21,626    DB total:     780 leads (639 with emails)
+2026-04-16 14:00:21,626 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-16 14:00:21,791 🔍 Finding emails for 50 leads...
+2026-04-16 14:00:22,353 Hunter.io rate limited — pausing 60s
+2026-04-16 14:01:22,793 🔮 Guessed: info@sublimespaseattle.com — Sublime Spa Seattle
+2026-04-16 14:01:23,744 Hunter.io rate limited — pausing 60s
+2026-04-16 14:02:24,271 🔮 Guessed: info@locations.massageenvy.com — Massage Envy
+2026-04-16 14:02:25,133 Hunter.io rate limited — pausing 60s
+2026-04-16 14:03:25,552 🔮 Guessed: info@suryaspa.net — Surya Spa
+2026-04-16 14:03:26,267 Hunter.io rate limited — pausing 60s
+2026-04-16 14:04:26,675 🔮 Guessed: info@nordstrom.com — Spa Nordstrom - Downtown Seattle
+2026-04-16 14:04:27,604 Hunter.io rate limited — pausing 60s
+2026-04-16 14:05:28,013 🔮 Guessed: info@vagaro.com — Calmed Soul Holistic Spa
+2026-04-16 14:05:28,919 Hunter.io rate limited — pausing 60s
+2026-04-16 14:06:29,313 🔮 Guessed: info@wac.net — Washington Athletic Club
+2026-04-16 14:06:30,659 Hunter.io rate limited — pausing 60s
+2026-04-16 14:07:31,041 🔮 Guessed: info@frenchysdayspa.com — Frenchy's Day Spa
+2026-04-16 14:07:31,892 Hunter.io rate limited — pausing 60s
+2026-04-16 14:08:32,284 🔮 Guessed: info@manta.com — Green Lake SPA
+2026-04-16 14:08:32,981 Hunter.io rate limited — pausing 60s
+2026-04-16 14:09:33,355 🔮 Guessed: info@hyatt.com — Hyatt at Olive 8
+2026-04-16 14:09:34,237 Hunter.io rate limited — pausing 60s
+2026-04-16 14:10:34,634 🔮 Guessed: info@celsiusmedspa.com — Celsius
+2026-04-16 14:10:35,498 Hunter.io rate limited — pausing 60s
+2026-04-16 14:11:35,912 🔮 Guessed: info@hyatt.com — Grand Hyatt Seattle
+2026-04-16 14:11:36,608 Hunter.io rate limited — pausing 60s
+2026-04-16 14:12:36,994 🔮 Guessed: info@massagemdb.com — Massage MDB
+2026-04-16 14:12:37,881 Hunter.io rate limited — pausing 60s
+2026-04-16 14:13:38,277 🔮 Guessed: info@lusciousskinspa.com — Luscious Skin Spa
+2026-04-16 14:13:39,214 Hunter.io rate limited — pausing 60s
+2026-04-16 14:14:39,621 🔮 Guessed: info@thecanaldayspa.com — The Canal Day Spa
+2026-04-16 14:14:40,433 Hunter.io rate limited — pausing 60s
+2026-04-16 14:15:40,795 🔮 Guessed: info@intermezzosalon.com — Intermezzo Salon & Spa
+2026-04-16 14:15:41,636 Hunter.io rate limited — pausing 60s
+2026-04-16 14:16:42,030 🔮 Guessed: info@marriott.com — Sheraton Grand Seattle
+2026-04-16 14:16:42,876 Hunter.io rate limited — pausing 60s
+2026-04-16 14:17:43,275 🔮 Guessed: info@elamarskin.com — ElaMar Nashville
+2026-04-16 14:17:43,971 Hunter.io rate limited — pausing 60s
+2026-04-16 14:18:44,329 🔮 Guessed: info@tolmanmedical.com — NSI Wellness | Aesthetics
+2026-04-16 14:18:45,188 Hunter.io rate limited — pausing 60s
+2026-04-16 14:19:45,678 🔮 Guessed: info@nakedmd.com — NakedMD Med Spa Nashville
+2026-04-16 14:19:46,542 Hunter.io rate limited — pausing 60s
+2026-04-16 14:20:47,027 🔮 Guessed: info@complexionnashville.com — Complexion Nashville
+2026-04-16 14:20:47,731 Hunter.io rate limited — pausing 60s
+2026-04-16 14:21:48,155 🔮 Guessed: info@elevatemedispa.com — Elevate Medical Spa
+2026-04-16 14:21:48,870 Hunter.io rate limited — pausing 60s
+2026-04-16 14:22:49,484 🔮 Guessed: info@hifinch.com — Hi, Finch
+2026-04-16 14:22:50,205 Hunter.io rate limited — pausing 60s
+2026-04-16 14:23:50,540 🔮 Guessed: info@smileyaesthetics.com — Smiley Aesthetics Medical Spa – Botox & Weight Loss Clinic Nashville West
+2026-04-16 14:23:51,254 Hunter.io rate limited — pausing 60s
+2026-04-16 14:24:51,628 🔮 Guessed: info@thenaturallook.net — The Natural Look MedSpa
+2026-04-16 14:24:53,264 Hunter.io rate limited — pausing 60s
+2026-04-16 14:25:54,098 🔮 Guessed: info@radiantespa.com — Radianté Spa Nashville
+2026-04-16 14:25:54,835 Hunter.io rate limited — pausing 60s
+2026-04-16 14:26:55,200 🔮 Guessed: info@slkclinic.com — SLK Aesthetic Medicine
+2026-04-16 14:26:55,904 Hunter.io rate limited — pausing 60s
+2026-04-16 14:27:56,246 🔮 Guessed: info@elanskinandlaser.com — Elan Skin & Laser Med Spa of Nashville
+2026-04-16 14:27:56,957 Hunter.io rate limited — pausing 60s
+2026-04-16 14:28:57,310 🔮 Guessed: info@melroseaesthetics.com — Melrose Aesthetics
+2026-04-16 14:28:58,149 Hunter.io rate limited — pausing 60s
+2026-04-16 14:29:58,512 🔮 Guessed: info@lumiereaesthetics.co — Lumière Aesthetics & Wellness
+2026-04-16 14:30:00,217 Hunter.io rate limited — pausing 60s
+2026-04-16 14:31:00,617 🔮 Guessed: info@amalieaesthetics.com — Amálie Aesthetics and Wellness
+2026-04-16 14:31:01,499 Hunter.io rate limited — pausing 60s
+2026-04-16 14:32:01,905 🔮 Guessed: info@ovme.com — OVME
+2026-04-16 14:32:02,633 Hunter.io rate limited — pausing 60s
+2026-04-16 14:33:03,021 🔮 Guessed: info@skinmb.com — Skin MB
+2026-04-16 14:33:03,882 Hunter.io rate limited — pausing 60s
+2026-04-16 14:34:04,600 🔮 Guessed: info@nashvilleskinsociety.com — Nashville Skin Society
+2026-04-16 14:34:05,900 Hunter.io rate limited — pausing 60s
+2026-04-16 14:35:06,258 🔮 Guessed: info@61five.com — 61Five Health & Wellness
+2026-04-16 14:35:07,171 Hunter.io rate limited — pausing 60s
+2026-04-16 14:36:07,540 🔮 Guessed: info@hatefaesthetics.com — Hatef Aesthetics & Plastic Surgery
+2026-04-16 14:36:08,682 Hunter.io rate limited — pausing 60s
+2026-04-16 14:37:09,085 🔮 Guessed: info@genesislifestylemedicine.com — Genesis Lifestyle Medicine
+2026-04-16 14:37:09,943 Hunter.io rate limited — pausing 60s
+2026-04-16 14:38:10,290 🔮 Guessed: info@next-health.com — Next Health in The Gulch - Nashville
+2026-04-16 14:38:11,139 Hunter.io rate limited — pausing 60s
+2026-04-16 14:39:11,532 🔮 Guessed: info@ovme.com — OVME
+2026-04-16 14:39:12,386 Hunter.io rate limited — pausing 60s
+2026-04-16 14:40:12,847 🔮 Guessed: info@tempowellnessnashville.com — Tempo Wellness + Aesthetics
+2026-04-16 14:40:13,939 Hunter.io rate limited — pausing 60s
+2026-04-16 14:41:14,318 🔮 Guessed: info@onyxwa.com — ONYX WELLNESS & AESTHETICS
+2026-04-16 14:41:14,825 
+==================================================
+2026-04-16 14:41:14,825 ✅ Email finder complete
+2026-04-16 14:41:14,825    API found:  0
+2026-04-16 14:41:14,825    Guessed:    40
+2026-04-16 14:41:14,825    Total:      40
+2026-04-16 14:41:14,825 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-16.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Thu Apr 16** (Day 4)
+
+**📋 YOUR TODO:**
+1️⃣ Send 20 LinkedIn DMs (posted above or in output/)
+3️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 20 LinkedIn DMs
+**📊 Funnel:** 780 leads → 137 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+**💼 20 LinkedIn DMs** queued — check Discord or output/ folder
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Thu Apr 16 14:41:15 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-16.log

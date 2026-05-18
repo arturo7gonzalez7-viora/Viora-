@@ -1,0 +1,175 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-01 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-01 14:00:05,353 🔄 Auto-rotation day 121: plumbing contractor in Los Angeles, CA
+2026-05-01 14:00:05,354 
+🔍 Searching: plumbing contractor in Los Angeles, CA
+2026-05-01 14:00:09,610 API error: DEADLINE_EXCEEDED — 
+2026-05-01 14:00:10,614 
+==================================================
+2026-05-01 14:00:10,615 ✅ Scraping complete
+2026-05-01 14:00:10,615    Total found:  0
+2026-05-01 14:00:10,615    New leads:    0
+2026-05-01 14:00:10,615    Duplicates:   0
+2026-05-01 14:00:10,622    DB total:     948 leads (567 with emails)
+2026-05-01 14:00:10,622 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-01 14:00:10,869 🔍 Finding emails for 50 leads...
+2026-05-01 14:00:11,257 Hunter.io rate limited — pausing 60s
+2026-05-01 14:01:11,634 🔮 Guessed: info@galaxyservices.com — Galaxy Heating & Air Conditioning
+2026-05-01 14:01:12,548 Hunter.io rate limited — pausing 60s
+2026-05-01 14:02:12,958 🔮 Guessed: info@aaahvacrepairsanfrancisco.com — AAA HVAC Repair San Francisco
+2026-05-01 14:02:13,818 Hunter.io rate limited — pausing 60s
+2026-05-01 14:03:14,205 🔮 Guessed: info@bestchoicehvac.shop — BEST CHOICE HVAC, INC
+2026-05-01 14:03:14,911 Hunter.io rate limited — pausing 60s
+2026-05-01 14:04:15,251 🔮 Guessed: info@alphahvacrepairsanfrancisco.com — Alpha HVAC Repair San Francisco
+2026-05-01 14:04:15,979 Hunter.io rate limited — pausing 60s
+2026-05-01 14:05:16,578 🔮 Guessed: info@hasslerheating.com — Hassler Heating and Air Conditioning, LLC
+2026-05-01 14:05:17,478 Hunter.io rate limited — pausing 60s
+2026-05-01 14:06:17,844 🔮 Guessed: info@horizonhvacrepairsanfrancisco.com — Horizon HVAC Repair San Francisco
+2026-05-01 14:06:18,692 Hunter.io rate limited — pausing 60s
+2026-05-01 14:07:18,887 🔮 Guessed: info@comfyhvac.com — Comfy Heating & Air Conditioning Inc.
+2026-05-01 14:07:19,768 Hunter.io rate limited — pausing 60s
+2026-05-01 14:08:20,157 🔮 Guessed: info@artofcomfort.com — Art of Comfort
+2026-05-01 14:08:21,007 Hunter.io rate limited — pausing 60s
+2026-05-01 14:09:21,214 🔮 Guessed: info@pacificradiantheat.com — Pacific Radiant Heat & Construction
+2026-05-01 14:09:22,227 Hunter.io rate limited — pausing 60s
+2026-05-01 14:10:22,600 🔮 Guessed: info@goldhvacrepairsanfrancisco.com — Gold HVAC Repair San Francisco
+2026-05-01 14:10:23,507 Hunter.io rate limited — pausing 60s
+2026-05-01 14:11:23,975 🔮 Guessed: info@carolflynn.com — Carol Flynn Heating & Cooling
+2026-05-01 14:11:24,831 Hunter.io rate limited — pausing 60s
+2026-05-01 14:12:25,169 🔮 Guessed: info@archplumbinginc.com — Arch Plumbing Inc.
+2026-05-01 14:12:25,879 Hunter.io rate limited — pausing 60s
+2026-05-01 14:13:26,235 🔮 Guessed: info@qualtechhvac.com — Qualtech Heating & Cooling
+2026-05-01 14:13:27,090 Hunter.io rate limited — pausing 60s
+2026-05-01 14:14:27,490 🔮 Guessed: info@smarthome-appliance.com — SmartHome Appliances & HVAC
+2026-05-01 14:14:28,186 Hunter.io rate limited — pausing 60s
+2026-05-01 14:15:28,564 🔮 Guessed: info@skyheating.com — Sky Heating, AC, Plumbing & Electrical
+2026-05-01 14:15:29,427 Hunter.io rate limited — pausing 60s
+2026-05-01 14:16:29,803 🔮 Guessed: info@aaaheatingandcoolinginc.com — AAA Heating & Cooling
+2026-05-01 14:16:30,654 Hunter.io rate limited — pausing 60s
+2026-05-01 14:17:31,022 🔮 Guessed: info@sunsethc.com — Sunset Heating & Cooling
+2026-05-01 14:17:31,901 Hunter.io rate limited — pausing 60s
+2026-05-01 14:18:32,276 🔮 Guessed: info@eheatcool.com — Efficiency Heating & Cooling
+2026-05-01 14:18:33,175 Hunter.io rate limited — pausing 60s
+2026-05-01 14:19:33,513 🔮 Guessed: info@sunglowinc.com — Sun Glow Inc.
+2026-05-01 14:19:34,344 Hunter.io rate limited — pausing 60s
+2026-05-01 14:20:34,703 🔮 Guessed: info@pyramidheating.com — Pyramid Heating & Cooling
+2026-05-01 14:20:35,602 Hunter.io rate limited — pausing 60s
+2026-05-01 14:21:35,979 🔮 Guessed: info@integrityairllc.com — Integrity Air LLC
+2026-05-01 14:21:36,851 Hunter.io rate limited — pausing 60s
+2026-05-01 14:22:37,195 🔮 Guessed: info@eheatcool.com — Efficiency Heating & Cooling
+2026-05-01 14:22:38,040 Hunter.io rate limited — pausing 60s
+2026-05-01 14:23:38,389 🔮 Guessed: info@centralairpdx.com — Central Air Heating, Cooling & Plumbing
+2026-05-01 14:23:39,249 Hunter.io rate limited — pausing 60s
+2026-05-01 14:24:39,616 🔮 Guessed: info@jacobsheating.com — Jacobs Heating & Air Conditioning, Inc.
+2026-05-01 14:24:40,309 Hunter.io rate limited — pausing 60s
+2026-05-01 14:25:40,669 🔮 Guessed: info@rosecityheating.com — Rose City Heating & Air
+2026-05-01 14:25:41,540 Hunter.io rate limited — pausing 60s
+2026-05-01 14:26:41,879 🔮 Guessed: info@centralairpdx.com — Central Air Heating, Cooling & Plumbing
+2026-05-01 14:26:42,787 Hunter.io rate limited — pausing 60s
+2026-05-01 14:27:43,155 🔮 Guessed: info@ableheatingandcooling.com — Able Heating & Cooling LLC
+2026-05-01 14:27:43,988 Hunter.io rate limited — pausing 60s
+2026-05-01 14:28:44,371 🔮 Guessed: info@comfortsolutionspdx.com — Comfort Solutions Heating & Cooling
+2026-05-01 14:28:45,226 Hunter.io rate limited — pausing 60s
+2026-05-01 14:29:45,583 🔮 Guessed: info@oregonheating.com — Oregon Heating & Air Conditioning, LLC
+2026-05-01 14:29:46,274 Hunter.io rate limited — pausing 60s
+2026-05-01 14:30:46,631 🔮 Guessed: info@cornelsplumbing.com — Cornel's Plumbing, Heating & Air Conditioning
+2026-05-01 14:30:47,369 Hunter.io rate limited — pausing 60s
+2026-05-01 14:31:47,571 🔮 Guessed: info@heatrelieftoday.com — Heat Relief Heating & Cooling
+2026-05-01 14:31:48,463 Hunter.io rate limited — pausing 60s
+2026-05-01 14:32:48,795 🔮 Guessed: info@specialtyheating.com — Specialty Heating & Cooling
+2026-05-01 14:32:49,500 Hunter.io rate limited — pausing 60s
+2026-05-01 14:33:49,861 🔮 Guessed: info@callairstars.com — Air Stars Heating, AC, Plumbing & Electrical
+2026-05-01 14:33:50,712 Hunter.io rate limited — pausing 60s
+2026-05-01 14:34:51,050 🔮 Guessed: info@cornelsplumbing.com — Cornel's Plumbing, Heating & Air Conditioning
+2026-05-01 14:34:51,749 Hunter.io rate limited — pausing 60s
+2026-05-01 14:35:52,145 🔮 Guessed: info@wattsheating.com — Watts Heating & Cooling
+2026-05-01 14:35:52,984 Hunter.io rate limited — pausing 60s
+2026-05-01 14:36:53,343 🔮 Guessed: info@wolfersheating.com — Wolfer’s Home Services
+2026-05-01 14:36:54,206 Hunter.io rate limited — pausing 60s
+2026-05-01 14:37:54,561 🔮 Guessed: info@climatecontrolinc.com — Climate Control
+2026-05-01 14:37:55,452 Hunter.io rate limited — pausing 60s
+2026-05-01 14:38:55,795 🔮 Guessed: info@advancedheatinginc.com — Advanced Heating & Air Conditioning, Inc
+2026-05-01 14:38:56,713 Hunter.io rate limited — pausing 60s
+2026-05-01 14:39:57,050 🔮 Guessed: info@anctilheating-cooling.com — Anctil Heating & Cooling
+2026-05-01 14:39:57,902 Hunter.io rate limited — pausing 60s
+2026-05-01 14:40:58,284 🔮 Guessed: info@precisionheatingco.com — Precision Heating & Cooling
+2026-05-01 14:40:59,162 Hunter.io rate limited — pausing 60s
+2026-05-01 14:41:59,548 🔮 Guessed: info@sunnyside-hvac.com — Sunnyside Heating & Cooling
+2026-05-01 14:42:00,053 
+==================================================
+2026-05-01 14:42:00,053 ✅ Email finder complete
+2026-05-01 14:42:00,053    API found:  0
+2026-05-01 14:42:00,053    Guessed:    41
+2026-05-01 14:42:00,054    Total:      41
+2026-05-01 14:42:00,054 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-01.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Fri May 01** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 948 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Fri May  1 14:42:00 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-01.log

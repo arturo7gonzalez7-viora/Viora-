@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lustere Cleaning Co. — Plan de Negocios 2025–2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8FAFC;
+            color: #1E293B;
+            line-height: 1.7;
+        }
+
+        /* ── PORTADA ── */
+        .cover {
+            background: linear-gradient(145deg, #0F2166 0%, #1E3A8A 60%, #1D4ED8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            border: 80px solid rgba(255,255,255,0.04);
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -60px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            border: 50px solid rgba(255,255,255,0.03);
+        }
+        .cover-logo {
+            display: flex; align-items: center; gap: 16px;
+            margin-bottom: 60px; position: relative; z-index: 1;
+        }
+        .cover-logo-mark {
+            width: 52px; height: 52px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .cover-brand { font-size: 1.3rem; font-weight: 900; color: white; letter-spacing: -0.3px; }
+        .cover-brand-sub { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 3px; }
+        .cover-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #60A5FA; margin-bottom: 20px; position: relative; z-index: 1; }
+        .cover-title { font-size: 3.8rem; font-weight: 900; color: white; line-height: 1.05; letter-spacing: -2px; max-width: 700px; margin-bottom: 24px; position: relative; z-index: 1; }
+        .cover-title em { font-style: normal; color: #60A5FA; }
+        .cover-subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 540px; margin-bottom: 60px; position: relative; z-index: 1; line-height: 1.7; }
+        .cover-meta { display: flex; gap: 40px; position: relative; z-index: 1; flex-wrap: wrap; }
+        .cover-meta-item { border-left: 2px solid rgba(255,255,255,0.15); padding-left: 16px; }
+        .cover-meta-item .label { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+        .cover-meta-item .value { font-size: 0.9rem; font-weight: 700; color: white; }
+
+        /* ── INDICE ── */
+        .toc { background: white; padding: 48px 60px; border-bottom: 1px solid #E2E8F0; }
+        .toc-title { font-size: 1.4rem; font-weight: 800; color: #0F2166; margin-bottom: 24px; letter-spacing: -0.5px; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 40px; }
+        .toc-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px dotted #E2E8F0; }
+        .toc-num { min-width: 28px; height: 28px; border-radius: 8px; background: #EFF6FF; color: #2563EB; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; }
+        .toc-label { font-size: 0.88rem; font-weight: 600; color: #334155; }
+        .toc-new { font-size: 0.6rem; font-weight: 800; background: #16A34A; color: white; padding: 2px 7px; border-radius: 6px; letter-spacing: 0.5px; margin-left: 6px; }
+
+        /* ── CONTENIDO ── */
+        .page { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+        .section { margin-bottom: 72px; }
+
+        .section-number {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: #2563EB;
+            display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+        }
+        .section-number::before {
+            content: attr(data-num);
+            background: #EFF6FF; color: #2563EB;
+            width: 28px; height: 28px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 800;
+        }
+        .section-title { font-size: 2rem; font-weight: 800; color: #0F172A; letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.2; }
+        .section-intro { font-size: 1.05rem; color: #334155; margin-bottom: 28px; line-height: 1.8; }
+        p { color: #475569; font-size: 0.95rem; margin-bottom: 14px; line-height: 1.75; }
+
+        /* ── STAT CARDS ── */
+        .card-grid { display: grid; gap: 16px; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+        .stat-card { background: white; border-radius: 16px; padding: 28px 24px; text-align: center; border: 1px solid #E2E8F0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .stat-card .stat { font-size: 2.2rem; font-weight: 900; color: #0F2166; letter-spacing: -1px; }
+        .stat-card .stat-label { font-size: 0.8rem; color: #64748B; font-weight: 600; margin-top: 6px; margin-bottom: 0; }
+        .stat-card .stat-sub { font-size: 0.72rem; color: #2563EB; font-weight: 600; margin-top: 4px; margin-bottom: 0; }
+
+        /* ── INFO CARDS ── */
+        .info-card { background: white; border-radius: 16px; padding: 28px 24px; border: 1px solid #E2E8F0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .info-card.blue { background: #0F2166; border-color: #0F2166; }
+        .info-card.blue .card-title, .info-card.blue .card-body { color: white !important; }
+        .info-card.accent { background: #EFF6FF; border-color: #BFDBFE; }
+        .info-card.green { background: #F0FDF4; border-color: #BBF7D0; }
+        .info-card.green .card-title { color: #166534 !important; }
+        .card-icon { font-size: 2rem; margin-bottom: 14px; }
+        .card-title { font-size: 1rem; font-weight: 800; color: #0F172A; margin-bottom: 10px; line-height: 1.3; }
+        .card-body { font-size: 0.88rem; color: #64748B; line-height: 1.7; margin: 0; }
+        .card-body ul { margin: 8px 0 0 16px; padding: 0; }
+        .card-body ul li { margin-bottom: 4px; }
+
+        /* ── TABLA ── */
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        thead { background: #0F2166; }
+        thead th { padding: 16px 20px; text-align: left; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+        tbody tr { border-bottom: 1px solid #F1F5F9; }
+        tbody tr:last-child { border-bottom: none; }
+        tbody td { padding: 15px 20px; font-size: 0.88rem; color: #334155; }
+        tbody tr:hover { background: #F8FAFC; }
+        .td-bold { font-weight: 800; color: #0F172A; }
+        .td-blue { color: #2563EB; font-weight: 700; }
+        .td-green { color: #16A34A; font-weight: 800; }
+        .highlight-row { background: #EFF6FF !important; }
+        .highlight-row td { color: #1E40AF !important; font-weight: 700 !important; }
+
+        /* ── TIMELINE ── */
+        .timeline { display: flex; flex-direction: column; gap: 0; }
+        .timeline-item { display: flex; gap: 24px; position: relative; padding-bottom: 36px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-left { display: flex; flex-direction: column; align-items: center; }
+        .timeline-dot { width: 44px; height: 44px; border-radius: 50%; background: #0F2166; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 900; flex-shrink: 0; }
+        .timeline-line { width: 2px; flex: 1; background: #E2E8F0; margin-top: 8px; }
+        .timeline-item:last-child .timeline-line { display: none; }
+        .timeline-content { padding-top: 10px; flex: 1; }
+        .timeline-phase { font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563EB; margin-bottom: 4px; }
+        .timeline-title { font-size: 1.1rem; font-weight: 800; color: #0F172A; margin-bottom: 10px; }
+        .timeline-body { font-size: 0.88rem; color: #64748B; margin: 0; line-height: 1.75; }
+
+        /* ── CHECKLIST ── */
+        .action-list { display: flex; flex-direction: column; gap: 12px; }
+        .action-item { display: flex; align-items: flex-start; gap: 16px; background: white; border-radius: 14px; padding: 20px 20px; border: 1px solid #E2E8F0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+        .action-num { min-width: 36px; height: 36px; border-radius: 10px; background: #0F2166; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+        .action-content { flex: 1; }
+        .action-title { font-size: 0.95rem; font-weight: 800; color: #0F172A; margin-bottom: 4px; }
+        .action-desc { font-size: 0.83rem; color: #64748B; margin: 0; line-height: 1.65; }
+
+        /* ── DIVIDER ── */
+        .divider { height: 1px; background: #E2E8F0; margin: 56px 0; }
+
+        /* ── NOTA ── */
+        .nota { background: #FFFBEB; border: 1px solid #FCD34D; border-radius: 12px; padding: 16px 20px; font-size: 0.83rem; color: #92400E; margin-top: 16px; line-height: 1.6; }
+        .nota strong { color: #78350F; }
+        .nota-green { background: #F0FDF4; border: 1px solid #86EFAC; border-radius: 12px; padding: 16px 20px; font-size: 0.83rem; color: #166534; margin-top: 16px; line-height: 1.6; }
+        .nota-blue { background: #EFF6FF; border: 1px solid #93C5FD; border-radius: 12px; padding: 16px 20px; font-size: 0.83rem; color: #1E40AF; margin-top: 16px; line-height: 1.6; }
+
+        /* ── COMPETITOR CARDS ── */
+        .competitor-card { background: white; border-radius: 16px; padding: 24px; border: 1px solid #E2E8F0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 16px; }
+        .competitor-name { font-size: 1.1rem; font-weight: 800; color: #0F2166; margin-bottom: 4px; }
+        .competitor-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #6B7280; margin-bottom: 12px; }
+        .competitor-details { font-size: 0.85rem; color: #475569; line-height: 1.75; }
+        .competitor-details strong { color: #0F172A; }
+        .tactic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .tactic-item { background: #F8FAFC; border-radius: 12px; padding: 16px; border: 1px solid #E2E8F0; }
+        .tactic-num { font-size: 0.7rem; font-weight: 800; color: #2563EB; margin-bottom: 4px; }
+        .tactic-title { font-size: 0.88rem; font-weight: 700; color: #0F172A; margin-bottom: 4px; }
+        .tactic-desc { font-size: 0.8rem; color: #64748B; margin: 0; line-height: 1.6; }
+        .lustere-response { background: #0F2166; border-radius: 12px; padding: 16px; margin-top: 6px; }
+        .lustere-response p { color: rgba(255,255,255,0.85) !important; font-size: 0.82rem; margin: 0; }
+        .lustere-response strong { color: #60A5FA; }
+
+        /* ── BRAND GUIDE ── */
+        .color-swatches { display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0; }
+        .swatch { text-align: center; }
+        .swatch-block { width: 80px; height: 80px; border-radius: 14px; margin-bottom: 8px; border: 1px solid #E2E8F0; }
+        .swatch-name { font-size: 0.75rem; font-weight: 700; color: #0F172A; }
+        .swatch-hex { font-size: 0.68rem; color: #6B7280; font-family: monospace; }
+        .swatch-use { font-size: 0.65rem; color: #2563EB; font-weight: 600; margin-top: 2px; }
+        .brand-do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+        .brand-do { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 20px; }
+        .brand-dont { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 12px; padding: 20px; }
+        .brand-do .label, .brand-dont .label { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+        .brand-do .label { color: #16A34A; }
+        .brand-dont .label { color: #DC2626; }
+        .brand-do ul, .brand-dont ul { margin: 0 0 0 16px; padding: 0; }
+        .brand-do li, .brand-dont li { font-size: 0.83rem; color: #475569; margin-bottom: 6px; line-height: 1.5; }
+
+        /* ── MESSAGE TEMPLATE ── */
+        .msg-template { background: #F1F5F9; border-radius: 14px; padding: 20px; margin-bottom: 16px; position: relative; }
+        .msg-template-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #2563EB; margin-bottom: 10px; }
+        .msg-template-text { font-size: 0.88rem; color: #1E293B; line-height: 1.75; white-space: pre-line; background: white; border-radius: 10px; padding: 16px; border: 1px solid #E2E8F0; }
+        .msg-template-note { font-size: 0.72rem; color: #6B7280; margin-top: 8px; font-style: italic; }
+
+        /* ── FOOTER ── */
+        .doc-footer { background: #0F2166; color: rgba(255,255,255,0.5); text-align: center; padding: 48px 36px; font-size: 0.8rem; letter-spacing: 0.3px; }
+        .doc-footer strong { color: white; }
+
+        /* ── PRINT ── */
+        @media print {
+            .cover { min-height: auto; padding: 60px 40px; page-break-after: always; }
+            .toc { page-break-after: always; }
+            .section { page-break-inside: avoid; }
+        }
+
+        @media (max-width: 700px) {
+            .cover { padding: 48px 28px; }
+            .cover-title { font-size: 2.4rem; }
+            .page { padding: 48px 20px; }
+            .toc { padding: 32px 24px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .card-grid.cols-2, .card-grid.cols-3, .card-grid.cols-4 { grid-template-columns: 1fr; }
+            .tactic-grid { grid-template-columns: 1fr; }
+            .brand-do-dont { grid-template-columns: 1fr; }
+            .color-swatches { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- ══ PORTADA ══ -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="cover">
+    <div class="cover-logo">
+        <div class="cover-logo-mark">
+            <svg width="30" height="30" viewBox="0 0 44 44" fill="none">
+                <path d="M22 4 L40 20 L37 20 L37 40 L28 40 L28 29 L16 29 L16 40 L7 40 L7 20 L4 20 Z" fill="rgba(255,255,255,0.9)"/>
+                <path d="M22 4 L40 20 L4 20 Z" fill="rgba(255,255,255,0.5)"/>
+                <rect x="18" y="29" width="8" height="11" rx="1" fill="#0F2166"/>
+                <path d="M35 6 L36.2 9.8 L40 11 L36.2 12.2 L35 16 L33.8 12.2 L30 11 L33.8 9.8 Z" fill="#93C5FD"/>
+            </svg>
+        </div>
+        <div>
+            <div class="cover-brand">Lustere Cleaning Co.</div>
+            <div class="cover-brand-sub">Un hogar impecable. Siempre.</div>
+        </div>
+    </div>
+    <div class="cover-eyebrow">Plan Estratégico de Negocios — 2025–2026</div>
+    <h1 class="cover-title">Tu Negocio.<br><em>Tu Futuro.</em><br>Tu Familia.</h1>
+    <p class="cover-subtitle">La guía completa para hacer crecer Lustere Cleaning Co. en Denver — desde el día 1 hasta $100K al año. Incluye análisis de competidores, guía de marca, plantillas listas para usar y plan paso a paso.</p>
+    <div class="cover-meta">
+        <div class="cover-meta-item">
+            <div class="label">Tipo de negocio</div>
+            <div class="value">Limpieza Residencial y Comercial</div>
+        </div>
+        <div class="cover-meta-item">
+            <div class="label">Área de servicio</div>
+            <div class="value">Denver Metro y Front Range, CO</div>
+        </div>
+        <div class="cover-meta-item">
+            <div class="label">Meta Año 1</div>
+            <div class="value">$80,000–$100,000</div>
+        </div>
+        <div class="cover-meta-item">
+            <div class="label">Versión</div>
+            <div class="value">2.0 — Abril 2025</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══ ÍNDICE ══ -->
+<div class="toc">
+    <div class="toc-title">📋 Contenido del Plan</div>
+    <div class="toc-grid">
+        <div class="toc-item"><div class="toc-num">1</div><div class="toc-label">Resumen Ejecutivo</div></div>
+        <div class="toc-item"><div class="toc-num">2</div><div class="toc-label">Servicios y Precios</div></div>
+        <div class="toc-item"><div class="toc-num">3</div><div class="toc-label">Proyección de Ingresos</div></div>
+        <div class="toc-item"><div class="toc-num">4</div><div class="toc-label">Estrategia de Marketing</div></div>
+        <div class="toc-item"><div class="toc-num">5</div><div class="toc-label">Análisis de Competidores <span class="toc-new">NUEVO</span></div></div>
+        <div class="toc-item"><div class="toc-num">6</div><div class="toc-label">Plan de 90 Días</div></div>
+        <div class="toc-item"><div class="toc-num">7</div><div class="toc-label">Costos para Empezar</div></div>
+        <div class="toc-item"><div class="toc-num">8</div><div class="toc-label">Por Qué Vamos a Ganar</div></div>
+        <div class="toc-item"><div class="toc-num">9</div><div class="toc-label">Lista de Acción</div></div>
+        <div class="toc-item"><div class="toc-num">10</div><div class="toc-label">Guía de Marca <span class="toc-new">NUEVO</span></div></div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- ══ CONTENIDO ══ -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="page">
+
+    <!-- ─── 1. RESUMEN EJECUTIVO ─── -->
+    <div class="section">
+        <div class="section-number" data-num="1">Resumen Ejecutivo</div>
+        <h2 class="section-title">¿Qué es Lustere Cleaning Co.?</h2>
+        <p class="section-intro">Es tu negocio de limpieza profesional. Familiar, de confianza, basado en Denver. Limpiamos casas y negocios para que las familias puedan vivir tranquilas — sin preocuparse por el desorden.</p>
+
+        <p>Denver está creciendo rapidísimo. Hay miles de familias ocupadas que necesitan alguien de confianza que les limpie la casa cada semana o cada dos semanas. <strong>Eso somos nosotros.</strong></p>
+        <p>La industria de limpieza residencial en Colorado genera más de <strong>$2 mil millones al año</strong> y crece entre 6–8% cada año. La demanda nunca se detiene. No importa la economía — la gente siempre necesita una casa limpia.</p>
+        <p>Nuestra ventaja es simple: <strong>somos de confianza, llegamos a tiempo, limpiamos bien, usamos productos seguros y comunicamos todo.</strong> Con eso solo, ya ganamos.</p>
+
+        <div style="margin-top: 32px;">
+            <div class="card-grid cols-4">
+                <div class="stat-card">
+                    <div class="stat">$100K</div>
+                    <p class="stat-label">Meta de ingresos</p>
+                    <p class="stat-sub">Primer año</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat">30+</div>
+                    <p class="stat-label">Clientes fijos</p>
+                    <p class="stat-sub">Meta al mes 9</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat">$149</div>
+                    <p class="stat-label">Precio promedio</p>
+                    <p class="stat-sub">Limpieza estándar</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat">85%+</div>
+                    <p class="stat-label">Margen de ganancia</p>
+                    <p class="stat-sub">Trabajando en familia</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-blue" style="margin-top: 24px;">
+            🎯 <strong>La misión:</strong> Ser la empresa de limpieza más confiable de Denver. No la más grande — la más confiable. Que cada cliente diga: "Con Lustere, mi casa siempre queda perfecta."
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 2. SERVICIOS Y PRECIOS ─── -->
+    <div class="section">
+        <div class="section-number" data-num="2">Servicios y Precios</div>
+        <h2 class="section-title">¿Qué ofrecemos y cuánto cobramos?</h2>
+        <p class="section-intro">Tenemos servicios para diferentes situaciones. El más importante es la limpieza estándar cada 2 semanas — ese es nuestro pan de cada día y el que genera ingresos fijos.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Precio desde</th>
+                    <th>Frecuencia</th>
+                    <th>Cliente ideal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-bold">🏠 Limpieza Básica</td>
+                    <td class="td-blue">$99</td>
+                    <td>Una vez o regular</td>
+                    <td>Apartamentos, casas pequeñas</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">⭐ Limpieza Estándar</td>
+                    <td class="td-blue">$149</td>
+                    <td>Cada 2 semanas (el más pedido)</td>
+                    <td>Familias, casas de 2–3 cuartos</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🧹 Limpieza Profunda</td>
+                    <td class="td-blue">$199+</td>
+                    <td>Mensual o primera vez</td>
+                    <td>Casas grandes, primera visita</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">📦 Mudanza (entrada/salida)</td>
+                    <td class="td-blue">$250+</td>
+                    <td>Una vez</td>
+                    <td>Inquilinos, agentes de bienes raíces</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🏢 Limpieza Comercial</td>
+                    <td class="td-blue">$300+</td>
+                    <td>Semanal</td>
+                    <td>Oficinas pequeñas, tiendas</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🔨 Post-Construcción</td>
+                    <td class="td-blue">$400+</td>
+                    <td>Una vez</td>
+                    <td>Constructores, contratistas</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🏡 Airbnb / Alquiler vacacional</td>
+                    <td class="td-blue">$120+</td>
+                    <td>Después de cada huésped</td>
+                    <td>Hosts de Airbnb, VRBO</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 24px;">
+            <div class="card-grid cols-2">
+                <div class="info-card accent">
+                    <div class="card-icon">💡</div>
+                    <div class="card-title">Estrategia de precios</div>
+                    <p class="card-body">Nuestros precios están en el rango medio-alto del mercado de Denver. No competimos por precio — competimos por calidad y confianza. Eso atrae mejores clientes que pagan sin quejarse.</p>
+                </div>
+                <div class="info-card accent">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">Descuentos por fidelidad</div>
+                    <p class="card-body"><strong>Semanal:</strong> 15% off · <strong>Cada 2 semanas:</strong> 10% off · <strong>Mensual:</strong> 5% off. Los clientes fijos pagan menos, y vos ganás estabilidad. Todos ganan.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota">⭐ <strong>La regla de oro:</strong> Enfocate primero en clientes de limpieza estándar cada 2 semanas. Son los que mejor ingreso fijo generan. 25 de esos = $3,350/mes garantizados (con el 10% de descuento aplicado).</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 3. PROYECCIÓN DE INGRESOS ─── -->
+    <div class="section">
+        <div class="section-number" data-num="3">Proyección de Ingresos</div>
+        <h2 class="section-title">¿Cuánto vas a ganar? — Números reales</h2>
+        <p class="section-intro">Estos son números conservadores y realistas. No son promesas — son metas alcanzables si trabajás con constancia. Los escenarios van de "bueno" a "excelente".</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Período</th>
+                    <th>Trabajos/mes</th>
+                    <th>Ingreso mensual</th>
+                    <th>Clientes fijos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-bold">Mes 1–2 🌱</td>
+                    <td>8–12</td>
+                    <td class="td-blue">$1,000–$1,600</td>
+                    <td>2–5</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Mes 3–4 🌿</td>
+                    <td>16–24</td>
+                    <td class="td-blue">$2,300–$3,500</td>
+                    <td>8–12</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Mes 5–6 🌳</td>
+                    <td>28–36</td>
+                    <td class="td-blue">$4,000–$5,400</td>
+                    <td>14–20</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">Mes 7–9 🚀</td>
+                    <td>40–55</td>
+                    <td class="td-blue">$6,000–$8,500</td>
+                    <td>22–30</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">Mes 10–12 🏆</td>
+                    <td>55–70</td>
+                    <td class="td-blue">$8,500–$10,800</td>
+                    <td>30–40</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 24px;">
+            <div class="card-grid cols-3">
+                <div class="info-card accent">
+                    <div class="card-icon">📈</div>
+                    <div class="card-title">Total Año 1</div>
+                    <p class="card-body">Entre <strong>$55,000 y $100,000+</strong> dependiendo de la velocidad de crecimiento. Meta realista: <strong>$80K</strong>.</p>
+                </div>
+                <div class="info-card accent">
+                    <div class="card-icon">🔁</div>
+                    <div class="card-title">El poder de los fijos</div>
+                    <p class="card-body">30 clientes × cada 2 sem. × $134 (con desc.) = <strong>$4,020/mes fijos</strong>. Eso sin contar trabajos extras.</p>
+                </div>
+                <div class="info-card accent">
+                    <div class="card-icon">💰</div>
+                    <div class="card-title">¿Cuánto queda limpio?</div>
+                    <p class="card-body">Costos por trabajo: $10–20 en materiales. Trabajando en familia: <strong>85–90% es ganancia neta</strong>. Eso es brutal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-green" style="margin-top: 20px;">
+            🎯 <strong>Meta del Año 2:</strong> Con 40+ clientes fijos + 1 empleado de medio tiempo, el objetivo es $120K–$150K en ingresos. Ahí es donde el negocio ya se paga solo y genera riqueza real.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 4. ESTRATEGIA DE MARKETING ─── -->
+    <div class="section">
+        <div class="section-number" data-num="4">Estrategia de Marketing</div>
+        <h2 class="section-title">Cómo conseguir clientes — paso a paso</h2>
+        <p class="section-intro">No necesitás gastar miles para arrancar. Las herramientas más poderosas son Google, tu red de conocidos, las redes sociales y los referidos. Acá está el plan completo:</p>
+
+        <div class="card-grid cols-2" style="margin-top: 24px;">
+            <div class="info-card">
+                <div class="card-icon">📍</div>
+                <div class="card-title">Google Business Profile — GRATIS</div>
+                <p class="card-body">Tu fuente #1 de clientes. Creá tu perfil en business.google.com. Agregá fotos profesionales, descripción clara, lista de servicios y activá "Solicitar cotización". <strong>Meta: 15 reseñas de 5 estrellas en 30 días.</strong></p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📄</div>
+                <div class="card-title">Volantes en vecindarios top — ~$75</div>
+                <p class="card-body">Imprimí 500 volantes bonitos y repartílos a mano en: <strong>Highlands, Cherry Creek, Wash Park, Stapleton, Centennial, Littleton, Parker.</strong> Con 15% off en la primera limpieza. Barato y super efectivo.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🤝</div>
+                <div class="card-title">Tu red personal — GRATIS</div>
+                <p class="card-body">Mandá mensaje a 30+ personas que conocés. Ofrecé 3–5 limpiezas con buen descuento a cambio de reseña en Google. <strong>Esas primeras reseñas valen oro</strong> — son la base de todo tu negocio.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">Nextdoor + Facebook Groups</div>
+                <p class="card-body">Publicá en grupos de vecinos de Denver. Sé genuino, no vendedor: <em>"Somos familia, acabamos de abrir, primer servicio con 15% off."</em> Estos grupos convierten increíble para servicios del hogar.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📸</div>
+                <div class="card-title">Instagram + Nextdoor — Fotos antes/después</div>
+                <p class="card-body">Publicá 3 veces por semana. Contenido ganador: <strong>fotos antes/después</strong> (con permiso), tips de limpieza, el equipo trabajando. Usá hashtags locales: #DenverCleaning #LustereCleaning #CleanHomeDenver</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-title">Google Local Services Ads — $15–25/día</div>
+                <p class="card-body">Cuando tengás 5+ reseñas, activá estos anuncios. Aparecés ARRIBA de todo en Google con el badge de "Google Guaranteed". Solo pagás cuando alguien te contacta. <strong>El mejor retorno de inversión.</strong></p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🏠</div>
+                <div class="card-title">Alianzas con agentes de bienes raíces</div>
+                <p class="card-body">Contactá 5–10 realtors locales. Ofreceles: <em>"Limpieza de mudanza con descuento para tus clientes."</em> Un solo realtor activo te puede dar 2–4 trabajos de mudanza al mes. <strong>Cada uno $250+.</strong></p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">💬</div>
+                <div class="card-title">Programa de referidos</div>
+                <p class="card-body"><strong>"Referí a un amigo → $25 de descuento para vos y para ellos."</strong> Creá tarjetas de referido. Los clientes felices son tus mejores vendedores. El boca a boca es gratis y el que mejor convierte.</p>
+            </div>
+        </div>
+
+        <div class="nota" style="margin-top: 20px;">
+            📱 <strong>Pro tip — Confirmaciones por texto:</strong> Mandá un SMS de confirmación 24h antes y otro el día de la limpieza. Esto reduce cancelaciones un 40% y hace que el cliente se sienta en buenas manos. ¡Usá las plantillas de la Sección 10!
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 5. ANÁLISIS DE COMPETIDORES (NUEVO) ─── -->
+    <div class="section">
+        <div class="section-number" data-num="5">Análisis de Competidores</div>
+        <h2 class="section-title">Lo que hacen los mejores de Colorado — y cómo los superamos 🏆</h2>
+        <p class="section-intro">Para ganar, primero tenés que saber contra quién competís. Estos son los 4 competidores más fuertes en Denver y lo que hacen bien. Después, te mostramos exactamente cómo los vamos a superar.</p>
+
+        <!-- Mop Stars -->
+        <div class="competitor-card">
+            <div class="competitor-name">⭐ Mop Stars — La #1 de Denver</div>
+            <div class="competitor-tag">Más de 500 reseñas de 5 estrellas · Partner de realtors</div>
+            <div class="competitor-details">
+                <p><strong>Lo que hacen bien:</strong></p>
+                <ul style="margin: 8px 0 12px 20px;">
+                    <li>Alianzas con <strong>agentes de bienes raíces y property managers</strong> — generan volumen masivo de trabajos de mudanza</li>
+                    <li>Limpiezas "inspection-ready" — el departamento queda listo para que el inspector lo apruebe</li>
+                    <li>Contratos comerciales con edificios de apartamentos</li>
+                    <li>Sistema de reseñas automatizado — piden review después de cada trabajo</li>
+                </ul>
+                <div class="lustere-response">
+                    <p>💡 <strong>Nuestra respuesta:</strong> Copiamos su estrategia de realtors desde el mes 2. Pero nuestra ventaja es el toque personal — ellos son grandes y corporativos, nosotros somos familia. Los realtors quieren alguien confiable que siempre conteste el teléfono. Esos somos nosotros.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chloe's -->
+        <div class="competitor-card">
+            <div class="competitor-name">🧹 Chloe's Cleaning Company — La amigable</div>
+            <div class="competitor-tag">Precio fijo · Sin contratos · $25 off primera limpieza</div>
+            <div class="competitor-details">
+                <p><strong>Lo que hacen bien:</strong></p>
+                <ul style="margin: 8px 0 12px 20px;">
+                    <li><strong>Precio fijo</strong> — el cliente sabe exactamente cuánto va a pagar, sin sorpresas</li>
+                    <li><strong>"Sin contratos"</strong> — reduce la fricción, la gente no tiene miedo de probar</li>
+                    <li>Oferta de <strong>$25 off primera limpieza</strong> para atraer clientes nuevos</li>
+                    <li>Cotización instantánea en <strong>60 segundos</strong> — formulario en su sitio web</li>
+                    <li>Vibra local y comunitaria — se sienten como vecinos, no como una empresa</li>
+                </ul>
+                <div class="lustere-response">
+                    <p>💡 <strong>Nuestra respuesta:</strong> Adoptamos el "sin contratos" y el descuento en primera limpieza. Pero vamos más lejos: <strong>nosotros además hablamos español</strong> — conectamos con la comunidad latina de Denver que ellos no alcanzan. Y nuestra cotización va a ser por WhatsApp en menos de 5 minutos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Cleaning Authority -->
+        <div class="competitor-card">
+            <div class="competitor-name">📋 The Cleaning Authority — La sistemática</div>
+            <div class="competitor-tag">Checklists · "Detail-Clean Rotation System" · Uniformes</div>
+            <div class="competitor-details">
+                <p><strong>Lo que hacen bien:</strong></p>
+                <ul style="margin: 8px 0 12px 20px;">
+                    <li><strong>Sistema de limpieza por rotación</strong> — cada visita se enfoca en áreas diferentes para que toda la casa se limpie a fondo con el tiempo</li>
+                    <li><strong>Checklists detallados</strong> — nada se les pasa</li>
+                    <li><strong>Uniformes profesionales</strong> — generan confianza instantánea en la puerta</li>
+                    <li>Productos eco-friendly como diferenciador</li>
+                </ul>
+                <div class="lustere-response">
+                    <p>💡 <strong>Nuestra respuesta:</strong> Creamos nuestro propio checklist para cada tipo de limpieza (ya viene en la guía de marca). Uniformes navy con logo desde el día 1. <strong>La diferencia: ellos cobran $200+ por limpieza estándar. Nosotros damos la misma calidad sistemática por $149.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Molly Maid -->
+        <div class="competitor-card">
+            <div class="competitor-name">🏢 Molly Maid — La franquicia grande</div>
+            <div class="competitor-tag">Franquicia nacional · Background checks · Seguro al frente</div>
+            <div class="competitor-details">
+                <p><strong>Lo que hacen bien:</strong></p>
+                <ul style="margin: 8px 0 12px 20px;">
+                    <li><strong>Confianza de marca nacional</strong> — la gente confía en un nombre conocido</li>
+                    <li><strong>Background checks</strong> destacados en su marketing — "nuestra gente es verificada"</li>
+                    <li><strong>Seguro y garantía</strong> al frente de todo — "si no estás satisfecho, volvemos gratis"</li>
+                    <li>Sistema de reservas online muy pulido</li>
+                </ul>
+                <div class="lustere-response">
+                    <p>💡 <strong>Nuestra respuesta:</strong> Ponemos nuestro seguro de responsabilidad civil y nuestra "garantía de satisfacción" al frente de TODO — sitio web, volantes, Google. <strong>Nuestra ventaja: somos locales, somos dueños, y la misma persona que limpia tu casa es la que te contesta el teléfono.</strong> Molly Maid manda a cualquiera.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10 Tácticas -->
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: #0F172A; margin: 36px 0 8px;">Las 10 tácticas que usan los mejores — y cómo las aplicamos</h3>
+        <p style="margin-bottom: 20px;">Esto es lo que separa a las empresas exitosas de Denver de las que cierran en 6 meses:</p>
+
+        <div class="tactic-grid">
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 01</div>
+                <div class="tactic-title">🏠 Alianzas con realtors</div>
+                <p class="tactic-desc">Mudanzas = volumen alto. Contactá 5–10 agentes. Ofrecé descuento para sus clientes. Un realtor activo = 2–4 trabajos/mes de $250+.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 02</div>
+                <div class="tactic-title">⚡ Cotización instantánea</div>
+                <p class="tactic-desc">Formulario simple en el sitio web o WhatsApp. 60 segundos = más conversiones. La gente no quiere esperar 24h por un precio.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 03</div>
+                <div class="tactic-title">🚫 "Sin contratos"</div>
+                <p class="tactic-desc">Reduce la fricción masivamente. Si el cliente no firma nada, no tiene miedo de probar. Y si le gusta, se queda solo.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 04</div>
+                <div class="tactic-title">👕 Uniformes + calcomanías</div>
+                <p class="tactic-desc">Polo navy con logo = confianza en la puerta. Calcomanía en el carro = publicidad gratis 24/7 manejando por Denver.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 05</div>
+                <div class="tactic-title">📱 Confirmación por SMS</div>
+                <p class="tactic-desc">Texto 24h antes + recordatorio el día de la cita. Reduce no-shows un 40% y el cliente siente que estás organizado.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 06</div>
+                <div class="tactic-title">🏅 Google Guaranteed Badge</div>
+                <p class="tactic-desc">Google Local Services Ads te dan un badge de "Google Guaranteed". Confianza instantánea. Solo pagás por contactos reales.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 07</div>
+                <div class="tactic-title">📸 Fotos antes/después</div>
+                <p class="tactic-desc">Instagram + Nextdoor. Nada vende más que una cocina sucia convertida en una cocina brillante. Pedí permiso y publicá.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 08</div>
+                <div class="tactic-title">🎁 Programa de referidos</div>
+                <p class="tactic-desc">$25 para vos y $25 para tu amigo. Crea tarjetas de referido. El boca a boca convierte 4x mejor que cualquier anuncio.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 09</div>
+                <div class="tactic-title">🔁 Descuentos por recurrencia</div>
+                <p class="tactic-desc">Semanal: 15% off. Cada 2 sem: 10% off. Mensual: 5% off. Los clientes se quedan más tiempo y vos tenés ingreso predecible.</p>
+            </div>
+            <div class="tactic-item">
+                <div class="tactic-num">TÁCTICA 10</div>
+                <div class="tactic-title">🏡 Airbnb host outreach</div>
+                <p class="tactic-desc">Hosts de Airbnb necesitan limpieza después de cada huésped. Alta frecuencia, buen pago. Buscalos en grupos de Facebook y Airbnb host meetups.</p>
+            </div>
+        </div>
+
+        <div class="nota-green" style="margin-top: 24px;">
+            ✅ <strong>Resumen:</strong> No necesitamos inventar nada nuevo. Solo tenemos que <strong>copiar lo que funciona</strong> y agregarle nuestras ventajas únicas: somos familia, hablamos español, somos dueños (no empleados de franquicia), y damos un toque personal que nadie puede copiar.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 6. PLAN DE 90 DÍAS ─── -->
+    <div class="section">
+        <div class="section-number" data-num="6">Plan de 90 Días</div>
+        <h2 class="section-title">Del día 1 a los primeros $5,000 al mes</h2>
+        <p class="section-intro">Este es tu roadmap. Seguí cada fase en orden y no te saltés pasos. Cada semana construye sobre la anterior.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Días 1–7 — La Base Legal y Digital</div>
+                    <div class="timeline-title">Dejá todo listo para operar como profesional</div>
+                    <p class="timeline-body">
+                        ✅ Registrá la LLC en Colorado (~$50 en sos.colorado.gov)<br>
+                        ✅ Abrí cuenta bancaria separada para el negocio<br>
+                        ✅ Conseguí seguro de responsabilidad civil (~$50/mes en NextInsurance.com)<br>
+                        ✅ Creá el perfil de Google Business con fotos y servicios<br>
+                        ✅ Activá Instagram y Facebook para Lustere<br>
+                        ✅ Mandá a imprimir 500 volantes + 250 tarjetas<br>
+                        ✅ Comprá el kit de limpieza inicial<br>
+                        ✅ Avisale a 30+ conocidos que ya estás abierto
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Días 8–30 — Primeros Clientes y Reseñas</div>
+                    <div class="timeline-title">Conseguí tus primeros 8–12 clientes</div>
+                    <p class="timeline-body">
+                        ✅ Repartí 300+ volantes en Highlands, Cherry Creek, Wash Park, Stapleton<br>
+                        ✅ Publicá en Nextdoor y 5+ grupos de Facebook cada semana<br>
+                        ✅ Hacé 3–5 limpiezas con descuento a cambio de reseñas de Google<br>
+                        ✅ Pedí reseña por texto después de CADA trabajo<br>
+                        ✅ Empezá a agendar clientes fijos cada 2 semanas<br>
+                        ✅ Publicá 3x por semana en Instagram (antes/después)<br>
+                        🎯 <strong>Meta: 10+ reseñas de 5 estrellas en Google</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Días 31–60 — Crecimiento y Alianzas</div>
+                    <div class="timeline-title">Duplicá tu base y activá anuncios</div>
+                    <p class="timeline-body">
+                        ✅ Activá Google Local Services Ads ($15–25/día)<br>
+                        ✅ Lanzá programa de referidos ($25 para quien refiere + $25 para el nuevo)<br>
+                        ✅ Contactá 5 agentes de bienes raíces locales<br>
+                        ✅ Contactá 3 hosts de Airbnb en Denver<br>
+                        ✅ Mandá uniformes navy con logo<br>
+                        ✅ Pedí calcomanía magnética para el carro (~$50)<br>
+                        🎯 <strong>Meta: 15–18 clientes fijos, $3,000+/mes</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Días 61–90 — Escalá el Negocio</div>
+                    <div class="timeline-title">Llegá a $4,000–$5,000 al mes</div>
+                    <p class="timeline-body">
+                        ✅ Con 20+ clientes fijos ya tenés ingresos constantes<br>
+                        ✅ Si hay demasiado trabajo, contratá ayuda de medio tiempo<br>
+                        ✅ Empezá a buscar clientes comerciales (oficinas, tiendas)<br>
+                        ✅ Optimizá anuncios de Google según lo que funciona<br>
+                        ✅ Subí un poco los precios para clientes nuevos (+$10–15)<br>
+                        ✅ Evaluá si necesitás un segundo vehículo<br>
+                        🎯 <strong>Meta: 25+ clientes fijos, $5,000+/mes</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 7. COSTOS PARA EMPEZAR ─── -->
+    <div class="section">
+        <div class="section-number" data-num="7">Costos para Empezar</div>
+        <h2 class="section-title">¿Cuánto dinero necesitás para arrancar?</h2>
+        <p class="section-intro">La mejor noticia: un negocio de limpieza es uno de los más baratos para empezar. Podés estar operando con menos de $500.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Qué necesitás</th>
+                    <th>Costo</th>
+                    <th>Notas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-bold">📋 Registro LLC Colorado</td>
+                    <td class="td-blue">$50</td>
+                    <td>Una sola vez — sos.colorado.gov</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🛡️ Seguro de responsabilidad</td>
+                    <td class="td-blue">$40–80/mes</td>
+                    <td>NextInsurance.com — esencial antes del primer trabajo</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🧹 Kit de limpieza inicial</td>
+                    <td class="td-blue">$100–150</td>
+                    <td>Aspiradora, trapeador, productos eco, guantes, trapos</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🪪 Tarjetas de presentación (250)</td>
+                    <td class="td-blue">$25–40</td>
+                    <td>Vistaprint — diseño ya listo</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">📄 Volantes (500 unidades)</td>
+                    <td class="td-blue">$30–60</td>
+                    <td>Vistaprint a color — diseño ya listo</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">👕 Uniformes (2 polos navy)</td>
+                    <td class="td-blue">$40–60</td>
+                    <td>Polo navy con logo bordado — CustomInk o local</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🚗 Calcomanía magnética para carro</td>
+                    <td class="td-blue">$40–60</td>
+                    <td>Publicidad gratis 24/7 — Vistaprint o Signs.com</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">🌐 Dominio web</td>
+                    <td class="td-blue">$12–15/año</td>
+                    <td>lusterecleaning.com — ¡el sitio ya está hecho!</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">📱 Anuncios de Google (mes 2+)</td>
+                    <td class="td-blue">$300–600/mes</td>
+                    <td>Empezar después de 5+ reseñas</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">💵 TOTAL PARA ARRANCAR</td>
+                    <td class="td-green">~$350–500</td>
+                    <td>Sin contar anuncios (esos vienen después)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="nota">💡 <strong>Regla importante:</strong> No gastés en lo que no es necesario al principio. El primer mes reinvertí todo en más volantes y en el kit de limpieza. Los anuncios de Google vienen cuando ya tengás reseñas.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 8. POR QUÉ VAMOS A GANAR ─── -->
+    <div class="section">
+        <div class="section-number" data-num="8">Por Qué Vamos a Ganar</div>
+        <h2 class="section-title">Nuestras ventajas — las que nadie puede copiar</h2>
+        <p class="section-intro">Hay cientos de empresas de limpieza en Denver. Pero nosotros tenemos algo que la mayoría no tiene. Y eso hace toda la diferencia.</p>
+
+        <div class="card-grid cols-2">
+            <div class="info-card blue">
+                <div class="card-icon">🏠</div>
+                <div class="card-title">Negocio familiar = Confianza real</div>
+                <p class="card-body">La gente deja entrar a su casa a desconocidos. Eso requiere mucha confianza. Un negocio familiar genera ese vínculo que las cadenas grandes nunca van a poder tener. <strong>Contá tu historia en cada interacción.</strong></p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🌿</div>
+                <div class="card-title">Productos eco-friendly = Diferenciador</div>
+                <p class="card-body">Las familias de Colorado aman los productos no tóxicos, especialmente con niños y mascotas. Esto justifica precios más altos y te posiciona como premium desde el día 1.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">💬</div>
+                <div class="card-title">Comunicación impecable = Clientes de por vida</div>
+                <p class="card-body">El problema #1 de las empresas de limpieza es que no contestan. Nosotros confirmamos cada cita, avisamos cuando estamos llegando, y pedimos feedback. <strong>Solo eso genera referidos automáticos.</strong></p>
+            </div>
+            <div class="info-card blue">
+                <div class="card-icon">⭐</div>
+                <div class="card-title">Reseñas = Tu arma más poderosa</div>
+                <p class="card-body">Con 15 reseñas auténticas de 5 estrellas en Google, superás al 90% de la competencia local. Las reseñas son lo que más retorno da. <strong>Pedílas SIEMPRE.</strong></p>
+            </div>
+            <div class="info-card blue">
+                <div class="card-icon">🇬🇹</div>
+                <div class="card-title">Bilingüe = Mercado doble</div>
+                <p class="card-body">Denver tiene una comunidad latina enorme. La mayoría de empresas de limpieza solo hablan inglés en su marketing. <strong>Nosotros hablamos los dos idiomas.</strong> Eso duplica nuestro mercado potencial.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-title">Dueño = Empleado = Vendedor</div>
+                <p class="card-body">En las cadenas grandes, quien limpia no es quien vende ni quien toma decisiones. Acá <strong>la misma persona que te contesta el teléfono es la que limpia tu casa</strong>. Esa consistencia es imposible de replicar a escala.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 9. LISTA DE ACCIÓN ─── -->
+    <div class="section">
+        <div class="section-number" data-num="9">Lista de Acción</div>
+        <h2 class="section-title">Hacé esto esta semana — en orden ✅</h2>
+        <p class="section-intro">No lo pienses demasiado. Agarrá esta lista, hacé cada paso, y al final de la semana ya vas a estar operando.</p>
+
+        <div class="action-list">
+            <div class="action-item">
+                <div class="action-num">1</div>
+                <div class="action-content">
+                    <div class="action-title">Registrá la LLC en Colorado</div>
+                    <p class="action-desc">Entrá a sos.colorado.gov → "Articles of Organization". Cuesta $50, tarda 10 minutos. Tu negocio queda oficial y legal.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">2</div>
+                <div class="action-content">
+                    <div class="action-title">Abrí cuenta bancaria para el negocio</div>
+                    <p class="action-desc">Desde el día 1 separás el dinero del negocio del personal. Chase, Wells Fargo o una cooperativa local funcionan bien. Llevá tu LLC paperwork.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">3</div>
+                <div class="action-content">
+                    <div class="action-title">Conseguí el seguro de responsabilidad</div>
+                    <p class="action-desc">NextInsurance.com — seguros para limpieza desde $40/mes. HACÉ ESTO ANTES del primer trabajo. Te protege si algo se rompe o se daña en casa del cliente.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">4</div>
+                <div class="action-content">
+                    <div class="action-title">Creá tu perfil de Google Business</div>
+                    <p class="action-desc">business.google.com — agregá área de servicio, fotos, descripción, servicios. Es GRATIS y va a ser tu fuente #1 de clientes nuevos.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">5</div>
+                <div class="action-content">
+                    <div class="action-title">Comprá el kit de limpieza</div>
+                    <p class="action-desc">Target o Walmart: aspiradora buena ($80–120), trapeador, productos eco-friendly (Method, Mrs. Meyer's), guantes, trapos de microfibra, balde. Total: ~$150.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">6</div>
+                <div class="action-content">
+                    <div class="action-title">Mandá a imprimir volantes y tarjetas</div>
+                    <p class="action-desc">Los diseños ya están listos. Subílos a Vistaprint.com → 500 volantes + 250 tarjetas. ~$75 total. Llegan en pocos días.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">7</div>
+                <div class="action-content">
+                    <div class="action-title">Pedí los uniformes</div>
+                    <p class="action-desc">2 polos navy con logo de Lustere bordado. CustomInk.com o una imprenta local. ~$30 cada uno. La primera impresión importa.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">8</div>
+                <div class="action-content">
+                    <div class="action-title">Avisale a TODA la gente que conocés — HOY</div>
+                    <p class="action-desc">Mandá mensaje a 30+ personas. "¡Abrimos Lustere Cleaning! 15% off en tu primera limpieza. ¿Conocés a alguien que necesite?" Ofrecé descuento por reseña.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">9</div>
+                <div class="action-content">
+                    <div class="action-title">Publicá en Nextdoor + 5 grupos de Facebook</div>
+                    <p class="action-desc">Buscá grupos de vecinos de Denver. Publicá tu oferta de forma personal: "Somos una familia de Denver, acabamos de abrir. 15% off primera limpieza." No seas vendedor — sé genuino.</p>
+                </div>
+            </div>
+            <div class="action-item">
+                <div class="action-num">10</div>
+                <div class="action-content">
+                    <div class="action-title">Hacé tu primera limpieza — y celebrá 🎉</div>
+                    <p class="action-desc">Tu primer cliente es el más importante. Dale un servicio increíble, tomá fotos del antes/después (con permiso), pedí la reseña en Google y ¡arrancaste!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── 10. GUÍA DE MARCA (NUEVO) ─── -->
+    <div class="section">
+        <div class="section-number" data-num="10">Guía de Marca</div>
+        <h2 class="section-title">Cómo usar Lustere de forma consistente 🎨</h2>
+        <p class="section-intro">Una marca consistente genera confianza. Cada vez que alguien vea tus colores, tu logo o tu mensaje, tiene que sentir lo mismo: profesionalismo, limpieza y calidez familiar. Esta guía te dice exactamente cómo lograrlo.</p>
+
+        <!-- 10.1 COLORES -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 32px 0 12px;">🎨 Colores Oficiales</h3>
+        <p>Estos son los únicos colores que usamos. Siempre. En todo.</p>
+
+        <div class="color-swatches">
+            <div class="swatch">
+                <div class="swatch-block" style="background: #0F2166;"></div>
+                <div class="swatch-name">Navy Profundo</div>
+                <div class="swatch-hex">#0F2166</div>
+                <div class="swatch-use">Headers, confianza, fondos oscuros</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-block" style="background: #2563EB;"></div>
+                <div class="swatch-name">Azul Medio</div>
+                <div class="swatch-hex">#2563EB</div>
+                <div class="swatch-use">Botones, CTAs, enlaces, acentos</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-block" style="background: #DBEAFE;"></div>
+                <div class="swatch-name">Azul Claro</div>
+                <div class="swatch-hex">#DBEAFE</div>
+                <div class="swatch-use">Fondos suaves, tarjetas, secciones</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-block" style="background: #FFFFFF; border: 2px solid #E2E8F0;"></div>
+                <div class="swatch-name">Blanco</div>
+                <div class="swatch-hex">#FFFFFF</div>
+                <div class="swatch-use">Espacio, limpieza, fondos principales</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-block" style="background: #6B7280;"></div>
+                <div class="swatch-name">Gris</div>
+                <div class="swatch-hex">#6B7280</div>
+                <div class="swatch-use">Texto secundario, notas, detalles</div>
+            </div>
+        </div>
+
+        <div class="nota-blue">
+            💡 <strong>Regla simple:</strong> Navy para lo importante. Azul para lo que querés que la gente toque o haga clic. Azul claro para fondos. Blanco para respirar. Gris solo para texto chiquito.
+        </div>
+
+        <!-- 10.2 LOGO -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">✨ Logo — Casa con destello</h3>
+        <p>Nuestro logo es una <strong>casa con un destello/sparkle</strong>. Representa hogar limpio, frescura y atención al detalle. Es simple, reconocible y funciona en cualquier tamaño.</p>
+
+        <div class="brand-do-dont" style="margin-top: 16px;">
+            <div class="brand-do">
+                <div class="label">✅ Cómo usarlo</div>
+                <ul>
+                    <li>Siempre sobre fondo <strong>blanco</strong> o <strong>navy oscuro</strong></li>
+                    <li>Tamaño mínimo: 32px de alto (digital) o 1cm (impreso)</li>
+                    <li>Dejar espacio alrededor — nunca pegado a otro elemento</li>
+                    <li>Con el nombre "Lustere Cleaning Co." al lado o abajo</li>
+                    <li>En uniformes: bordado en blanco sobre polo navy</li>
+                </ul>
+            </div>
+            <div class="brand-dont">
+                <div class="label">❌ Qué NO hacer</div>
+                <ul>
+                    <li>Nunca ponerlo sobre fondo gris — se pierde</li>
+                    <li>Nunca estirarlo o deformarlo</li>
+                    <li>Nunca cambiar los colores del logo</li>
+                    <li>Nunca ponerlo sobre una foto sin fondo semi-transparente</li>
+                    <li>Nunca hacerlo más chico que el tamaño mínimo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 10.3 TIPOGRAFÍA -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">🔤 Tipografía — Inter</h3>
+        <p>Usamos <strong>Inter</strong> para todo. Es moderna, legible y profesional. Gratis en Google Fonts.</p>
+
+        <div class="card-grid cols-3" style="margin-top: 16px;">
+            <div class="info-card">
+                <div style="font-family: Inter; font-weight: 900; font-size: 1.5rem; color: #0F2166; margin-bottom: 8px;">Inter Black</div>
+                <div style="font-size: 0.75rem; color: #6B7280; font-weight: 600;">Peso: 900</div>
+                <p class="card-body" style="margin-top: 8px;">Para títulos grandes y headlines. El texto que tiene que gritar.</p>
+            </div>
+            <div class="info-card">
+                <div style="font-family: Inter; font-weight: 700; font-size: 1.3rem; color: #0F2166; margin-bottom: 8px;">Inter Bold</div>
+                <div style="font-size: 0.75rem; color: #6B7280; font-weight: 600;">Peso: 700</div>
+                <p class="card-body" style="margin-top: 8px;">Para subtítulos, nombres de servicios y texto importante.</p>
+            </div>
+            <div class="info-card">
+                <div style="font-family: Inter; font-weight: 400; font-size: 1.1rem; color: #0F2166; margin-bottom: 8px;">Inter Regular</div>
+                <div style="font-size: 0.75rem; color: #6B7280; font-weight: 600;">Peso: 400</div>
+                <p class="card-body" style="margin-top: 8px;">Para el cuerpo de texto, descripciones y párrafos largos.</p>
+            </div>
+        </div>
+
+        <!-- 10.4 TONO DE VOZ -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">🗣️ Tono de Voz — Cómo habla Lustere</h3>
+        <p>Lustere habla como una familia profesional que te quiere ayudar. <strong>Cálido, directo, confiable.</strong> Nunca corporativo, nunca robótico, nunca distante.</p>
+
+        <div class="brand-do-dont" style="margin-top: 16px;">
+            <div class="brand-do">
+                <div class="label">✅ Así sí hablamos</div>
+                <ul>
+                    <li>"¡Hola! Tu limpieza está confirmada para mañana a las 10am 🏠"</li>
+                    <li>"¡Fue un placer limpiar tu hogar! Si necesitás algo, acá estamos."</li>
+                    <li>"Somos una familia de Denver que ama lo que hace."</li>
+                    <li>"Tu casa va a quedar impecable. Siempre."</li>
+                    <li>"¿Primera vez? 15% de descuento — sin contratos, sin compromisos."</li>
+                </ul>
+            </div>
+            <div class="brand-dont">
+                <div class="label">❌ Así NO hablamos</div>
+                <ul>
+                    <li>"Estimado cliente, le informamos que su servicio ha sido programado."</li>
+                    <li>"Nuestra empresa ofrece soluciones integrales de higienización."</li>
+                    <li>"Para más información, contacte a nuestro departamento de servicio al cliente."</li>
+                    <li>"Términos y condiciones aplican. Sujeto a disponibilidad."</li>
+                    <li>Cualquier cosa que suene a un robot o a una corporación enorme.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota" style="margin-top: 16px;">
+            🇬🇹 <strong>Nota:</strong> Podemos comunicarnos en español e inglés. En español usamos "vos" de forma natural (estilo chapín), pero profesional. El español nos conecta con la comunidad latina y nos hace únicos en el mercado de Denver.
+        </div>
+
+        <!-- 10.5 FOTOGRAFÍA -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">📸 Fotografía — Qué tipo de fotos usar</h3>
+
+        <div class="brand-do-dont">
+            <div class="brand-do">
+                <div class="label">✅ Fotos que sí usamos</div>
+                <ul>
+                    <li><strong>Antes/después</strong> — siempre con buena luz, mismo ángulo</li>
+                    <li><strong>El equipo trabajando</strong> — con uniforme, sonriendo, en acción</li>
+                    <li><strong>Cuartos limpios y brillantes</strong> — cocinas, baños, salas iluminadas</li>
+                    <li><strong>Detalles</strong> — superficies brillantes, pisos relucientes, orden</li>
+                    <li><strong>Productos eco-friendly</strong> — los que usamos, en su embalaje bonito</li>
+                </ul>
+            </div>
+            <div class="brand-dont">
+                <div class="label">❌ Fotos que NO usamos</div>
+                <ul>
+                    <li>Fotos de stock genéricas — se ven falsas</li>
+                    <li>Imágenes oscuras o con mala iluminación</li>
+                    <li>Fotos con desorden visible en el fondo</li>
+                    <li>Selfies borrosas o mal encuadradas</li>
+                    <li>Fotos de la casa del cliente sin permiso</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 10.6 UNIFORMES -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">👕 Uniformes — Apariencia Profesional</h3>
+        <p>El uniforme genera confianza instantánea cuando alguien abre la puerta. Es lo primero que ven.</p>
+
+        <div class="card-grid cols-2" style="margin-top: 16px;">
+            <div class="info-card">
+                <div class="card-icon">👔</div>
+                <div class="card-title">El uniforme estándar</div>
+                <p class="card-body">
+                    <strong>Arriba:</strong> Polo o camiseta navy (#0F2166) con logo de Lustere bordado en blanco — lado izquierdo del pecho.<br><br>
+                    <strong>Abajo:</strong> Pantalón negro o gris oscuro, cómodo para trabajar.<br><br>
+                    <strong>Guantes:</strong> Blancos o gris claro — siempre limpios.<br><br>
+                    <strong>Zapatos:</strong> Cerrados, cómodos, limpios. Preferible negros.
+                </p>
+            </div>
+            <div class="info-card accent">
+                <div class="card-icon">✨</div>
+                <div class="card-title">Estándares de apariencia</div>
+                <p class="card-body">
+                    ✅ Uniforme limpio y planchado en cada trabajo<br>
+                    ✅ Pelo recogido o limpio<br>
+                    ✅ Uñas cortas y limpias<br>
+                    ✅ Sin perfume fuerte (muchos clientes son alérgicos)<br>
+                    ✅ Sonrisa genuina 😊<br>
+                    ✅ ID badge con nombre y logo (opcional pero recomendado)
+                </p>
+            </div>
+        </div>
+
+        <!-- 10.7 REDES SOCIALES -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">📱 Redes Sociales — Plan de contenido</h3>
+        <p>Publicá <strong>3 veces por semana</strong> en Instagram y Facebook. Consistencia > perfección. Mejor publicar 3 posts buenos que 1 perfecto.</p>
+
+        <div class="card-grid cols-4" style="margin-top: 16px;">
+            <div class="stat-card">
+                <div class="stat" style="font-size: 1.8rem;">40%</div>
+                <p class="stat-label">Antes/Después</p>
+                <p class="stat-sub">Tu contenido estrella</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat" style="font-size: 1.8rem;">30%</div>
+                <p class="stat-label">Tips de limpieza</p>
+                <p class="stat-sub">Valor gratis = seguidores</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat" style="font-size: 1.8rem;">20%</div>
+                <p class="stat-label">Equipo / Behind the scenes</p>
+                <p class="stat-sub">La gente conecta con gente</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat" style="font-size: 1.8rem;">10%</div>
+                <p class="stat-label">Ofertas y promos</p>
+                <p class="stat-sub">No saturar con ventas</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <div class="card-grid cols-2">
+                <div class="info-card">
+                    <div class="card-title">📅 Calendario sugerido</div>
+                    <p class="card-body">
+                        <strong>Lunes:</strong> Antes/después de un trabajo reciente<br>
+                        <strong>Miércoles:</strong> Tip de limpieza o dato útil<br>
+                        <strong>Viernes:</strong> Detrás de escenas, historia del equipo, o promo del fin de semana
+                    </p>
+                </div>
+                <div class="info-card">
+                    <div class="card-title">#️⃣ Hashtags para usar</div>
+                    <p class="card-body">
+                        #LustereCleaning #DenverCleaning #CleanHomeDenver #LimpiezaDenver #EcoCleanDenver #DenverMaid #ColoradoCleaning #SpotlessHome #FamilyBusiness #HouseCleaning
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10.8 PLANTILLAS DE MENSAJES -->
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #0F172A; margin: 36px 0 12px;">💬 Plantillas de Mensajes — Listas para copiar y pegar</h3>
+        <p>Estos mensajes están listos para usar en WhatsApp o texto. Solo cambiá los datos en [corchetes] y enviá.</p>
+
+        <!-- Confirmación de cita -->
+        <div class="msg-template">
+            <div class="msg-template-label">📅 Confirmación de cita</div>
+            <div class="msg-template-text">¡Hola [nombre]! 👋
+
+Te confirmamos tu limpieza con Lustere Cleaning Co. para:
+
+📅 [día y fecha]
+🕐 [hora]
+📍 [dirección]
+
+Si necesitás cambiar algo, avisanos con tiempo. ¡Nos vemos mañana!
+
+✨ Lustere Cleaning Co.
+"Un hogar impecable. Siempre."</div>
+            <div class="msg-template-note">Enviar 24 horas antes de la cita. Personalizar con el nombre del cliente.</div>
+        </div>
+
+        <!-- Recordatorio día de la cita -->
+        <div class="msg-template">
+            <div class="msg-template-label">⏰ Recordatorio del día</div>
+            <div class="msg-template-text">¡Buenos días [nombre]! ☀️
+
+Solo para recordarte que tu limpieza es hoy a las [hora]. Ya estamos en camino. 🚗
+
+Si tenés alguna instrucción especial (alarma, mascotas, áreas especiales), avisanos.
+
+¡Nos vemos pronto! ✨</div>
+            <div class="msg-template-note">Enviar 1–2 horas antes de llegar.</div>
+        </div>
+
+        <!-- Post-limpieza pidiendo reseña -->
+        <div class="msg-template">
+            <div class="msg-template-label">⭐ Post-limpieza — Pedir reseña</div>
+            <div class="msg-template-text">¡Hola [nombre]! 🏠
+
+¡Fue un placer limpiar tu hogar hoy! Esperamos que todo haya quedado como te gusta.
+
+Si quedaste contento/a, una reseña en Google nos ayuda MUCHÍSIMO como negocio familiar. Solo toma 1 minuto:
+
+⭐ [link de Google review]
+
+¡Mil gracias por tu confianza! Nos vemos en [fecha de próxima limpieza]. 💙
+
+— Lustere Cleaning Co.</div>
+            <div class="msg-template-note">Enviar 2–4 horas después de la limpieza. SIEMPRE incluir el link directo de Google review.</div>
+        </div>
+
+        <!-- Seguimiento si no responden -->
+        <div class="msg-template">
+            <div class="msg-template-label">🔄 Seguimiento — Si no responden</div>
+            <div class="msg-template-text">¡Hola [nombre]! 👋
+
+Te escribimos hace unos días para ver cómo estuvo la limpieza. ¿Todo bien? ¿Hay algo que podamos mejorar?
+
+Nos encantaría seguir trabajando con vos. Si querés agendar tu próxima limpieza, avisanos y te damos fecha. 📅
+
+Recordá que con plan cada 2 semanas tenés 10% de descuento. 😊
+
+— Lustere Cleaning Co.</div>
+            <div class="msg-template-note">Enviar 3–5 días después si no hubo respuesta al primer mensaje.</div>
+        </div>
+
+        <!-- Mensaje de referido -->
+        <div class="msg-template">
+            <div class="msg-template-label">🎁 Mensaje de referido</div>
+            <div class="msg-template-text">¡Hola [nombre]! 🌟
+
+¡Queríamos darte las gracias por ser cliente de Lustere!
+
+Tenemos un regalo para vos: por cada amigo o familiar que nos refieras y agende su primera limpieza, te regalamos $25 de descuento en tu próximo servicio. 🎁
+
+Y tu referido también recibe $25 off en su primera limpieza. ¡Todos ganan! 🙌
+
+Solo deciles que mencionen tu nombre al agendar, o mandanos su contacto y nosotros los contactamos.
+
+¡Gracias por la confianza! 💙
+— Lustere Cleaning Co.</div>
+            <div class="msg-template-note">Enviar a clientes satisfechos después de 2–3 servicios exitosos. Funciona mejor que cualquier anuncio.</div>
+        </div>
+
+        <!-- Primer contacto / cotización -->
+        <div class="msg-template">
+            <div class="msg-template-label">💰 Respuesta a solicitud de cotización</div>
+            <div class="msg-template-text">¡Hola [nombre]! 👋 Gracias por contactar a Lustere Cleaning Co.
+
+Para darte una cotización exacta, solo necesito unos datos rápidos:
+
+🏠 ¿Cuántos cuartos/baños tiene tu casa?
+📏 ¿Tamaño aproximado? (pies cuadrados si sabés)
+🐾 ¿Mascotas?
+📅 ¿Cada cuánto querés limpieza? (semanal, cada 2 sem, mensual)
+✨ ¿Hay algo especial que necesités? (horno, refrigeradora, ventanas)
+
+¡Te mando la cotización en menos de 5 minutos! 😊</div>
+            <div class="msg-template-note">Responder RÁPIDO — idealmente en menos de 15 minutos. La velocidad de respuesta gana clientes.</div>
+        </div>
+
+        <div class="nota-green" style="margin-top: 20px;">
+            ✅ <strong>Pro tip:</strong> Guardá estos mensajes como plantillas en WhatsApp (Ajustes → Herramientas de negocio → Respuestas rápidas) para mandarlos con un solo toque. Cambiá los datos entre corchetes y listo.
+        </div>
+
+    </div><!-- fin sección 10 -->
+
+</div><!-- fin .page -->
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- ══ FOOTER ══ -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="doc-footer">
+    <div style="margin-bottom: 16px;">
+        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M22 4 L40 20 L37 20 L37 40 L28 40 L28 29 L16 29 L16 40 L7 40 L7 20 L4 20 Z" fill="rgba(255,255,255,0.9)"/>
+            <rect x="18" y="29" width="8" height="11" rx="1" fill="#0F2166"/>
+            <path d="M35 6 L36.2 9.8 L40 11 L36.2 12.2 L35 16 L33.8 12.2 L30 11 L33.8 9.8 Z" fill="#93C5FD"/>
+        </svg>
+    </div>
+    <strong style="font-size: 1.1rem;">Lustere Cleaning Co.</strong><br>
+    <span style="color: #60A5FA; font-size: 0.75rem; letter-spacing: 1px;">Un hogar impecable. Siempre.</span><br><br>
+    <span>Plan Estratégico de Negocios · Versión 2.0 · Abril 2025</span><br>
+    <span>Denver, Colorado · www.lusterecleaning.com</span><br><br>
+    <span style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">Este documento es confidencial y fue creado exclusivamente para uso interno de Lustere Cleaning Co.</span>
+</div>
+
+</body>
+</html>

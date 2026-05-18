@@ -1,0 +1,228 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-10 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-10 14:00:03,394 file_cache is only supported with oauth2client<4.0.0
+2026-04-10 14:00:03,401 🔍 Checking for replies...
+2026-04-10 14:00:03,974 📬 Found 22 inbox messages to check
+2026-04-10 14:00:09,898 
+==================================================
+2026-04-10 14:00:09,898 ✅ Reply check complete
+2026-04-10 14:00:09,898    New replies:    0
+2026-04-10 14:00:09,899    Positive:       0 ← RESPOND TO THESE!
+2026-04-10 14:00:09,899    Unsubscribes:   0
+2026-04-10 14:00:09,899    Bounces:        0
+2026-04-10 14:00:09,899 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-10 14:00:10,180 🔄 Auto-rotation day 100: insurance agency in Fort Worth, TX
+2026-04-10 14:00:10,180 
+🔍 Searching: insurance agency in Fort Worth, TX
+2026-04-10 14:00:11,040   ✅ Armor Texas Insurance Agency, Inc. — (817) 332-2066 — https://www.armortexasins.com/
+2026-04-10 14:00:11,279   ✅ Worth Insurance Agency — (817) 539-6370 — https://www.worth-insurance.com/
+2026-04-10 14:00:11,567   ✅ America's Best Auto Insurance — (817) 415-9000 — http://www.abautoinsurance.com/
+2026-04-10 14:00:11,801   ✅ Graymark Insurance — (817) 900-9116 — https://www.mygraymark.com/
+2026-04-10 14:00:12,028   ✅ Fort Worth Insurance Agency — (817) 292-2929 — http://www.fortworthinsurance.com/
+2026-04-10 14:00:12,324   ✅ Graham Insurance Group, Inc. — (817) 293-0388 — https://www.graham-insurance.com/
+2026-04-10 14:00:12,545   ✅ Freeway Insurance — (817) 383-7117 — https://locations.freeway.com/ne-28th-st-fort-worth-auto-insurance-76106-tx?utm_medium=directory&utm_source=google&utm_campaign=BF28ST_FortWorth_TX
+2026-04-10 14:00:12,842   ✅ Rainbow Insurance Agency — (817) 922-8031 — https://rainbowinsuranceoffice.com/
+2026-04-10 14:00:13,084   ✅ Schuder Insurance Agency - Fort Worth — (817) 353-2017 — https://www.schuderinsurance.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb
+2026-04-10 14:00:13,303   ✅ Atlas Auto Insurance — (817) 886-9142 — http://www.atlasatvin.com/
+2026-04-10 14:00:13,470   ✅ Higginbotham Headquarters — (800) 728-2374 — https://www.higginbotham.com/locations/fort-worth/
+2026-04-10 14:00:13,746   ✅ NDI Agency - Home Insurance and Auto Insurance — (214) 349-8300 — http://www.ndiagency.com/
+2026-04-10 14:00:13,894   ✅ America's Best Auto Insurance — (817) 214-5500 — https://www.abautoinsurance.com/
+2026-04-10 14:00:14,080   ✅ Altima Auto Insurance — (817) 349-6555 — https://www.altimains.com/
+2026-04-10 14:00:14,327   ✅ Kendrick Parker - State Farm Insurance Agent — (817) 294-2370 — https://www.coveredbyken.com/
+2026-04-10 14:00:14,480   ✅ A-MAX Auto Insurance — (817) 625-8989 — https://www.amaxinsurance.com/find-an-office/north-main?utm_source=google&utm_medium=organic&utm_campaign=gmb
+2026-04-10 14:00:14,665   ✅ Maria Amaya: Allstate Insurance — (817) 717-6412 — https://agents.allstate.com/maria-amaya-fort-worth-tx1.html?utm_source=GMB&utm_medium=Website
+2026-04-10 14:00:14,887   ✅ Fiesta Auto Insurance & Tax Service — (817) 259-0364 — https://fiestainsurance.com/stores/fiesta-insurance-and-tax-fort-worth-texas-tx031/
+2026-04-10 14:00:15,027   ✅ Hall Insurance Agency, Inc. — (817) 281-0125 — https://www.insureitfast.com/
+2026-04-10 14:00:15,241   ✅ La Familia Auto Insurance — (817) 522-1271 — https://lafamiliainsurance.com/stores/fort-worth-main/
+2026-04-10 14:00:18,026   ✅ James Little Agency, LLC — (817) 380-4952 — https://www.jameslittleagency.com/
+2026-04-10 14:00:18,200   ✅ Amtex Insurance — (817) 924-0101 — https://www.amtexinsurance.com/
+2026-04-10 14:00:22,557   ✅ Freeway Insurance — (817) 383-7114 — https://locations.freeway.com/freeway-insurance-fort-worth-tx-76116?utm_medium=directory&utm_source=google&utm_campaign=ATXFW1_FortWorth_TX
+2026-04-10 14:00:22,769   ✅ A - Star Auto Insurance — (817) 838-5600 — http://www.astarins.com/
+2026-04-10 14:00:22,955   ✅ Fort Worth Affordable Auto Insurance Expert — (206) 237-2540 — no website
+2026-04-10 14:00:23,197   ✅ Amtex Insurance — (817) 624-5000 — https://amtexinsurance.com/
+2026-04-10 14:00:23,424   ✅ Precise Insurance Group — (817) 350-6265 — https://www.preciseins.com/
+2026-04-10 14:00:23,621   ✅ A-MAX Auto Insurance — (817) 916-4500 — https://www.amaxinsurance.com/find-an-office/28th-street?utm_source=google&utm_medium=organic&utm_campaign=gmb
+2026-04-10 14:00:23,752   ✅ LOW COST INSURANCE — (817) 625-1873 — https://www.lowcosttexas.com/
+2026-04-10 14:00:23,974   ✅ Insurance For Texans Group — (469) 789-0220 — https://www.insurancefortexans.com/
+2026-04-10 14:00:24,117   ✅ La Familia Auto Insurance — (682) 224-7788 — https://lafamiliainsurance.com/stores/fort-worth-camp-bowie/
+2026-04-10 14:00:24,258   ✅ Mike Anderson - GEICO Insurance Agent — (682) 291-6550 — https://www.geico.com/insurance-agents/texas/dallas-fort-worth/michael-anderson/?y_source=1_MTYyMDYwNDgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-04-10 14:00:24,441   ✅ Flores & Associates Insurance Agency — (817) 926-1238 — http://www.fredfloresintegra.com/
+2026-04-10 14:00:24,571   ✅ Fiesta Auto Insurance & Tax Service — (817) 923-8400 — https://fiestainsurance.com/stores/fiesta-insurance-and-tax-fort-worth-texas-tx009/
+2026-04-10 14:00:24,710   ✅ Brightway Insurance, The Tyson Rochelle Agency — (817) 756-5001 — https://www.brightway.com/agencies/TX/Fort-Worth-West/0336
+2026-04-10 14:00:24,902   ✅ Veronica Mendoza - State Farm Insurance Agent — (817) 222-9300 — https://www.veronicamendoza.net/?cmpid=P2VW_blm_0001
+2026-04-10 14:00:25,175   ✅ Higginbotham - Fort Worth — (800) 728-2374 — https://www.higginbotham.com/locations/fort-worth-2/
+2026-04-10 14:00:25,342   ✅ Converse Insurance — (512) 215-4312 — http://www.converseinsurance.com/
+2026-04-10 14:00:25,506   ✅ Kathleen Alexander - State Farm Insurance Agent — (817) 292-6006 — https://www.katsgotyourback.com/?cmpid=MLLIST
+2026-04-10 14:00:28,239   ✅ Firstline Insurance Agency — (817) 618-5480 — http://firstline.insure/
+2026-04-10 14:00:28,406   ✅ Laperlas Affordable Auto Insurance Fort Worth TX — (682) 382-4233 — no website
+2026-04-10 14:00:28,545   ✅ A-MAX Auto Insurance — (817) 834-0000 — https://www.amaxinsurance.com/find-an-office/sylvania?utm_source=google&utm_medium=organic&utm_campaign=gmb
+2026-04-10 14:00:28,751   ✅ Luna Insurance Agency — (817) 744-8150 — https://www.lunains.agency/
+2026-04-10 14:00:28,912   ✅ Avex Affordable Auto Insurance — (254) 472-3892 — no website
+2026-04-10 14:00:29,088   ✅ Lone Star Insurers — (817) 813-8654 — http://www.lonestarinsurers.com/
+2026-04-10 14:00:29,232   ✅ Fred Loya Insurance — (817) 926-6835 — https://www.fredloya.com/
+2026-04-10 14:00:29,387   ✅ Belk Cheapest Auto Insurance of Fort Worth — (254) 272-2665 — no website
+2026-04-10 14:00:29,530   ✅ Hemphill Insurance Agency — (817) 923-2001 — http://www.hemphillinsurance.com/
+2026-04-10 14:00:29,678   ✅ La Familia Auto Insurance — (972) 646-7015 — https://lafamiliainsurance.com/stores/fort-worth-azle/
+2026-04-10 14:00:29,793   ✅ Affordable Auto Insurance Agency Fort Worth — (719) 483-6482 — no website
+2026-04-10 14:00:29,812   📊 Found 50, 50 new (rest were duplicates)
+2026-04-10 14:00:30,813 
+==================================================
+2026-04-10 14:00:30,813 ✅ Scraping complete
+2026-04-10 14:00:30,813    Total found:  50
+2026-04-10 14:00:30,813    New leads:    50
+2026-04-10 14:00:30,813    Duplicates:   0
+2026-04-10 14:00:30,815    DB total:     530 leads (431 with emails)
+2026-04-10 14:00:30,815 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-10 14:00:30,962 🔍 Finding emails for 50 leads...
+2026-04-10 14:00:31,527 Hunter.io rate limited — pausing 60s
+2026-04-10 14:01:31,962 🔮 Guessed: info@spheatingandairconditioning.com — S P Heating and Air
+2026-04-10 14:01:32,744 Hunter.io rate limited — pausing 60s
+2026-04-10 14:02:33,217 🔮 Guessed: info@aceanda.com — Ace & A HVAC, Heating & AC Repair
+2026-04-10 14:02:34,215 Hunter.io rate limited — pausing 60s
+2026-04-10 14:03:34,627 🔮 Guessed: info@mrsuperiormaintenance.com — Mr. Superior Maintenance
+2026-04-10 14:03:35,408 Hunter.io rate limited — pausing 60s
+2026-04-10 14:04:35,842 🔮 Guessed: info@addisonsmith.net — Addison Smith Mechanical Contractor, Inc.
+2026-04-10 14:04:36,789 Hunter.io rate limited — pausing 60s
+2026-04-10 14:05:37,287 🔮 Guessed: info@ddhvacservices.com — DD HVAC, hvac techs you can trust
+2026-04-10 14:05:38,296 Hunter.io rate limited — pausing 60s
+2026-04-10 14:06:38,672 🔮 Guessed: info@atlantaheatingandairconditioning.com — Atlanta Heating and Air Conditioning
+2026-04-10 14:06:39,580 Hunter.io rate limited — pausing 60s
+2026-04-10 14:07:40,034 🔮 Guessed: info@atlantaairpro.com — Atlanta Air Pro
+2026-04-10 14:07:40,817 Hunter.io rate limited — pausing 60s
+2026-04-10 14:08:41,222 🔮 Guessed: info@acrepairatlanta.com — AC Repair Atlanta
+2026-04-10 14:08:42,110 Hunter.io rate limited — pausing 60s
+2026-04-10 14:09:42,562 🔮 Guessed: info@valmechhvac.com — Valhalla Mechanical
+2026-04-10 14:09:43,457 Hunter.io rate limited — pausing 60s
+2026-04-10 14:10:43,902 🔮 Guessed: info@airlast.com — Airlast
+2026-04-10 14:10:44,785 Hunter.io rate limited — pausing 60s
+2026-04-10 14:11:45,170 🔮 Guessed: info@maidwonderfully.com — Wonderfully Maid Cleaning, LLC
+2026-04-10 14:11:46,105 Hunter.io rate limited — pausing 60s
+2026-04-10 14:12:46,494 🔮 Guessed: info@freshlookhomecleaning.com — Fresh Look Home Cleaning
+2026-04-10 14:12:47,403 Hunter.io rate limited — pausing 60s
+2026-04-10 14:13:47,854 🔮 Guessed: info@evolutiondrcleaning.com — Evolution DR Cleaning Services
+2026-04-10 14:13:48,581 Hunter.io rate limited — pausing 60s
+2026-04-10 14:14:49,075 🔮 Guessed: info@thecleaningauthority.com — The Cleaning Authority - Jacksonville
+2026-04-10 14:14:49,961 Hunter.io rate limited — pausing 60s
+2026-04-10 14:15:50,349 🔮 Guessed: info@lilicleaningservices.com — Lili Cleaning Services
+2026-04-10 14:15:51,098 Hunter.io rate limited — pausing 60s
+2026-04-10 14:16:51,538 🔮 Guessed: info@firstcoasthomepros.com — First Coast Home Pros
+2026-04-10 14:16:52,435 Hunter.io rate limited — pausing 60s
+2026-04-10 14:17:52,882 🔮 Guessed: info@cleanservicesjax.com — Cleanservices Jacksonville
+2026-04-10 14:17:53,614 Hunter.io rate limited — pausing 60s
+2026-04-10 14:18:53,996 🔮 Guessed: info@merrymaids.com — Merry Maids of Jacksonville
+2026-04-10 14:18:54,887 Hunter.io rate limited — pausing 60s
+2026-04-10 14:19:55,262 🔮 Guessed: info@starjaxcleaning.com — Star Jax Cleaning Services
+2026-04-10 14:19:56,158 Hunter.io rate limited — pausing 60s
+2026-04-10 14:20:56,553 🔮 Guessed: info@twomaidsjacksonville.com — Two Maids
+2026-04-10 14:20:57,453 Hunter.io rate limited — pausing 60s
+2026-04-10 14:21:57,864 🔮 Guessed: info@fabbycleaningserv.com — Fabby Cleaning Services
+2026-04-10 14:21:58,744 Hunter.io rate limited — pausing 60s
+2026-04-10 14:22:59,158 🔮 Guessed: info@enviro-master.com — Enviro-Master of Jacksonville
+2026-04-10 14:22:59,916 Hunter.io rate limited — pausing 60s
+2026-04-10 14:24:00,323 🔮 Guessed: info@maidpro.com — Maidpro Jacksonville
+2026-04-10 14:24:01,222 Hunter.io rate limited — pausing 60s
+2026-04-10 14:25:01,647 🔮 Guessed: info@maidbrigade.com — Maid Brigade of Jacksonville
+2026-04-10 14:25:02,421 Hunter.io rate limited — pausing 60s
+2026-04-10 14:26:02,890 🔮 Guessed: info@belamaids.com — Bela Maids Housecleaning Services
+2026-04-10 14:26:03,804 Hunter.io rate limited — pausing 60s
+2026-04-10 14:27:04,206 🔮 Guessed: info@atcjax.com — All That Cleaning Jacksonville
+2026-04-10 14:27:04,953 Hunter.io rate limited — pausing 60s
+2026-04-10 14:28:05,330 🔮 Guessed: info@mollymaid.com — Molly Maid of Greater Jacksonville and Clay County
+2026-04-10 14:28:06,088 Hunter.io rate limited — pausing 60s
+2026-04-10 14:29:06,459 🔮 Guessed: info@janiking.com — Jani-King of Jacksonville
+2026-04-10 14:29:07,456 Hunter.io rate limited — pausing 60s
+2026-04-10 14:30:07,842 🔮 Guessed: info@jan-pro.com — JAN-PRO Cleaning & Disinfecting in Jacksonville
+2026-04-10 14:30:08,922 Hunter.io rate limited — pausing 60s
+2026-04-10 14:31:09,333 🔮 Guessed: info@cleanitalljax.com — Clean It All Jax
+2026-04-10 14:31:10,065 Hunter.io rate limited — pausing 60s
+2026-04-10 14:32:10,471 🔮 Guessed: info@mayacleaningservicesjax.com — Maya Cleaning Services
+2026-04-10 14:32:11,349 Hunter.io rate limited — pausing 60s
+2026-04-10 14:33:11,730 🔮 Guessed: info@patriotmaids.com — Patriot Maids Cleaning Services
+2026-04-10 14:33:12,619 Hunter.io rate limited — pausing 60s
+2026-04-10 14:34:13,024 🔮 Guessed: info@maidpro.com — Maidpro of St Johns , Clay County & Jacksonville
+2026-04-10 14:34:13,769 Hunter.io rate limited — pausing 60s
+2026-04-10 14:35:14,179 🔮 Guessed: info@tinamaidspro.com — Tina Maids
+2026-04-10 14:35:15,061 Hunter.io rate limited — pausing 60s
+2026-04-10 14:36:15,508 🔮 Guessed: info@ccsmaidservice.com — CCS Maid Service
+2026-04-10 14:36:16,472 Hunter.io rate limited — pausing 60s
+2026-04-10 14:37:16,935 🔮 Guessed: info@anniescleaningfl.com — Annie's Cleaners LLC Florida
+2026-04-10 14:37:17,847 Hunter.io rate limited — pausing 60s
+2026-04-10 14:38:18,285 🔮 Guessed: info@maids.com — The Maids in Jacksonville
+2026-04-10 14:38:19,168 Hunter.io rate limited — pausing 60s
+2026-04-10 14:39:19,569 🔮 Guessed: info@asyoulikeitjax.com — As You Like It Housekeeping Referral Agency
+2026-04-10 14:39:20,465 Hunter.io rate limited — pausing 60s
+2026-04-10 14:40:20,893 🔮 Guessed: info@expert-cleaners.com — Expert Cleaner's LLC
+2026-04-10 14:40:21,638 Hunter.io rate limited — pausing 60s
+2026-04-10 14:41:22,101 🔮 Guessed: info@armortexasins.com — Armor Texas Insurance Agency, Inc.
+2026-04-10 14:41:23,007 Hunter.io rate limited — pausing 60s
+2026-04-10 14:42:23,469 🔮 Guessed: info@worth-insurance.com — Worth Insurance Agency
+2026-04-10 14:42:24,249 Hunter.io rate limited — pausing 60s
+2026-04-10 14:43:24,654 🔮 Guessed: info@abautoinsurance.com — America's Best Auto Insurance
+2026-04-10 14:43:25,159 
+==================================================
+2026-04-10 14:43:25,159 ✅ Email finder complete
+2026-04-10 14:43:25,159    API found:  0
+2026-04-10 14:43:25,159    Guessed:    42
+2026-04-10 14:43:25,160    Total:      42
+2026-04-10 14:43:25,160 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-10 14:43:26,479 ERROR 🚨 Bounce rate too high (477.2%). PAUSING all sends.
+2026-04-10 14:43:26,479 ERROR    Fix: review lead quality, remove bad emails, then restart.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-10.txt
+✅ LinkedIn DMs posted to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Fri Apr 10** (Day 3)
+
+**📋 YOUR TODO:**
+1️⃣ Send 20 LinkedIn DMs (posted above or in output/)
+3️⃣ Check calendar for demo calls
+
+**📧 Today:** 3 emails sent · 20 LinkedIn DMs
+**📊 Funnel:** 530 leads → 57 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+**💼 20 LinkedIn DMs** queued — check Discord or output/ folder
+
+✅ Report sent to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Fri Apr 10 14:43:28 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-10.log

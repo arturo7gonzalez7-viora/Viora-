@@ -1,0 +1,193 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-14 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-14 14:00:04,487 🔄 Auto-rotation day 134: cleaning service in Seattle, WA
+2026-05-14 14:00:04,487 
+🔍 Searching: cleaning service in Seattle, WA
+2026-05-14 14:00:05,417   ✅ Maid Service Seattle — (206) 736-4650 — https://www.seattlegreenmaids.com/
+2026-05-14 14:00:05,738   ✅ THA House Cleaning Seattle — (425) 289-9310 — https://www.thacleaning.com/
+2026-05-14 14:00:06,036   ✅ Susan's Green Cleaning — (206) 348-1971 — https://www.susansgreencleaning.com/
+2026-05-14 14:00:06,331   ✅ The Dazzle Cleaning Company — (425) 209-0794 — https://dazzlecompany.com/
+2026-05-14 14:00:06,609   ✅ Ladonna's Cleaning Service — (206) 941-8876 — http://www.ladonnascleaningseattle.com/?utm_source=google&utm_medium=local&utm_campaign=gmb
+2026-05-14 14:00:06,882   ✅ Simply Clean — (206) 973-2515 — https://www.seattlesimplyclean.com/
+2026-05-14 14:00:07,191   ✅ Queen Anne Cleaning Services — (206) 776-2626 — https://queenannecleaning.com/
+2026-05-14 14:00:07,454   ✅ The Dazzle Cleaning Company — (206) 424-9909 — https://dazzlecompany.com/locations/north-seattle-wa?utm_source=gbp&utm_medium=organic
+2026-05-14 14:00:07,719   ✅ April Lane's Home Cleaning — (206) 527-4290 — http://www.aprillanescleaning.com/
+2026-05-14 14:00:08,001   ✅ Hometress Cleaning Service LLC — (206) 929-1605 — https://www.hometress.com/seattle/
+2026-05-14 14:00:08,307   ✅ The Cleanup Guys — (425) 842-2566 — https://cleanupguys.com/
+2026-05-14 14:00:08,569   ✅ Green Cleaning Seattle - Otium-Maid Services — (206) 307-2270 — https://greencleaningseattle.com/
+2026-05-14 14:00:08,875   ✅ Meekas cleaning services llc — (206) 600-1316 — https://www.meekascleaningservicesllc.com/
+2026-05-14 14:00:09,035   ✅ Simply Clean — (425) 242-5050 — https://www.seattlesimplyclean.com/bellevue
+2026-05-14 14:00:09,200   ✅ ACA Luxe Cleaning Services LLC — (360) 777-9286 — no website
+2026-05-14 14:00:11,812   ✅ A&K House Cleaning — (206) 203-7733 — http://www.cleaning-wa.com/
+2026-05-14 14:00:11,969   ✅ Power Pup Clean — (206) 931-8758 — http://seattlecarpetcleaners.com/
+2026-05-14 14:00:12,153   ✅ Vladimir & Olga Cleaning Service — (312) 918-0660 — https://www.cleaninginseattlevladiolga.com/
+2026-05-14 14:00:12,299   ✅ Magic Maid | House Cleaning Services — (206) 752-9839 — http://magicmaid.cleaning/
+2026-05-14 14:00:12,482   ✅ MagiClean Cleaning Services — (253) 420-7879 — http://magicleanseattle.com/
+2026-05-14 14:00:12,709   ✅ Crystal Panes Window and Gutter Cleaning — (206) 284-5183 — http://crystalpanes.com/
+2026-05-14 14:00:12,909   ✅ Kelian - Cleaning Services — (206) 489-0302 — https://www.keliancleaningwa.com/
+2026-05-14 14:00:15,536   ✅ Seattle House Cleaners — (425) 600-5826 — https://www.seattlehousecleaners.com/
+2026-05-14 14:00:15,734   ✅ Seattle Window Cleaners — (206) 210-3117 — http://www.westseattlewindowcleaner.com/?utm_campaign=gmb
+2026-05-14 14:00:15,923   ✅ Cosmos Cleaning — (206) 752-3625 — https://cosmos-cleaning.com/
+2026-05-14 14:00:16,065   ✅ Shine Seattle LLC - Airbnb Cleaning and House Cleaning — (206) 279-2123 — http://www.shineseattle.com/
+2026-05-14 14:00:16,089   📊 Found 26, 26 new (rest were duplicates)
+2026-05-14 14:00:17,089 
+==================================================
+2026-05-14 14:00:17,089 ✅ Scraping complete
+2026-05-14 14:00:17,089    Total found:  26
+2026-05-14 14:00:17,089    New leads:    26
+2026-05-14 14:00:17,089    Duplicates:   0
+2026-05-14 14:00:17,093    DB total:     1325 leads (924 with emails)
+2026-05-14 14:00:17,093 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-14 14:00:17,317 🔍 Finding emails for 50 leads...
+2026-05-14 14:00:17,739 Hunter.io rate limited — pausing 60s
+2026-05-14 14:01:18,128 🔮 Guessed: info@210mobiledetailing.com — 210 Mobile Detailing of Austin
+2026-05-14 14:01:18,840 Hunter.io rate limited — pausing 60s
+2026-05-14 14:02:19,244 🔮 Guessed: info@torquecardetailing.site — Torque Car Detailing
+2026-05-14 14:02:19,969 Hunter.io rate limited — pausing 60s
+2026-05-14 14:03:20,359 🔮 Guessed: info@alsetauto.com — ALSET Auto
+2026-05-14 14:03:21,230 Hunter.io rate limited — pausing 60s
+2026-05-14 14:04:21,627 🔮 Guessed: info@nicencleanatx.com — Nice - N - Clean
+2026-05-14 14:04:22,519 Hunter.io rate limited — pausing 60s
+2026-05-14 14:05:22,870 🔮 Guessed: info@warhousegyms.com — War House Gym
+2026-05-14 14:05:23,772 Hunter.io rate limited — pausing 60s
+2026-05-14 14:06:24,157 🔮 Guessed: info@eosfitness.com — EōS Fitness
+2026-05-14 14:06:25,014 Hunter.io rate limited — pausing 60s
+2026-05-14 14:07:25,416 🔮 Guessed: info@renegadefit.com — Renegade
+2026-05-14 14:07:26,615 Hunter.io rate limited — pausing 60s
+2026-05-14 14:08:27,041 🔮 Guessed: info@oceanpacificgym.com — Ocean Pacific Gym and Wellness
+2026-05-14 14:08:27,781 Hunter.io rate limited — pausing 60s
+2026-05-14 14:09:28,266 🔮 Guessed: info@chuzefitness.com — Chuze Fitness
+2026-05-14 14:09:29,175 Hunter.io rate limited — pausing 60s
+2026-05-14 14:10:29,551 🔮 Guessed: info@anytimefitness.com — Anytime Fitness Downtown San Diego
+2026-05-14 14:10:30,728 Hunter.io rate limited — pausing 60s
+2026-05-14 14:11:31,091 🔮 Guessed: info@primefitnesstraining.com — Prime Fitness
+2026-05-14 14:11:31,959 Hunter.io rate limited — pausing 60s
+2026-05-14 14:12:32,353 🔮 Guessed: info@thegymsandiego.com — The Gym
+2026-05-14 14:12:33,184 Hunter.io rate limited — pausing 60s
+2026-05-14 14:13:33,561 🔮 Guessed: info@hivetrainingclub.com — HIVE Training Club
+2026-05-14 14:13:34,460 Hunter.io rate limited — pausing 60s
+2026-05-14 14:14:34,825 🔮 Guessed: info@northparkfitness.com — North Park Fitness
+2026-05-14 14:14:35,839 Hunter.io rate limited — pausing 60s
+2026-05-14 14:15:36,225 🔮 Guessed: info@balancedfitnesshealth.com — Balanced Fitness & Health
+2026-05-14 14:15:36,966 Hunter.io rate limited — pausing 60s
+2026-05-14 14:16:37,676 🔮 Guessed: info@fitclubs.com — Fit East Village
+2026-05-14 14:16:38,642 Hunter.io rate limited — pausing 60s
+2026-05-14 14:17:39,039 🔮 Guessed: info@fitclubs.com — Fit Little Italy
+2026-05-14 14:17:39,945 Hunter.io rate limited — pausing 60s
+2026-05-14 14:18:40,310 🔮 Guessed: info@aquaviewellness.com — AquaVie Fitness + Wellness Club
+2026-05-14 14:18:41,177 Hunter.io rate limited — pausing 60s
+2026-05-14 14:19:41,545 🔮 Guessed: info@24hourfitness.com — 24 Hour Fitness
+2026-05-14 14:19:42,438 Hunter.io rate limited — pausing 60s
+2026-05-14 14:20:42,959 🔮 Guessed: info@theyardgym.com — The Yard Gym Normal Heights
+2026-05-14 14:20:43,863 Hunter.io rate limited — pausing 60s
+2026-05-14 14:21:44,242 🔮 Guessed: info@fitclubs.com — Fit Mission Beach
+2026-05-14 14:21:45,207 Hunter.io rate limited — pausing 60s
+2026-05-14 14:22:45,592 🔮 Guessed: info@ironorrfitness.com — Personal Trainer San Diego - Iron Orr Fitness
+2026-05-14 14:22:46,503 Hunter.io rate limited — pausing 60s
+2026-05-14 14:23:46,889 🔮 Guessed: info@hardcorefitnessbootcamp.com — Hardcore Fitness Downtown San Diego
+2026-05-14 14:23:47,629 Hunter.io rate limited — pausing 60s
+2026-05-14 14:24:47,971 🔮 Guessed: info@crunch.com — Crunch Fitness - Serra Mesa
+2026-05-14 14:24:48,691 Hunter.io rate limited — pausing 60s
+2026-05-14 14:25:49,087 🔮 Guessed: info@ihtfactor.com — IHT Factor Training - San Diego Downtown
+2026-05-14 14:25:49,873 Hunter.io rate limited — pausing 60s
+2026-05-14 14:26:50,249 🔮 Guessed: info@invictusfitness.com — Invictus Fitness
+2026-05-14 14:26:51,015 Hunter.io rate limited — pausing 60s
+2026-05-14 14:27:51,374 🔮 Guessed: info@plsportsclub.com — Point Loma Sports Club
+2026-05-14 14:27:52,240 Hunter.io rate limited — pausing 60s
+2026-05-14 14:28:52,630 🔮 Guessed: info@24hourfitness.com — 24 Hour Fitness
+2026-05-14 14:28:53,585 Hunter.io rate limited — pausing 60s
+2026-05-14 14:29:53,960 🔮 Guessed: info@thecompoundliftingclub.com — The Compound Lifting Club
+2026-05-14 14:29:54,867 Hunter.io rate limited — pausing 60s
+2026-05-14 14:30:55,273 🔮 Guessed: info@balancedfitnesshealth.com — Balanced Fitness & Health
+2026-05-14 14:30:56,043 Hunter.io rate limited — pausing 60s
+2026-05-14 14:31:56,454 🔮 Guessed: info@broadwayathletic.com — Broadway Athletic and Swim Club
+2026-05-14 14:31:57,360 Hunter.io rate limited — pausing 60s
+2026-05-14 14:32:57,767 🔮 Guessed: info@teqneeq.com — Teqneeq FHC
+2026-05-14 14:32:58,681 Hunter.io rate limited — pausing 60s
+2026-05-14 14:33:59,030 🔮 Guessed: info@grindergym.com — Grinder Gym San Diego
+2026-05-14 14:33:59,893 Hunter.io rate limited — pausing 60s
+2026-05-14 14:35:00,418 🔮 Guessed: info@24hourfitness.com — 24 Hour Fitness
+2026-05-14 14:35:01,300 Hunter.io rate limited — pausing 60s
+2026-05-14 14:36:01,703 🔮 Guessed: info@equinox.com — Equinox Downtown San Diego
+2026-05-14 14:36:02,638 Hunter.io rate limited — pausing 60s
+2026-05-14 14:37:03,121 🔮 Guessed: info@24hourfitness.com — 24 Hour Fitness
+2026-05-14 14:37:04,175 Hunter.io rate limited — pausing 60s
+2026-05-14 14:38:04,520 🔮 Guessed: info@24hourfitness.com — 24 Hour Fitness
+2026-05-14 14:38:05,025 
+==================================================
+2026-05-14 14:38:05,025 ✅ Email finder complete
+2026-05-14 14:38:05,025    API found:  0
+2026-05-14 14:38:05,025    Guessed:    37
+2026-05-14 14:38:05,025    Total:      37
+2026-05-14 14:38:05,025 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-14.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Thu May 14** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1325 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Thu May 14 14:38:05 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-14.log

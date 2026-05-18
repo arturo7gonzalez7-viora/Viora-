@@ -1,0 +1,214 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-04 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-04 14:00:04,133 🔄 Auto-rotation day 124: general contractor in Dallas, TX
+2026-05-04 14:00:04,134 
+🔍 Searching: general contractor in Dallas, TX
+2026-05-04 14:00:05,066   ✅ Prime Construction & General Contractors LLC — (972) 322-1690 — http://primeconstructiongc.com/
+2026-05-04 14:00:05,362   ✅ ELITE Construction — (469) 669-3902 — https://eliteconstructionusa.com/
+2026-05-04 14:00:05,610   ✅ ICO Construction & Remodeling Dallas TX — (214) 856-0898 — https://icodallas.com/areas-served/dallas-tx/
+2026-05-04 14:00:05,885   ✅ Specialty Contractors Inc. — (214) 389-5130 — http://www.callspecialty.com/
+2026-05-04 14:00:06,202   ✅ ON Group Remodeling & Construction — (469) 324-2888 — https://ongroupconstructions.com/
+2026-05-04 14:00:06,431   ✅ Skyline General Contractor — (945) 303-8407 — no website
+2026-05-04 14:00:06,660   ✅ Bodnar Construction LLC — (469) 859-9541 — https://www.bodnarconstruction.net/
+2026-05-04 14:00:06,875   ✅ Creative Construction Remodeling — (972) 342-7232 — https://ccrbarry.com/
+2026-05-04 14:00:07,145   ✅ Tillett General Contractor at Dallas LLC — (945) 323-5653 — no website
+2026-05-04 14:00:07,412   ✅ RB Construction USA LLC — (972) 658-2911 — http://rbconstructionusa.com/
+2026-05-04 14:00:07,703   ✅ Lucky Construction Inc — (972) 223-4448 — http://www.luckyconstruction.com/
+2026-05-04 14:00:07,974   ✅ United Roofing & General Contractors — (888) 863-8858 — http://unitedroofers.co/
+2026-05-04 14:00:08,198   ✅ United Black Contractors Inc. — (800) 906-9312 — http://unitedblackcontractors.com/
+2026-05-04 14:00:08,437   ✅ TriArc Construction — (214) 556-0085 — http://www.triarc-llc.com/
+2026-05-04 14:00:08,606   ✅ Vertex Roofers and General Contractors — (214) 206-5123 — https://vertexroofers.com/
+2026-05-04 14:00:08,771   ✅ HomePro Contracting, Handyman Dallas, Licensed General Contractors in Dallas. — (214) 886-3326 — http://homeproservicesdfw.com/
+2026-05-04 14:00:08,900   ✅ Diamante Property Services LLC — (469) 343-2619 — https://diamantepropertyservices.com/
+2026-05-04 14:00:09,202   ✅ Evans General Contractors — (972) 843-9182 — https://evansgeneralcontractors.com/
+2026-05-04 14:00:09,500   ✅ Sercon Contracting LLC — (214) 490-5858 — https://www.sercon.io/
+2026-05-04 14:00:12,274   ✅ Terrell General Contractors — (214) 865-7611 — http://www.terrellgc.com/
+2026-05-04 14:00:12,493   ✅ G2 General Contractors — (469) 296-4275 — https://www.g2waterrestoration.com/?y_source=1_Mzk0NTUxNTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-05-04 14:00:12,655   ✅ Power Construction Group — (214) 360-4500 — http://www.powerconstructiongroup.com/
+2026-05-04 14:00:12,828   ✅ LFR Construction — (903) 215-8305 — https://mylibertyfoundations.com/
+2026-05-04 14:00:13,064   ✅ Dallas Contractors — (214) 377-5981 — no website
+2026-05-04 14:00:13,227   ✅ Jaxon Martin Roofing and General Contractors — (469) 939-1985 — https://www.jaxonmartin.com/
+2026-05-04 14:00:13,369   ✅ Malakai Construction, Inc. — (832) 837-0017 — https://www.malakaiconstruction.com/
+2026-05-04 14:00:13,507   ✅ Suffolk Construction — (469) 872-5600 — http://www.suffolk.com/
+2026-05-04 14:00:13,673   ✅ Dallas Drywall Contractor Pros — (469) 908-1924 — https://www.drywalldallas.com/
+2026-05-04 14:00:13,848   ✅ New Tech Bathroom Remodeling Dallas — (469) 489-3976 — https://www.newbathtech.com/bathroom-remodeling-dallas-tx/?utm_source=GMBDallas&utm_medium=organic
+2026-05-04 14:00:13,976   ✅ Blake Construction Blake Construction — (214) 563-5035 — http://www.blake-construction.com/contact-us/
+2026-05-04 14:00:14,182   ✅ Corporate Contractors Inc — (214) 979-9080 — no website
+2026-05-04 14:00:14,399   ✅ Allbright Services, LLC — (469) 367-0990 — http://www.myallbright.com/
+2026-05-04 14:00:14,574   ✅ D-Tex Construction — (214) 434-2727 — http://dtexconstruction.com/
+2026-05-04 14:00:14,844   ✅ Kingdom Construction Company — (903) 267-7812 — https://kingdomconstructionco.com/
+2026-05-04 14:00:17,446   ✅ Green Mark Build — (214) 529-0153 — http://greenmarkbuild.com/
+2026-05-04 14:00:17,627   ✅ My Contractor DFW — (214) 884-8806 — no website
+2026-05-04 14:00:17,778   ✅ Dallas Demolition — (214) 942-7612 — http://www.dallasdemolition.com/
+2026-05-04 14:00:17,973   ✅ Reactic Restoration — (214) 730-6009 — https://reacticrestoration.com/dallas
+2026-05-04 14:00:18,227   ✅ Isler Homes — (214) 443-1860 — http://islerhomes.com/
+2026-05-04 14:00:18,255   📊 Found 39, 39 new (rest were duplicates)
+2026-05-04 14:00:19,255 
+==================================================
+2026-05-04 14:00:19,256 ✅ Scraping complete
+2026-05-04 14:00:19,256    Total found:  39
+2026-05-04 14:00:19,256    New leads:    39
+2026-05-04 14:00:19,256    Duplicates:   0
+2026-05-04 14:00:19,258    DB total:     987 leads (608 with emails)
+2026-05-04 14:00:19,259 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-04 14:00:19,491 🔍 Finding emails for 50 leads...
+2026-05-04 14:00:20,187 Hunter.io rate limited — pausing 60s
+2026-05-04 14:01:20,684 🔮 Guessed: info@maxmechservice.com — Max Air Heating, Cooling & Refrigeration
+2026-05-04 14:01:21,527 Hunter.io rate limited — pausing 60s
+2026-05-04 14:02:21,859 🔮 Guessed: info@firstcallheat.com — First Call Heating & Cooling
+2026-05-04 14:02:22,741 Hunter.io rate limited — pausing 60s
+2026-05-04 14:03:23,153 🔮 Guessed: info@costplusheating.com — Cost Plus Heating & Air
+2026-05-04 14:03:24,139 Hunter.io rate limited — pausing 60s
+2026-05-04 14:04:24,907 🔮 Guessed: info@evergreengas.net — Evergreen Gas Heating & Cooling
+2026-05-04 14:04:25,627 Hunter.io rate limited — pausing 60s
+2026-05-04 14:05:26,102 🔮 Guessed: info@rapidportlandoracrepair.com — Rapid Portland OR AC Repair
+2026-05-04 14:05:26,859 Hunter.io rate limited — pausing 60s
+2026-05-04 14:06:27,304 🔮 Guessed: info@portlandecotempclimatesolutions.com — EcoTemp Portland HVAC Repair
+2026-05-04 14:06:28,049 Hunter.io rate limited — pausing 60s
+2026-05-04 14:07:28,757 🔮 Guessed: info@proheatingandcoolinginc.com — Pro Heating and Cooling, INC.
+2026-05-04 14:07:29,724 Hunter.io rate limited — pausing 60s
+2026-05-04 14:08:30,156 🔮 Guessed: info@threeriversheating.com — Three Rivers Heating and Cooling
+2026-05-04 14:08:30,867 Hunter.io rate limited — pausing 60s
+2026-05-04 14:09:31,370 🔮 Guessed: info@columbiahvac.net — Columbia Heating & Cooling
+2026-05-04 14:09:32,118 Hunter.io rate limited — pausing 60s
+2026-05-04 14:10:32,499 🔮 Guessed: info@truairpdx.com — Tru Air Heating and Cooling LLC
+2026-05-04 14:10:33,311 Hunter.io rate limited — pausing 60s
+2026-05-04 14:11:33,700 🔮 Guessed: info@mpcomfort.com — MP Heating & Air Conditioning
+2026-05-04 14:11:34,444 Hunter.io rate limited — pausing 60s
+2026-05-04 14:12:34,993 🔮 Guessed: info@allenbrothersplumbers.com — Allen Brothers
+2026-05-04 14:12:35,858 Hunter.io rate limited — pausing 60s
+2026-05-04 14:13:36,346 🔮 Guessed: info@portlandheatandac.com — Portland Heating & Air Conditioning
+2026-05-04 14:13:37,172 Hunter.io rate limited — pausing 60s
+2026-05-04 14:14:37,788 🔮 Guessed: info@nwheatingandcooling.com — Northwest Heating & Cooling
+2026-05-04 14:14:38,857 Hunter.io rate limited — pausing 60s
+2026-05-04 14:15:39,220 🔮 Guessed: info@nobleheating.com — Noble Heating & Air
+2026-05-04 14:15:40,199 Hunter.io rate limited — pausing 60s
+2026-05-04 14:16:40,693 🔮 Guessed: info@dandfplumbing.com — D&F Plumbing, Heating and Cooling
+2026-05-04 14:16:41,671 Hunter.io rate limited — pausing 60s
+2026-05-04 14:17:42,099 🔮 Guessed: info@arcticpdx.com — Arctic Heating & Refrigeration, Inc.
+2026-05-04 14:17:43,041 Hunter.io rate limited — pausing 60s
+2026-05-04 14:18:43,447 🔮 Guessed: info@callaviator.com — Aviator Heating & Cooling
+2026-05-04 14:18:44,164 Hunter.io rate limited — pausing 60s
+2026-05-04 14:19:45,041 🔮 Guessed: info@hvacandapplianceguys.com — HVAC & Appliance Repair Guys
+2026-05-04 14:19:46,082 Hunter.io rate limited — pausing 60s
+2026-05-04 14:20:46,748 🔮 Guessed: info@orbitheatingandcooling.com — Orbit Heating and Cooling
+2026-05-04 14:20:48,367 Hunter.io rate limited — pausing 60s
+2026-05-04 14:21:48,765 🔮 Guessed: info@innovabuilder.com — Innova Heating and Cooling
+2026-05-04 14:21:56,137 Hunter.io rate limited — pausing 60s
+2026-05-04 14:22:56,335 🔮 Guessed: info@newtampaplasticsurgery.com — New Tampa Plastic Surgery - G. Peter Fakhre, MD
+2026-05-04 14:22:57,035 Hunter.io rate limited — pausing 60s
+2026-05-04 14:23:57,414 🔮 Guessed: info@vivifyps.com — VIVIFY Plastic Surgery
+2026-05-04 14:23:58,114 Hunter.io rate limited — pausing 60s
+2026-05-04 14:24:58,502 🔮 Guessed: info@castellanocosmeticsurgery.com — Castellano Cosmetic Surgery Center
+2026-05-04 14:24:59,274 Hunter.io rate limited — pausing 60s
+2026-05-04 14:25:59,706 🔮 Guessed: info@synergymdplasticsurgery.com — SynergyMD Plastic Surgery
+2026-05-04 14:26:00,628 Hunter.io rate limited — pausing 60s
+2026-05-04 14:27:01,048 🔮 Guessed: info@bodze.com — Bodze Plastic Surgery and Medical Spa
+2026-05-04 14:27:02,134 Hunter.io rate limited — pausing 60s
+2026-05-04 14:28:02,562 🔮 Guessed: info@davidhalpernmd.com — Tampa Bay Plastic Surgery, Inc.
+2026-05-04 14:28:03,283 Hunter.io rate limited — pausing 60s
+2026-05-04 14:29:03,655 🔮 Guessed: info@artisanplasticsurgerycenter.net — Artisan Aesthetics Plastic Surgery: Dr. Stan Castor, MD
+2026-05-04 14:29:04,536 Hunter.io rate limited — pausing 60s
+2026-05-04 14:30:04,949 🔮 Guessed: info@davisfacialsurgery.com — Davis Facial Plastic Surgery: Dean G. Davis, M.D, FACS
+2026-05-04 14:30:05,826 Hunter.io rate limited — pausing 60s
+2026-05-04 14:31:06,546 🔮 Guessed: info@wattplasticsurgery.com — Watt Plastic Surgery
+2026-05-04 14:31:07,265 Hunter.io rate limited — pausing 60s
+2026-05-04 14:32:07,462 🔮 Guessed: info@tracitemmenmd.com — Temmen Plastic Surgery: Traci Temmen, M.D.
+2026-05-04 14:32:08,178 Hunter.io rate limited — pausing 60s
+2026-05-04 14:33:08,572 🔮 Guessed: info@raviveplasticsurgery.com — Ravive Plastic Surgery & MedSpa
+2026-05-04 14:33:09,366 Hunter.io rate limited — pausing 60s
+2026-05-04 14:34:09,583 🔮 Guessed: info@premierecenter.com — PREMIERE Center for Cosmetic Surgery
+2026-05-04 14:34:10,381 Hunter.io rate limited — pausing 60s
+2026-05-04 14:35:10,644 🔮 Guessed: info@tampapalmsplasticsurgery.com — Tampa Palms Plastic Surgery
+2026-05-04 14:35:11,351 Hunter.io rate limited — pausing 60s
+2026-05-04 14:36:11,588 🔮 Guessed: info@jaimeperezmd.com — Plastic Surgery Center of Tampa - Jaime Perez, MD
+2026-05-04 14:36:12,306 Hunter.io rate limited — pausing 60s
+2026-05-04 14:37:12,620 🔮 Guessed: info@drdiaco.com — Diaco Institute of Plastic Surgery
+2026-05-04 14:37:13,319 Hunter.io rate limited — pausing 60s
+2026-05-04 14:38:13,690 🔮 Guessed: info@elitetampa.com — Elite Facial Plastic Surgery: Dr. Dominic M. Castellano
+2026-05-04 14:38:14,397 Hunter.io rate limited — pausing 60s
+2026-05-04 14:39:14,661 🔮 Guessed: info@drdemetrimd.com — Demetri Arnaoutakis, MD
+2026-05-04 14:39:15,350 Hunter.io rate limited — pausing 60s
+2026-05-04 14:40:15,688 🔮 Guessed: info@tampasurgicalarts.com — Tampa Surgical Arts
+2026-05-04 14:40:16,815 Hunter.io rate limited — pausing 60s
+2026-05-04 14:41:17,455 🔮 Guessed: info@landonplasticsurgery.com — Landon Plastic Surgery
+2026-05-04 14:41:18,275 Hunter.io rate limited — pausing 60s
+2026-05-04 14:42:18,657 🔮 Guessed: info@markelovmd.com — Alexey Markelov MD Plastic Surgery
+2026-05-04 14:42:19,164 
+==================================================
+2026-05-04 14:42:19,164 ✅ Email finder complete
+2026-05-04 14:42:19,164    API found:  0
+2026-05-04 14:42:19,164    Guessed:    41
+2026-05-04 14:42:19,164    Total:      41
+2026-05-04 14:42:19,165 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-04.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Mon May 04** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 987 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Mon May  4 14:42:19 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-04.log

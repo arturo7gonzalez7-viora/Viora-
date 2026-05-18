@@ -1,0 +1,227 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-24 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-24 14:00:04,128 🔄 Auto-rotation day 114: plastic surgeon in Tampa, FL
+2026-04-24 14:00:04,128 
+🔍 Searching: plastic surgeon in Tampa, FL
+2026-04-24 14:00:05,121   ✅ New Tampa Plastic Surgery - G. Peter Fakhre, MD — (813) 752-7842 — https://www.newtampaplasticsurgery.com/
+2026-04-24 14:00:05,419   ✅ VIVIFY Plastic Surgery — (813) 588-5150 — https://www.vivifyps.com/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=vivify-plastic-surgery
+2026-04-24 14:00:05,689   ✅ Castellano Cosmetic Surgery Center — (813) 872-6093 — https://castellanocosmeticsurgery.com/
+2026-04-24 14:00:05,953   ✅ SynergyMD Plastic Surgery — (727) 594-7553 — https://www.synergymdplasticsurgery.com/
+2026-04-24 14:00:06,169   ✅ Bodze Plastic Surgery and Medical Spa — (813) 444-4455 — https://bodze.com/
+2026-04-24 14:00:06,485   ✅ Tampa Bay Plastic Surgery, Inc. — (813) 871-5000 — http://www.davidhalpernmd.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-24 14:00:06,626   ✅ Artisan Aesthetics Plastic Surgery: Dr. Stan Castor, MD — (813) 971-2000 — https://artisanplasticsurgerycenter.net/
+2026-04-24 14:00:06,843   ✅ Davis Facial Plastic Surgery: Dean G. Davis, M.D, FACS — (813) 877-7917 — https://www.davisfacialsurgery.com/?utm_source=google&utm_medium=local&utm_cAMpaign=tAMpa-davis-website
+2026-04-24 14:00:07,056   ✅ Watt Plastic Surgery — (813) 878-0089 — https://www.wattplasticsurgery.com/
+2026-04-24 14:00:07,276   ✅ Temmen Plastic Surgery: Traci Temmen, M.D. — (813) 771-6393 — https://www.tracitemmenmd.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-24 14:00:07,419   ✅ Ravive Plastic Surgery & MedSpa — (813) 535-3882 — http://www.raviveplasticsurgery.com/
+2026-04-24 14:00:07,700   ✅ PREMIERE Center for Cosmetic Surgery — (813) 400-1465 — http://www.premierecenter.com/?y_source=1_OTg4NzI4NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D
+2026-04-24 14:00:07,859   ✅ Tampa Palms Plastic Surgery — (813) 631-1500 — https://www.tampapalmsplasticsurgery.com/
+2026-04-24 14:00:08,120   ✅ Plastic Surgery Center of Tampa - Jaime Perez, MD — (813) 877-3739 — https://www.jaimeperezmd.com/
+2026-04-24 14:00:08,279   ✅ Diaco Institute of Plastic Surgery — (813) 876-3611 — http://www.drdiaco.com/
+2026-04-24 14:00:08,436   ✅ Elite Facial Plastic Surgery: Dr. Dominic M. Castellano — (813) 975-3223 — https://www.elitetampa.com/?utm_source=gmb&utm_medium=organic
+2026-04-24 14:00:08,630   ✅ Demetri Arnaoutakis, MD — (813) 603-3110 — https://www.drdemetrimd.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_term=Demetri-Arnaoutakis-MD-FL&utm_content=website
+2026-04-24 14:00:08,776   ✅ Tampa Surgical Arts — (813) 836-7202 — https://www.tampasurgicalarts.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-24 14:00:08,931   ✅ Landon Plastic Surgery — (813) 499-1408 — https://www.landonplasticsurgery.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=Tampa
+2026-04-24 14:00:09,115   ✅ Alexey Markelov MD Plastic Surgery — (813) 709-8880 — http://www.markelovmd.com/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb
+2026-04-24 14:00:11,783   ✅ Dr. William P. Mack, MD — (813) 875-5437 — http://www.mackmd.com
+2026-04-24 14:00:11,919   ✅ Lohith Bose, MD, FACS — (219) 983-6210 — https://boseplasticsurgery.com/
+2026-04-24 14:00:12,063   ✅ Formation by Dr. Gopal Grandhige - Tampa Plastic Surgery Clinic — (813) 922-2920 — https://formationmed.com/?utm_source=localsearch&utm_medium=organic&utm_campaign=googlemybusiness&y_source=1_Njk0NDQ2NzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-04-24 14:00:12,200   ✅ Politis Plastic Surgery — (813) 355-8501 — http://politisplasticsurgery.com/
+2026-04-24 14:00:12,418   ✅ ImageLift: Facial Plastic Surgery — (813) 463-9245 — https://imagelift.com/
+2026-04-24 14:00:12,611   ✅ Gruber Plastic Surgery — (888) 400-0086 — https://www.drmeegangruber.com/
+2026-04-24 14:00:12,840   ✅ Dana Coberly — (813) 448-6550 — https://www.drcoberly.com/
+2026-04-24 14:00:13,030   ✅ Dr. Joseph Castellano — (813) 872-6093 — https://www.castellanocosmeticsurgery.com/about-us/meet-dr-castellano/
+2026-04-24 14:00:13,239   ✅ Rejuve Aesthetic Surgery — (813) 280-2639 — https://rejuveaesthetic.com/
+2026-04-24 14:00:13,385   ✅ Tampa Bay Cosmetic Surgery Center — (727) 522-3223 — https://www.kassmd.com/
+2026-04-24 14:00:13,573   ✅ Farrior Facial Plastic Surgery — (813) 875-3223 — https://drfarrior.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-24 14:00:13,734   ✅ Tampa Plastic Surgeon - Dr Mendoza — (813) 777-5850 — http://www.embodimentmedspa.com/
+2026-04-24 14:00:13,946   ✅ Holcomb Kreithen Plastic Surgery and MedSpa - Tampa — (813) 694-4483 — https://www.hkplasticsurgery.com/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=tampa
+2026-04-24 14:00:14,175   ✅ SynergyMD — (813) 590-1776 — https://synergymd.com/
+2026-04-24 14:00:14,373   ✅ Adam Scheiner MD — (813) 367-1915 — https://adamscheinermd.com/
+2026-04-24 14:00:14,569   ✅ VG Signature | Vipul Gargya, MD — (813) 413-6683 — https://vgsignatureart.com/
+2026-04-24 14:00:14,766   ✅ Meghan Murphy, PA-C — (813) 878-0089 — https://wattplasticsurgery.com/
+2026-04-24 14:00:14,933   ✅ Oculofacial Surgery and Cosmetic Laser Institute Tampa — (813) 303-0123 — http://doctorrosh.com/
+2026-04-24 14:00:15,085   ✅ Finer You PA - Dr. Anahita Azharian, DO, MPH — (813) 563-2220 — https://fineryou.com/about/dr-azharian/
+2026-04-24 14:00:15,248   ✅ Sono Bello Tampa — (813) 609-0839 — https://www.sonobello.com/locations/tampa/
+2026-04-24 14:00:17,875   ✅ Forever Young Aesthetics - Tampa — (813) 353-0023 — http://www.foreveryoungtampa.com/
+2026-04-24 14:00:18,066   ✅ VIVIFY Med Spa — (813) 588-5150 — https://www.vivifyps.com/vivify-medspa/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-medspa
+2026-04-24 14:00:18,261   ✅ Lecada Medical Artistry — (813) 874-2332 — http://www.lecadatampa.com/?utm_source=gbp
+2026-04-24 14:00:18,387   ✅ Dr. Moriah R. Moffitt, MD — (813) 414-0908 — http://www.drmoffitt.com/
+2026-04-24 14:00:18,586   ✅ Karen E. Wells M.D., F.A.C.S — (813) 353-8809 — https://www.drkarenwells.com/
+2026-04-24 14:00:18,812   ✅ Joshua A. Halpern, M.D. P.A. — (813) 872-2696 — https://www.drhalpern.com/
+2026-04-24 14:00:18,973   ✅ Dr. Mutaz B. Habal, MD — (813) 238-0409 — no website
+2026-04-24 14:00:19,144   ✅ The Julian Institute of Plastic Surgery — (352) 556-5248 — https://julianplasticsurgery.com/
+2026-04-24 14:00:19,295   ✅ Ernesto J Ruas MD — (813) 259-1550 — https://www.drruas.com/
+2026-04-24 14:00:19,448   ✅ Gerard C. Mosiello MD — (813) 631-1500 — http://www.tampapalmsplasticsurgery.com/
+2026-04-24 14:00:19,476   📊 Found 50, 50 new (rest were duplicates)
+2026-04-24 14:00:20,476 
+==================================================
+2026-04-24 14:00:20,476 ✅ Scraping complete
+2026-04-24 14:00:20,477    Total found:  50
+2026-04-24 14:00:20,477    New leads:    50
+2026-04-24 14:00:20,477    Duplicates:   0
+2026-04-24 14:00:20,478    DB total:     784 leads (361 with emails)
+2026-04-24 14:00:20,478 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-24 14:00:20,655 🔍 Finding emails for 50 leads...
+2026-04-24 14:00:21,227 Hunter.io rate limited — pausing 60s
+2026-04-24 14:01:21,615 🔮 Guessed: info@siutsehairextensions.com — Siutse Hair Extensions
+2026-04-24 14:01:22,346 Hunter.io rate limited — pausing 60s
+2026-04-24 14:02:22,562 🔮 Guessed: info@redsalon.com — Red Salon
+2026-04-24 14:02:23,457 Hunter.io rate limited — pausing 60s
+2026-04-24 14:03:23,691 🔮 Guessed: info@cristianrovere.com — Cristian Rovere Hair Salon and Spa
+2026-04-24 14:03:24,445 Hunter.io rate limited — pausing 60s
+2026-04-24 14:04:24,698 🔮 Guessed: info@whitespacesalon.com — White Space Hair Salon
+2026-04-24 14:04:25,627 Hunter.io rate limited — pausing 60s
+2026-04-24 14:05:26,040 🔮 Guessed: info@james-styles.vercel.app — James styles hair salón
+2026-04-24 14:05:26,944 Hunter.io rate limited — pausing 60s
+2026-04-24 14:06:27,179 🔮 Guessed: info@gleamhairstudio.com — Gleam Hair Studio
+2026-04-24 14:06:28,053 Hunter.io rate limited — pausing 60s
+2026-04-24 14:07:28,269 🔮 Guessed: info@detlev.com — detlev - A davines Salon
+2026-04-24 14:07:29,117 Hunter.io rate limited — pausing 60s
+2026-04-24 14:08:29,335 🔮 Guessed: info@salondahlia.com — Salon Dahlia
+2026-04-24 14:08:30,226 Hunter.io rate limited — pausing 60s
+2026-04-24 14:09:30,633 🔮 Guessed: info@wynwoodsalon.setmore.com — Wynwood Salon
+2026-04-24 14:09:31,363 Hunter.io rate limited — pausing 60s
+2026-04-24 14:10:31,576 🔮 Guessed: info@shapesbyluke-101660.square.site — Shapes By Luke Hair MIAMI
+2026-04-24 14:10:32,697 Hunter.io rate limited — pausing 60s
+2026-04-24 14:11:32,918 🔮 Guessed: info@cuesalonstudio.com — cue. HAIR STUDIO - organic hair color, blonde specialist, and blowdry memberships
+2026-04-24 14:11:33,628 Hunter.io rate limited — pausing 60s
+2026-04-24 14:12:34,044 🔮 Guessed: info@hairhealers.com — Hair Healers Beauty Salon
+2026-04-24 14:12:34,985 Hunter.io rate limited — pausing 60s
+2026-04-24 14:13:35,206 🔮 Guessed: info@rootandbark.com — The Root & Bark
+2026-04-24 14:13:36,074 Hunter.io rate limited — pausing 60s
+2026-04-24 14:14:36,331 🔮 Guessed: info@wynwoodhairco.com — Wynwood Hair Co.
+2026-04-24 14:14:37,210 Hunter.io rate limited — pausing 60s
+2026-04-24 14:15:37,585 🔮 Guessed: info@thenerohairsalon.com — Nero Hair Salon
+2026-04-24 14:15:38,484 Hunter.io rate limited — pausing 60s
+2026-04-24 14:16:38,714 🔮 Guessed: info@studionsalon.com — Studio N Salon
+2026-04-24 14:16:39,479 Hunter.io rate limited — pausing 60s
+2026-04-24 14:17:39,853 🔮 Guessed: info@downtownautomotiveseattle.com — Downtown Automotive
+2026-04-24 14:17:40,736 Hunter.io rate limited — pausing 60s
+2026-04-24 14:18:41,122 🔮 Guessed: info@pacrimauto.com — Pacific Rim Automotive, Inc.
+2026-04-24 14:18:41,837 Hunter.io rate limited — pausing 60s
+2026-04-24 14:19:42,196 🔮 Guessed: info@yourfamilyauto.wordpress.com — Your Family Auto
+2026-04-24 14:19:42,923 Hunter.io rate limited — pausing 60s
+2026-04-24 14:20:43,161 🔮 Guessed: info@superiorautoservice.net — Superior Auto Service
+2026-04-24 14:20:44,191 Hunter.io rate limited — pausing 60s
+2026-04-24 14:21:44,535 🔮 Guessed: info@tomokoautocarecenter.com — Tomoko Auto Care Center
+2026-04-24 14:21:45,494 Hunter.io rate limited — pausing 60s
+2026-04-24 14:22:45,726 🔮 Guessed: info@buddandcompany.com — Budd & Company Automotive - Rainier Ave
+2026-04-24 14:22:46,589 Hunter.io rate limited — pausing 60s
+2026-04-24 14:23:47,186 🔮 Guessed: info@autorepairrevolution.com — Repair Revolution
+2026-04-24 14:23:47,979 Hunter.io rate limited — pausing 60s
+2026-04-24 14:24:48,249 🔮 Guessed: info@aceautorepairandtire.com — Ace Auto Repair & Tire
+2026-04-24 14:24:49,019 Hunter.io rate limited — pausing 60s
+2026-04-24 14:25:49,471 🔮 Guessed: info@autorepairseattle.com — Chuck's Auto Repair - North Seattle
+2026-04-24 14:25:50,446 Hunter.io rate limited — pausing 60s
+2026-04-24 14:26:50,676 🔮 Guessed: info@eliteautoseattle.com — Elite Auto Care
+2026-04-24 14:26:51,570 Hunter.io rate limited — pausing 60s
+2026-04-24 14:27:51,939 🔮 Guessed: info@baysautorepairballard.com — Bay's Auto Repair & Collision Services
+2026-04-24 14:27:52,657 Hunter.io rate limited — pausing 60s
+2026-04-24 14:28:53,010 🔮 Guessed: info@lakecityautoworks.com — Lake City Autoworks
+2026-04-24 14:28:53,771 Hunter.io rate limited — pausing 60s
+2026-04-24 14:29:54,029 🔮 Guessed: info@precisionmotorworks.net — Precision Motorworks
+2026-04-24 14:29:54,908 Hunter.io rate limited — pausing 60s
+2026-04-24 14:30:55,153 🔮 Guessed: info@arrowsautomotive.com — Arrows Automotive
+2026-04-24 14:30:56,054 Hunter.io rate limited — pausing 60s
+2026-04-24 14:31:56,423 🔮 Guessed: info@bestserviceandrepair.com — Best Service & Repair
+2026-04-24 14:31:57,327 Hunter.io rate limited — pausing 60s
+2026-04-24 14:32:57,708 🔮 Guessed: info@mossalley.com — Moss Alley Motors
+2026-04-24 14:32:58,465 Hunter.io rate limited — pausing 60s
+2026-04-24 14:33:58,845 🔮 Guessed: info@uvillageautocare.com — Village AutoCare & Tires
+2026-04-24 14:33:59,583 Hunter.io rate limited — pausing 60s
+2026-04-24 14:34:59,951 🔮 Guessed: info@tomsautomotive.com — Tom’s Automotive of West Seattle
+2026-04-24 14:35:00,881 Hunter.io rate limited — pausing 60s
+2026-04-24 14:36:01,259 🔮 Guessed: info@carrepairsseattle.com — 34th STREET GARAGE SEATTLE
+2026-04-24 14:36:02,135 Hunter.io rate limited — pausing 60s
+2026-04-24 14:37:02,522 🔮 Guessed: info@johnsonsautorepair.net — Johnson's Auto Repair
+2026-04-24 14:37:03,409 Hunter.io rate limited — pausing 60s
+2026-04-24 14:38:03,636 🔮 Guessed: info@eurocarservice.com — EuroCar Service
+2026-04-24 14:38:04,391 Hunter.io rate limited — pausing 60s
+2026-04-24 14:39:04,769 🔮 Guessed: info@high-road.com — High Road Automotive
+2026-04-24 14:39:05,500 Hunter.io rate limited — pausing 60s
+2026-04-24 14:40:05,853 🔮 Guessed: info@faseattle.com — Finesse Auto Service & Repair
+2026-04-24 14:40:06,592 Hunter.io rate limited — pausing 60s
+2026-04-24 14:41:07,070 🔮 Guessed: info@randkautomotive.com — R AND K AUTOMOTIVE
+2026-04-24 14:41:07,947 Hunter.io rate limited — pausing 60s
+2026-04-24 14:42:08,297 🔮 Guessed: info@dannysautorepair.com — Danny's Auto Repair
+2026-04-24 14:42:09,058 Hunter.io rate limited — pausing 60s
+2026-04-24 14:43:09,311 🔮 Guessed: info@gregs.com — Greg's Japanese Auto
+2026-04-24 14:43:09,818 
+==================================================
+2026-04-24 14:43:09,818 ✅ Email finder complete
+2026-04-24 14:43:09,818    API found:  0
+2026-04-24 14:43:09,818    Guessed:    42
+2026-04-24 14:43:09,818    Total:      42
+2026-04-24 14:43:09,818 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-24.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Fri Apr 24** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 784 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Fri Apr 24 14:43:10 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-24.log

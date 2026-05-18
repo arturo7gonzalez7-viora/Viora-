@@ -1,0 +1,52 @@
+2026-04-09 14:45:19,248 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-09 14:45:19,249 INFO    Already sent today: 0, remaining: 40
+2026-04-09 14:45:19,433 INFO file_cache is only supported with oauth2client<4.0.0
+2026-04-09 14:45:19,874 INFO ✅ Email 1 → info@losfelizmedspa.com (Los Feliz Med Spa)
+2026-04-09 14:45:35,841 INFO ✅ Email 1 → info@rjmedspa.com (R&J Medspa)
+2026-04-09 14:45:53,710 INFO ✅ Email 1 → calvin@sculptdtla.com (Sculpt Med Spa Downtown Los Angeles)
+2026-04-09 14:45:59,474 INFO ✅ Email 1 → info@ivemedicalspa.com (IVE MEDICAL SPA)
+2026-04-09 14:46:14,285 INFO ✅ Email 1 → info@blisspointmedspa.com (Bliss Point Medical Spa)
+2026-04-09 14:46:24,121 INFO ✅ Email 1 → info@renewmespa.com (RenewMe IV Therapy + Medspa)
+2026-04-09 14:46:37,068 INFO ✅ Email 1 → info@skinstorymedspa.com (Skin Story Med Spa)
+2026-04-09 14:46:45,183 INFO ✅ Email 1 → info@deluxecosmeticcenter.com (Deluxe Cosmetic Center)
+2026-04-09 14:46:53,657 INFO ✅ Email 1 → info@vermontmedspa.com (Vermont Med spa)
+2026-04-09 14:47:03,296 INFO ✅ Email 1 → info@smoothskinlounge.com (SMOOTH SKIN LOUNGE)
+2026-04-09 14:47:09,501 INFO ✅ Email 1 → info@flawlessskincenter.com (Flawless Skin Center - West Hollywood: Med Spa)
+2026-04-09 14:47:19,412 INFO ✅ Email 1 → me@melosangeles.com (me.losangeles aesthetics)
+2026-04-09 14:47:27,050 INFO ✅ Email 1 → info@simplyrenewla.com (Re:Lune - Medical Aesthetics and Wellness)
+2026-04-09 14:47:39,685 INFO ✅ Email 1 → alissa.bayer@milkandhoneyspa.com (milk + honey | Brentwood)
+2026-04-09 14:47:51,491 INFO ✅ Email 1 → info@skincarewellnesspa.com (Skincare Wellness Spa)
+2026-04-09 14:48:00,734 INFO ✅ Email 1 → info@shapedsecretz.com (Shaped Secretz Body Sculpting)
+2026-04-09 14:48:13,431 INFO ✅ Email 1 → elsegundo@skinworksmed.com (Skin Works Medical Spa | Torrance)
+2026-04-09 14:48:24,530 INFO ✅ Email 1 → info@spadelapeau.com (Spa De La Peau)
+2026-04-09 14:48:36,786 INFO ✅ Email 1 → info@shinylaserclinic.com (Shiny Laser Skin Clinic – Koreatown Med Spa & Laser Skin Experts)
+2026-04-09 14:48:53,686 INFO ✅ Email 1 → info@polarisaesthetics.com (Polaris Medical Aesthetics)
+2026-04-09 14:49:02,081 INFO ✅ Email 1 → info@vipaestheticsla.com (VIP AESTHETICS AND MEN'S HEALTH BY VIP MEDICAL)
+2026-04-09 14:49:16,943 INFO ✅ Email 1 → shelby.mack@southcoastmedspa.com (South Coast MedSpa)
+2026-04-09 14:49:28,068 INFO ✅ Email 1 → alyssa@springsrejuvenation.com (Springs Rejuvenation)
+2026-04-09 14:49:35,872 INFO ✅ Email 1 → info@thesunsetaesthetics.com (The Sunset Aesthetics)
+2026-04-09 14:49:43,005 INFO ✅ Email 1 → info@skinsationla.com (Skinsation LA)
+2026-04-09 14:49:57,787 INFO ✅ Email 1 → info@siennamedspa.com (Sienna Med)
+2026-04-09 14:50:15,686 INFO ✅ Email 1 → info@healthmedspa.com (Health Med Spa IV Therapy – Los Angeles)
+2026-04-09 14:50:28,315 INFO ✅ Email 1 → sunny.gao@waveplasticsurgery.com (Wave Plastic Surgery)
+2026-04-09 14:50:41,486 INFO ✅ Email 1 → lilly@thethingswedo.co (The Things We Do)
+2026-04-09 14:50:56,281 INFO ✅ Email 1 → info@re-nuaesthetics.com (Re-Nu Aesthetics)
+2026-04-09 14:51:13,000 INFO ✅ Email 1 → info@latinamedicalcenter.com (Latina Medical Center)
+2026-04-09 14:51:24,091 INFO ✅ Email 1 → info@beverlyhillsmedspa.com (Beverly Hills Med Spa)
+2026-04-09 14:51:31,855 INFO ✅ Email 1 → info@facialspa.net (Facial spa LA)
+2026-04-09 14:51:39,133 INFO ✅ Email 1 → romina@theskinagency.com (The Skin Agency)
+2026-04-09 14:51:54,636 INFO ✅ Email 1 → info@arcbeautylab.com (Arc Beauty Lab)
+2026-04-09 14:52:10,088 INFO ✅ Email 1 → info@rejuvayou.com (Rejuvayou Medical)
+2026-04-09 14:52:26,466 INFO ✅ Email 1 → info@elmdspa.com (EL Med Spa)
+2026-04-09 14:52:42,308 INFO ✅ Email 1 → skramer@oubeauty.com (OU Beauty)
+2026-04-09 14:52:56,928 INFO ✅ Email 1 → info@medworksaesthetics.com (Medworks Aesthetics)
+2026-04-09 14:53:04,772 INFO ✅ Email 1 → info@dermasterusa.com (Dermaster Medical Aesthetic Clinic)
+2026-04-09 14:53:18,576 INFO 
+==================================================
+2026-04-09 14:53:18,577 INFO ✅ Email sender complete [SENT]
+2026-04-09 14:53:18,577 INFO    Emails sent:     40
+2026-04-09 14:53:18,577 INFO    Daily limit:     40
+2026-04-09 14:53:18,577 INFO    Already today:   0
+2026-04-09 14:53:18,577 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-04-09.log
+2026-04-09 14:53:18,577 INFO ==================================================
+

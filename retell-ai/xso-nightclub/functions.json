@@ -1,0 +1,193 @@
+{
+  "functions": [
+    {
+      "name": "check_availability",
+      "description": "Check if VIP table is available for specified date, time, and party size. Returns availability status and alternative times if requested slot is unavailable.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date in YYYY-MM-DD format (America/Denver timezone)",
+            "example": "2026-02-14"
+          },
+          "time": {
+            "type": "string",
+            "description": "Preferred time in HH:MM 24-hour format (America/Denver timezone)",
+            "example": "22:00"
+          },
+          "party_size": {
+            "type": "integer",
+            "description": "Number of people in the party (1-10; larger parties should be transferred to human)",
+            "minimum": 1,
+            "maximum": 10
+          }
+        },
+        "required": ["date", "time", "party_size"]
+      },
+      "webhook_url": "https://hook.us1.make.com/YOUR_WEBHOOK_ID_HERE/check_availability",
+      "expected_response": {
+        "available": "boolean",
+        "alternatives": [
+          {
+            "time": "string (HH:MM)",
+            "room": "string (XSO Main Room or Cielo Room)"
+          }
+        ],
+        "message": "string (optional explanation)"
+      }
+    },
+    {
+      "name": "create_reservation",
+      "description": "Create a confirmed VIP table reservation. Only call this after check_availability confirms availability and caller has confirmed all details.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "description": "Caller's first name",
+            "example": "Maria"
+          },
+          "last_name": {
+            "type": "string",
+            "description": "Caller's last name",
+            "example": "Rodriguez"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Caller's phone number in any format",
+            "example": "303-555-1234"
+          },
+          "email": {
+            "type": "string",
+            "description": "Caller's email address",
+            "format": "email",
+            "example": "maria@example.com"
+          },
+          "party_size": {
+            "type": "integer",
+            "description": "Number of people (must match check_availability call)",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "date": {
+            "type": "string",
+            "description": "Reservation date in YYYY-MM-DD format (America/Denver timezone)",
+            "example": "2026-02-14"
+          },
+          "time": {
+            "type": "string",
+            "description": "Reservation time in HH:MM 24-hour format (America/Denver timezone)",
+            "example": "22:00"
+          },
+          "special_requests": {
+            "type": "string",
+            "description": "Any special requests or notes from the caller (optional)",
+            "example": "Birthday celebration, prefer near dance floor"
+          },
+          "room": {
+            "type": "string",
+            "enum": ["XSO Main Room", "Cielo Room", "either"],
+            "description": "Preferred room (default: either)",
+            "default": "either"
+          }
+        },
+        "required": ["first_name", "last_name", "phone", "email", "party_size", "date", "time"]
+      },
+      "webhook_url": "https://hook.us1.make.com/YOUR_WEBHOOK_ID_HERE/create_reservation",
+      "expected_response": {
+        "success": "boolean",
+        "booking_id": "string (unique identifier)",
+        "confirmation_number": "string (display to caller)",
+        "room_assigned": "string (XSO Main Room or Cielo Room)",
+        "deposit_required": "boolean",
+        "deposit_amount": "number (optional)",
+        "message": "string (optional)"
+      }
+    },
+    {
+      "name": "send_confirmation",
+      "description": "Send email and SMS confirmation to the caller after successful reservation. Only call after create_reservation succeeds.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "booking_id": {
+            "type": "string",
+            "description": "Booking ID from create_reservation response"
+          },
+          "email": {
+            "type": "string",
+            "description": "Recipient email address",
+            "format": "email"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Recipient phone number for SMS"
+          },
+          "confirmation_data": {
+            "type": "object",
+            "description": "Full reservation details for confirmation message",
+            "properties": {
+              "name": "string",
+              "party_size": "integer",
+              "date": "string",
+              "time": "string",
+              "room": "string",
+              "confirmation_number": "string"
+            }
+          }
+        },
+        "required": ["booking_id", "email", "phone"]
+      },
+      "webhook_url": "https://hook.us1.make.com/YOUR_WEBHOOK_ID_HERE/send_confirmation",
+      "expected_response": {
+        "email_sent": "boolean",
+        "sms_sent": "boolean",
+        "message": "string"
+      }
+    },
+    {
+      "name": "get_event_info",
+      "description": "Get information about upcoming events at XSO. Optionally filter by date.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Optional date to check specific event (YYYY-MM-DD format)",
+            "example": "2026-02-14"
+          },
+          "day_of_week": {
+            "type": "string",
+            "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+            "description": "Optional day of week to get recurring event info"
+          }
+        }
+      },
+      "webhook_url": "https://hook.us1.make.com/YOUR_WEBHOOK_ID_HERE/get_event_info",
+      "expected_response": {
+        "events": [
+          {
+            "name": "string",
+            "date": "string (YYYY-MM-DD)",
+            "day_of_week": "string",
+            "time": "string (HH:MM)",
+            "room": "string",
+            "description": "string",
+            "djs": ["string"],
+            "ticket_url": "string (optional)"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Replace YOUR_WEBHOOK_ID_HERE with actual Make.com webhook IDs",
+    "All dates/times assume America/Denver timezone",
+    "check_availability should be called before create_reservation",
+    "send_confirmation should only be called after successful create_reservation",
+    "For demo purposes, these can be mocked with static responses",
+    "Production: integrate with Tablelist API or custom booking system",
+    "Consider rate limiting and error handling in webhook implementations"
+  ]
+}

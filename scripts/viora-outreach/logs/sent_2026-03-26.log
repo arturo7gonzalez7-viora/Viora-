@@ -1,0 +1,17 @@
+2026-03-26 17:20:40,457 INFO 📧 Email sender starting — daily limit: 5 (bounce rate: 0.0%)
+2026-03-26 17:20:40,459 INFO    Already sent today: 0, remaining: 5
+2026-03-26 17:20:41,029 INFO file_cache is only supported with oauth2client<4.0.0
+2026-03-26 17:20:41,622 INFO ✅ Email 1 → matt@restormedicalspa.com (RESTOR Medical Spa | Central Park)
+2026-03-26 17:20:55,934 INFO ✅ Email 1 → clayton@looklab.com (Look Lab Med Spa)
+2026-03-26 17:21:03,377 INFO ✅ Email 1 → info@naturamedspaivbar.com (Natura Med Spa & IV Bar - Denver)
+2026-03-26 17:21:18,683 INFO ✅ Email 1 → matt@restormedicalspa.com (RESTOR Medical Spa)
+2026-03-26 17:21:37,103 INFO ✅ Email 1 → sara.kubik@rejuvenatecolorado.com (Rejuvenate MedSpa)
+2026-03-26 17:21:53,904 INFO 
+==================================================
+2026-03-26 17:21:53,904 INFO ✅ Email sender complete [SENT]
+2026-03-26 17:21:53,904 INFO    Emails sent:     5
+2026-03-26 17:21:53,904 INFO    Daily limit:     5
+2026-03-26 17:21:53,904 INFO    Already today:   0
+2026-03-26 17:21:53,904 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-03-26.log
+2026-03-26 17:21:53,904 INFO ==================================================
+

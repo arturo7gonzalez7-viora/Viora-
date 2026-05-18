@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viora CRM</title>
+<link rel="icon" type="image/png" href="/static/logo.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-0:#0a0a0f;--bg-1:#12121a;--bg-2:#1a1a2e;--bg-3:#222240;
+  --text-0:#f0f0f5;--text-1:#b0b0c8;--text-2:#7070a0;
+  --accent:#7c3aed;--accent-2:#a855f7;--accent-glow:rgba(124,58,237,.25);
+  --green:#22c55e;--green-dim:#166534;--yellow:#eab308;--red:#ef4444;
+  --blue:#3b82f6;--orange:#f97316;--pink:#ec4899;
+  --radius:10px;--radius-sm:6px;
+  --shadow:0 1px 3px rgba(0,0,0,.4),0 4px 20px rgba(0,0,0,.3);
+  --transition:all .2s ease;
+}
+html{font-size:14px;scroll-behavior:smooth}
+body{background:var(--bg-0);color:var(--text-0);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;line-height:1.5;min-height:100vh}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg-1)}
+::-webkit-scrollbar-thumb{background:var(--bg-3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+/* ─── Stats Bar ────────────────────────────────────────────────── */
+.stats-bar{background:#0d0d14;border-bottom:1px solid var(--bg-3);padding:8px 24px;display:flex;align-items:center;justify-content:center;gap:24px;font-size:.8rem;font-weight:600;position:sticky;top:0;z-index:200;flex-wrap:wrap}
+.stats-bar .stat{display:flex;align-items:center;gap:6px;color:var(--text-1)}
+.stats-bar .stat .val{color:var(--text-0)}
+
+/* ─── Layout ───────────────────────────────────────────────────── */
+.shell{display:flex;min-height:calc(100vh - 38px)}
+.sidebar{width:220px;background:var(--bg-1);border-right:1px solid var(--bg-3);padding:20px 0;flex-shrink:0;display:flex;flex-direction:column;position:fixed;top:38px;left:0;bottom:0;z-index:100}
+.main{margin-left:220px;flex:1;padding:24px 32px;max-width:1400px}
+
+/* ─── Sidebar ──────────────────────────────────────────────────── */
+.logo{padding:20px 16px 20px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:8px;}
+.logo .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav{flex:1}
+.nav-item{display:flex;align-items:center;gap:10px;padding:12px 20px;color:var(--text-1);cursor:pointer;font-size:.9rem;font-weight:600;transition:var(--transition);border-left:3px solid transparent}
+.nav-item:hover{background:var(--bg-2);color:var(--text-0)}
+.nav-item.active{background:var(--accent-glow);color:var(--accent-2);border-left-color:var(--accent)}
+.nav-item .icon{width:20px;text-align:center;font-size:1.1rem}
+.nav-badge{margin-left:auto;background:var(--accent);color:#fff;font-size:.7rem;padding:2px 7px;border-radius:10px;font-weight:600}
+
+/* ─── Section Headers ──────────────────────────────────────────── */
+.page-title{font-size:1.6rem;font-weight:700;margin-bottom:4px;letter-spacing:-.03em}
+.page-sub{color:var(--text-2);font-size:.9rem;margin-bottom:24px}
+.section{margin-bottom:32px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section-title{font-size:1.1rem;font-weight:600;display:flex;align-items:center;gap:8px}
+.count-badge{background:var(--bg-3);color:var(--text-1);font-size:.75rem;padding:2px 8px;border-radius:8px;font-weight:500}
+
+/* ─── Cards ────────────────────────────────────────────────────── */
+.card{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius);padding:16px;transition:var(--transition)}
+.card:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-glow)}
+.card-grid{display:grid;gap:12px}
+.card-grid.cols-2{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.card-grid.cols-3{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+
+/* ─── Money Move Cards ─────────────────────────────────────────── */
+.money-card{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius);padding:20px;margin-bottom:20px}
+.money-card-title{font-size:1.15rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.money-card-empty{color:var(--text-2);text-align:center;padding:20px;font-size:.9rem}
+
+/* ─── Lead Cards ───────────────────────────────────────────────── */
+.lead-card{display:flex;flex-direction:column;gap:8px}
+.lead-card .name{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:6px}
+.lead-card .meta{color:var(--text-2);font-size:.8rem;display:flex;flex-wrap:wrap;gap:8px}
+.lead-card .meta span{display:flex;align-items:center;gap:3px}
+.lead-card .actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+
+/* ─── Buttons ──────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--radius-sm);font-size:.8rem;font-weight:600;cursor:pointer;border:1px solid transparent;transition:var(--transition);white-space:nowrap;text-decoration:none}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-2);transform:translateY(-1px)}
+.btn-success{background:var(--green-dim);color:var(--green);border-color:var(--green-dim)}
+.btn-success:hover{background:var(--green);color:#fff}
+.btn-ghost{background:transparent;color:var(--text-1);border-color:var(--bg-3)}
+.btn-ghost:hover{background:var(--bg-2);color:var(--text-0)}
+.btn-danger{background:transparent;color:var(--red);border-color:rgba(239,68,68,.3)}
+.btn-danger:hover{background:var(--red);color:#fff}
+.btn-sm{padding:4px 10px;font-size:.75rem}
+.btn-orange{background:rgba(249,115,22,.15);color:var(--orange);border-color:rgba(249,115,22,.3)}
+.btn-orange:hover{background:var(--orange);color:#fff}
+.btn-blue{background:rgba(59,130,246,.15);color:var(--blue);border-color:rgba(59,130,246,.3)}
+.btn-blue:hover{background:var(--blue);color:#fff}
+
+/* ─── Status Badges ────────────────────────────────────────────── */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.badge-new{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge-contacted{background:rgba(249,115,22,.15);color:var(--orange)}
+.badge-interested{background:rgba(34,197,94,.15);color:var(--green)}
+.badge-demo_booked{background:rgba(168,85,247,.15);color:var(--accent-2)}
+.badge-closed{background:rgba(34,197,94,.2);color:var(--green)}
+.badge-lost{background:rgba(239,68,68,.15);color:var(--red)}
+.badge-warm_lead{background:rgba(234,179,8,.15);color:var(--yellow)}
+
+/* ─── Progress Bar ─────────────────────────────────────────────── */
+.progress-wrap{margin:8px 0}
+.progress-label{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:6px}
+.progress-label .current{color:var(--text-0);font-weight:600}
+.progress-label .goal{color:var(--text-2)}
+.progress-bar{height:8px;background:var(--bg-3);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .6s ease}
+
+/* ─── KPI Cards ────────────────────────────────────────────────── */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px}
+.kpi{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius);padding:16px;text-align:center}
+.kpi .value{font-size:1.8rem;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent-2),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.kpi .label{color:var(--text-2);font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+/* ─── Pipeline / Kanban ────────────────────────────────────────── */
+.kanban{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;overflow-x:auto}
+.kanban-col{min-width:180px}
+.kanban-header{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-2);padding:8px 0;border-bottom:2px solid var(--bg-3);margin-bottom:8px;display:flex;justify-content:space-between}
+.kanban-header .num{color:var(--text-0)}
+.kanban-card{background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:10px;margin-bottom:6px;cursor:pointer;transition:var(--transition);font-size:.8rem}
+.kanban-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.kanban-card .biz{font-weight:600;margin-bottom:2px;font-size:.85rem}
+.kanban-card .sub{color:var(--text-2);font-size:.7rem}
+
+/* ─── Table ────────────────────────────────────────────────────── */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{text-align:left;color:var(--text-2);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;padding:10px 12px;border-bottom:1px solid var(--bg-3);position:sticky;top:0;background:var(--bg-0)}
+td{padding:10px 12px;border-bottom:1px solid var(--bg-2);color:var(--text-1)}
+tr:hover td{background:var(--bg-1);color:var(--text-0)}
+tr.hot td{border-left:3px solid var(--green)}
+
+/* ─── Filters Bar ──────────────────────────────────────────────── */
+.filters{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.filter-input,.filter-select{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:8px 12px;color:var(--text-0);font-size:.85rem;outline:none;transition:var(--transition)}
+.filter-input:focus,.filter-select:focus{border-color:var(--accent)}
+.filter-input{min-width:200px}
+.filter-select{min-width:120px;cursor:pointer}
+
+/* ─── Modals ───────────────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:1000;display:none;justify-content:center;align-items:flex-start;padding:60px 20px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:12px;padding:24px;width:100%;max-width:560px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.modal-title{font-size:1.2rem;font-weight:700;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.modal-close{background:none;border:none;color:var(--text-2);cursor:pointer;font-size:1.2rem;padding:4px}
+.modal-close:hover{color:var(--text-0)}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;color:var(--text-2);font-size:.8rem;font-weight:500;margin-bottom:4px}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:10px 12px;color:var(--text-0);font-size:.85rem;outline:none;font-family:inherit}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:60px}
+.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+
+/* ─── LinkedIn DM Card ─────────────────────────────────────────── */
+.li-card{background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:12px;display:flex;flex-direction:column;gap:8px}
+.li-card .biz{font-weight:600;font-size:.9rem}
+.li-card .city{color:var(--text-2);font-size:.8rem}
+.li-card .msg{background:var(--bg-1);border-radius:var(--radius-sm);padding:10px;font-size:.8rem;color:var(--text-1);line-height:1.5;border:1px solid transparent;transition:var(--transition)}
+.li-card .msg:hover{border-color:var(--accent)}
+.li-card .btns{display:flex;gap:6px}
+.copied{background:var(--green-dim)!important;color:var(--green)!important;border-color:var(--green)!important}
+
+/* ─── Client Roster ────────────────────────────────────────────── */
+.client-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:12px;align-items:center;padding:12px;border-bottom:1px solid var(--bg-2);font-size:.85rem}
+.client-row:last-child{border-bottom:none}
+.client-row:hover{background:var(--bg-1)}
+.client-row .biz{font-weight:600}
+.client-row .mrr{color:var(--green);font-weight:700}
+
+/* ─── Invoice Badges ───────────────────────────────────────────── */
+.badge-paid{background:rgba(34,197,94,.15);color:var(--green)}
+.badge-pending{background:rgba(234,179,8,.15);color:var(--yellow)}
+.badge-overdue{background:rgba(239,68,68,.15);color:var(--red)}
+
+/* ─── AI Audit ──────────────────────────────────────────────── */
+.audit-form-card{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.audit-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.audit-form-row{grid-template-columns:1fr}}
+.audit-report{display:none}
+.audit-report.visible{display:block}
+.biz-info-card{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(59,130,246,.08));border:1px solid rgba(124,58,237,.25);border-radius:var(--radius);padding:20px;margin-bottom:24px}
+.biz-info-card .biz-title{font-size:1.3rem;font-weight:700;margin-bottom:4px}
+.biz-info-card .biz-url{color:var(--blue);font-size:.85rem}
+.biz-info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px}
+.biz-info-item{font-size:.8rem}
+.biz-info-item .label{color:var(--text-2);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.auto-card{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius);padding:20px;margin-bottom:14px;transition:var(--transition)}
+.auto-card:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-glow)}
+.auto-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.auto-card .auto-name{font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.auto-card .auto-why{color:var(--text-1);font-size:.85rem;line-height:1.5;margin-bottom:12px;padding:10px;background:var(--bg-2);border-radius:var(--radius-sm)}
+.auto-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.auto-badge{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
+.auto-badge.time{background:rgba(59,130,246,.12);color:var(--blue)}
+.auto-badge.revenue{background:rgba(34,197,94,.12);color:var(--green)}
+.auto-badge.roi{background:rgba(168,85,247,.15);color:var(--accent-2)}
+.auto-badge.price{background:rgba(234,179,8,.12);color:var(--yellow)}
+.auto-recommend-btn{background:var(--green-dim);color:var(--green);border:1px solid rgba(34,197,94,.3);padding:8px 16px;border-radius:var(--radius-sm);cursor:pointer;font-weight:600;font-size:.8rem;transition:var(--transition)}
+.auto-recommend-btn:hover{background:var(--green);color:#fff}
+.auto-recommend-btn.selected{background:var(--green);color:#fff}
+.roi-summary{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(124,58,237,.1));border:1px solid rgba(34,197,94,.2);border-radius:var(--radius);padding:24px;margin:24px 0;text-align:center}
+.roi-summary .big-number{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--green),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.roi-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:16px}
+.roi-summary-item{text-align:center}
+.roi-summary-item .val{font-size:1.3rem;font-weight:700;color:var(--text-0)}
+.roi-summary-item .lbl{font-size:.7rem;color:var(--text-2);text-transform:uppercase;letter-spacing:.04em}
+.audit-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.audit-history-card{background:var(--bg-1);border:1px solid var(--bg-3);border-radius:var(--radius);padding:14px;cursor:pointer;transition:var(--transition)}
+.audit-history-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid var(--bg-3);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;margin-right:8px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(105vh) rotate(720deg);opacity:0;}}
+
+/* ─── Sequence Pills ───────────────────────────────────────────── */
+.seq-pills{display:flex;gap:4px}
+.seq-pill{width:24px;height:6px;border-radius:3px;background:var(--bg-3)}
+.seq-pill.sent{background:var(--accent)}
+.seq-pill.replied{background:var(--green)}
+
+/* ─── Toast ────────────────────────────────────────────────────── */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--bg-2);border:1px solid var(--accent);border-radius:var(--radius);padding:12px 20px;font-size:.85rem;font-weight:500;z-index:2000;transform:translateY(100px);opacity:0;transition:all .3s ease;pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ─── Tabs ─────────────────────────────────────────────────────── */
+.page{display:none}
+.page.active{display:block}
+
+/* ─── Revenue projections ──────────────────────────────────────── */
+.proj-row{display:flex;gap:16px;margin-top:12px}
+.proj-item{flex:1;text-align:center;padding:12px;background:var(--bg-2);border-radius:var(--radius-sm)}
+.proj-item .days{font-size:.7rem;color:var(--text-2);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.proj-item .amt{font-size:1.3rem;font-weight:700;margin-top:4px;color:var(--text-0)}
+
+/* ─── Mobile ───────────────────────────────────────────────────── */
+.mobile-header{display:none;background:var(--bg-1);border-bottom:1px solid var(--bg-3);padding:12px 16px;position:sticky;top:38px;z-index:101;justify-content:space-between;align-items:center}
+.hamburger{background:none;border:none;color:var(--text-0);font-size:1.4rem;cursor:pointer}
+
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s ease;width:260px}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0;padding:16px}
+  .mobile-header{display:flex}
+  .kanban{grid-template-columns:repeat(3,1fr)}
+  .kpi-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .kanban{grid-template-columns:1fr 1fr}
+  .card-grid.cols-2,.card-grid.cols-3{grid-template-columns:1fr}
+  .client-row{grid-template-columns:1fr 1fr;gap:6px}
+  .filters{flex-direction:column}
+  .filter-input,.filter-select{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── Persistent Stats Bar ───────────────────────────────────── -->
+<div class="stats-bar" id="stats-bar">
+  <div class="stat">📱 IG/FB: <span class="val" id="sb-instagram">0/20</span></div>
+  <div class="stat">💼 LinkedIn: <span class="val" id="sb-linkedin">0/20</span></div>
+  <div class="stat">📧 Email: <span class="val" id="sb-emails">0/10</span></div>
+  <div class="stat">🔥 Hot: <span class="val" id="sb-hot">0</span></div>
+  <div class="stat">💰 MRR: <span class="val" id="sb-mrr">$0</span></div>
+</div>
+
+<!-- ─── Mobile Header ──────────────────────────────────────────── -->
+<div class="mobile-header">
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+  <span style="font-weight:700">Viora CRM</span>
+  <span style="width:8px;height:8px;border-radius:50%;background:var(--green)"></span>
+</div>
+
+<div class="shell">
+<!-- ─── Sidebar (5 tabs) ──────────────────────────────────────── -->
+<aside class="sidebar" id="sidebar">
+  <div class="logo">
+    <img src="/static/logo.png" alt="Viora" style="height:72px; width:auto; object-fit:contain;">
+  </div>
+  <nav class="nav">
+    <div class="nav-item active" data-page="today" onclick="switchPage('today')">
+      <span class="icon">⚡</span> TODAY
+    </div>
+    <div class="nav-item" data-page="pipeline" onclick="switchPage('pipeline')">
+      <span class="icon">🔀</span> PIPELINE
+    </div>
+    <div class="nav-item" data-page="clients" onclick="switchPage('clients')">
+      <span class="icon">⭐</span> CLIENTS
+    </div>
+    <div class="nav-item" data-page="audit" onclick="switchPage('audit')">
+      <span class="icon">🧠</span> AI AUDIT
+    </div>
+    <div class="nav-item" data-page="leads" onclick="switchPage('leads')">
+      <span class="icon">📋</span> LEADS
+    </div>
+    <div class="nav-item" data-page="content" onclick="switchPage('content')">
+      <span class="icon">✍️</span> CONTENT
+    </div>
+    <div class="nav-item" onclick="window.open('/playbook','_blank')" style="margin-top:auto;border-top:1px solid rgba(255,255,255,0.07);padding-top:12px;">
+      <span class="icon">📖</span> PLAYBOOK
+    </div>
+  </nav>
+</aside>
+
+<!-- ─── Main Content ─────────────────────────────────────────── -->
+<div class="main">
+
+<!-- ══════════ TODAY PAGE ══════════ -->
+<div class="page active" id="page-today">
+  <div class="page-title">⚡ Today's 3 Money Moves</div>
+  <div class="page-sub" id="today-date"></div>
+  <div id="daily-focus" style="margin:12px 0 16px;padding:14px 18px;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.25);border-radius:12px;font-size:0.9rem;color:#c0c0cc;line-height:1.8;"></div>
+  <div style="text-align:center;margin-bottom:24px;">
+    <button id="complete-day-btn" onclick="celebrateDay()" style="background:linear-gradient(135deg,#7c3aed,#2563eb);color:white;border:none;padding:12px 32px;border-radius:30px;font-size:0.95rem;font-weight:700;cursor:pointer;letter-spacing:0.03em;box-shadow:0 4px 20px rgba(124,58,237,0.4);transition:all 0.2s;">✅ Mark Day Complete</button>
+  </div>
+  <div id="celebration-msg" style="display:none;text-align:center;padding:20px;font-size:1.1rem;font-weight:700;color:#10b981;"></div>
+
+  <!-- CARD 0: INSTAGRAM + FACEBOOK DMs — MAIN GUN -->
+  <div class="money-card" id="card-instagram">
+    <div class="money-card-title">📱 INSTAGRAM + FACEBOOK DMs — YOUR MAIN GUN</div>
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span class="current" id="ig-progress-text">0/20 IG/FB DMs sent today</span>
+        <span class="goal">Goal: 20</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="ig-progress-bar" style="width:0%"></div></div>
+    </div>
+    <div id="ig-leads" style="display:grid;gap:10px;margin-top:14px"></div>
+  </div>
+
+  <!-- CARD 1: LINKEDIN DMs -->
+  <div class="money-card" id="card-pitches">
+    <div class="money-card-title">💼 LINKEDIN DMs — SECONDARY CHANNEL</div>
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span class="current" id="dm-progress-text">0/20 LinkedIn DMs sent today</span>
+        <span class="goal">Goal: 20</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="dm-progress-bar" style="width:0%"></div></div>
+    </div>
+    <div id="pitch-leads" style="display:grid;gap:10px;margin-top:14px"></div>
+  </div>
+
+  <!-- CARD 2: HOT LEADS -->
+  <div class="money-card" id="card-hot">
+    <div class="money-card-title">🔥 HOT LEADS — RESPOND NOW</div>
+    <div id="hot-leads-list"></div>
+  </div>
+
+  <!-- CARD 3: DEMOS BOOKED -->
+  <div class="money-card" id="card-demos">
+    <div class="money-card-title">📅 DEMOS BOOKED — PREP NOW</div>
+    <div id="demos-list"></div>
+  </div>
+
+</div>
+
+<!-- ══════════ CONTENT PAGE ══════════ -->
+<div class="page" id="page-content">
+  <div class="page-title">✍️ Daily Content</div>
+  <p style="color:#8a8a9a;margin-bottom:24px;">Post one piece of content every day. It takes 2 minutes and compounds over time. Inbound leads from content close at 50%+ because they came to you.</p>
+
+  <div id="content-page-area"></div>
+
+  <div style="margin-top:32px;">
+    <div class="page-title" style="font-size:1rem;margin-bottom:16px;">Full Week of Content</div>
+    <div id="full-week-content"></div>
+  </div>
+</div>
+
+<!-- ══════════ PIPELINE PAGE ══════════ -->
+<div class="page" id="page-pipeline">
+  <div class="page-title">🔀 Pipeline</div>
+  <div class="page-sub">Drag your leads from first contact to closed deal</div>
+  <div class="card" style="margin-bottom:20px">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span class="current" id="pipe-mrr">$0 MRR</span>
+        <span class="goal">$20,000 goal</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="pipe-mrr-bar" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div class="kanban" id="kanban"></div>
+</div>
+
+<!-- ══════════ CLIENTS PAGE ══════════ -->
+<div class="page" id="page-clients">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+    <div>
+      <div class="page-title">⭐ Clients & Billing</div>
+      <div class="page-sub">Active paying clients</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-primary" onclick="openAddClient()">+ Add Client</button>
+      <button class="btn btn-ghost" onclick="openCreateInvoice()">💳 Create Invoice</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span class="current" id="client-mrr-label">$0 MRR from clients</span>
+        <span class="goal">$20,000 goal</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="client-mrr-bar" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px">
+    <div class="client-row" style="font-weight:600;color:var(--text-2);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em">
+      <div>Business</div><div>MRR</div><div>Started</div><div>Next Check-in</div><div></div>
+    </div>
+    <div id="clients-list"></div>
+  </div>
+
+  <!-- Invoice Section -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-title">📄 Invoices <span class="count-badge" id="invoice-count">0</span></div>
+    </div>
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Client</th><th>Description</th><th>Amount</th><th>Type</th><th>Status</th><th>Created</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="invoices-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ AI AUDIT PAGE ══════════ -->
+<div class="page" id="page-audit">
+  <div class="page-title">🧠 AI Audit Generator</div>
+  <div class="page-sub">Generate custom AI automation reports before your sales calls</div>
+
+  <div class="audit-form-card">
+    <div class="audit-form-row">
+      <div class="form-group">
+        <label>Prospect Website URL</label>
+        <input class="filter-input" id="audit-url" placeholder="https://example.com" style="width:100%">
+      </div>
+      <div class="form-group">
+        <label>Business Name *</label>
+        <input class="filter-input" id="audit-biz" placeholder="Acme Med Spa" style="width:100%" required>
+      </div>
+    </div>
+    <div class="audit-form-row" style="margin-top:12px">
+      <div class="form-group">
+        <label>Industry</label>
+        <select class="filter-select" id="audit-industry" style="width:100%">
+          <option value="med spa">Med Spa</option>
+          <option value="hvac">HVAC</option>
+          <option value="law firm">Law Firm</option>
+          <option value="salon">Salon</option>
+          <option value="gym">Gym</option>
+          <option value="roofing">Roofing</option>
+          <option value="auto repair">Auto Repair</option>
+          <option value="cleaning service">Cleaning Service</option>
+          <option value="contractor">Contractor</option>
+          <option value="other" selected>Other</option>
+        </select>
+      </div>
+      <div class="form-group" style="display:flex;align-items:flex-end">
+        <button class="btn btn-primary" id="audit-generate-btn" onclick="generateAudit()" style="padding:10px 28px;font-size:.95rem">
+          🧠 Generate Audit Report
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="audit-report" id="audit-report">
+    <div class="biz-info-card" id="audit-biz-info"></div>
+    <div class="section">
+      <div class="section-title" style="margin-bottom:14px"><span class="emoji">🎯</span> Your Top AI Opportunities</div>
+      <div id="audit-recommendations"></div>
+    </div>
+    <div class="roi-summary" id="audit-roi-summary"></div>
+    <div class="audit-actions" id="audit-actions"></div>
+  </div>
+
+  <div class="section" style="margin-top:32px">
+    <div class="section-head">
+      <div class="section-title">📚 Recent Audit Reports <span class="count-badge" id="audit-history-count">0</span></div>
+    </div>
+    <div class="card-grid cols-2" id="audit-history"></div>
+  </div>
+</div>
+
+<!-- ══════════ LEADS PAGE ══════════ -->
+<div class="page" id="page-leads">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div>
+      <div class="page-title">📋 Leads Database</div>
+      <div class="page-sub">All <span id="leads-total">0</span> leads</div>
+    </div>
+    <button class="btn btn-primary" onclick="openAddLead()">+ Add Lead</button>
+  </div>
+
+  <div class="filters">
+    <input class="filter-input" id="f-search" placeholder="Search name, email, city..." oninput="debounceLoadLeads()">
+    <select class="filter-select" id="f-status" onchange="loadLeads()">
+      <option value="">All Status</option>
+      <option value="new">New</option>
+      <option value="contacted">Contacted</option>
+      <option value="interested">Interested</option>
+      <option value="demo_booked">Demo Booked</option>
+      <option value="closed">Closed</option>
+      <option value="lost">Lost</option>
+      <option value="warm_lead">Warm Lead</option>
+    </select>
+    <select class="filter-select" id="f-industry" onchange="loadLeads()"></select>
+    <select class="filter-select" id="f-city" onchange="loadLeads()"></select>
+    <label style="display:flex;align-items:center;gap:4px;font-size:.8rem;color:var(--text-2);cursor:pointer">
+      <input type="checkbox" id="f-email" onchange="loadLeads()"> Has email
+    </label>
+    <label style="display:flex;align-items:center;gap:4px;font-size:.8rem;color:var(--text-2);cursor:pointer">
+      <input type="checkbox" id="f-replied" onchange="loadLeads()"> Replied
+    </label>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Business</th><th>Contact</th><th>Industry</th><th>City</th><th>Sequence</th><th>Status</th><th style="width:180px">Actions</th></tr>
+      </thead>
+      <tbody id="leads-tbody"></tbody>
+    </table>
+  </div>
+  <div style="display:flex;justify-content:center;gap:8px;margin-top:16px" id="leads-pagination"></div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /shell -->
+
+<!-- ─── Lead Detail Modal ──────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-lead">
+  <div class="modal">
+    <div class="modal-title">
+      <span id="ml-title">Lead Details</span>
+      <button class="modal-close" onclick="closeModal('modal-lead')">✕</button>
+    </div>
+    <div id="ml-body"></div>
+  </div>
+</div>
+
+<!-- ─── Demo Prep Modal ────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-demo">
+  <div class="modal" style="max-width:640px">
+    <div class="modal-title">
+      <span>🎤 Demo Prep</span>
+      <button class="modal-close" onclick="closeModal('modal-demo')">✕</button>
+    </div>
+    <div id="demo-body"></div>
+  </div>
+</div>
+
+<!-- ─── Add Lead Modal ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-add-lead">
+  <div class="modal">
+    <div class="modal-title">
+      <span>+ Quick Add Lead</span>
+      <button class="modal-close" onclick="closeModal('modal-add-lead')">✕</button>
+    </div>
+    <form id="add-lead-form" onsubmit="submitAddLead(event)">
+      <div class="form-group"><label>Business Name *</label><input name="business_name" required></div>
+      <div class="form-group"><label>Owner / Contact Name</label><input name="owner_name"></div>
+      <div class="form-group"><label>Email</label><input name="email" type="email"></div>
+      <div class="form-group"><label>Phone</label><input name="phone"></div>
+      <div class="form-group"><label>City</label><input name="city"></div>
+      <div class="form-group"><label>Industry</label><input name="industry"></div>
+      <div class="form-group"><label>Notes</label><textarea name="notes"></textarea></div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" onclick="closeModal('modal-add-lead')">Cancel</button>
+        <button type="submit" class="btn btn-primary">Add as Warm Lead</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ─── Add Client Modal ───────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-add-client">
+  <div class="modal">
+    <div class="modal-title">
+      <span>+ Add Client</span>
+      <button class="modal-close" onclick="closeModal('modal-add-client')">✕</button>
+    </div>
+    <form id="add-client-form" onsubmit="submitAddClient(event)">
+      <div class="form-group"><label>Business Name *</label><input name="business_name" required></div>
+      <div class="form-group"><label>Owner Name</label><input name="owner_name"></div>
+      <div class="form-group"><label>Email</label><input name="email" type="email"></div>
+      <div class="form-group"><label>Phone</label><input name="phone"></div>
+      <div class="form-group"><label>Industry</label><input name="industry"></div>
+      <div class="form-group"><label>City</label><input name="city"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="form-group"><label>Monthly Value ($)</label><input name="monthly_value" type="number" value="497"></div>
+        <div class="form-group"><label>Setup Fee ($)</label><input name="setup_fee" type="number" value="997"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="form-group"><label>Start Date</label><input name="start_date" type="date"></div>
+        <div class="form-group"><label>Next Check-in</label><input name="next_checkin" type="date"></div>
+      </div>
+      <div class="form-group"><label>Notes</label><textarea name="notes"></textarea></div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" onclick="closeModal('modal-add-client')">Cancel</button>
+        <button type="submit" class="btn btn-primary">Add Client</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ─── Create Invoice Modal ────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-invoice">
+  <div class="modal">
+    <div class="modal-title">
+      <span>💳 Create Invoice</span>
+      <button class="modal-close" onclick="closeModal('modal-invoice')">✕</button>
+    </div>
+    <form id="invoice-form" onsubmit="submitInvoice(event)">
+      <div class="form-group">
+        <label>Client</label>
+        <select name="client_id" id="inv-client" onchange="prefillInvoiceClient()" style="width:100%;background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:10px 12px;color:var(--text-0);font-size:.85rem">
+          <option value="">Select a client...</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Client Name</label><input name="client_name" id="inv-name" required></div>
+      <div class="form-group"><label>Client Email</label><input name="client_email" id="inv-email" type="email"></div>
+      <div class="form-group">
+        <label>Payment Type</label>
+        <select name="type" id="inv-type" onchange="prefillAmount()" style="width:100%;background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:10px 12px;color:var(--text-0);font-size:.85rem">
+          <option value="setup">Setup Fee</option>
+          <option value="monthly">Monthly Payment</option>
+          <option value="pilot">30-Day Pilot</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+      <div class="form-group" id="tier-group">
+        <label>Tier</label>
+        <select id="inv-tier" onchange="prefillAmount()" style="width:100%;background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:10px 12px;color:var(--text-0);font-size:.85rem">
+          <option value="starter">Starter</option>
+          <option value="growth">Growth</option>
+          <option value="scale">Scale</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Amount ($)</label><input name="amount" id="inv-amount" type="number" step="0.01" required></div>
+      <div class="form-group"><label>Description</label><input name="description" id="inv-desc" placeholder="e.g. Viora AI Setup Fee - Starter"></div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" onclick="closeModal('modal-invoice')">Cancel</button>
+        <button type="submit" class="btn btn-primary">Generate Invoice</button>
+      </div>
+    </form>
+    <div id="invoice-result" style="display:none;margin-top:16px;padding:16px;background:var(--bg-2);border-radius:var(--radius);border:1px solid var(--bg-3)">
+      <div style="font-weight:600;margin-bottom:8px" id="inv-result-title"></div>
+      <div id="inv-result-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Toast ──────────────────────────────────────────────────── -->
+<div class="toast" id="toast"></div>
+
+<script>
+const BOOKING_URL = "{{ booking_url }}";
+const MAX_EMAILS = {{ max_emails }};
+let currentPage = 'today';
+let leadsPage = 1;
+let debounceTimer;
+
+// ─── Utils ──────────────────────────────────────────────────────
+async function api(path, opts = {}) {
+  const res = await fetch(path, {
+    headers: { 'Content-Type': 'application/json', ...opts.headers },
+    ...opts,
+    body: opts.body ? JSON.stringify(opts.body) : undefined,
+  });
+  return res.json();
+}
+function $(id) { return document.getElementById(id); }
+function toast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function switchPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  $('page-' + page).classList.add('active');
+  document.querySelector(`.nav-item[data-page="${page}"]`).classList.add('active');
+  currentPage = page;
+  closeSidebar();
+  if (page === 'today') loadToday();
+  else if (page === 'pipeline') loadPipeline();
+  else if (page === 'clients') loadClients();
+  else if (page === 'audit') loadAuditHistory();
+  else if (page === 'leads') loadLeads();
+  else if (page === 'content') loadContentPage();
+}
+
+function celebrateDay() {
+  const messages = [
+    { title: "THAT IS HOW IT IS DONE.", sub: "You showed up today. Most people won't. That separates you. $20k is closer than it was yesterday." },
+    { title: "LET'S GO.", sub: "Every DM sent, every post published — it compounds. You are building something real. Keep going." },
+    { title: "W DAY.", sub: "40 DMs. Content posted. Done. That is the work that builds empires. Same thing tomorrow." },
+    { title: "YOU DID THE WORK.", sub: "This is what separates closers from dreamers. You executed today. The pipeline is growing. Stack more tomorrow." },
+    { title: "LOCKED IN.", sub: "One day at a time. You just made Viora stronger. Check back tomorrow and do it again." },
+  ];
+  const m = messages[Math.floor(Math.random() * messages.length)];
+  
+  // Hide button
+  const btn = document.getElementById('complete-day-btn');
+  btn.style.display = 'none';
+  
+  // Show celebration
+  const cel = document.getElementById('celebration-msg');
+  cel.style.display = 'block';
+  cel.innerHTML = `
+    <div style="font-size:2.5rem;margin-bottom:12px;">🎉🔥🎉</div>
+    <div style="font-size:1.4rem;font-weight:800;color:#10b981;margin-bottom:8px;letter-spacing:0.05em;">${m.title}</div>
+    <div style="font-size:0.95rem;color:#c0c0cc;max-width:400px;margin:0 auto;line-height:1.7;">${m.sub}</div>
+  `;
+  
+  // Confetti burst
+  launchConfetti();
+  
+  // Save to localStorage so it stays done for today
+  localStorage.setItem('day_complete_' + new Date().toDateString(), '1');
+}
+
+function launchConfetti() {
+  const colors = ['#7c3aed','#2563eb','#10b981','#f59e0b','#ec4899','#a78bfa'];
+  const container = document.body;
+  for (let i = 0; i < 80; i++) {
+    const conf = document.createElement('div');
+    conf.style.cssText = `
+      position:fixed;
+      width:${Math.random()*10+5}px;
+      height:${Math.random()*10+5}px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      left:${Math.random()*100}vw;
+      top:-20px;
+      border-radius:${Math.random()>0.5?'50%':'2px'};
+      z-index:9999;
+      opacity:0.9;
+      pointer-events:none;
+      animation:confettiFall ${Math.random()*2+1.5}s linear forwards;
+      animation-delay:${Math.random()*0.8}s;
+    `;
+    container.appendChild(conf);
+    setTimeout(() => conf.remove(), 4000);
+  }
+}
+
+function checkDayComplete() {
+  if (localStorage.getItem('day_complete_' + new Date().toDateString())) {
+    const btn = document.getElementById('complete-day-btn');
+    if (btn) btn.style.display = 'none';
+    const cel = document.getElementById('celebration-msg');
+    if (cel) {
+      cel.style.display = 'block';
+      cel.innerHTML = `<div style="font-size:1rem;color:#10b981;">✅ Day already marked complete. Come back tomorrow and do it again.</div>`;
+    }
+  }
+}
+
+function loadContentPage() {
+  loadDailyContent();
+  // Show full week below
+  const BOOKING = 'https://calendar.app.google/V5Facsr8nXZQRrdQ8';
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const types = ['Question Post','Case Study','ROI Stat','Behind the Scenes','Pain Point','Results Post','Value Post'];
+  const icons = ['🤔','📈','💰','🛠','🎯','🔥','💡'];
+  const todayDay = new Date().getDay();
+  const el = document.getElementById('full-week-content');
+  if (!el) return;
+  el.innerHTML = days.map((day, i) => {
+    const isToday = i === todayDay;
+    return `<div style="background:rgba(255,255,255,${isToday ? '0.07' : '0.03'});border:1px solid rgba(255,255,255,${isToday ? '0.15' : '0.07'});border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span>${icons[i]}</span>
+        <strong style="color:${isToday ? '#a78bfa' : '#e8e8ed'};">${day}</strong>
+        <span style="font-size:0.75rem;color:#8a8a9a;">— ${types[i]}</span>
+        ${isToday ? '<span style="background:rgba(124,58,237,0.3);color:#a78bfa;font-size:0.7rem;font-weight:700;padding:2px 8px;border-radius:10px;">TODAY</span>' : ''}
+      </div>
+      <p style="color:#8a8a9a;font-size:0.85rem;">Open the TODAY tab on ${day}s to get this post ready to copy and paste.</p>
+    </div>`;
+  }).join('');
+}
+
+function toggleSidebar() { $('sidebar').classList.toggle('open'); }
+function closeSidebar() { $('sidebar').classList.remove('open'); }
+function openModal(id) { $(id).classList.add('open'); }
+function closeModal(id) { $(id).classList.remove('open'); }
+
+function statusBadge(s) {
+  return `<span class="badge badge-${s || 'new'}">${(s || 'new').replace('_', ' ')}</span>`;
+}
+
+function seqPills(e1, e2, e3, replied) {
+  const c = replied ? 'replied' : 'sent';
+  return `<div class="seq-pills">
+    <div class="seq-pill ${e1 ? c : ''}"></div>
+    <div class="seq-pill ${e2 ? c : ''}"></div>
+    <div class="seq-pill ${e3 ? c : ''}"></div>
+  </div>`;
+}
+
+async function copyText(text, btn) {
+  await navigator.clipboard.writeText(text);
+  if (btn) {
+    btn.classList.add('copied');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 1500);
+  }
+  toast('Copied!');
+}
+
+function liSearchUrl(biz) {
+  return `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(biz + ' owner')}`;
+}
+
+// ─── Instagram/Facebook DM Messages ──────────────────────────────
+function isSpanishName(name) {
+  if (!name) return false;
+  const n = name.toLowerCase();
+  const hints = ['hernandez','garcia','martinez','lopez','gonzalez','rodriguez','perez','sanchez','ramirez','torres','flores','rivera','gomez','diaz','reyes','morales','jimenez','ruiz','alvarez','romero','mendoza','gutierrez','ortiz','castillo','nunez','medina','chavez','vargas','ramos','vasquez','cruz','delgado','sandoval','contreras','guerrero','estrada','leon','soto','herrera','mejia','aguilar','salazar','silva','pena','vega','luna','cortez','valdez','fuentes','campos','rios','rojas','bautista'];
+  return hints.some(h => n.includes(h));
+}
+
+function getIGPitch(name, biz, industry, index) {
+  const first = name ? name.split(' ')[0] : 'there';
+  const ind = industry || 'home service';
+  if (isSpanishName(name) || isSpanishName(biz)) {
+    return `Hola ${first}, ¿cuántas llamadas pierde ${biz} cuando están en el trabajo? Construimos una IA que contesta cada llamada 24/7 en inglés y español, califica al cliente, y agenda la cita automáticamente. Tengo un demo en vivo ahora mismo. ¿Te interesa verlo?`;
+  }
+  const msgs = [
+    `Hey ${first} — quick question: what happens to the calls you miss when your crew is on a job? I work with ${ind} companies in Colorado specifically. Built an AI that answers every call 24/7 before your competitor picks up. Running it for a contractor in Colorado right now. Happy to show you a live demo. Worth a quick look?`,
+    `Hey ${first}, I help ${ind} companies in Denver never miss a lead — even when your team is on a job site. AI answers every call, captures the job details, books the estimate. Running it for Colorado contractors right now. Want to hear what it sounds like?`,
+    `Hey ${first}, how many calls does ${biz} miss in a week when you're on a job? Even 2-3 missed calls/week = thousands in lost revenue. We built an AI that fixes that for Colorado contractors. Happy to show you in 15 min.`,
+  ];
+  return msgs[index % 3];
+}
+
+async function markInstagram(id, btn) {
+  const res = await api(`/api/leads/${id}/instagram`, { method: 'POST' });
+  if (res && res.ok) {
+    const card = btn.closest('.li-card');
+    if (card) {
+      card.style.transition = 'opacity 0.3s, transform 0.3s';
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(20px)';
+      setTimeout(() => card.remove(), 300);
+    }
+    toast('✅ IG/FB DM marked sent!');
+    const stats = await api('/api/today');
+    if (stats) {
+      const c = stats.ig_count || 0;
+      const pct = Math.min(100, (c / 20) * 100);
+      const pt = document.getElementById('ig-progress-text');
+      const pb = document.getElementById('ig-progress-bar');
+      if (pt) pt.textContent = `${c}/20 IG/FB DMs sent today`;
+      if (pb) pb.style.width = pct + '%';
+      const sb = document.getElementById('sb-instagram');
+      if (sb) sb.textContent = `${c}/20`;
+    }
+  }
+}
+
+// ─── Audit Pitch Messages ────────────────────────────────────────
+function getAuditPitch(name, biz, industry, index) {
+  const first = name ? name.split(' ')[0] : '';
+  const ind = industry || 'local';
+  const msgs = [
+    `Hey ${first}, I help ${ind} businesses automate the time-consuming stuff 2014 missed calls, follow-ups, reviews, scheduling and more. Free 20 min AI review to show where you are losing time and money. Worth a look for ${biz}? ${BOOKING_URL}`,
+    `Hey ${first}, quick question for ${biz}. I do free AI business reviews where I look at your whole operation and show which automations would save you the most time and money. Takes 20 min. Worth it? ${BOOKING_URL}`,
+    `Hey ${first}, I help ${ind} owners stop doing things manually that AI can handle automatically. Free 20 min review to show what is possible for ${biz}. No pitch, just real insight. Interested? ${BOOKING_URL}`,
+  ];
+  return msgs[index % 3];
+}
+
+// ─── Stats Bar Update ────────────────────────────────────────────
+async function updateStatsBar() {
+  try {
+    const s = await api('/api/stats');
+    $('sb-instagram').textContent = `${s.instagram_today || 0}/20`;
+    $('sb-linkedin').textContent = `${s.linkedin_today || 0}/20`;
+    $('sb-emails').textContent = `${s.emails_today || 0}/10`;
+    $('sb-hot').textContent = s.hot_leads || 0;
+    $('sb-mrr').textContent = `$${(s.mrr || 0).toLocaleString()}`;
+  } catch(e) {}
+}
+
+// ─── Load Today ─────────────────────────────────────────────────
+async function loadToday() {
+  const data = await api('/api/today');
+
+  $('today-date').textContent = new Date().toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  });
+
+  loadDailyContent();
+
+  // Daily focus summary
+  const focusEl = document.getElementById('daily-focus');
+  if (focusEl) {
+    const hotCount = (data.hot_leads || []).length;
+    const demoCount = (data.demos || []).length;
+    const igCount2 = data.ig_count || 0;
+    const dmCount2 = data.dm_count || 0;
+    const items = [];
+    if (hotCount > 0) items.push(`🔥 <strong style="color:#10b981">${hotCount} hot lead${hotCount>1?'s':''} — RESPOND NOW.</strong> This is your #1 priority. Money on the table.`);
+    if (demoCount > 0) items.push(`📞 <strong style="color:#a78bfa">Demo prep needed</strong> — open AI Audit tab, research their business before the call. Lead with Tier 3 ($1,800/mo) first.`);
+    items.push(`📱 <strong>Send ${Math.max(0, 20 - igCount2)}/20 Instagram/Facebook DMs</strong> — search local HVAC and roofing owners. This is your MAIN revenue channel per the playbook.`);
+    items.push(`💼 <strong>Send ${Math.max(0, 20 - dmCount2)}/20 LinkedIn DMs</strong> — secondary channel. Keep the pipeline full.`);
+    items.push('✍️ <strong>Post today\'s LinkedIn content</strong> — open Content tab, copy, post. 5 min. Compounds into inbound.');
+    items.push('💰 <strong>Pricing reminder:</strong> ALWAYS present Tier 3 ($1,800/mo) first, then Tier 2 ($1,200/mo). Never open with your cheapest option.');
+    focusEl.innerHTML = items.map(i => `• ${i}`).join('<br>');
+  }
+
+  // CARD 0: INSTAGRAM + FACEBOOK DMs — MAIN GUN
+  const igCount = data.ig_count || 0;
+  const igPct = Math.min(100, (igCount / 20) * 100);
+  $('ig-progress-text').textContent = `${igCount}/20 IG/FB DMs sent today`;
+  $('ig-progress-bar').style.width = igPct + '%';
+
+  const igLeads = data.ig_leads || [];
+  if (igLeads.length) {
+    $('ig-leads').innerHTML = igLeads.map((l, i) => {
+      const msg = getIGPitch(l.owner_name, l.business_name, l.industry, i);
+      const igUrl = `https://www.instagram.com/search/top/?q=${encodeURIComponent(l.business_name)}`;
+      const fbUrl = `https://www.facebook.com/search/top/?q=${encodeURIComponent(l.business_name)}`;
+      return `
+        <div class="li-card" id="ig-card-${l.id}">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+            <div>
+              <div class="biz">${l.business_name}</div>
+              <div class="city">${l.city || ''} · ${l.industry || ''}</div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <a href="${igUrl}" target="_blank" class="btn btn-sm" style="background:rgba(225,48,108,0.2);color:#e1306c;border:1px solid rgba(225,48,108,0.3)">📷 Instagram</a>
+              <a href="${fbUrl}" target="_blank" class="btn btn-blue btn-sm">💬 Facebook</a>
+              <button onclick="skipLead(${l.id}, this)" title="Skip this lead" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.3);border-radius:6px;width:28px;height:28px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+            </div>
+          </div>
+          <div class="msg">${msg}</div>
+          <div class="btns">
+            <button class="btn btn-ghost btn-sm" onclick="copyText(\`${msg.replace(/`/g,'\\`').replace(/\\/g,'\\\\')}\`, this)">📋 Copy</button>
+            <button class="btn btn-success btn-sm" onclick="markInstagram(${l.id}, this)">✓ Sent</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } else {
+    $('ig-leads').innerHTML = '<div class="money-card-empty">All leads messaged on IG/FB! Add more to the database. 💪</div>';
+  }
+
+  // CARD 1: LINKEDIN DMs
+  const dmCount = data.dm_count || 0;
+  const dmPct = Math.min(100, (dmCount / 20) * 100);
+  $('dm-progress-text').textContent = `${dmCount}/20 LinkedIn DMs sent today`;
+  $('dm-progress-bar').style.width = dmPct + '%';
+
+  const pitches = data.pitch_leads || [];
+  if (pitches.length) {
+    $('pitch-leads').innerHTML = pitches.map((l, i) => {
+      const msg = getAuditPitch(l.owner_name, l.business_name, l.industry, i);
+      const url = liSearchUrl(l.business_name);
+      return `
+        <div class="li-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+            <div>
+              <div class="biz">${l.business_name}</div>
+              <div class="city">${l.city || ''} · ${l.industry || ''}</div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <a href="${url}" target="_blank" class="btn btn-blue btn-sm">🔍 Find on LinkedIn</a>
+              <button onclick="skipLead(${l.id}, this)" title="Skip this lead" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.3);border-radius:6px;width:28px;height:28px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+            </div>
+          </div>
+          <div class="msg">${msg}</div>
+          <div class="btns">
+            <button class="btn btn-ghost btn-sm" onclick="copyText(\`${msg.replace(/`/g,'\\`').replace(/\\/g,'\\\\')}\`, this)">📋 Copy</button>
+            <button class="btn btn-success btn-sm" onclick="markLinkedIn(${l.id}, this)">✓ Sent</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } else {
+    $('pitch-leads').innerHTML = '<div class="money-card-empty">All leads messaged! Add more to the database.</div>';
+  }
+
+  // CARD 2: HOT LEADS
+  const hots = data.hot_leads || [];
+  if (hots.length) {
+    $('hot-leads-list').innerHTML = hots.map(l => `
+      <div class="card lead-card" style="margin-bottom:10px">
+        <div class="name">🔥 ${l.business_name}</div>
+        <div class="meta">
+          ${l.owner_name ? `<span>👤 ${l.owner_name}</span>` : ''}
+          ${l.city ? `<span>📍 ${l.city}</span>` : ''}
+          ${l.email ? `<span>✉️ ${l.email}</span>` : ''}
+          ${l.phone ? `<span>📞 ${l.phone}</span>` : ''}
+        </div>
+        <div class="actions">
+          <a href="${BOOKING_URL}" target="_blank" class="btn btn-success btn-sm">📅 Book Demo</a>
+          <button class="btn btn-primary btn-sm" onclick="runAuditForLead('${(l.business_name||'').replace(/'/g,"\\'")}','${(l.website||'').replace(/'/g,"\\'")}','${(l.industry||'').replace(/'/g,"\\'")}')">🧠 Run AI Audit</button>
+          <button class="btn btn-ghost btn-sm" onclick="openLeadDetail(${l.id})">Details</button>
+        </div>
+      </div>
+    `).join('');
+  } else {
+    $('hot-leads-list').innerHTML = '<div class="money-card-empty">No hot leads yet. Keep sending DMs. 💪</div>';
+  }
+
+  // CARD 3: DEMOS BOOKED
+  const demos = data.demos || [];
+  if (demos.length) {
+    $('demos-list').innerHTML = demos.map(l => `
+      <div class="card lead-card" style="margin-bottom:10px">
+        <div class="name">📅 ${l.business_name}</div>
+        <div class="meta">
+          ${l.demo_date ? `<span>🗓 Demo: ${l.demo_date}</span>` : ''}
+          ${l.city ? `<span>📍 ${l.city}</span>` : ''}
+          ${l.industry ? `<span>🏷 ${l.industry}</span>` : ''}
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary btn-sm" onclick="runAuditForLead('${(l.business_name||'').replace(/'/g,"\\'")}','${(l.website||'').replace(/'/g,"\\'")}','${(l.industry||'').replace(/'/g,"\\'")}')">🧠 Run AI Audit</button>
+          <button class="btn btn-orange btn-sm" onclick="openDemoPrep(${l.id})">🎤 Demo Prep</button>
+        </div>
+      </div>
+    `).join('');
+  } else {
+    $('demos-list').innerHTML = '<div class="money-card-empty">No demos scheduled yet. Book them from Hot Leads above!</div>';
+  }
+}
+
+// ─── Daily Content Generator ────────────────────────────────────
+function loadDailyContent() {
+  const BOOKING = 'https://calendar.app.google/V5Facsr8nXZQRrdQ8';
+  const dayOfWeek = new Date().getDay(); // 0=Sun 1=Mon ... 6=Sat
+
+  const posts = [
+    // Sunday: Full automation menu
+    { platform: 'LinkedIn', type: 'Value Post', icon: '💡',
+      hook: '6 things service businesses can automate right now (and what each saves you):',
+      body: `1. AI Receptionist — answers every call 24/7. Saves $3,000-$6,000/mo vs hiring a human.\n2. Missed call text-back — auto-texts anyone who calls within 60 seconds. 78% of customers buy from whoever responds first.\n3. Review automation — requests Google reviews after every job. 3x more reviews, 1 star increase = 7% more revenue.\n4. Follow-up sequences — automated 3-touch follow-up for every lead. Recovers 20-30% of lost business.\n5. Appointment reminders — texts clients 24hr and 2hr before. Reduces no-shows by 29%.\n6. Reactivation campaigns — auto-texts past customers who haven't returned in 60 days.\n\nAll of this runs automatically. No extra staff. No extra hours.\n\nDM me to see which ones make sense for your business.`,
+      hashtags: '#AI #automation #servicebusiness #smallbusiness #ROI' },
+    // Monday: Missed call text-back
+    { platform: 'LinkedIn', type: 'Quick Tip', icon: '📱',
+      hook: '78% of customers buy from whoever responds first.',
+      body: `Not the best product. Not the cheapest price. Whoever responds first.\n\nMost service businesses respond to missed calls hours later. Or not at all.\n\nWe set up an automation that texts anyone who calls within 60 seconds automatically.\n\n"Hey, we just missed your call! How can we help?"\n\nThat one message recovers leads that would have called your competitor.\n\n$100/month. Pays for itself with one recovered customer.\n\nDM me if you want to see how it works.`,
+      hashtags: '#servicebusiness #automation #AI #missedcalls #smallbusiness' },
+    // Tuesday: Review automation
+    { platform: 'LinkedIn', type: 'Growth Tip', icon: '⭐',
+      hook: 'One star increase on Google = 5-9% more revenue.',
+      body: `Most service businesses have happy customers who just never leave a review.\n\nNot because they don't want to. Because nobody asked at the right moment.\n\nWe automate review requests. After every completed job or appointment, the customer gets a text:\n\n"Thanks for choosing [Business]! Mind leaving us a quick Google review?" with a direct link.\n\nBusinesses using this get 3x more reviews within 60 days.\n\nMore reviews = higher ranking = more calls = more revenue.\n\nDM me if you want this set up for your business.`,
+      hashtags: '#googlereviews #localSEO #servicebusiness #automation #AI' },
+    // Wednesday: Behind the scenes
+    { platform: 'LinkedIn', type: 'Behind the Scenes', icon: '🛠',
+      hook: 'Here is what I built for a roofing company this week:',
+      body: `1. AI that answers every call 24/7 and books estimates directly into their calendar\n2. Automatic text-back for every missed call\n3. Follow-up sequence for every quote that doesn't close in 48 hours\n4. Review request after every completed job\n\nTotal setup time: 3 days.\nMonthly cost to them: $600.\nEstimated value from recovered leads alone: $4,000+/month.\n\nThis is what AI automation actually looks like for a service business.\n\nDM me if you want to see what this could look like for yours. Free 20 min review, no pitch.`,
+      hashtags: '#roofing #AIautomation #servicebusiness #businessgrowth' },
+    // Thursday: Follow-up sequences
+    { platform: 'LinkedIn', type: 'Sales Tip', icon: '🔄',
+      hook: '55% of all sales happen after the 5th follow-up.',
+      body: `Most service businesses follow up once. Maybe twice.\n\nThen they move on and assume the lead is dead.\n\nThe lead isn't dead. They just got busy.\n\nWe build automated follow-up sequences that reach out 3 times over 7 days without you lifting a finger.\n\nDay 1: Immediate confirmation text\nDay 3: Value email with a case study\nDay 7: Final check-in\n\nBusinesses using this recover 20-30% of leads they thought were gone.\n\nDM me if you want this running in your business.`,
+      hashtags: '#salesautomation #followup #servicebusiness #AI #leads' },
+    // Friday: AI receptionist result
+    { platform: 'LinkedIn', type: 'Case Study', icon: '📈',
+      hook: '70 new appointments in 30 days. Zero extra ad spend.',
+      body: `A barbershop we work with was already getting the calls.\n\nThey just couldn't answer all of them.\n\nWe set up an AI receptionist that answers every call 24/7, qualifies the caller, and books them directly into their calendar.\n\nResult: 70 new appointments in their first month from calls they were already missing.\n\nNo new marketing. No new ads. Just no more missed calls.\n\nIf your business takes phone calls, you are probably leaving money on the table every single day.\n\nDM me. Free 20 min AI review for your business. I will show you exactly what we would build.`,
+      hashtags: '#AIreceptionist #barbershop #businessgrowth #automation #Viora' },
+    // Saturday: Reactivation
+    { platform: 'LinkedIn', type: 'Hidden Revenue', icon: '💰',
+      hook: 'Your best leads are already in your database.',
+      body: `Most service businesses spend thousands trying to find new customers.\n\nMeanwhile their past customers haven't heard from them in 6 months.\n\nGetting a past customer back costs 5x less than finding a new one.\n\nWe set up reactivation campaigns that automatically reach out to past customers who haven't returned in 60-90 days.\n\n"Hey [name], it's been a while! We'd love to see you again. Here's 10% off your next visit."\n\nThat one automation alone pays for everything else we build.\n\nDM me if you want to see how this works for your business.`,
+      hashtags: '#customerretention #automation #servicebusiness #AI #revenueGrowth' },
+  ];
+
+  const today = posts[dayOfWeek];
+  const fullPost = `${today.hook}\n\n${today.body}\n\n${today.hashtags}`;
+
+  const contentTarget = document.getElementById('content-page-area') || document.getElementById('content-post-area');
+  if (!contentTarget) return;
+  contentTarget.innerHTML = `
+    <div style="margin-bottom:12px;display:flex;gap:8px;align-items:center;">
+      <span style="font-size:1.2rem;">${today.icon}</span>
+      <span style="font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#a78bfa;">${today.type}</span>
+      <span style="font-size:0.75rem;color:#8a8a9a;">— ${today.platform}</span>
+    </div>
+    <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:16px;font-size:0.88rem;line-height:1.7;color:#c0c0cc;white-space:pre-wrap;margin-bottom:12px;">${fullPost}</div>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-primary btn-sm" onclick="navigator.clipboard.writeText(${JSON.stringify(fullPost)}).then(()=>{this.textContent='✅ Copied!';setTimeout(()=>this.textContent='📋 Copy Post',2000})">📋 Copy Post</button>
+      <a href="https://www.linkedin.com/feed/" target="_blank" class="btn btn-sm" style="background:rgba(10,102,194,0.3);color:#60a5fa;">🔗 Open LinkedIn</a>
+    </div>
+  `;
+}
+
+function runAuditForLead(biz, website, industry) {
+  switchPage('audit');
+  $('audit-biz').value = biz;
+  $('audit-url').value = website || '';
+  if (industry) {
+    const sel = $('audit-industry');
+    for (let o of sel.options) {
+      if (o.value.toLowerCase() === industry.toLowerCase()) { o.selected = true; break; }
+    }
+  }
+}
+
+// ─── Pipeline ───────────────────────────────────────────────────
+async function loadPipeline() {
+  const data = await api('/api/pipeline');
+  const pct = Math.min(100, (data.mrr / data.mrr_goal) * 100);
+  $('pipe-mrr').textContent = `$${data.mrr.toLocaleString()} MRR`;
+  $('pipe-mrr-bar').style.width = pct + '%';
+
+  const cols = [
+    { key: 'new', label: 'New', color: 'var(--blue)' },
+    { key: 'contacted', label: 'Contacted', color: 'var(--orange)' },
+    { key: 'interested', label: 'Replied', color: 'var(--green)' },
+    { key: 'demo_booked', label: 'Demo Booked', color: 'var(--accent-2)' },
+    { key: 'closed', label: 'Closed', color: 'var(--green)' },
+    { key: 'lost', label: 'Lost', color: 'var(--red)' },
+  ];
+
+  $('kanban').innerHTML = cols.map(c => {
+    const items = data.stages[c.key] || [];
+    const count = data.counts[c.key] || 0;
+    return `
+      <div class="kanban-col">
+        <div class="kanban-header" style="border-bottom-color:${c.color}">
+          ${c.label} <span class="num">${count}</span>
+        </div>
+        ${items.slice(0, 20).map(l => `
+          <div class="kanban-card" onclick="openLeadDetail(${l.id})">
+            <div class="biz">${l.business_name}</div>
+            <div class="sub">${l.city || ''} · ${l.industry || ''}</div>
+            ${c.key === 'demo_booked' ? `<button class="btn btn-primary btn-sm" style="margin-top:6px;width:100%" onclick="event.stopPropagation();openDemoPrep(${l.id})">🎤 Demo Prep</button>` : ''}
+          </div>
+        `).join('')}
+        ${count > 20 ? `<div style="text-align:center;font-size:.75rem;color:var(--text-2);padding:8px">+${count - 20} more</div>` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+// ─── Clients + Billing ──────────────────────────────────────────
+async function loadClients() {
+  const [clientData, invoiceData] = await Promise.all([
+    api('/api/clients'),
+    api('/api/billing/invoices')
+  ]);
+
+  const pct = Math.min(100, (clientData.total_mrr / 20000) * 100);
+  $('client-mrr-label').textContent = `$${clientData.total_mrr.toLocaleString()} MRR from clients`;
+  $('client-mrr-bar').style.width = pct + '%';
+
+  if (clientData.clients.length === 0) {
+    $('clients-list').innerHTML = '<div style="text-align:center;padding:32px;color:var(--text-2)">No clients yet — close your first deal! 🚀</div>';
+  } else {
+    $('clients-list').innerHTML = clientData.clients.map(c => `
+      <div class="client-row">
+        <div>
+          <div class="biz">${c.business_name}</div>
+          <div style="font-size:.75rem;color:var(--text-2)">${c.owner_name || ''} · ${c.industry || ''}</div>
+        </div>
+        <div class="mrr">$${(c.monthly_value || 0).toLocaleString()}/mo</div>
+        <div>${c.start_date || '—'}</div>
+        <div>${c.next_checkin || '—'}</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          <button class="btn btn-primary btn-sm" onclick="quickInvoice(${c.id},'${(c.business_name||'').replace(/'/g,"\\'")}','${c.email||''}','monthly',${c.monthly_value||0})">💳 Monthly</button>
+          <button class="btn btn-orange btn-sm" onclick="quickInvoice(${c.id},'${(c.business_name||'').replace(/'/g,"\\'")}','${c.email||''}','setup',${c.setup_fee||1550})">💰 Setup</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // Invoices
+  const invs = invoiceData.invoices || [];
+  $('invoice-count').textContent = invs.length;
+  $('invoices-tbody').innerHTML = invs.length
+    ? invs.map(inv => `
+      <tr>
+        <td>
+          <div style="font-weight:600">${inv.client_name || '—'}</div>
+          <div style="font-size:.7rem;color:var(--text-2)">${inv.client_email || ''}</div>
+        </td>
+        <td>${inv.description || '—'}</td>
+        <td style="font-weight:600">$${(inv.amount||0).toFixed(2)}</td>
+        <td><span class="badge badge-${inv.type === 'setup' ? 'demo_booked' : inv.type === 'monthly' ? 'contacted' : inv.type === 'pilot' ? 'interested' : 'warm_lead'}">${inv.type || 'custom'}</span></td>
+        <td><span class="badge badge-${inv.status}">${(inv.status||'pending').toUpperCase()}</span></td>
+        <td style="font-size:.8rem;color:var(--text-2)">${inv.created_at ? new Date(inv.created_at).toLocaleDateString() : '—'}</td>
+        <td>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            ${inv.status !== 'paid' ? `<button class="btn btn-success btn-sm" onclick="markInvoicePaid(${inv.id})">Mark Paid</button>` : ''}
+            ${inv.client_email && inv.status !== 'paid' ? `<button class="btn btn-blue btn-sm" onclick="sendInvoiceEmail(${inv.id})">Email</button>` : ''}
+            <button class="btn btn-danger btn-sm" onclick="deleteInvoice(${inv.id})">✕</button>
+          </div>
+        </td>
+      </tr>
+    `).join('')
+    : '<tr><td colspan="7" style="text-align:center;color:var(--text-2);padding:24px">No invoices yet.</td></tr>';
+}
+
+// ─── Leads Table ────────────────────────────────────────────────
+async function loadLeads() {
+  const params = new URLSearchParams({
+    q: $('f-search').value,
+    status: $('f-status').value,
+    industry: $('f-industry').value,
+    city: $('f-city').value,
+    has_email: $('f-email').checked ? '1' : '',
+    has_replied: $('f-replied').checked ? '1' : '',
+    page: leadsPage,
+    per_page: 50,
+  });
+
+  const data = await api('/api/leads?' + params);
+  $('leads-total').textContent = data.total;
+
+  $('leads-tbody').innerHTML = data.leads.map(l => `
+    <tr class="${l.status === 'interested' ? 'hot' : ''}" onclick="openLeadDetail(${l.id})" style="cursor:pointer">
+      <td>
+        <div style="font-weight:600">${l.business_name}</div>
+        <div style="font-size:.75rem;color:var(--text-2)">${l.owner_name || ''}</div>
+      </td>
+      <td>
+        <div>${l.email || '—'}</div>
+        <div style="font-size:.75rem;color:var(--text-2)">${l.phone || ''}</div>
+      </td>
+      <td>${l.industry || '—'}</td>
+      <td>${l.city || '—'}</td>
+      <td>${seqPills(l.email_1_sent, l.email_2_sent, l.email_3_sent, l.replied)}</td>
+      <td>${statusBadge(l.status)}</td>
+      <td onclick="event.stopPropagation()">
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          ${l.status !== 'interested' ? `<button class="btn btn-success btn-sm" onclick="changeStatus(${l.id},'interested')">Replied</button>` : ''}
+          ${l.status !== 'demo_booked' && !l.demo_booked ? `<button class="btn btn-primary btn-sm" onclick="changeStatus(${l.id},'demo_booked')">Demo</button>` : ''}
+          ${l.status !== 'closed' ? `<button class="btn btn-ghost btn-sm" onclick="changeStatus(${l.id},'closed')">Close</button>` : ''}
+          ${l.status !== 'lost' ? `<button class="btn btn-danger btn-sm" onclick="changeStatus(${l.id},'lost')">Lost</button>` : ''}
+        </div>
+      </td>
+    </tr>
+  `).join('');
+
+  const totalPages = Math.ceil(data.total / 50);
+  let pgHtml = '';
+  for (let i = 1; i <= totalPages && i <= 10; i++) {
+    pgHtml += `<button class="btn ${i === leadsPage ? 'btn-primary' : 'btn-ghost'} btn-sm" onclick="leadsPage=${i};loadLeads()">${i}</button>`;
+  }
+  if (totalPages > 10) pgHtml += `<span style="color:var(--text-2);font-size:.8rem">... ${totalPages} pages</span>`;
+  $('leads-pagination').innerHTML = pgHtml;
+}
+
+function debounceLoadLeads() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => { leadsPage = 1; loadLeads(); }, 300);
+}
+
+async function loadFilters() {
+  const stats = await api('/api/stats');
+  $('f-industry').innerHTML = '<option value="">All Industries</option>' +
+    stats.industries.map(i => `<option value="${i}">${i}</option>`).join('');
+  $('f-city').innerHTML = '<option value="">All Cities</option>' +
+    stats.cities.map(c => `<option value="${c}">${c}</option>`).join('');
+}
+
+// ─── Lead Detail Modal ──────────────────────────────────────────
+async function openLeadDetail(id) {
+  const lead = await api(`/api/leads/${id}`);
+  if (lead.error) return toast('Lead not found');
+
+  $('ml-title').textContent = lead.business_name;
+  $('ml-body').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div><span style="color:var(--text-2);font-size:.75rem">Owner</span><br>${lead.owner_name || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">Email</span><br>${lead.email || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">Phone</span><br>${lead.phone || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">Industry</span><br>${lead.industry || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">City</span><br>${lead.city || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">Status</span><br>${statusBadge(lead.status)}</div>
+    </div>
+    <div style="margin-bottom:12px">
+      <span style="color:var(--text-2);font-size:.75rem">Email Sequence</span><br>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
+        ${seqPills(lead.email_1_sent, lead.email_2_sent, lead.email_3_sent, lead.replied)}
+        <span style="font-size:.8rem;color:var(--text-2)">
+          ${lead.email_3_sent ? 'Sequence complete' : lead.email_2_sent ? 'Email 2 sent' : lead.email_1_sent ? 'Email 1 sent' : 'Not started'}
+        </span>
+      </div>
+    </div>
+    ${lead.replied ? `<div style="margin-bottom:12px;color:var(--green);font-size:.85rem">✅ Replied on ${lead.reply_date || '—'}</div>` : ''}
+    ${lead.demo_booked ? `<div style="margin-bottom:12px;color:var(--accent-2);font-size:.85rem">📅 Demo: ${lead.demo_date || lead.demo_booked}</div>` : ''}
+    ${lead.website ? `<div style="margin-bottom:12px"><a href="${lead.website.startsWith('http') ? lead.website : 'https://' + lead.website}" target="_blank" style="color:var(--blue);font-size:.85rem">🌐 ${lead.website}</a></div>` : ''}
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="lead-notes-${lead.id}" style="width:100%;background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius-sm);padding:10px;color:var(--text-0);font-size:.85rem;min-height:60px;font-family:inherit">${lead.notes || ''}</textarea>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="btn btn-ghost btn-sm" onclick="saveNotes(${lead.id})">💾 Save Notes</button>
+      <button class="btn btn-success btn-sm" onclick="changeStatus(${lead.id},'interested');closeModal('modal-lead')">✅ Replied</button>
+      <button class="btn btn-primary btn-sm" onclick="changeStatus(${lead.id},'demo_booked');closeModal('modal-lead')">📅 Demo Booked</button>
+      <a href="${BOOKING_URL}" target="_blank" class="btn btn-primary btn-sm">📅 Calendar</a>
+      <button class="btn btn-success btn-sm" onclick="changeStatus(${lead.id},'closed');closeModal('modal-lead')">🎉 Closed</button>
+      <button class="btn btn-danger btn-sm" onclick="changeStatus(${lead.id},'lost');closeModal('modal-lead')">✗ Lost</button>
+    </div>
+  `;
+  openModal('modal-lead');
+}
+
+async function saveNotes(id) {
+  const notes = document.getElementById(`lead-notes-${id}`).value;
+  await api(`/api/leads/${id}`, { method: 'PATCH', body: { notes } });
+  toast('Notes saved ✓');
+}
+
+// ─── Demo Prep ──────────────────────────────────────────────────
+async function openDemoPrep(id) {
+  const data = await api(`/api/leads/${id}/demo-prep`);
+  if (data.error) return toast('Lead not found');
+  const l = data.lead;
+  const s = data.demo_script;
+  $('demo-body').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div><span style="color:var(--text-2);font-size:.75rem">Business</span><br><strong>${l.business_name}</strong></div>
+      <div><span style="color:var(--text-2);font-size:.75rem">Owner</span><br>${l.owner_name || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">Industry</span><br>${l.industry || '—'}</div>
+      <div><span style="color:var(--text-2);font-size:.75rem">City</span><br>${l.city || '—'}</div>
+    </div>
+    <div style="margin-bottom:12px">
+      <span style="font-size:.8rem;font-weight:600;color:var(--text-2)">PAIN POINTS:</span>
+      <div style="margin-top:6px">${data.pain_points.map(p => `<span style="display:inline-block;background:rgba(239,68,68,.1);color:var(--red);padding:3px 10px;border-radius:12px;font-size:.75rem;margin:3px">${p}</span>`).join('')}</div>
+    </div>
+    <div style="background:var(--bg-2);border:1px solid var(--bg-3);border-radius:var(--radius);padding:16px">
+      <div style="font-weight:600;margin-bottom:10px">📋 Demo Script</div>
+      ${['opener','discovery','pain_agitate','solution','close'].map(k => `
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-2);margin-top:10px">${k.replace('_',' ')}</div>
+        <div style="background:var(--bg-1);border-radius:var(--radius-sm);padding:12px;margin:4px 0;font-size:.85rem;line-height:1.6;color:var(--text-1)">${s[k]}</div>
+      `).join('')}
+    </div>
+    <div style="margin-top:16px;display:flex;gap:8px">
+      <a href="${BOOKING_URL}" target="_blank" class="btn btn-primary">📅 Booking Calendar</a>
+      <button class="btn btn-success" onclick="changeStatus(${l.id},'closed');closeModal('modal-demo');toast('🎉 Deal closed!')">🎉 Mark Closed</button>
+    </div>
+  `;
+  openModal('modal-demo');
+}
+
+// ─── Status & LinkedIn ──────────────────────────────────────────
+async function changeStatus(id, status) {
+  await api(`/api/leads/${id}/status`, { method: 'POST', body: { status } });
+  toast(`Status → ${status.replace('_', ' ')} ✓`);
+  if (currentPage === 'pipeline') loadPipeline();
+  else if (currentPage === 'leads') loadLeads();
+  updateStatsBar();
+}
+
+async function skipLead(id, btn) {
+  await api(`/api/leads/${id}/skip`, { method: 'POST' });
+  const card = btn.closest('.li-card');
+  if (card) {
+    card.style.transition = 'opacity 0.2s';
+    card.style.opacity = '0';
+    setTimeout(() => card.remove(), 200);
+  }
+  toast('Lead skipped');
+}
+
+async function markLinkedIn(id, btn) {
+  const res = await api(`/api/leads/${id}/linkedin`, { method: 'POST' });
+  if (res && res.ok) {
+    // Remove the card from view immediately
+    const card = btn.closest('.lead-card') || btn.closest('.pitch-card') || btn.closest('.li-card') || btn.parentElement.parentElement;
+    if (card) {
+      card.style.transition = 'opacity 0.3s, transform 0.3s';
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(20px)';
+      setTimeout(() => card.remove(), 300);
+    }
+    toast('✅ Marked sent and saved!');
+    // Refresh the counter immediately
+    const stats = await api('/api/today');
+    if (stats) {
+      const dmCount = stats.dm_count || 0;
+      const dmPct = Math.min(100, (dmCount / 20) * 100);
+      const pt = document.getElementById('dm-progress-text');
+      const pb = document.getElementById('dm-progress-bar');
+      if (pt) pt.textContent = `${dmCount}/20 LinkedIn DMs sent today`;
+      if (pb) pb.style.width = dmPct + '%';
+      const sb = document.getElementById('sb-linkedin');
+      if (sb) sb.textContent = `${dmCount}/20`;
+    }
+  }
+}
+
+// ─── Add Lead ───────────────────────────────────────────────────
+function openAddLead() { openModal('modal-add-lead'); }
+async function submitAddLead(e) {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  await api('/api/leads', { method: 'POST', body: Object.fromEntries(fd) });
+  closeModal('modal-add-lead');
+  e.target.reset();
+  toast('Lead added ✓');
+  loadLeads();
+}
+
+// ─── Add Client ─────────────────────────────────────────────────
+function openAddClient() { openModal('modal-add-client'); }
+async function submitAddClient(e) {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const body = Object.fromEntries(fd);
+  body.monthly_value = parseFloat(body.monthly_value) || 497;
+  body.setup_fee = parseFloat(body.setup_fee) || 0;
+  await api('/api/clients', { method: 'POST', body });
+  closeModal('modal-add-client');
+  e.target.reset();
+  toast('Client added 🎉');
+  loadClients();
+  updateStatsBar();
+}
+
+// ─── AI Audit ───────────────────────────────────────────────────
+let currentAuditData = null;
+
+async function generateAudit() {
+  const url = $('audit-url').value.trim();
+  const biz = $('audit-biz').value.trim();
+  const industry = $('audit-industry').value;
+  if (!biz) { toast('Business name is required'); return; }
+
+  const btn = $('audit-generate-btn');
+  btn.innerHTML = '<span class="spinner"></span> Analyzing...';
+  btn.disabled = true;
+
+  try {
+    const data = await api('/api/audit/generate', {
+      method: 'POST',
+      body: { url, business_name: biz, industry }
+    });
+    if (data.error) { toast(data.error); return; }
+    currentAuditData = data;
+    renderAuditReport(data);
+  } catch(e) {
+    toast('Error generating report');
+  } finally {
+    btn.innerHTML = '🧠 Generate Audit Report';
+    btn.disabled = false;
+  }
+}
+
+function renderAuditReport(data) {
+  const report = $('audit-report');
+  report.classList.add('visible');
+  const sd = data.scraped_data || {};
+
+  $('audit-biz-info').innerHTML = `
+    <div class="biz-title">🧠 ${data.business_name}</div>
+    ${data.website ? `<div class="biz-url"><a href="${data.website}" target="_blank" style="color:var(--blue)">${data.website}</a></div>` : ''}
+    <div style="margin-top:4px"><span class="badge badge-demo_booked">${data.industry}</span>
+      ${sd.scrape_success ? '<span class="badge badge-interested" style="margin-left:6px">✓ Site Scraped</span>' : '<span class="badge badge-contacted" style="margin-left:6px">Industry-based</span>'}
+    </div>
+    <div class="biz-info-grid">
+      ${sd.phone ? `<div class="biz-info-item"><div class="label">Phone</div><div>📞 ${sd.phone}</div></div>` : ''}
+      ${sd.email ? `<div class="biz-info-item"><div class="label">Email</div><div>✉️ ${sd.email}</div></div>` : ''}
+      ${sd.booking_system ? `<div class="biz-info-item"><div class="label">Booking</div><div>📅 ${sd.booking_system}</div></div>` : ''}
+      ${(sd.tech_stack||[]).length ? `<div class="biz-info-item"><div class="label">Tech</div><div>🛠️ ${sd.tech_stack.join(', ')}</div></div>` : ''}
+      ${(sd.services||[]).length ? `<div class="biz-info-item" style="grid-column:1/-1"><div class="label">Services</div><div>${sd.services.slice(0,8).join(' • ')}</div></div>` : ''}
+    </div>
+  `;
+
+  const recs = data.recommendations || [];
+  $('audit-recommendations').innerHTML = recs.map((r, i) => `
+    <div class="auto-card">
+      <div class="auto-card-header">
+        <div class="auto-name">
+          <span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700">${i+1}</span>
+          ${r.name}
+        </div>
+        <button class="auto-recommend-btn" onclick="this.classList.toggle('selected');this.textContent=this.classList.contains('selected')?'✓ Recommended!':'✓ Recommend This'">✓ Recommend This</button>
+      </div>
+      <div class="auto-why">💡 <strong>Why ${data.business_name}:</strong> ${r.why}</div>
+      <div class="auto-badges">
+        <span class="auto-badge time">⏱ ${r.time_saved}</span>
+        <span class="auto-badge revenue">💰 ${r.revenue_recovered}</span>
+        <span class="auto-badge roi">📈 ${r.roi_range} ROI</span>
+        <span class="auto-badge price">🏷️ ${r.price_display}</span>
+      </div>
+      <div style="font-size:.8rem;color:var(--text-2);font-style:italic">${r.roi_pitch}</div>
+    </div>
+  `).join('');
+
+  $('audit-roi-summary').innerHTML = `
+    <div style="font-size:.8rem;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">📊 Total Potential Impact</div>
+    <div class="big-number">${data.total_roi_estimate}% ROI</div>
+    <div style="font-size:.9rem;color:var(--text-1);margin-top:8px">
+      All ${recs.length} automations = <strong style="color:var(--green)">$${data.total_revenue_recovered.toLocaleString()}/mo recovered</strong>
+      for <strong style="color:var(--accent-2)">$${data.total_monthly_cost.toLocaleString()}/mo</strong>
+    </div>
+    <div class="roi-summary-grid">
+      <div class="roi-summary-item"><div class="val">${data.total_time_saved} hrs</div><div class="lbl">Time Saved / Week</div></div>
+      <div class="roi-summary-item"><div class="val">$${data.total_revenue_recovered.toLocaleString()}</div><div class="lbl">Revenue / Mo</div></div>
+      <div class="roi-summary-item"><div class="val">$${data.total_monthly_cost.toLocaleString()}</div><div class="lbl">Investment / Mo</div></div>
+      <div class="roi-summary-item"><div class="val">${data.total_roi_estimate}%</div><div class="lbl">Total ROI</div></div>
+    </div>
+  `;
+
+  $('audit-actions').innerHTML = `
+    <button class="btn btn-primary" onclick="saveAuditReport()">💾 Save Report</button>
+    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print / PDF</button>
+    <button class="btn btn-success" onclick="copyDemoSummary()">📋 Copy Summary</button>
+  `;
+
+  report.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+async function saveAuditReport() {
+  if (!currentAuditData) return;
+  const res = await api('/api/audit/save', {
+    method: 'POST',
+    body: {
+      business_name: currentAuditData.business_name,
+      website: currentAuditData.website,
+      industry: currentAuditData.industry,
+      scraped_data: currentAuditData.scraped_data,
+      recommendations: currentAuditData.recommendations,
+      total_roi_estimate: currentAuditData.total_roi_estimate,
+      lead_id: currentAuditData.lead_id,
+    }
+  });
+  if (res.ok) { toast(`Audit #${res.id} saved ✓`); loadAuditHistory(); }
+  else toast('Error saving');
+}
+
+function copyDemoSummary() {
+  if (!currentAuditData) return;
+  const d = currentAuditData;
+  let s = `AI AUDIT: ${d.business_name} (${d.industry})\nWebsite: ${d.website || 'N/A'}\n\nTOP OPPORTUNITIES:\n`;
+  (d.recommendations || []).forEach((r, i) => {
+    s += `${i+1}. ${r.name} - ${r.revenue_recovered} recovered, ${r.time_saved} saved, ${r.price_display}\n`;
+  });
+  s += `\nTOTAL: $${d.total_revenue_recovered.toLocaleString()}/mo recovered for $${d.total_monthly_cost.toLocaleString()}/mo = ${d.total_roi_estimate}% ROI`;
+  navigator.clipboard.writeText(s);
+  toast('Summary copied ✓');
+}
+
+async function loadAuditHistory() {
+  const data = await api('/api/audit/reports');
+  const reports = data.reports || [];
+  $('audit-history-count').textContent = reports.length;
+
+  if (!reports.length) {
+    $('audit-history').innerHTML = '<div class="card" style="text-align:center;padding:24px;color:var(--text-2)">No audit reports yet. Generate your first one above! 🧠</div>';
+    return;
+  }
+
+  $('audit-history').innerHTML = reports.map(r => {
+    const recCount = (r.recommendations || []).length;
+    const created = r.created_at ? new Date(r.created_at).toLocaleDateString() : '';
+    return `
+      <div class="audit-history-card" onclick="viewSavedAudit(${r.id})">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div style="font-weight:700;font-size:.95rem">🧠 ${r.business_name}</div>
+            <div style="font-size:.8rem;color:var(--text-2)">${r.website || 'No URL'} • ${r.industry}</div>
+          </div>
+          <button class="btn btn-danger btn-sm" onclick="event.stopPropagation();deleteAuditReport(${r.id})">✕</button>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+          <span class="badge badge-demo_booked">${recCount} automations</span>
+          <span class="badge badge-interested">${r.total_roi_estimate || 0}% ROI</span>
+          <span style="font-size:.75rem;color:var(--text-2)">${created}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function viewSavedAudit(id) {
+  api('/api/audit/reports').then(data => {
+    const report = (data.reports || []).find(r => r.id === id);
+    if (!report) return toast('Not found');
+    const recs = report.recommendations || [];
+    currentAuditData = {
+      business_name: report.business_name, website: report.website,
+      industry: report.industry, scraped_data: report.scraped_data || {},
+      recommendations: recs,
+      total_monthly_cost: recs.reduce((s,r) => s + (r.price||0), 0),
+      total_revenue_recovered: recs.reduce((s,r) => s + (r.avg_revenue||0), 0),
+      total_time_saved: Math.round(recs.reduce((s,r) => s + ((r.time_saved_low||0)+(r.time_saved_high||0))/2, 0)),
+      total_roi_estimate: report.total_roi_estimate || 0,
+      lead_id: report.lead_id,
+    };
+    renderAuditReport(currentAuditData);
+  });
+}
+
+async function deleteAuditReport(id) {
+  if (!confirm('Delete this audit report?')) return;
+  await api(`/api/audit/reports/${id}`, {method: 'DELETE'});
+  toast('Deleted');
+  loadAuditHistory();
+}
+
+// ─── Billing (Invoice Modal) ─────────────────────────────────────
+const SETUP_FEES = {starter: 1550, growth: 2575, scale: 3600};
+const MONTHLY_FEES = {starter: 360, growth: 770, scale: 1544};
+
+function prefillAmount() {
+  const type = $('inv-type').value;
+  const tier = $('inv-tier').value;
+  const tierGroup = $('tier-group');
+
+  if (type === 'pilot') {
+    tierGroup.style.display = 'none';
+    $('inv-amount').value = 750;
+    $('inv-desc').value = '30-Day AI Automation Pilot — build + 30 days proven results. Converts to monthly after.';
+  } else if (type === 'custom') {
+    tierGroup.style.display = 'none';
+    $('inv-amount').value = '';
+    $('inv-desc').value = '';
+  } else {
+    tierGroup.style.display = 'block';
+    const fees = type === 'setup' ? SETUP_FEES : MONTHLY_FEES;
+    $('inv-amount').value = fees[tier] || '';
+    $('inv-desc').value = `Viora AI ${type === 'setup' ? 'Setup Fee' : 'Monthly Payment'} - ${tier.charAt(0).toUpperCase() + tier.slice(1)}`;
+  }
+}
+
+function prefillInvoiceClient() {
+  const sel = $('inv-client');
+  const opt = sel.options[sel.selectedIndex];
+  if (opt && opt.dataset.name) {
+    $('inv-name').value = opt.dataset.name;
+    $('inv-email').value = opt.dataset.email || '';
+  }
+}
+
+async function openCreateInvoice() {
+  $('invoice-result').style.display = 'none';
+  $('invoice-form').reset();
+  prefillAmount();
+  const data = await api('/api/clients');
+  const sel = $('inv-client');
+  sel.innerHTML = '<option value="">Select a client...</option>' +
+    (data.clients || []).map(c => `<option value="${c.id}" data-name="${c.business_name}" data-email="${c.email||''}">${c.business_name}</option>`).join('');
+  openModal('modal-invoice');
+}
+
+async function submitInvoice(e) {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const body = {
+    client_id: fd.get('client_id') || null,
+    client_name: fd.get('client_name'),
+    client_email: fd.get('client_email'),
+    amount: parseFloat(fd.get('amount')),
+    description: fd.get('description'),
+    type: fd.get('type'),
+  };
+  const res = await api('/api/billing/create-payment-link', {method: 'POST', body});
+  const rd = $('invoice-result');
+  rd.style.display = 'block';
+  if (res.error) {
+    $('inv-result-title').textContent = '❌ Error';
+    $('inv-result-body').innerHTML = `<div style="color:var(--red)">${res.error}</div>`;
+    return;
+  }
+  const inv = res.invoice;
+  $('inv-result-title').textContent = '✅ Invoice Created';
+  $('inv-result-body').innerHTML = `
+    <div>Invoice #${inv.id} for <strong>$${inv.amount.toFixed(2)}</strong> — ${inv.client_name}</div>
+    ${res.payment_url ? `<div style="margin-top:8px"><button class="btn btn-primary btn-sm" onclick="copyText('${res.payment_url}', this)">📋 Copy Payment Link</button></div>` : ''}
+    ${inv.client_email ? `<button class="btn btn-blue btn-sm" style="margin-top:8px" onclick="sendInvoiceEmail(${inv.id})">✉️ Send Email</button>` : ''}
+  `;
+  if (currentPage === 'clients') loadClients();
+  updateStatsBar();
+}
+
+async function markInvoicePaid(id) {
+  await api(`/api/billing/invoices/${id}/pay`, {method: 'POST'});
+  toast('Marked paid ✅');
+  loadClients();
+}
+
+async function sendInvoiceEmail(id) {
+  const res = await api('/api/billing/send-invoice', {method: 'POST', body: {invoice_id: id}});
+  if (res.ok) toast('Invoice sent ✉️');
+  else toast('Failed: ' + (res.error || 'unknown'));
+}
+
+async function deleteInvoice(id) {
+  if (!confirm('Delete invoice?')) return;
+  await api(`/api/billing/invoices/${id}`, {method: 'DELETE'});
+  toast('Deleted');
+  loadClients();
+}
+
+async function quickInvoice(clientId, name, email, type, amount) {
+  const desc = type === 'setup' ? `Viora AI Setup - ${name}` : `Viora AI Monthly - ${name}`;
+  const res = await api('/api/billing/create-payment-link', {
+    method: 'POST',
+    body: {client_id: clientId, client_name: name, client_email: email, amount, description: desc, type}
+  });
+  if (res.invoice) toast(`Invoice #${res.invoice.id} created for $${amount}`);
+  else toast('Error: ' + (res.error || 'unknown'));
+  if (currentPage === 'clients') loadClients();
+}
+
+// ─── Init ───────────────────────────────────────────────────────
+async function init() {
+  await loadFilters();
+  loadToday();
+  updateStatsBar();
+  checkDayComplete();
+
+  // Stats bar refresh every 30 seconds
+  setInterval(updateStatsBar, 30000);
+
+  // Auto-refresh pipeline/leads/clients every 5 min but NOT today tab
+  // (today tab only refreshes on manual page reload to avoid disrupting LinkedIn outreach)
+  setInterval(() => {
+    if (currentPage === 'pipeline') loadPipeline();
+    else if (currentPage === 'leads') loadLeads();
+    else if (currentPage === 'clients') loadClients();
+    else if (currentPage === 'audit') loadAuditHistory();
+  }, 5 * 60 * 1000);
+}
+
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', e => { if (e.target === el) el.classList.remove('open'); });
+});
+
+init();
+</script>
+</body>
+</html>

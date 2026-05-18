@@ -1,0 +1,198 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-12 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-12 14:00:04,748 🔄 Auto-rotation day 132: veterinary clinic in Charlotte, NC
+2026-05-12 14:00:04,751 
+🔍 Searching: veterinary clinic in Charlotte, NC
+2026-05-12 14:00:05,805   ✅ Stand For Animals Veterinary Clinic — (704) 970-2711 — http://www.standforanimals.org/
+2026-05-12 14:00:06,087   ✅ Carolina Veterinary Specialists Charlotte — (704) 303-8363 — https://charlotte.carolinavet.com/
+2026-05-12 14:00:06,406   ✅ Petfolk Veterinary & Urgent Care - SouthPark — (980) 580-8079 — https://petfolk.com/locations/charlotte-nc/vet-clinics/south-park?utm_source=gbp&utm_medium=referral&utm_campaign=gbp_south-park&utm_content=website_link
+2026-05-12 14:00:06,677   ✅ CARE | Charlotte Animal Referral & Emergency — (704) 457-2300 — https://carecharlotte.com/
+2026-05-12 14:00:06,945   ✅ Independence Veterinary Clinic — (704) 841-1313 — https://independenceveterinaryclinic.com/
+2026-05-12 14:00:07,186   ✅ Armstrong Animal Clinic — (704) 334-1996 — https://www.armstronganimalclinic.com/
+2026-05-12 14:00:07,544   ✅ South End Veterinary Clinic — (704) 632-8012 — http://www.southendvet.com/
+2026-05-12 14:00:07,837   ✅ Epic Tails Veterinary Clinic — (704) 523-8015 — https://www.epictailsvet.com/
+2026-05-12 14:00:08,071   ✅ GoodVets Montford — (704) 924-4700 — https://goodvets.com/locations/charlotte/montford
+2026-05-12 14:00:08,271   ✅ Ark Veterinary Services PLLC — (704) 675-7387 — https://www.arkvetllc.com/
+2026-05-12 14:00:08,548   ✅ VEG ER for Pets — (980) 880-6062 — https://www.veg.com/locations/north-carolina/charlotte?utm_source=organic_google&utm_medium=gbp_link&utm_campaign=locations_page&utm_content=charlotte
+2026-05-12 14:00:08,774   ✅ CityVet | Charlotte Uptown Veterinary Clinic & Urgent Care — (980) 249-3113 — http://www.cityvet.com/charlotte-uptown/?utm_source=yext&utm_medium=organic&utm_campaign=charlotte-uptown
+2026-05-12 14:00:11,495   ✅ Harris Boulevard Veterinary Clinic — (704) 596-7387 — http://harrisblvdveterinaryclinic.com/
+2026-05-12 14:00:11,692   ✅ Carolina Veterinary Specialists Matthews — (980) 446-1466 — https://matthews.carolinavet.com/
+2026-05-12 14:00:11,947   ✅ Spay Neuter Clinic of the Carolinas — (704) 542-9997 — http://spayneutercarolinas.com/
+2026-05-12 14:00:12,103   ✅ CLT Vets — (704) 703-8363 — http://www.cltvets.com/
+2026-05-12 14:00:12,314   ✅ Pineville Animal Clinic — (704) 527-2030 — https://pinevilleanimalclinic.com/
+2026-05-12 14:00:12,651   ✅ Matthews Animal Clinic — (704) 847-9856 — http://www.matthewsanimalclinic.com/
+2026-05-12 14:00:12,906   ✅ Charlotte Natural Animal Clinic — (980) 819-7402 — http://www.charlottenaturalanimal.com/
+2026-05-12 14:00:13,183   ✅ Plantation Animal Clinic — (704) 841-2225 — https://www.thrivepetcare.com/locations/north-carolina/matthews/plantation-animal-clinic?utm_source=google&utm_medium=gmb
+2026-05-12 14:00:15,787   ✅ GoodVets Myers Park — (704) 979-4015 — https://goodvets.com/locations/charlotte/myers-park
+2026-05-12 14:00:15,997   ✅ GoodVets Plaza Midwood — (704) 980-8355 — https://goodvets.com/locations/charlotte/plaza-midwood
+2026-05-12 14:00:16,135   ✅ Avery Animal Clinic — (704) 594-2215 — https://averyanimalclinic.com/
+2026-05-12 14:00:16,276   ✅ CityVet | Lower South End — (704) 749-0555 — https://www.cityvet.com/lower-south-end/?utm_source=yext&utm_medium=organic&utm_campaign=lower-south-end
+2026-05-12 14:00:16,549   ✅ Stand For Animals Veterinary Clinic — (704) 970-2711 — http://www.standforanimals.org/
+2026-05-12 14:00:16,705   ✅ Stand For Animals Veterinary Clinic — (704) 970-2711 — http://www.standforanimals.org/
+2026-05-12 14:00:16,988   ✅ Mobile Vet Clinic-Charlotte NC — (704) 522-0677 — http://www.mobilevet.com/
+2026-05-12 14:00:17,224   ✅ Vetco Vaccination Clinic — (704) 916-4047 — https://stores.petco.com/nc/charlotte/vaccinations-charlotte-nc-2533.html
+2026-05-12 14:00:17,391   ✅ Dr. Brad Brown, DVM — (704) 523-2996 — http://www.longanimal.com/
+2026-05-12 14:00:17,412   📊 Found 29, 27 new (rest were duplicates)
+2026-05-12 14:00:18,413 
+==================================================
+2026-05-12 14:00:18,413 ✅ Scraping complete
+2026-05-12 14:00:18,413    Total found:  29
+2026-05-12 14:00:18,413    New leads:    27
+2026-05-12 14:00:18,413    Duplicates:   2
+2026-05-12 14:00:18,417    DB total:     1249 leads (849 with emails)
+2026-05-12 14:00:18,417 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-12 14:00:18,634 🔍 Finding emails for 50 leads...
+2026-05-12 14:00:19,318 Hunter.io rate limited — pausing 60s
+2026-05-12 14:01:19,709 🔮 Guessed: info@homeproservicesdfw.com — HomePro Contracting, Handyman Dallas, Licensed General Contractors in Dallas.
+2026-05-12 14:01:20,593 Hunter.io rate limited — pausing 60s
+2026-05-12 14:02:21,174 🔮 Guessed: info@diamantepropertyservices.com — Diamante Property Services LLC
+2026-05-12 14:02:22,148 Hunter.io rate limited — pausing 60s
+2026-05-12 14:03:22,568 🔮 Guessed: info@evansgeneralcontractors.com — Evans General Contractors
+2026-05-12 14:03:23,500 Hunter.io rate limited — pausing 60s
+2026-05-12 14:04:23,869 🔮 Guessed: info@sercon.io — Sercon Contracting LLC
+2026-05-12 14:04:24,960 Hunter.io rate limited — pausing 60s
+2026-05-12 14:05:25,402 🔮 Guessed: info@terrellgc.com — Terrell General Contractors
+2026-05-12 14:05:26,623 Hunter.io rate limited — pausing 60s
+2026-05-12 14:06:27,048 🔮 Guessed: info@g2waterrestoration.com — G2 General Contractors
+2026-05-12 14:06:27,784 Hunter.io rate limited — pausing 60s
+2026-05-12 14:07:28,238 🔮 Guessed: info@powerconstructiongroup.com — Power Construction Group
+2026-05-12 14:07:29,170 Hunter.io rate limited — pausing 60s
+2026-05-12 14:08:29,539 🔮 Guessed: info@mylibertyfoundations.com — LFR Construction
+2026-05-12 14:08:30,277 Hunter.io rate limited — pausing 60s
+2026-05-12 14:09:30,651 🔮 Guessed: info@jaxonmartin.com — Jaxon Martin Roofing and General Contractors
+2026-05-12 14:09:31,553 Hunter.io rate limited — pausing 60s
+2026-05-12 14:10:31,890 🔮 Guessed: info@malakaiconstruction.com — Malakai Construction, Inc.
+2026-05-12 14:10:32,758 Hunter.io rate limited — pausing 60s
+2026-05-12 14:11:33,140 🔮 Guessed: info@suffolk.com — Suffolk Construction
+2026-05-12 14:11:33,844 Hunter.io rate limited — pausing 60s
+2026-05-12 14:12:34,172 🔮 Guessed: info@drywalldallas.com — Dallas Drywall Contractor Pros
+2026-05-12 14:12:34,867 Hunter.io rate limited — pausing 60s
+2026-05-12 14:13:35,241 🔮 Guessed: info@newbathtech.com — New Tech Bathroom Remodeling Dallas
+2026-05-12 14:13:36,163 Hunter.io rate limited — pausing 60s
+2026-05-12 14:14:36,559 🔮 Guessed: info@blake-construction.com — Blake Construction Blake Construction
+2026-05-12 14:14:37,462 Hunter.io rate limited — pausing 60s
+2026-05-12 14:15:37,889 🔮 Guessed: info@myallbright.com — Allbright Services, LLC
+2026-05-12 14:15:38,830 Hunter.io rate limited — pausing 60s
+2026-05-12 14:16:39,166 🔮 Guessed: info@dtexconstruction.com — D-Tex Construction
+2026-05-12 14:16:40,034 Hunter.io rate limited — pausing 60s
+2026-05-12 14:17:40,480 🔮 Guessed: info@kingdomconstructionco.com — Kingdom Construction Company
+2026-05-12 14:17:41,382 Hunter.io rate limited — pausing 60s
+2026-05-12 14:18:41,760 🔮 Guessed: info@greenmarkbuild.com — Green Mark Build
+2026-05-12 14:18:42,616 Hunter.io rate limited — pausing 60s
+2026-05-12 14:19:42,962 🔮 Guessed: info@dallasdemolition.com — Dallas Demolition
+2026-05-12 14:19:43,801 Hunter.io rate limited — pausing 60s
+2026-05-12 14:20:44,185 🔮 Guessed: info@reacticrestoration.com — Reactic Restoration
+2026-05-12 14:20:45,072 Hunter.io rate limited — pausing 60s
+2026-05-12 14:21:45,437 🔮 Guessed: info@islerhomes.com — Isler Homes
+2026-05-12 14:21:46,165 Hunter.io rate limited — pausing 60s
+2026-05-12 14:22:46,539 🔮 Guessed: info@atautosa.com — AT Automotive
+2026-05-12 14:22:47,413 Hunter.io rate limited — pausing 60s
+2026-05-12 14:23:47,765 🔮 Guessed: info@texasautorepairs.com — Texas Auto Repairs
+2026-05-12 14:23:48,648 Hunter.io rate limited — pausing 60s
+2026-05-12 14:24:49,020 🔮 Guessed: info@jackies-auto-clinic.blogspot.com — Jackie's Auto Clinic
+2026-05-12 14:24:49,932 Hunter.io rate limited — pausing 60s
+2026-05-12 14:25:50,303 🔮 Guessed: info@premier1auto.com — Premier1 Auto Care
+2026-05-12 14:25:51,008 Hunter.io rate limited — pausing 60s
+2026-05-12 14:26:51,384 🔮 Guessed: info@mdautomotiveonline.com — MD Automotive
+2026-05-12 14:26:52,088 Hunter.io rate limited — pausing 60s
+2026-05-12 14:27:52,453 🔮 Guessed: info@martinsautoclinic.net — Martin's Auto Clinic
+2026-05-12 14:27:53,305 Hunter.io rate limited — pausing 60s
+2026-05-12 14:28:53,737 🔮 Guessed: info@autorepairsanantonio.com — Auto Service Experts
+2026-05-12 14:28:54,458 Hunter.io rate limited — pausing 60s
+2026-05-12 14:29:54,816 🔮 Guessed: info@tireandmechanicshopinsanantoniotexas.com — Mr. Mechanic & Tire Muffler Shop
+2026-05-12 14:29:55,584 Hunter.io rate limited — pausing 60s
+2026-05-12 14:30:56,079 🔮 Guessed: info@cmautocare.com — Chad Miller Auto Care
+2026-05-12 14:30:56,852 Hunter.io rate limited — pausing 60s
+2026-05-12 14:31:57,208 🔮 Guessed: info@sanfordautoservice.com — Sanford Auto Service
+2026-05-12 14:31:58,086 Hunter.io rate limited — pausing 60s
+2026-05-12 14:32:58,452 🔮 Guessed: info@precisionautomasterstx.com — Precision Auto Masters
+2026-05-12 14:32:59,525 Hunter.io rate limited — pausing 60s
+2026-05-12 14:33:59,904 🔮 Guessed: info@sausaautorepair.wixsite.com — USA Auto Repair
+2026-05-12 14:34:00,799 Hunter.io rate limited — pausing 60s
+2026-05-12 14:35:01,169 🔮 Guessed: info@mikesdowntowngarage.com — Mike's Downtown Garage
+2026-05-12 14:35:01,888 Hunter.io rate limited — pausing 60s
+2026-05-12 14:36:02,292 🔮 Guessed: info@victorsservicecenter.com — Victor's Service Center Inc
+2026-05-12 14:36:03,232 Hunter.io rate limited — pausing 60s
+2026-05-12 14:37:03,628 🔮 Guessed: info@eurasianautorepair.com — Eurasian Auto Repair
+2026-05-12 14:37:04,369 Hunter.io rate limited — pausing 60s
+2026-05-12 14:38:04,776 🔮 Guessed: info@autoworksatx.com — AutoWorks
+2026-05-12 14:38:05,664 Hunter.io rate limited — pausing 60s
+2026-05-12 14:39:06,061 🔮 Guessed: info@kingdomautorepairtx.com — Kingdom Auto Repair Service
+2026-05-12 14:39:06,569 
+==================================================
+2026-05-12 14:39:06,570 ✅ Email finder complete
+2026-05-12 14:39:06,570    API found:  0
+2026-05-12 14:39:06,570    Guessed:    38
+2026-05-12 14:39:06,570    Total:      38
+2026-05-12 14:39:06,570 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-12.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue May 12** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1249 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue May 12 14:39:07 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-12.log

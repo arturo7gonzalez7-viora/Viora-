@@ -1,0 +1,217 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-13 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-13 14:00:04,100 🔄 Auto-rotation day 133: tattoo shop in Indianapolis, IN
+2026-05-13 14:00:04,100 
+🔍 Searching: tattoo shop in Indianapolis, IN
+2026-05-13 14:00:04,944   ✅ Big Time Tattoos and Piercings — (317) 791-8111 — http://www.bigtimetattoos.com/
+2026-05-13 14:00:05,246   ✅ The Artistry Realm Tattoo & Art Studio — (317) 220-8790 — https://theartistryrealm.com/
+2026-05-13 14:00:05,535   ✅ Cleopatra Ink Tattoo & Piercing Indianapolis Studio — (463) 314-4502 — https://cleopatraink.com/en/studios/indianapolis-tattoo-and-piercing-studio
+2026-05-13 14:00:05,807   ✅ Flink's Ink Tattoo and Piercings — (317) 332-9971 — https://indianapoliscustomtattoos.com/
+2026-05-13 14:00:06,202   ✅ Inkfam Tattoo Gallery — (317) 783-1470 — http://linktr.ee/shadowink
+2026-05-13 14:00:06,363   ✅ DOE Tattz & Piercing Shop — (317) 258-7283 — no website
+2026-05-13 14:00:06,655   ✅ Ink'D Tattoos — (317) 762-1652 — https://www.facebook.com/profile.php?id=61558270495262
+2026-05-13 14:00:06,840   ✅ MASTERWORK TATTOO — (317) 384-8887 — http://www.masterworktattoo.net/
+2026-05-13 14:00:07,062   ✅ Fountain Square Tattoo — (317) 602-4069 — http://www.fountainsquaretattoo.com/
+2026-05-13 14:00:07,252   ✅ Steel Rod Tattoo — (317) 297-8335 — http://www.steelrodtattoo.com/
+2026-05-13 14:00:07,494   ✅ Animation Art Studio — (317) 390-4919 — http://www.aastudioindy.com/
+2026-05-13 14:00:07,795   ✅ Dreamlike Ink Tattoo Studio — (317) 721-4478 — https://dreamlikeink.wixsite.com/dreamlike-ink
+2026-05-13 14:00:08,119   ✅ 77 Art Collective — (317) 672-2447 — https://www.vagaro.com/us03/77artcollective
+2026-05-13 14:00:08,319   ✅ High Caliber Tattoo and Piercing Studio — (317) 244-9648 — http://hctattoo.com/
+2026-05-13 14:00:08,668   ✅ Leviathan Ink Tattoo & Piercing — (317) 566-4879 — https://leviathanink.biz/
+2026-05-13 14:00:08,847   ✅ Phong Tattoo — (317) 669-2326 — https://www.facebook.com/phongtattoo6789/
+2026-05-13 14:00:09,194   ✅ Ink & Ivy Studio — (317) 419-2313 — https://linktr.ee/ink_ivy_studio
+2026-05-13 14:00:09,387   ✅ Metamorphosis — (317) 466-1666 — http://metamorphosis.ink/
+2026-05-13 14:00:09,603   ✅ Kickshaw Tattoo — (317) 492-9409 — no website
+2026-05-13 14:00:09,788   ✅ Big Lew’s Tattoos — (317) 529-1930 — https://booking.cojilio.com/3092
+2026-05-13 14:00:12,552   ✅ Memory Lane Tattoo Club — (463) 237-9994 — http://www.instagram.com/memorylanetattooclub
+2026-05-13 14:00:12,765   ✅ Rowan The Fashion Mall at Keystone — (463) 345-3557 — https://heyrowan.com/pages/indianapolis-piercing-studio?utm_medium=yext&utm_source=extnet&y_source=1_OTE1MzY0NTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-05-13 14:00:12,933   ✅ Irish Ink Tattoo and Piercing — (317) 893-2672 — no website
+2026-05-13 14:00:13,123   ✅ Solace Art Collective — (317) 419-2254 — https://zzmaps.xyz/business/solace-art-collective-DYtPm2rI
+2026-05-13 14:00:13,328   ✅ Black Ink Indianapolis — (317) 605-9120 — https://www.instagram.com/blackinkindianapolis?igsh=NnpzcXk3cjhocTV2&utm_source=qr
+2026-05-13 14:00:13,604   ✅ A-1 Art Tattoos LLC — (317) 941-6278 — https://a1arttattoosllc.square.site/
+2026-05-13 14:00:13,846   ✅ Golden Goose Tattoo Company — (317) 746-6505 — http://goldengooseindy.com/
+2026-05-13 14:00:14,029   ✅ Wing & Wheel Tattoo — (317) 936-9464 — http://www.wingandwheeltattoo.com/
+2026-05-13 14:00:14,368   ✅ Speakeasy Tattoo Studio — (317) 983-4567 — https://www.speakeasystudiosindy.com/
+2026-05-13 14:00:14,667   ✅ Forever Gallery Tattoo — (317) 810-1049 — http://4evergallery.com/
+2026-05-13 14:00:14,893   ✅ Artistic Skin Design and Body Piercing — (317) 780-8282 — http://www.artisticskins.com/
+2026-05-13 14:00:15,085   ✅ Blessed Tattoo Studio — (317) 832-6183 — https://www.facebook.com/profile.php?id=100087747470848
+2026-05-13 14:00:15,246   ✅ Infamous Tattoo Studio — (317) 862-1096 — no website
+2026-05-13 14:00:15,534   ✅ Artistic Skin Designs Inc — (317) 352-8282 — http://www.artisticskindesigns.com/
+2026-05-13 14:00:15,712   ✅ Revved Up Tattoos — (317) 537-2667 — http://www.revveduptattoos.com/
+2026-05-13 14:00:15,884   ✅ Indiana Tattoo Company — (317) 993-3526 — http://indianatattooco.com/
+2026-05-13 14:00:16,166   ✅ Tinta Azteca Tattoo Studio — (317) 832-3706 — https://www.facebook.com/TintaAztecaTattoos?mibextid=2JQ9oc
+2026-05-13 14:00:16,329   ✅ Mythical Wizard Tattoo — (317) 991-5352 — http://mythicalwizardtattoo.com/
+2026-05-13 14:00:16,463   ✅ Salty Siren Tattoo Lounge — (317) 360-2205 — http://www.saltysirentattoo.com/
+2026-05-13 14:00:19,082   ✅ INKSTINCT TATTOO — (463) 328-3180 — no website
+2026-05-13 14:00:19,260   ✅ Pushininkinc — (317) 332-9971 — http://www.pushininkinc.com/
+2026-05-13 14:00:19,460   ✅ Midwest Tattoo Company — (317) 466-1623 — http://www.midwesttattoocompany.com/
+2026-05-13 14:00:19,667   ✅ Ink Therapy Tattoo — (317) 268-6869 — http://inktherapytattoo.com/
+2026-05-13 14:00:19,962   ✅ Ceremony Tattoo — (317) 602-4272 — https://instagram.com/ceremony.tattoo
+2026-05-13 14:00:20,099   ✅ Indy Tattoo Works — (317) 244-8905 — http://www.indytattooworks.com/
+2026-05-13 14:00:20,297   ✅ Artistic Skin Designs Inc — (317) 244-8282 — http://www.artisticskindesigns.com/
+2026-05-13 14:00:20,457   ✅ Artistic Skin Design and Body Piercing — (317) 257-8282 — http://artisticskins.com/
+2026-05-13 14:00:20,591   ✅ The Stabbernacle Tattoo Studio — (317) 384-1753 — https://www.facebook.com/profile.php?id=61574634932287
+2026-05-13 14:00:20,764   ✅ Delta 9 Tattoo Co — (317) 480-6190 — https://tattoshopsnearme.com/delta-9-tattoo-co
+2026-05-13 14:00:21,156   ✅ The Mandala Effect — (317) 982-7817 — https://themandalaeffect.my.canva.site/#home
+2026-05-13 14:00:21,184   📊 Found 50, 50 new (rest were duplicates)
+2026-05-13 14:00:22,184 
+==================================================
+2026-05-13 14:00:22,185 ✅ Scraping complete
+2026-05-13 14:00:22,185    Total found:  50
+2026-05-13 14:00:22,185    New leads:    50
+2026-05-13 14:00:22,185    Duplicates:   0
+2026-05-13 14:00:22,188    DB total:     1299 leads (887 with emails)
+2026-05-13 14:00:22,189 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-13 14:00:22,444 🔍 Finding emails for 50 leads...
+2026-05-13 14:00:22,863 Hunter.io rate limited — pausing 60s
+2026-05-13 14:01:23,421 🔮 Guessed: info@vandmautomotivesa.com — V & M AUTOMOTIVE
+2026-05-13 14:01:24,194 Hunter.io rate limited — pausing 60s
+2026-05-13 14:02:24,592 🔮 Guessed: info@eriksautomotive.com — Erik's Automotive
+2026-05-13 14:02:25,297 Hunter.io rate limited — pausing 60s
+2026-05-13 14:03:25,665 🔮 Guessed: info@broadwaytireautoservice.com — Broadway Tire & Automotive
+2026-05-13 14:03:26,528 Hunter.io rate limited — pausing 60s
+2026-05-13 14:04:26,936 🔮 Guessed: info@gooseautomotive.com — Goose Euro - Downtown
+2026-05-13 14:04:27,658 Hunter.io rate limited — pausing 60s
+2026-05-13 14:05:27,882 🔮 Guessed: info@paleocarcare.com — Paleo Car Care
+2026-05-13 14:05:28,618 Hunter.io rate limited — pausing 60s
+2026-05-13 14:06:29,035 🔮 Guessed: info@juanolvera92.wixsite.com — Bexar County Automotive
+2026-05-13 14:06:29,986 Hunter.io rate limited — pausing 60s
+2026-05-13 14:07:30,357 🔮 Guessed: info@dasautoshoptx.com — DasAutoShopTX
+2026-05-13 14:07:31,205 Hunter.io rate limited — pausing 60s
+2026-05-13 14:08:31,686 🔮 Guessed: info@goodyear.com — Goodyear Auto Service
+2026-05-13 14:08:32,389 Hunter.io rate limited — pausing 60s
+2026-05-13 14:09:33,849 🔮 Guessed: info@eliseosgarage.net — Eliseo's Garage
+2026-05-13 14:09:34,591 Hunter.io rate limited — pausing 60s
+2026-05-13 14:10:34,951 🔮 Guessed: info@vicsautotech.com — Marks Automotive
+2026-05-13 14:10:35,816 Hunter.io rate limited — pausing 60s
+2026-05-13 14:11:36,241 🔮 Guessed: info@shwash.co — SHWASH Mobile Car Detailing Austin
+2026-05-13 14:11:36,990 Hunter.io rate limited — pausing 60s
+2026-05-13 14:12:37,457 🔮 Guessed: info@taurusautodetailing.com — Taurus Auto Detailing, Paint Protection Film & Ceramic Coating
+2026-05-13 14:12:38,316 Hunter.io rate limited — pausing 60s
+2026-05-13 14:13:38,759 🔮 Guessed: info@autodetailingtx.com — Auto Detailing Austin LLC
+2026-05-13 14:13:40,303 Hunter.io rate limited — pausing 60s
+2026-05-13 14:14:40,707 🔮 Guessed: info@completeautodetail.com — Complete Auto Detail & Car Wash
+2026-05-13 14:14:41,601 Hunter.io rate limited — pausing 60s
+2026-05-13 14:15:41,951 🔮 Guessed: info@perfectionautodetailing.weebly.com — Perfection Auto Detailing
+2026-05-13 14:15:42,796 Hunter.io rate limited — pausing 60s
+2026-05-13 14:16:43,141 🔮 Guessed: info@brightsidedetailing.com — Brightside Detailing
+2026-05-13 14:16:44,020 Hunter.io rate limited — pausing 60s
+2026-05-13 14:17:44,278 🔮 Guessed: info@rawvisiondetailing.com — Raw Vision Auto Detailing
+2026-05-13 14:17:45,185 Hunter.io rate limited — pausing 60s
+2026-05-13 14:18:45,523 🔮 Guessed: info@thewaxshackdetailing.com — The Wax Shack Auto Detailing Austin
+2026-05-13 14:18:46,455 Hunter.io rate limited — pausing 60s
+2026-05-13 14:19:46,859 🔮 Guessed: info@topofthelinedetailing.com — TOP OF THE LINE DETAILING LLC
+2026-05-13 14:19:47,750 Hunter.io rate limited — pausing 60s
+2026-05-13 14:20:48,260 🔮 Guessed: info@amexidetailing.com — Amexi Detailing
+2026-05-13 14:20:49,110 Hunter.io rate limited — pausing 60s
+2026-05-13 14:21:49,585 🔮 Guessed: info@centexshinycars.com — Centex Mobile Detailing
+2026-05-13 14:21:50,438 Hunter.io rate limited — pausing 60s
+2026-05-13 14:22:50,902 🔮 Guessed: info@xadetail.com — Xtreme Auto Detail, Inc.
+2026-05-13 14:22:51,741 Hunter.io rate limited — pausing 60s
+2026-05-13 14:23:52,080 🔮 Guessed: info@sponges.app — Sponges: Mobile Car Wash and Detailing
+2026-05-13 14:23:52,937 Hunter.io rate limited — pausing 60s
+2026-05-13 14:24:53,369 🔮 Guessed: info@ocdetailing.square.site — OCDetailing
+2026-05-13 14:24:54,221 Hunter.io rate limited — pausing 60s
+2026-05-13 14:25:54,721 🔮 Guessed: info@keepcleanatx.com — Keep clean ATX Mobile Detailing Services
+2026-05-13 14:25:55,501 Hunter.io rate limited — pausing 60s
+2026-05-13 14:26:55,897 🔮 Guessed: info@royal-auto-finishes.com — Royal Auto Finishes
+2026-05-13 14:26:56,756 Hunter.io rate limited — pausing 60s
+2026-05-13 14:27:57,145 🔮 Guessed: info@thedailydetail.com — The Daily Detail Mobile Car Detailing
+2026-05-13 14:27:57,921 Hunter.io rate limited — pausing 60s
+2026-05-13 14:28:58,264 🔮 Guessed: info@halloffamedetail.com — Hall of Fame Detail - Mobile Window Tinting & Mobile Car Detailing
+2026-05-13 14:28:59,157 Hunter.io rate limited — pausing 60s
+2026-05-13 14:29:59,515 🔮 Guessed: info@luxelinedetail.net — LuxeLine Detailing
+2026-05-13 14:30:00,257 Hunter.io rate limited — pausing 60s
+2026-05-13 14:31:00,783 🔮 Guessed: info@authenticdetails.com — Authentic Details
+2026-05-13 14:31:01,655 Hunter.io rate limited — pausing 60s
+2026-05-13 14:32:01,997 🔮 Guessed: info@geneticdetailing.com — GENETIC DETAILING
+2026-05-13 14:32:02,745 Hunter.io rate limited — pausing 60s
+2026-05-13 14:33:03,111 🔮 Guessed: info@twobrothershandwash.weebly.com — Two Brothers Hand Wash & Detailing
+2026-05-13 14:33:03,948 Hunter.io rate limited — pausing 60s
+2026-05-13 14:34:04,399 🔮 Guessed: info@washarooatx.com — Washaroo Hand Car Wash & Detailing
+2026-05-13 14:34:05,466 Hunter.io rate limited — pausing 60s
+2026-05-13 14:35:05,870 🔮 Guessed: info@ceramicautocoatings.com — No Mediocre Auto Detailing
+2026-05-13 14:35:06,591 Hunter.io rate limited — pausing 60s
+2026-05-13 14:36:07,049 🔮 Guessed: info@washarooatx.com — Washaroo Hand Car Wash - East Austin
+2026-05-13 14:36:07,903 Hunter.io rate limited — pausing 60s
+2026-05-13 14:37:08,278 🔮 Guessed: info@austinautofinishes.com — Austin Auto Finishes
+2026-05-13 14:37:09,003 Hunter.io rate limited — pausing 60s
+2026-05-13 14:38:09,396 🔮 Guessed: info@padtx.com — Pristine Auto Detailing
+2026-05-13 14:38:09,901 
+==================================================
+2026-05-13 14:38:09,902 ✅ Email finder complete
+2026-05-13 14:38:09,902    API found:  0
+2026-05-13 14:38:09,902    Guessed:    37
+2026-05-13 14:38:09,902    Total:      37
+2026-05-13 14:38:09,902 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-13.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Wed May 13** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1299 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Wed May 13 14:38:10 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-13.log

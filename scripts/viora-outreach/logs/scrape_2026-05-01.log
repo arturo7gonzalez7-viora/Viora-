@@ -1,0 +1,13 @@
+2026-05-01 14:00:05,353 🔄 Auto-rotation day 121: plumbing contractor in Los Angeles, CA
+2026-05-01 14:00:05,354 
+🔍 Searching: plumbing contractor in Los Angeles, CA
+2026-05-01 14:00:09,610 API error: DEADLINE_EXCEEDED — 
+2026-05-01 14:00:10,614 
+==================================================
+2026-05-01 14:00:10,615 ✅ Scraping complete
+2026-05-01 14:00:10,615    Total found:  0
+2026-05-01 14:00:10,615    New leads:    0
+2026-05-01 14:00:10,615    Duplicates:   0
+2026-05-01 14:00:10,622    DB total:     948 leads (567 with emails)
+2026-05-01 14:00:10,622 ==================================================
+

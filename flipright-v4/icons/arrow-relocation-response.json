@@ -1,0 +1,14 @@
+{
+  "created": "2026-02-12T20:04:09.970938+00:00",
+  "data": [
+    {
+      "is_image_safe": true,
+      "prompt": "A minimalist, professional design of a moving/relocation arrow icon. The arrow has rounded corners and a red gradient from #dc2626 to #991b1b. The arrow is centered on a white background. The icon has a 64x64px feel and is scalable.",
+      "resolution": "1024x1024",
+      "seed": 664574369,
+      "style_type": "GENERAL",
+      "upscaled_resolution": null,
+      "url": "https://ideogram.ai/api/images/ephemeral/ZBKM-s-6T16UdF_Ke0jBPQ.png?exp=1771013068&sig=c6f45d3a4d4fbe90cdc586621567981286123750d31a0bfb0185ac4fde062b75"
+    }
+  ]
+}

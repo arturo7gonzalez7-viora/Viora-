@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flip Right LLC - Denver's trusted property solution experts. We buy inherited homes, divorce properties, foreclosures, and distressed real estate. Get your cash offer in 24 hours.">
+    <title>Flip Right LLC | Denver Property Solutions & Cash Offers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #dc2626;
+            --primary-dark: #991b1b;
+            --primary-light: #ef4444;
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 6px 16px -4px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white) !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn::after {
+            display: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: var(--primary);
+            border: none;
+            padding: 0.625rem 1.25rem;
+            border-radius: 6px;
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%),
+                        url('images/hero-denver.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(220, 38, 38, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--white) 0%, rgba(255,255,255,0.85) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(220, 38, 38, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--gray-50);
+            padding: 5rem 2rem;
+            border-top: 3px solid var(--primary);
+        }
+
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .dark-section .section-title {
+            color: var(--white);
+        }
+
+        .dark-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* Services */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--gray-50);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+            background: var(--white);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Process Section */
+        .process {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-secondary) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(220, 38, 38, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .process-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(220, 38, 38, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .step-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--gray-50);
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .quote-icon {
+            width: 40px;
+            height: 40px;
+            opacity: 0.15;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+        }
+
+        .testimonial-text {
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .contact-intro {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            margin-bottom: 1.25rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .contact-item:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: var(--gray-50);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-secondary) 100%);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 85vh;
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.05rem;
+            }
+
+            .stats {
+                padding: 3rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                padding: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .process-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Flip Right">
+                <img src="images/logo-main.png" alt="Flip Right" class="logo-svg" style="width: 180px; height: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="cta-btn">Get Offer</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="scrollTo('#contact')">Get Offer</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Denver's Trusted Property Solution Experts</h1>
+            <p class="subtitle">Serving the Denver Metro Area and Front Range. We specialize in inherited homes, estate sales, divorce situations, and foreclosures. Get a fair cash offer in 24 hours with no fees, no repairs, and zero hassle.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get Your Cash Offer</a>
+                <a href="#process" class="btn btn-secondary">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$47M+</div>
+                <div class="stat-label">Properties Purchased</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,200+</div>
+                <div class="stat-label">Families Helped</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24hrs</div>
+                <div class="stat-label">Average Offer Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <p class="section-subtitle">We handle the most challenging property situations with expertise and compassion</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/house-inherited.png" alt="Inherited Properties" class="service-icon">
+                <h3>Inherited Properties</h3>
+                <p>Inheriting a home can be overwhelming. We handle all the complexities, from estate settlements to probate processes, giving you a hassle-free cash offer so you can move forward.</p>
+            </div>
+            
+            <div class="service-card">
+                <img src="images/scales-divorce.png" alt="Divorce Situations" class="service-icon">
+                <h3>Divorce Situations</h3>
+                <p>Going through a divorce is difficult enough. We provide quick, fair solutions for selling shared property, helping both parties move on without the stress of traditional sales.</p>
+            </div>
+            
+            <div class="service-card">
+                <img src="images/clock-foreclosure.png" alt="Foreclosure Prevention" class="service-icon">
+                <h3>Foreclosure Prevention</h3>
+                <p>Facing foreclosure? We can help you avoid credit damage by purchasing your home quickly, often within days, protecting your financial future and giving you a fresh start.</p>
+            </div>
+            
+            <div class="service-card">
+                <img src="images/buildings-estate.png" alt="Estate Sales" class="service-icon">
+                <h3>Estate Sales</h3>
+                <p>Managing an estate sale requires expertise and sensitivity. We offer complete estate liquidation services with fair market valuations and professional handling of all assets.</p>
+            </div>
+            
+            <div class="service-card">
+                <img src="images/hammer-distressed.png" alt="Distressed Properties" class="service-icon">
+                <h3>Distressed Properties</h3>
+                <p>Got a fixer-upper? We buy houses in any condition. No repairs needed, no cleaning required. We see the potential in every property and make competitive cash offers.</p>
+            </div>
+            
+            <div class="service-card">
+                <img src="images/arrow-relocation.png" alt="Relocation Assistance" class="service-icon">
+                <h3>Relocation Assistance</h3>
+                <p>Need to relocate quickly for work or family? We provide rapid closings and flexible terms to accommodate your timeline, making your transition as smooth as possible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process dark-section">
+        <div class="section-header">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Our simple 4-step process gets you from burden to solution in days, not months</p>
+        </div>
+        
+        <div class="process-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Contact Us</h3>
+                <p>Reach out via phone, email, or our online form. Share basic information about your property and situation. We respond within hours.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Property Evaluation</h3>
+                <p>We'll schedule a no-obligation walkthrough at your convenience. Our experts assess the property and discuss your unique needs and timeline.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Receive Cash Offer</h3>
+                <p>Within 24 hours, you'll receive a fair, all-cash offer. No hidden fees, no commissions, no repair costs. The offer you see is what you get.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Close On Your Terms</h3>
+                <p>Choose your closing date — as fast as 7 days or on your schedule. We handle all paperwork and closing costs. Walk away with cash in hand.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real stories from real people we've helped through difficult property situations</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <svg class="quote-icon" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M6 10h8c0 5-3 8-8 12V10zm20 0h8c0 5-3 8-8 12V10z"/>
+                </svg>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                </div>
+                <p class="testimonial-text">"After my father passed, dealing with his property in Capitol Hill felt impossible. Flip Right LLC made everything so easy. They handled the entire process with professionalism and compassion. I received a fair offer within a day and closed in two weeks. Incredible service during a difficult time."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah Mitchell</h4>
+                        <p>Inherited Property - Capitol Hill, Denver</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <svg class="quote-icon" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M6 10h8c0 5-3 8-8 12V10zm20 0h8c0 5-3 8-8 12V10z"/>
+                </svg>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                </div>
+                <p class="testimonial-text">"Going through a divorce was stressful enough without worrying about selling our house in Highlands Ranch. Flip Right bought it as-is, no repairs needed. The team was respectful, discreet, and incredibly efficient. We closed in 10 days and could both move on with our lives. Thank you!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JT</div>
+                    <div class="author-info">
+                        <h4>James Thompson</h4>
+                        <p>Divorce Sale - Highlands Ranch, CO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <svg class="quote-icon" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M6 10h8c0 5-3 8-8 12V10zm20 0h8c0 5-3 8-8 12V10z"/>
+                </svg>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                </div>
+                <p class="testimonial-text">"I was facing foreclosure on my Lakewood home and felt hopeless. Flip Right stepped in and saved my credit. They explained everything clearly, gave me a fair price, and closed before the bank could foreclose. Five years later, I own a home again thanks to them protecting my financial future."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MC</div>
+                    <div class="author-info">
+                        <h4>Maria Chen</h4>
+                        <p>Foreclosure Prevention - Lakewood, CO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <svg class="quote-icon" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M6 10h8c0 5-3 8-8 12V10zm20 0h8c0 5-3 8-8 12V10z"/>
+                </svg>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                </div>
+                <p class="testimonial-text">"My grandmother's estate in Aurora was overwhelming. Multiple properties, decades of belongings, and complex probate. Flip Right handled everything with expertise and care. They coordinated with our attorneys, cleared the properties, and gave us fair offers on all three homes. Truly a full-service solution."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RD</div>
+                    <div class="author-info">
+                        <h4>Robert Davis</h4>
+                        <p>Estate Sale - Aurora, CO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <svg class="quote-icon" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M6 10h8c0 5-3 8-8 12V10zm20 0h8c0 5-3 8-8 12V10z"/>
+                </svg>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                </div>
+                <p class="testimonial-text">"I needed to relocate from Denver to Seattle for work within 3 weeks. Traditional real estate wasn't an option. Flip Right came through with a competitive offer and closed in 9 days. They even let me push the closing date back when my new job start date changed. Flexibility and professionalism at its best."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LW</div>
+                    <div class="author-info">
+                        <h4>Linda Washington</h4>
+                        <p>Quick Relocation - Denver, CO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <svg class="quote-icon" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M6 10h8c0 5-3 8-8 12V10zm20 0h8c0 5-3 8-8 12V10z"/>
+                </svg>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                    <svg class="star" viewBox="0 0 20 20" fill="#fbbf24"><path d="M10 1l2.5 6.5L19 8l-5 4.5L15.5 19 10 15l-5.5 4L6 12.5 1 8l6.5-.5L10 1z"/></svg>
+                </div>
+                <p class="testimonial-text">"Our rental property in Westminster became a money pit with constant repairs. We wanted out but dreaded the hassle of listing it. Flip Right bought it as-is, foundation issues and all. No inspections, no repairs, no stress. Just a straightforward cash transaction. Best decision we made."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">KP</div>
+                    <div class="author-info">
+                        <h4>Kevin & Paula Johnson</h4>
+                        <p>Distressed Property - Westminster, CO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2 class="section-title">Get Your Cash Offer Today</h2>
+            <p class="section-subtitle">No obligation. No pressure. Just honest solutions for your property situation.</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Ready to Flip Right?</h3>
+                <p class="contact-intro">Serving Denver, Aurora, Lakewood, and all surrounding communities. We're here to help you navigate any property challenge. Reach out today and discover how easy selling your Colorado property can be.</p>
+                
+                <div class="contact-item">
+                    <svg class="contact-item-icon" viewBox="0 0 48 48" fill="none">
+                        <rect width="48" height="48" rx="10" fill="#fef2f2"/>
+                        <path d="M16 18h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H16c-1.1 0-2-.9-2-2v-8c0-1.1.9-2 2-2z" stroke="#dc2626" stroke-width="2" fill="none"/>
+                        <path d="M14 22l10 6 10-6" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>(855) 555-FLIP</p>
+                        <p style="font-size: 0.85rem; color: var(--gray-500);">Mon-Sat 8AM-8PM MST</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <svg class="contact-item-icon" viewBox="0 0 48 48" fill="none">
+                        <rect width="48" height="48" rx="10" fill="#fef2f2"/>
+                        <path d="M18 16h12c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H18c-1.1 0-2-.9-2-2V18c0-1.1.9-2 2-2z" stroke="#dc2626" stroke-width="2" fill="none"/>
+                        <path d="M16 22l8 5 8-5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>info@fliprightllc.co</p>
+                        <p style="font-size: 0.85rem; color: var(--gray-500);">24-hour response time</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <svg class="contact-item-icon" viewBox="0 0 48 48" fill="none">
+                        <rect width="48" height="48" rx="10" fill="#fef2f2"/>
+                        <path d="M24 14c-4.4 0-8 3.6-8 8 0 6 8 14 8 14s8-8 8-14c0-4.4-3.6-8-8-8z" stroke="#dc2626" stroke-width="2" fill="none"/>
+                        <circle cx="24" cy="22" r="3" fill="#dc2626"/>
+                    </svg>
+                    <div>
+                        <h4>Visit Us</h4>
+                        <p>1625 Broadway, Suite 2700</p>
+                        <p>Denver, CO 80202</p>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" required placeholder="John Smith">
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" required placeholder="john@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>Property Address *</label>
+                    <input type="text" required placeholder="123 Main Street, Denver, CO 80202">
+                </div>
+                
+                <div class="form-group">
+                    <label>Property Situation *</label>
+                    <select required>
+                        <option value="">Select your situation...</option>
+                        <option>Inherited Property</option>
+                        <option>Divorce</option>
+                        <option>Foreclosure</option>
+                        <option>Estate Sale</option>
+                        <option>Distressed Property</option>
+                        <option>Need to Relocate</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tell Us More (Optional)</label>
+                    <textarea placeholder="Share any details about your property or situation..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Get My Cash Offer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Flip Right LLC</h3>
+                <p>Proudly serving Denver and the Front Range for over a decade. We're not just property buyers — we're problem solvers. Our mission is to provide fast, fair, and compassionate solutions to Colorado property owners facing difficult situations.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#services">Our Services</a>
+                <a href="#process">How It Works</a>
+                <a href="#testimonials">Client Stories</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Service Areas</h3>
+                <a href="#">Denver Metro</a>
+                <a href="#">Aurora</a>
+                <a href="#">Lakewood</a>
+                <a href="#">Highlands Ranch</a>
+                <a href="#">Westminster</a>
+                <a href="#">All of Colorado</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="#">Seller's Guide</a>
+                <a href="#">Inheritance FAQ</a>
+                <a href="#">Foreclosure Help</a>
+                <a href="#">Divorce & Property</a>
+                <a href="#">Blog</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Flip Right LLC. All rights reserved. Licensed Real Estate Investors.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your submission! A Flip Right specialist will contact you within 24 hours with your cash offer.');
+            event.target.reset();
+            return false;
+        }
+
+        function scrollTo(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                scrollTo(this.getAttribute('href'));
+            });
+        });
+    </script>
+</body>
+</html>

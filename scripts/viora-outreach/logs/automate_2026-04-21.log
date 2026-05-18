@@ -1,0 +1,179 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-21 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-21 14:00:04,626 🔄 Auto-rotation day 111: attorney in Philadelphia, PA
+2026-04-21 14:00:04,627 
+🔍 Searching: attorney in Philadelphia, PA
+2026-04-21 14:00:08,898 API error: DEADLINE_EXCEEDED — 
+2026-04-21 14:00:09,900 
+==================================================
+2026-04-21 14:00:09,901 ✅ Scraping complete
+2026-04-21 14:00:09,901    Total found:  0
+2026-04-21 14:00:09,901    New leads:    0
+2026-04-21 14:00:09,901    Duplicates:   0
+2026-04-21 14:00:09,905    DB total:     636 leads (233 with emails)
+2026-04-21 14:00:09,906 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-21 14:00:10,095 🔍 Finding emails for 50 leads...
+2026-04-21 14:00:10,569 Hunter.io rate limited — pausing 60s
+2026-04-21 14:01:10,911 🔮 Guessed: info@ukiehvac.com — Ukrainian Village HVAC
+2026-04-21 14:01:11,803 Hunter.io rate limited — pausing 60s
+2026-04-21 14:02:12,136 🔮 Guessed: info@directimprovements.com — Direct Improvements
+2026-04-21 14:02:12,984 Hunter.io rate limited — pausing 60s
+2026-04-21 14:03:13,350 🔮 Guessed: info@frontlineheatingcooling.com — Frontline Heating & Cooling
+2026-04-21 14:03:14,219 Hunter.io rate limited — pausing 60s
+2026-04-21 14:04:14,563 🔮 Guessed: info@greenaircare.com — Green Air Care
+2026-04-21 14:04:15,445 Hunter.io rate limited — pausing 60s
+2026-04-21 14:05:15,833 🔮 Guessed: info@tribecamedspa.com — Tribeca Medspa
+2026-04-21 14:05:16,622 Hunter.io rate limited — pausing 60s
+2026-04-21 14:06:16,986 🔮 Guessed: info@skinneymedspa.com — SKINNEY Medspa
+2026-04-21 14:06:17,832 Hunter.io rate limited — pausing 60s
+2026-04-21 14:07:18,187 🔮 Guessed: info@perfectmedspa.com — Perfect Med Spa
+2026-04-21 14:07:18,912 Hunter.io rate limited — pausing 60s
+2026-04-21 14:08:19,263 🔮 Guessed: info@zzmedspa.com — ZZ Med Spa
+2026-04-21 14:08:20,136 Hunter.io rate limited — pausing 60s
+2026-04-21 14:09:20,488 🔮 Guessed: info@manhattan-medspa.com — Manhattan Medspa
+2026-04-21 14:09:21,202 Hunter.io rate limited — pausing 60s
+2026-04-21 14:10:21,594 🔮 Guessed: info@qcny.com — QC Spa New York
+2026-04-21 14:10:22,459 Hunter.io rate limited — pausing 60s
+2026-04-21 14:11:22,860 🔮 Guessed: info@dolcemedicalspas.com — Dolce Medical Spa NYC
+2026-04-21 14:11:23,742 Hunter.io rate limited — pausing 60s
+2026-04-21 14:12:24,103 🔮 Guessed: info@skinovamedspa.com — Skinova Medspa
+2026-04-21 14:12:24,832 Hunter.io rate limited — pausing 60s
+2026-04-21 14:13:25,213 🔮 Guessed: info@berejuvednyc.zoca.com — BeRejuved Medical Spa & Wellness Studio - NYC
+2026-04-21 14:13:26,083 Hunter.io rate limited — pausing 60s
+2026-04-21 14:14:26,426 🔮 Guessed: info@ject.us — JECT
+2026-04-21 14:14:27,275 Hunter.io rate limited — pausing 60s
+2026-04-21 14:15:27,667 🔮 Guessed: info@skinneymedspa.com — Skinney Medspa
+2026-04-21 14:15:28,367 Hunter.io rate limited — pausing 60s
+2026-04-21 14:16:28,710 🔮 Guessed: info@alluredayspa.com — Allure Day Spa & Hair Design - Best Head Spa, Facial, Massage, and Beauty Salon near Me NYC
+2026-04-21 14:16:29,443 Hunter.io rate limited — pausing 60s
+2026-04-21 14:17:29,788 🔮 Guessed: info@evolvemedspa.com — Evolve Med Spa
+2026-04-21 14:17:30,640 Hunter.io rate limited — pausing 60s
+2026-04-21 14:18:30,990 🔮 Guessed: info@beautyfixmedspa.com — BeautyFix Medspa Flatiron
+2026-04-21 14:18:31,703 Hunter.io rate limited — pausing 60s
+2026-04-21 14:19:32,069 🔮 Guessed: info@newyork.crpce.com — Clinique des Champs Élysées
+2026-04-21 14:19:32,792 Hunter.io rate limited — pausing 60s
+2026-04-21 14:20:33,170 🔮 Guessed: info@kurskinlab.com — KUR Skin Lab
+2026-04-21 14:20:34,037 Hunter.io rate limited — pausing 60s
+2026-04-21 14:21:34,369 🔮 Guessed: info@firstavemedspa.com — First Ave Med Spa
+2026-04-21 14:21:35,264 Hunter.io rate limited — pausing 60s
+2026-04-21 14:22:35,603 🔮 Guessed: info@peachystudio.com — Peachy West SoHo
+2026-04-21 14:22:36,474 Hunter.io rate limited — pausing 60s
+2026-04-21 14:23:36,821 🔮 Guessed: info@belangemedspa.com — Bel Angé Medical Spa
+2026-04-21 14:23:37,695 Hunter.io rate limited — pausing 60s
+2026-04-21 14:24:38,042 🔮 Guessed: info@eurekabodycareandspa.com — Eureka Body Care and Spa + Medspa, Botox
+2026-04-21 14:24:38,728 Hunter.io rate limited — pausing 60s
+2026-04-21 14:25:38,930 🔮 Guessed: info@skindeepnyc.com — Skin Deep NYC
+2026-04-21 14:25:39,747 Hunter.io rate limited — pausing 60s
+2026-04-21 14:26:40,091 🔮 Guessed: info@skinlab-nyc.com — SkinLab NYC
+2026-04-21 14:26:40,792 Hunter.io rate limited — pausing 60s
+2026-04-21 14:27:41,137 🔮 Guessed: info@revivalmedicalspa.com — Revival Med Spa
+2026-04-21 14:27:41,984 Hunter.io rate limited — pausing 60s
+2026-04-21 14:28:42,345 🔮 Guessed: info@contorstudio.com — CONTŌR
+2026-04-21 14:28:43,034 Hunter.io rate limited — pausing 60s
+2026-04-21 14:29:43,385 🔮 Guessed: info@centralparkwestmedspa.com — Central Park West Med Spa
+2026-04-21 14:29:44,282 Hunter.io rate limited — pausing 60s
+2026-04-21 14:30:44,505 🔮 Guessed: info@upkeepmedspa.com — UPKEEP Med Spa
+2026-04-21 14:30:45,356 Hunter.io rate limited — pausing 60s
+2026-04-21 14:31:45,691 🔮 Guessed: info@edenmedspanyc.com — Eden Med Spa
+2026-04-21 14:31:46,550 Hunter.io rate limited — pausing 60s
+2026-04-21 14:32:46,930 🔮 Guessed: info@smoothsynergy.com — Smooth Synergy Medical Spa & Laser Center
+2026-04-21 14:32:47,627 Hunter.io rate limited — pausing 60s
+2026-04-21 14:33:47,989 🔮 Guessed: info@miraclefacemedspanyc.com — MiracleFace MedSpa
+2026-04-21 14:33:48,838 Hunter.io rate limited — pausing 60s
+2026-04-21 14:34:49,184 🔮 Guessed: info@skincenter.nyc — Skin Center New York
+2026-04-21 14:34:49,914 Hunter.io rate limited — pausing 60s
+2026-04-21 14:35:50,291 🔮 Guessed: info@slim-herbal.com — Slim Herbal Med Spa
+2026-04-21 14:35:51,146 Hunter.io rate limited — pausing 60s
+2026-04-21 14:36:51,495 🔮 Guessed: info@dermastarspa.com — DermaStar Skin & Laser
+2026-04-21 14:36:52,248 Hunter.io rate limited — pausing 60s
+2026-04-21 14:37:52,599 🔮 Guessed: info@inglomedspa.com — IN•GLO Face and Body Sculpting
+2026-04-21 14:37:53,456 Hunter.io rate limited — pausing 60s
+2026-04-21 14:38:53,803 🔮 Guessed: info@modifymedspa.com — Modify MedSpa - Suite 504
+2026-04-21 14:38:54,669 Hunter.io rate limited — pausing 60s
+2026-04-21 14:39:55,040 🔮 Guessed: info@malmanlaw.com — Malman Law
+2026-04-21 14:39:55,895 Hunter.io rate limited — pausing 60s
+2026-04-21 14:40:56,255 🔮 Guessed: info@ankinlaw.com — Ankin Law
+2026-04-21 14:40:57,115 Hunter.io rate limited — pausing 60s
+2026-04-21 14:41:57,478 🔮 Guessed: info@levinperconti.com — Levin & Perconti
+2026-04-21 14:41:58,339 Hunter.io rate limited — pausing 60s
+2026-04-21 14:42:58,689 🔮 Guessed: info@farajlaw.com — The Law Offices of Haytham Faraj
+2026-04-21 14:42:59,410 Hunter.io rate limited — pausing 60s
+2026-04-21 14:43:59,776 🔮 Guessed: info@chicagorealestateatty.com — Donald Kiolbassa Attorney At Law
+2026-04-21 14:44:00,282 
+==================================================
+2026-04-21 14:44:00,282 ✅ Email finder complete
+2026-04-21 14:44:00,282    API found:  0
+2026-04-21 14:44:00,282    Guessed:    43
+2026-04-21 14:44:00,282    Total:      43
+2026-04-21 14:44:00,282 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-21.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue Apr 21** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 636 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue Apr 21 14:44:00 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-21.log

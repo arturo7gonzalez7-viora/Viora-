@@ -1,0 +1,208 @@
+<!-- ========== PROFESSIONAL NAVIGATION SECTION ========== -->
+<style>
+/* NAVIGATION STYLING - EASY TO CUSTOMIZE */
+.professional-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO SECTION - EASY TO ADD YOUR LOGO IMAGE */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    /* ADD YOUR LOGO: background-image: url('your-logo.png'); */
+    background: linear-gradient(135deg, #D4AF37, #F5D76E);
+    background-size: cover;
+    background-position: center;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #D4AF37;
+    letter-spacing: 2px;
+}
+
+/* CENTERED NAVIGATION MENU */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu li a:hover {
+    color: #D4AF37;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+/* CTA BUTTON */
+.nav-cta {
+    background: transparent;
+    color: #D4AF37;
+    border: 2px solid #D4AF37;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    background: #D4AF37;
+    color: #000000;
+}
+
+/* HERO TAGLINE SECTION */
+.hero-tagline {
+    text-align: center;
+    margin-top: 120px; /* Space for fixed nav */
+    padding: 60px 20px;
+}
+
+.tagline-box {
+    display: inline-block;
+    border: 1px solid #D4AF37;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.tagline-text {
+    color: #D4AF37;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* You can add a mobile menu here later */
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .tagline-box {
+        padding: 15px 25px;
+    }
+    
+    .tagline-text {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+</style>
+
+<!-- ========== HTML STRUCTURE ========== -->
+<nav class="professional-nav">
+    <div class="nav-container">
+        <!-- LOGO SECTION - EASY TO CUSTOMIZE -->
+        <div class="logo">
+            <div class="logo-image">
+                <!-- TO ADD YOUR LOGO IMAGE:
+                     1. Replace the CSS background with: background-image: url('your-logo.png');
+                     2. OR replace this div with: <img src="your-logo.png" alt="Logo" style="width: 50px; height: 50px; border-radius: 8px;"> -->
+            </div>
+            <div class="logo-text">FR</div>
+        </div>
+
+        <!-- CENTERED NAVIGATION MENU - EASY TO EDIT -->
+        <ul class="nav-menu">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#process">PROCESS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#reviews">REVIEWS</a></li>
+        </ul>
+
+        <!-- CTA BUTTON - EASY TO CUSTOMIZE -->
+        <a href="#contact" class="nav-cta">GET FREE OFFER</a>
+    </div>
+</nav>
+
+<!-- HERO TAGLINE SECTION - PERFECTLY CENTERED -->
+<section class="hero-tagline">
+    <div class="tagline-box">
+        <div class="tagline-text">DENVER'S PREMIER HOME TRANSFORMATION EXPERTS</div>
+    </div>
+</section>
+
+<!-- ========== EASY CUSTOMIZATION GUIDE ========== -->
+<!--
+
+TO ADD YOUR LOGO IMAGE:
+1. Replace .logo-image CSS with: background-image: url('your-logo.png');
+2. OR replace the div with: <img src="your-logo.png" alt="Logo">
+
+TO CHANGE COLORS:
+- Gold accent: Change #D4AF37 to your color
+- Background: Change rgba(0, 0, 0, 0.95) to your color
+
+TO ADD MENU ITEMS:
+- Copy this line: <li><a href="#newpage">NEW PAGE</a></li>
+- Paste in the nav-menu ul
+
+TO CHANGE THE TAGLINE:
+- Edit the text in: <div class="tagline-text">YOUR NEW TAGLINE</div>
+
+-->

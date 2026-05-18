@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lustere Cleaning Co. — Business Plan 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8FAFC;
+            color: #1E293B;
+            line-height: 1.6;
+        }
+
+        /* ── COVER PAGE ── */
+        .cover {
+            background: linear-gradient(145deg, #0F2166 0%, #1E3A8A 60%, #1D4ED8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            border: 80px solid rgba(255,255,255,0.04);
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -60px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            border: 50px solid rgba(255,255,255,0.03);
+        }
+        .cover-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            position: relative; z-index: 1;
+        }
+        .cover-logo-mark {
+            width: 52px; height: 52px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .cover-brand { font-size: 1.3rem; font-weight: 900; color: white; letter-spacing: -0.3px; }
+        .cover-brand-sub { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 3px; }
+        .cover-eyebrow {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: #60A5FA;
+            margin-bottom: 20px; position: relative; z-index: 1;
+        }
+        .cover-title {
+            font-size: 4rem; font-weight: 900; color: white;
+            line-height: 1.05; letter-spacing: -2px;
+            max-width: 700px; margin-bottom: 24px;
+            position: relative; z-index: 1;
+        }
+        .cover-title em { font-style: normal; color: #60A5FA; }
+        .cover-subtitle {
+            font-size: 1.15rem; color: rgba(255,255,255,0.6);
+            max-width: 520px; margin-bottom: 60px;
+            position: relative; z-index: 1; line-height: 1.6;
+        }
+        .cover-meta {
+            display: flex; gap: 40px;
+            position: relative; z-index: 1;
+        }
+        .cover-meta-item { border-left: 2px solid rgba(255,255,255,0.15); padding-left: 16px; }
+        .cover-meta-item .label { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+        .cover-meta-item .value { font-size: 0.9rem; font-weight: 700; color: white; }
+
+        /* ── CONTENT ── */
+        .page { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+
+        .section { margin-bottom: 72px; }
+
+        .section-number {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: #2563EB;
+            display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+        }
+        .section-number::before {
+            content: attr(data-num);
+            background: #EFF6FF; color: #2563EB;
+            width: 24px; height: 24px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 800;
+        }
+        .section-title {
+            font-size: 2rem; font-weight: 800; color: #0F172A;
+            letter-spacing: -0.5px; margin-bottom: 24px; line-height: 1.2;
+        }
+        p { color: #475569; font-size: 0.95rem; margin-bottom: 16px; line-height: 1.75; }
+
+        /* cards */
+        .card-grid { display: grid; gap: 16px; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+        .info-card {
+            background: white; border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .info-card.blue { background: #0F2166; border-color: #0F2166; }
+        .info-card.blue * { color: white !important; }
+        .info-card.accent { background: #EFF6FF; border-color: #BFDBFE; }
+
+        .card-icon { font-size: 1.8rem; margin-bottom: 12px; }
+        .card-title { font-size: 0.95rem; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+        .card-body { font-size: 0.82rem; color: #64748B; line-height: 1.6; margin: 0; }
+
+        /* stat cards */
+        .stat-card {
+            background: white; border-radius: 16px;
+            padding: 28px 24px; text-align: center;
+            border: 1px solid #E2E8F0;
+        }
+        .stat-card .stat { font-size: 2.2rem; font-weight: 900; color: #0F2166; letter-spacing: -1px; }
+        .stat-card .stat-label { font-size: 0.75rem; color: #94A3B8; font-weight: 500; margin-top: 4px; margin-bottom: 0; }
+        .stat-card .stat-sub { font-size: 0.7rem; color: #2563EB; font-weight: 600; margin-top: 4px; margin-bottom: 0; }
+
+        /* table */
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 0; }
+        thead { background: #0F2166; }
+        thead th { padding: 16px 20px; text-align: left; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+        tbody tr { border-bottom: 1px solid #F1F5F9; }
+        tbody tr:last-child { border-bottom: none; }
+        tbody td { padding: 14px 20px; font-size: 0.85rem; color: #334155; }
+        tbody tr:hover { background: #F8FAFC; }
+        .td-bold { font-weight: 700; color: #0F172A; }
+        .td-blue { color: #2563EB; font-weight: 700; }
+        .td-green { color: #16A34A; font-weight: 700; }
+
+        /* timeline */
+        .timeline { display: flex; flex-direction: column; gap: 0; }
+        .timeline-item { display: flex; gap: 24px; position: relative; padding-bottom: 32px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-left { display: flex; flex-direction: column; align-items: center; }
+        .timeline-dot {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: #0F2166; color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 800; flex-shrink: 0;
+        }
+        .timeline-line { width: 2px; flex: 1; background: #E2E8F0; margin-top: 8px; }
+        .timeline-item:last-child .timeline-line { display: none; }
+        .timeline-content { padding-top: 8px; flex: 1; }
+        .timeline-phase { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563EB; margin-bottom: 4px; }
+        .timeline-title { font-size: 1rem; font-weight: 800; color: #0F172A; margin-bottom: 8px; }
+        .timeline-body { font-size: 0.82rem; color: #64748B; margin: 0; line-height: 1.65; }
+
+        /* list */
+        .action-list { display: flex; flex-direction: column; gap: 10px; }
+        .action-item {
+            display: flex; align-items: flex-start; gap: 14px;
+            background: white; border-radius: 12px; padding: 16px 18px;
+            border: 1px solid #E2E8F0;
+        }
+        .action-check {
+            width: 22px; height: 22px; border-radius: 6px;
+            background: #EFF6FF; color: #2563EB;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 800; flex-shrink: 0; margin-top: 1px;
+        }
+        .action-text { font-size: 0.85rem; color: #334155; line-height: 1.5; margin: 0; }
+        .action-text strong { color: #0F172A; font-weight: 700; }
+
+        /* revenue table highlight */
+        .highlight-row { background: #EFF6FF !important; }
+        .highlight-row td { color: #1E40AF !important; font-weight: 700 !important; }
+
+        /* divider */
+        .divider { height: 1px; background: #E2E8F0; margin: 48px 0; }
+
+        /* badge */
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #EFF6FF; color: #1D4ED8;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+            padding: 5px 12px; border-radius: 50px;
+        }
+
+        /* footer */
+        .doc-footer {
+            background: #0F2166; color: rgba(255,255,255,0.5);
+            text-align: center; padding: 32px;
+            font-size: 0.75rem; letter-spacing: 0.5px;
+        }
+        .doc-footer strong { color: white; }
+
+        @media (max-width: 700px) {
+            .cover { padding: 48px 32px; }
+            .cover-title { font-size: 2.5rem; }
+            .page { padding: 48px 20px; }
+            .card-grid.cols-2, .card-grid.cols-3, .card-grid.cols-4 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+    <div class="cover-logo">
+        <div class="cover-logo-mark">
+            <svg width="30" height="30" viewBox="0 0 44 44" fill="none">
+                <path d="M22 4 L40 20 L37 20 L37 40 L28 40 L28 29 L16 29 L16 40 L7 40 L7 20 L4 20 Z" fill="rgba(255,255,255,0.9)"/>
+                <path d="M22 4 L40 20 L4 20 Z" fill="rgba(255,255,255,0.5)"/>
+                <rect x="18" y="29" width="8" height="11" rx="1" fill="#0F2166"/>
+                <path d="M35 6 L36.2 9.8 L40 11 L36.2 12.2 L35 16 L33.8 12.2 L30 11 L33.8 9.8 Z" fill="#93C5FD"/>
+            </svg>
+        </div>
+        <div>
+            <div class="cover-brand">Lustere Cleaning Co.</div>
+            <div class="cover-brand-sub">Denver, Colorado</div>
+        </div>
+    </div>
+    <div class="cover-eyebrow">Business Plan — 2025</div>
+    <h1 class="cover-title">Built to <em>Grow.</em><br>Built to Last.</h1>
+    <p class="cover-subtitle">A complete roadmap from launch to a thriving, profitable cleaning business serving Denver and the Front Range.</p>
+    <div class="cover-meta">
+        <div class="cover-meta-item">
+            <div class="label">Business Type</div>
+            <div class="value">Residential &amp; Commercial Cleaning</div>
+        </div>
+        <div class="cover-meta-item">
+            <div class="label">Service Area</div>
+            <div class="value">Denver Metro &amp; Front Range, CO</div>
+        </div>
+        <div class="cover-meta-item">
+            <div class="label">Year 1 Revenue Target</div>
+            <div class="value">$80,000+</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ CONTENT ══════════ -->
+<div class="page">
+
+    <!-- 1. EXECUTIVE SUMMARY -->
+    <div class="section">
+        <div class="section-number" data-num="1">Executive Summary</div>
+        <h2 class="section-title">The Opportunity</h2>
+        <p>Lustere Cleaning Co. is a family-owned professional cleaning service based in Denver, Colorado. We provide residential deep cleaning, recurring maintenance plans, move-in/move-out cleans, and commercial services to homeowners and businesses across the Front Range.</p>
+        <p>The Denver metro cleaning market is booming — busy professionals, dual-income families, and the city's rapidly growing population create consistent demand for trustworthy, high-quality home cleaning. Our competitive advantage is built on three pillars: <strong>reliability, eco-friendly practices, and exceptional communication</strong>.</p>
+        <p>We are positioned to reach profitability within the first 90 days and scale to a full-time operation generating $80,000+ in Year 1 revenue through a focused combination of referrals, Google Business, and targeted digital advertising.</p>
+
+        <div style="margin-top: 32px;">
+            <div class="card-grid cols-4">
+                <div class="stat-card">
+                    <div class="stat">$80K+</div>
+                    <p class="stat-label">Year 1 Revenue Target</p>
+                    <p class="stat-sub">Conservative estimate</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat">20+</div>
+                    <p class="stat-label">Recurring Clients</p>
+                    <p class="stat-sub">Goal by Month 6</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat">$149</div>
+                    <p class="stat-label">Average Job Value</p>
+                    <p class="stat-sub">Standard clean</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat">90%</div>
+                    <p class="stat-label">Profit Margin</p>
+                    <p class="stat-sub">Owner-operated</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 2. SERVICES & PRICING -->
+    <div class="section">
+        <div class="section-number" data-num="2">Services &amp; Pricing</div>
+        <h2 class="section-title">What We Offer</h2>
+        <p>Lustere offers a tiered service menu designed to maximize bookings at every price point while upselling clients toward higher-value recurring plans.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Starting Price</th>
+                    <th>Frequency</th>
+                    <th>Target Client</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-bold">Basic Residential</td>
+                    <td class="td-blue">$99</td>
+                    <td>One-time or recurring</td>
+                    <td>Apartments, small homes</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">Standard Clean ⭐</td>
+                    <td class="td-blue">$149</td>
+                    <td>Bi-weekly (most popular)</td>
+                    <td>Family homes, 2–3 bed</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Premium Deep Clean</td>
+                    <td class="td-blue">$199+</td>
+                    <td>Monthly or first-time</td>
+                    <td>Large homes, first visits</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Move In / Move Out</td>
+                    <td class="td-blue">$250+</td>
+                    <td>One-time</td>
+                    <td>Renters, real estate agents</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Commercial</td>
+                    <td class="td-blue">$300+</td>
+                    <td>Weekly</td>
+                    <td>Small offices, retail</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Post-Construction</td>
+                    <td class="td-blue">$400+</td>
+                    <td>One-time</td>
+                    <td>Contractors, builders</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 16px; font-size: 0.8rem; color: #94A3B8;">⭐ Recommended anchor service — highest volume, best recurring conversion rate.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 3. REVENUE PROJECTIONS -->
+    <div class="section">
+        <div class="section-number" data-num="3">Revenue Projections</div>
+        <h2 class="section-title">The Numbers</h2>
+        <p>The following projections are based on realistic growth from 0 recurring clients to 25+ within 12 months, with a single-operator model scaling to a 2-person team by Month 6.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Period</th>
+                    <th>Monthly Jobs</th>
+                    <th>Avg. Job Value</th>
+                    <th>Monthly Revenue</th>
+                    <th>Recurring Clients</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-bold">Month 1–2</td>
+                    <td>8–12</td>
+                    <td>$130</td>
+                    <td class="td-blue">$1,040–$1,560</td>
+                    <td>2–4</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Month 3–4</td>
+                    <td>15–20</td>
+                    <td>$145</td>
+                    <td class="td-blue">$2,175–$2,900</td>
+                    <td>6–10</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Month 5–6</td>
+                    <td>25–30</td>
+                    <td>$149</td>
+                    <td class="td-blue">$3,725–$4,470</td>
+                    <td>12–16</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">Month 7–9</td>
+                    <td>35–45</td>
+                    <td>$155</td>
+                    <td class="td-blue">$5,425–$6,975</td>
+                    <td>20–25</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">Month 10–12</td>
+                    <td>50–65</td>
+                    <td>$160</td>
+                    <td class="td-blue">$8,000–$10,400</td>
+                    <td>28–35</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 24px;">
+            <div class="card-grid cols-3">
+                <div class="info-card accent">
+                    <div class="card-icon">📈</div>
+                    <div class="card-title">Year 1 Total Revenue</div>
+                    <p class="card-body">Conservative projection: <strong>$48,000–$80,000</strong> depending on growth rate and recurring client retention.</p>
+                </div>
+                <div class="info-card accent">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">Recurring Revenue Power</div>
+                    <p class="card-body">25 bi-weekly clients @ $149 = <strong>$3,725/month</strong> guaranteed, predictable base revenue.</p>
+                </div>
+                <div class="info-card accent">
+                    <div class="card-icon">💰</div>
+                    <div class="card-title">Profit Margin</div>
+                    <p class="card-body">Owner-operated: ~85–90% margin. With 1 employee: ~60–70%. Supplies cost $10–20/job.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 4. MARKETING STRATEGY -->
+    <div class="section">
+        <div class="section-number" data-num="4">Marketing Strategy</div>
+        <h2 class="section-title">How to Get Clients — Fast</h2>
+        <p>The fastest path to revenue for a new cleaning business is a combination of <strong>Google Business Profile</strong> (free), <strong>referrals</strong> (nearly free), and <strong>door-to-door flyers</strong> in target neighborhoods. Paid ads come in Month 2–3 once you have reviews.</p>
+
+        <div class="card-grid cols-2" style="margin-top: 24px;">
+            <div class="info-card">
+                <div class="card-icon">📍</div>
+                <div class="card-title">Phase 1: Google Business Profile (Week 1)</div>
+                <p class="card-body">Set up your free Google Business listing immediately. This is the #1 source of local cleaning leads in Denver. Add photos, list all services, and set up "Request a Quote." Aim for 10+ reviews in 30 days.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📄</div>
+                <div class="card-title">Phase 1: Flyers &amp; Door Hangers (Week 1–2)</div>
+                <p class="card-body">Print 500 flyers and door hangers. Target neighborhoods: Highlands, Cherry Creek, Wash Park, Stapleton, Centennial. Offer a 15% first-clean discount. Distribute yourself — costs under $50.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🤝</div>
+                <div class="card-title">Phase 1: Personal Network (Week 1)</div>
+                <p class="card-body">Text and message every person you know. Offer a deeply discounted first clean to 3–5 people in exchange for a Google review and referrals. These first reviews are gold.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">Phase 2: Nextdoor &amp; Facebook Groups (Week 2–3)</div>
+                <p class="card-body">Post in Denver-area Nextdoor and Facebook neighborhood groups. "New local cleaning company, first clean 15% off." These platforms are highly trusted and convert extremely well for home services.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">⭐</div>
+                <div class="card-title">Phase 2: Review Engine (Month 1–2)</div>
+                <p class="card-body">After every job, text clients: "It was a pleasure cleaning your home! If you loved it, a Google review means the world to us: [link]." Even 10 reviews puts you ahead of most competitors.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-title">Phase 3: Google Local Services Ads (Month 2–3)</div>
+                <p class="card-body">Once you have 5+ reviews, run Google Local Services Ads. Budget $15–25/day. These ads show at the very top of Google and are pay-per-lead — only pay when someone contacts you.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 5. 90-DAY LAUNCH PLAN -->
+    <div class="section">
+        <div class="section-number" data-num="5">90-Day Launch Plan</div>
+        <h2 class="section-title">Your Roadmap to First $5K/Month</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Days 1–7 — Foundation</div>
+                    <div class="timeline-title">Get Legit &amp; Get Visible</div>
+                    <p class="timeline-body">Register your business (LLC, ~$50 in CO). Open a business bank account. Get basic liability insurance (~$50/mo). Set up Google Business Profile with photos. Create Instagram/Facebook page. Print flyers and business cards. Tell everyone you know.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Days 8–30 — First Clients</div>
+                    <div class="timeline-title">Land Your First 8–10 Clients</div>
+                    <p class="timeline-body">Distribute 300–500 flyers in target neighborhoods. Post in Nextdoor + Facebook groups 2–3x/week. Offer friends/family discounted cleans for reviews. Book your first recurring clients and lock in bi-weekly schedules. Collect 5+ Google reviews.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Days 31–60 — Build Momentum</div>
+                    <div class="timeline-title">Double Your Client Base</div>
+                    <p class="timeline-body">Launch Google Local Services Ads ($15–20/day). Set up a referral program: "Refer a friend, get $20 off your next clean." Partner with a local real estate agent for move-in/out cleans. Aim for 12–15 recurring clients by end of Month 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">Days 61–90 — Scale</div>
+                    <div class="timeline-title">Hit $3,000–$5,000/Month</div>
+                    <p class="timeline-body">With 15–20 recurring clients, you're hitting consistent monthly revenue. Consider hiring a part-time cleaner to handle overflow. Start targeting commercial clients (small offices). Optimize your Google Ads based on what's converting. Raise prices slightly for new clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 6. STARTUP COSTS -->
+    <div class="section">
+        <div class="section-number" data-num="6">Startup Costs</div>
+        <h2 class="section-title">What You Need to Start</h2>
+        <p>The beauty of a cleaning business: extremely low startup costs. You can be fully operational for under $500.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Estimated Cost</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-bold">LLC Registration (Colorado)</td>
+                    <td class="td-blue">$50</td>
+                    <td>One-time, file at Colorado SOS</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Liability Insurance</td>
+                    <td class="td-blue">$40–80/mo</td>
+                    <td>Essential — protects you in homes</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Cleaning Supplies (starter kit)</td>
+                    <td class="td-blue">$100–150</td>
+                    <td>Mop, vacuum, eco products, gloves</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Business Cards (250 qty)</td>
+                    <td class="td-blue">$25–40</td>
+                    <td>Vistaprint or local printer</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Flyers (500 qty)</td>
+                    <td class="td-blue">$30–60</td>
+                    <td>Vistaprint, full color</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Website (domain + hosting)</td>
+                    <td class="td-blue">$15–20/yr</td>
+                    <td>Domain only — site already built!</td>
+                </tr>
+                <tr>
+                    <td class="td-bold">Google Ads (optional, Month 2)</td>
+                    <td class="td-blue">$300–600/mo</td>
+                    <td>Start after first 5 reviews</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="td-bold">TOTAL TO LAUNCH</td>
+                    <td class="td-green">~$300–400</td>
+                    <td>Without Google Ads</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 7. COMPETITIVE ADVANTAGE -->
+    <div class="section">
+        <div class="section-number" data-num="7">Competitive Advantage</div>
+        <h2 class="section-title">Why Lustere Wins</h2>
+
+        <div class="card-grid cols-2">
+            <div class="info-card blue">
+                <div class="card-icon">🏠</div>
+                <div class="card-title">Family-Owned = Trust</div>
+                <p class="card-body">People choose cleaning companies based on trust above all else. A family-owned operation signals personal accountability that franchise chains can't replicate. Lead with your story.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🌿</div>
+                <div class="card-title">Eco-Friendly Positioning</div>
+                <p class="card-body">Colorado homeowners skew eco-conscious. Using non-toxic, plant-based products is a differentiator that justifies premium pricing and appeals to families with kids and pets.</p>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">💬</div>
+                <div class="card-title">Communication = Retention</div>
+                <p class="card-body">The #1 complaint about cleaning companies is poor communication. Confirm appointments, text when arriving, follow up after. This alone will generate referrals from every client.</p>
+            </div>
+            <div class="info-card blue">
+                <div class="card-icon">⭐</div>
+                <div class="card-title">Reviews-First Strategy</div>
+                <p class="card-body">10 genuine 5-star Google reviews in your first month puts Lustere above 80% of local competitors who have 0–2 reviews. Reviews are the single highest-ROI activity in Month 1.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 8. IMMEDIATE ACTION CHECKLIST -->
+    <div class="section">
+        <div class="section-number" data-num="8">Action Checklist</div>
+        <h2 class="section-title">Do This Week — In Order</h2>
+
+        <div class="action-list">
+            <div class="action-item">
+                <div class="action-check">1</div>
+                <p class="action-text"><strong>Register the LLC</strong> — Go to sos.colorado.gov and file Articles of Organization ($50). Takes 10 minutes online.</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">2</div>
+                <p class="action-text"><strong>Open a business bank account</strong> — Keep personal and business money completely separate from Day 1. Chase or a local credit union works great.</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">3</div>
+                <p class="action-text"><strong>Get liability insurance</strong> — NextInsurance.com offers cleaning business insurance starting at $40/month. Do this before your first job.</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">4</div>
+                <p class="action-text"><strong>Set up Google Business Profile</strong> — Go to business.google.com. Add your service area, photos, description, and services. This is free and will be your biggest lead source.</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">5</div>
+                <p class="action-text"><strong>Buy your domain and point it to the website</strong> — Buy lusterecleaning.com (~$12/yr on Namecheap). Your professional website is already live and ready.</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">6</div>
+                <p class="action-text"><strong>Print flyers and business cards</strong> — Your print-ready designs are already done. Upload to Vistaprint and order 500 flyers + 250 business cards (~$75 total).</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">7</div>
+                <p class="action-text"><strong>Text your network today</strong> — Send 20–30 personal messages to people you know. Offer a discounted first clean in exchange for an honest Google review. These first clients are critical.</p>
+            </div>
+            <div class="action-item">
+                <div class="action-check">8</div>
+                <p class="action-text"><strong>Post on Nextdoor &amp; Facebook groups</strong> — Find 5 Denver-area neighborhood groups and post your intro offer. Be personal and genuine — not salesy.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+    <strong>Lustere Cleaning Co.</strong> · Business Plan 2025 · Denver, Colorado<br>
+    <span style="margin-top: 6px; display: block;">www.lusterecleaning.com · hello@lusterecleaning.com · (720) 000-0000</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lustere Cleaning Co. — Business Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1E293B;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 60px 40px;
+            gap: 60px;
+        }
+
+        .card-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .card-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #64748B;
+        }
+
+        /* Card base — 3.5 × 2 inch at 96dpi */
+        .card {
+            width: 3.5in;
+            height: 2in;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        /* ══════════════════════════
+           FRONT — white with deep blue accents
+        ══════════════════════════ */
+        .card-front {
+            background: #FFFFFF;
+        }
+        /* bottom-right accent block */
+        .card-front::before {
+            content: '';
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 110px; height: 72px;
+            background: #0F2166;
+            border-radius: 14px 0 14px 0;
+        }
+        /* small accent dot bottom-right */
+        .card-front::after {
+            content: '';
+            position: absolute;
+            bottom: 14px; right: 16px;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #60A5FA;
+            z-index: 2;
+        }
+
+        .front-inner {
+            position: relative;
+            z-index: 1;
+            padding: 22px 26px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .front-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* stay in left 60% so it never hits the arc */
+            max-width: 60%;
+        }
+        .front-logo-mark {
+            width: 34px; height: 34px;
+            background: #0F2166;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .front-brand {
+            font-size: 0.82rem;
+            font-weight: 900;
+            color: #0F2166;
+            letter-spacing: -0.2px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .front-brand-sub {
+            font-size: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #94A3B8;
+            margin-top: 2px;
+        }
+
+        .front-tagline {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0F2166;
+            letter-spacing: -0.4px;
+            line-height: 1.2;
+        }
+        .front-tagline em {
+            font-style: normal;
+            color: #2563EB;
+        }
+
+        .front-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .front-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.6rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        .front-contact-item .dot {
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: #2563EB;
+            flex-shrink: 0;
+        }
+
+        /* ══════════════════════════
+           BACK — deep blue, premium
+        ══════════════════════════ */
+        .card-back {
+            background: #0F2166;
+        }
+        /* diagonal sweep */
+        .card-back::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 45%;
+            background: linear-gradient(135deg, #1E3A8A, #0F2166);
+            clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+        }
+        /* grid dots watermark */
+        .card-back::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 18px 18px;
+        }
+
+        .back-inner {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .back-logo-mark {
+            width: 48px; height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        .back-name {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            letter-spacing: -0.3px;
+            text-align: center;
+        }
+        .back-name span { color: #60A5FA; }
+
+        .back-divider {
+            width: 40px; height: 2px;
+            background: linear-gradient(90deg, transparent, #3B82F6, transparent);
+            border-radius: 2px;
+        }
+
+        .back-tagline {
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+        }
+
+        .back-services {
+            display: flex;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .back-service-pill {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.5px;
+        }
+
+        .back-website {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #93C5FD;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Print hint ── */
+        .print-hint {
+            font-size: 0.65rem;
+            color: #475569;
+            text-align: center;
+            margin-top: -20px;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .print-hint { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FRONT -->
+    <div class="card-group">
+        <div class="card-label">Front</div>
+        <div class="card card-front">
+            <div class="front-inner">
+
+                <!-- Logo row -->
+                <div class="front-logo-row">
+                    <div class="front-logo-mark">
+                        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+                            <path d="M22 4 L40 20 L37 20 L37 40 L28 40 L28 29 L16 29 L16 40 L7 40 L7 20 L4 20 Z" fill="white" opacity="0.9"/>
+                            <path d="M22 4 L40 20 L4 20 Z" fill="white" opacity="0.5"/>
+                            <rect x="18" y="29" width="8" height="11" rx="1" fill="#0F2166"/>
+                            <path d="M35 6 L36.2 9.8 L40 11 L36.2 12.2 L35 16 L33.8 12.2 L30 11 L33.8 9.8 Z" fill="#60A5FA"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="front-brand">Lustere Cleaning Co.</div>
+                        <div class="front-brand-sub">Denver, Colorado</div>
+                    </div>
+                </div>
+
+                <!-- Tagline -->
+                <div class="front-tagline">A Spotless Home.<br><em>Every Time.</em></div>
+
+                <!-- Contact -->
+                <div class="front-contact">
+                    <div class="front-contact-item"><span class="dot"></span>(720) 000-0000</div>
+                    <div class="front-contact-item"><span class="dot"></span>hello@lusterecleaning.com</div>
+                    <div class="front-contact-item"><span class="dot"></span>www.lusterecleaning.com</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="card-group">
+        <div class="card-label">Back</div>
+        <div class="card card-back">
+            <div class="back-inner">
+                <div class="back-logo-mark">
+                    <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+                        <path d="M22 4 L40 20 L37 20 L37 40 L28 40 L28 29 L16 29 L16 40 L7 40 L7 20 L4 20 Z" fill="rgba(255,255,255,0.85)"/>
+                        <path d="M22 4 L40 20 L4 20 Z" fill="rgba(255,255,255,0.45)"/>
+                        <rect x="18" y="29" width="8" height="11" rx="1" fill="#0F2166"/>
+                        <path d="M35 6 L36.2 9.8 L40 11 L36.2 12.2 L35 16 L33.8 12.2 L30 11 L33.8 9.8 Z" fill="#93C5FD"/>
+                    </svg>
+                </div>
+                <div class="back-name">Lustere<span>.</span></div>
+                <div class="back-divider"></div>
+                <div class="back-tagline">Professional Cleaning Services</div>
+                <div class="back-services">
+                    <div class="back-service-pill">Residential</div>
+                    <div class="back-service-pill">Deep Clean</div>
+                    <div class="back-service-pill">Move In/Out</div>
+                </div>
+                <div class="back-website">www.lusterecleaning.com</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="print-hint">Open in browser → File → Print → Save as PDF for print-ready output</div>
+
+</body>
+</html>

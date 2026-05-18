@@ -1,0 +1,32 @@
+{
+  "channels": {
+    "discord": {
+      "accounts": {
+        "jarvis": {
+          "guilds": {
+            "1471327350187753658": {
+              "channels": {
+                "1471327350686879799": {"requireMention": false},
+                "1471394219867246613": {"requireMention": false},
+                "1471374971728040028": {"requireMention": false},
+                "1471357176277766297": {"requireMention": false},
+                "1471383969697239134": {"requireMention": false},
+                "1471388116974833685": {"requireMention": false},
+                "1471388232506675284": {"requireMention": false},
+                "1471400833974538280": {"requireMention": false},
+                "1471417205827698842": {"requireMention": false},
+                "1471429071161528404": {"requireMention": false},
+                "1471608693475774568": {"requireMention": false},
+                "1471748852989169674": {"requireMention": false},
+                "1471771874345353348": {"requireMention": false},
+                "1473537385567486005": {"requireMention": false},
+                "1474243679991500900": {"requireMention": false},
+                "1475953649539747920": {"requireMention": false}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

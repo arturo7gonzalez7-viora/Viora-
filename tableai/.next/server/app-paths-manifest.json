@@ -1,0 +1,16 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/help/route": "app/api/help/route.js",
+  "/api/scan-receipt/route": "app/api/scan-receipt/route.js",
+  "/calls/page": "app/calls/page.js",
+  "/compliance/page": "app/compliance/page.js",
+  "/finance/page": "app/finance/page.js",
+  "/feedback/[restaurantId]/page": "app/feedback/[restaurantId]/page.js",
+  "/inventory/page": "app/inventory/page.js",
+  "/loyalty/page": "app/loyalty/page.js",
+  "/marketing/page": "app/marketing/page.js",
+  "/page": "app/page.js",
+  "/reviews/page": "app/reviews/page.js",
+  "/reservations/page": "app/reservations/page.js",
+  "/settings/page": "app/settings/page.js"
+}

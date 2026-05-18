@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viora - AI Voice Agent for Service Businesses</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== CONFIGURATION ========== */
+        :root {
+            /* Premium Brand Colors */
+            --primary-blue: #4A8FF5;
+            --primary-purple: #9B6DD9;
+            --accent-gold: #F5C563;
+            --gradient-primary: linear-gradient(135deg, #4A8FF5 0%, #9B6DD9 100%);
+            --gradient-premium: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            
+            /* Background */
+            --bg-dark: #0a0a12;
+            --bg-darker: #050508;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            
+            /* Text */
+            --text-primary: #FFFFFF;
+            --text-secondary: #C4C4D6;
+            --text-muted: #8E8EA0;
+            
+            /* Premium effects */
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            --premium-shadow: 0 10px 40px rgba(74, 143, 245, 0.15);
+            
+            /* Spacing */
+            --section-padding: 120px;
+            --container-max: 1200px;
+        }
+        
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Gradient background effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(91, 155, 243, 0.15), transparent 50%),
+                        radial-gradient(ellipse 60% 50% at 50% 120%, rgba(166, 116, 217, 0.1), transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Content wrapper */
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: clamp(1rem, 1.5vw, 1.0625rem);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        section {
+            padding: var(--section-padding) 0;
+            position: relative;
+        }
+        
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 18, 0.95);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 18px 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 14px 0;
+            box-shadow: var(--premium-shadow);
+            background: rgba(10, 10, 18, 0.98);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.625rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 8px 32px rgba(74, 143, 245, 0.35);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 48px rgba(74, 143, 245, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1.5px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* ========== CARDS ========== */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .glass-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        /* ========== VIDEO STYLES ========== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            display: block;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-items: center;
+        }
+        
+        /* Center when only 2 items */
+        .video-grid:has(.video-card:nth-child(2):last-child) {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+        }
+        
+        @media (max-width: 968px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .video-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--premium-shadow);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* 9:16 aspect ratio - exact Instagram Reels ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Thumbnail image styling */
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* 9:16 ratio */
+            overflow: hidden;
+            background: #000;
+            cursor: pointer;
+        }
+        
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-thumbnail .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .video-thumbnail:hover .play-button {
+            background: rgba(255, 255, 255, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-thumbnail .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 24px solid #000;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            margin-left: 6px;
+        }
+        
+        /* Video Modal/Lightbox */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+        }
+        
+        .video-modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 32px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .video-modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .video-modal iframe {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border: none;
+        }
+        
+        .video-card-content {
+            padding: 20px 24px;
+        }
+        
+        .video-card-content h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        
+        .video-card-content p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+        
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            margin-bottom: 28px;
+            line-height: 1.12;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+        
+        .hero h1 .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            margin-bottom: 40px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        .trust-badge {
+            margin-top: 48px;
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        
+        /* ========== SOCIAL PROOF ========== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .testimonial-card {
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.0625rem;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .author-info h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .author-info p {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+        
+        /* ========== SECTION HEADERS ========== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-header h2 {
+            margin-bottom: 12px;
+        }
+        
+        .section-header p {
+            font-size: 1.0625rem;
+        }
+        
+        /* ========== HOW IT WORKS ========== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .step-card {
+            text-align: center;
+        }
+        
+        .step-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 20px;
+            background: var(--gradient-primary);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(91, 155, 243, 0.3);
+        }
+        
+        .step-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+        
+        .step-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.375rem;
+        }
+        
+        .step-card p {
+            font-size: 0.9375rem;
+        }
+        
+        /* ========== FEATURES ========== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .feature-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
+        
+        .glass-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.125rem;
+        }
+        
+        .glass-card p {
+            font-size: 0.9375rem;
+        }
+        
+        /* ========== USE CASES ========== */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 48px;
+        }
+        
+        .use-case-card {
+            text-align: center;
+            padding: 28px 24px;
+        }
+        
+        .use-case-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            background: var(--gradient-primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .use-case-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        .use-case-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 6px;
+        }
+        
+        .use-case-card p {
+            font-size: 0.875rem;
+        }
+        
+        /* ========== SERVICE TIERS SECTION ========== */
+        .service-tiers {
+            padding: var(--section-padding) 0;
+        }
+        
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tier-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .tier-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .tier-card.featured {
+            border: 2px solid var(--primary-blue);
+            transform: scale(1.05);
+        }
+        
+        .tier-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        
+        .tier-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 0.9375rem;
+        }
+        
+        .tier-pricing {
+            margin-bottom: 24px;
+        }
+        
+        .setup-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        
+        .monthly-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+        
+        .price-period {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        .tier-perfect-for {
+            background: rgba(74, 143, 245, 0.1);
+            border: 1px solid rgba(74, 143, 245, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .tier-perfect-for h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tier-perfect-for p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .tier-includes {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        
+        .tier-includes h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .tier-includes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tier-includes li {
+            padding: 6px 0;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+        
+        .tier-includes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .tier-delivery {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .tier-delivery h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        
+        .tier-delivery p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        /* ========== PRICING ========== */
+        .pricing-card {
+            max-width: 580px;
+            margin: 48px auto 0;
+            padding: 40px;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .pricing-item:first-of-type {
+            padding-top: 0;
+        }
+        
+        .pricing-item:last-of-type {
+            border-bottom: none;
+        }
+        
+        .pricing-label {
+            flex: 1;
+        }
+        
+        .pricing-label h4 {
+            font-size: 1.0625rem;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+        
+        .pricing-label p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .pricing-value {
+            font-size: 1.375rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: right;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+        
+        .pricing-note {
+            background: rgba(91, 155, 243, 0.08);
+            border: 1px solid rgba(91, 155, 243, 0.2);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .pricing-note p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* ========== FAQ ========== */
+        .faq-grid {
+            max-width: 780px;
+            margin: 48px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: var(--bg-card-hover);
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            color: var(--text-primary);
+        }
+        
+        .faq-toggle {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            margin-left: 16px;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-top: 0;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 12px;
+        }
+        
+        .faq-answer p {
+            line-height: 1.7;
+            font-size: 0.9375rem;
+        }
+        
+        /* ========== FORM ========== */
+        .form-section {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 540px;
+            margin: 48px auto 0;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        
+        .form-header h3 {
+            margin-bottom: 6px;
+            font-size: 1.625rem;
+        }
+        
+        .form-header p {
+            font-size: 0.9375rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .form-group select {
+            cursor: pointer;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 32px;
+            background: rgba(91, 155, 243, 0.1);
+            border: 1px solid rgba(91, 155, 243, 0.3);
+            border-radius: 12px;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-message h3 {
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+        
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 1.375rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+        }
+        
+        .footer-copyright {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+        
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 60px;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-content {
+                justify-content: center;
+                gap: 0;
+            }
+            
+            .hero {
+                padding-top: 100px;
+                min-height: 85vh;
+                padding-bottom: 40px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+            
+            .steps-grid,
+            .features-grid,
+            .testimonials-grid,
+            .use-cases-grid,
+            .video-grid,
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card,
+            .form-section {
+                padding: 28px 20px;
+            }
+            
+            .pricing-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+            
+            .pricing-value {
+                text-align: left;
+                margin-left: 0;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .tier-card.featured {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .testimonials-grid,
+            .features-grid,
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Viora</div>
+                <ul class="nav-links">
+                    <li><a href="#demos">Demos</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#service-tiers">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Never Miss Another Call. <span class="gradient-text">Never Lose Another Customer.</span></h1>
+                
+                <!-- UPDATED: Hero subheadline to include both services -->
+                <p>Your AI voice agent handles every call AND generates qualified leads automatically—24/7 phone coverage plus targeted outreach campaigns that book appointments directly into your calendar.</p>
+                
+                <div class="btn-group">
+                    <a href="https://calendly.com/arturo-viora" class="btn btn-primary book-demo-btn">Book a Demo</a>
+                    <a href="#demos" class="btn btn-secondary">Watch Demo</a>
+                </div>
+                
+                <div class="trust-badge">Trusted by home service professionals, real estate agents, and high-volume service businesses</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DEMO VIDEOS SECTION ========== -->
+    <section id="demos">
+        <div class="container">
+            <div class="section-header">
+                <h2>See Viora in Action</h2>
+                <p>Watch how our AI voice agent handles real customer calls and books appointments automatically</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail" onclick="playInlineVideo(this, 'https://drive.google.com/file/d/19jd4crQd4-PA-C9pdEVp1AtC90SQzglQ/preview')" role="button" aria-label="Play Demo 1 video">
+                        <img src="https://i.imgur.com/placeholder300x500.png" alt="Demo Video Thumbnail">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-card-content">
+                        <h4>AI Receptionist Demo</h4>
+                        <p>See how our AI handles incoming calls professionally</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Simple setup, powerful results in just a few days</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>Quick Setup</h3>
+                    <p>We integrate with your existing phone system and calendar in minutes, not hours.</p>
+                </div>
+                
+                <div class="step-card fade-in">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3>AI Training</h3>
+                    <p>Your AI learns your business, services, and booking preferences perfectly.</p>
+                </div>
+                
+                <div class="step-card fade-in">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Go Live</h3>
+                    <p>Start capturing every lead with 24/7 professional phone coverage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to never miss a customer again</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
+                    <h3>24/7 Phone Coverage</h3>
+                    <p>Never miss a call again with AI that answers professionally every time.</p>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Scheduling</h3>
+                    <p>Automatic appointment booking with calendar integration and confirmation.</p>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6L12 10.5 8.5 8 12 5.5 15.5 8zM8.5 16L12 13.5 15.5 16 12 18.5 8.5 16z"/>
+                        </svg>
+                    </div>
+                    <h3>Lead Qualification</h3>
+                    <p>Intelligent screening to identify high-value prospects automatically.</p>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Reports</h3>
+                    <p>Real-time insights on call volume, bookings, and revenue opportunities.</p>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM17 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Integration</h3>
+                    <p>Seamlessly works with your existing tools and workflows.</p>
+                </div>
+
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zM10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3>Automated Lead Generation</h3>
+                    <p>Our advanced system identifies and reaches out to your ideal prospects via LinkedIn and email, qualifying them before booking appointments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICE TIERS SECTION ========== -->
+    <section id="service-tiers" class="service-tiers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Growth Strategy</h2>
+                <p>Based on overwhelming client success, we now offer two proven approaches to grow your business</p>
+            </div>
+            
+            <div class="tiers-grid">
+                <!-- Tier 1: AI Receptionist Only -->
+                <div class="tier-card fade-in">
+                    <div class="tier-header">
+                        <h3>AI Receptionist Only</h3>
+                        <div class="tier-subtitle">Perfect for busy businesses with strong call volume</div>
+                    </div>
+                    
+                    <div class="tier-pricing">
+                        <div class="setup-price">$1,500 Setup</div>
+                        <div class="monthly-price">$250</div>
+                        <div class="price-period">per month</div>
+                    </div>
+                    
+                    <div class="tier-perfect-for">
+                        <h4>Perfect For:</h4>
+                        <p>Businesses that get plenty of calls but miss opportunities</p>
+                    </div>
+                    
+                    <div class="tier-includes">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li>24/7 AI phone coverage</li>
+                            <li>Professional appointment booking</li>
+                            <li>Lead qualification & screening</li>
+                            <li>Calendar integration & confirmations</li>
+                            <li>Real-time call reports</li>
+                            <li>Custom scripts for your business</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tier-delivery">
+                        <h4>Delivery Time:</h4>
+                        <p>5-7 business days</p>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <a href="https://calendly.com/arturo-viora" class="btn btn-secondary book-demo-btn">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Tier 2: Complete Growth System -->
+                <div class="tier-card featured fade-in">
+                    <div class="tier-header">
+                        <h3>Complete Growth System</h3>
+                        <div class="tier-subtitle">Maximum growth with automated lead generation</div>
+                    </div>
+                    
+                    <div class="tier-pricing">
+                        <div class="setup-price">$3,500 Setup</div>
+                        <div class="monthly-price">$550</div>
+                        <div class="price-period">per month</div>
+                    </div>
+                    
+                    <div class="tier-perfect-for">
+                        <h4>Perfect For:</h4>
+                        <p>Businesses wanting to scale rapidly with automated outreach</p>
+                    </div>
+                    
+                    <div class="tier-includes">
+                        <h4>Everything in Tier 1 PLUS:</h4>
+                        <ul>
+                            <li>Targeted LinkedIn outreach campaigns</li>
+                            <li>Professional email sequences</li>
+                            <li>Lead research & qualification</li>
+                            <li>Prospect database management</li>
+                            <li>Advanced reporting & analytics</li>
+                            <li>Weekly strategy optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tier-delivery">
+                        <h4>Delivery Time:</h4>
+                        <p>7-14 business days</p>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <a href="https://calendly.com/arturo-viora" class="btn btn-primary book-demo-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real results from real businesses</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        "Since implementing Viora's AI receptionist, we've captured 40% more leads and never miss a call. It's like having a perfect employee who never takes a break."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>Owner, Martinez HVAC</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        "The appointment booking automation saved us 10 hours per week. Our conversion rate from calls to bookings went from 60% to 85%."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DR</div>
+                        <div class="author-info">
+                            <h4>David Rodriguez</h4>
+                            <p>Regional Manager, Elite Plumbing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING DETAILS ========== -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Investment Details</h2>
+                <p>Transparent pricing with no hidden fees</p>
+            </div>
+            
+            <div class="glass-card pricing-card">
+                <div class="pricing-header">
+                    <h3>Payment Structure</h3>
+                </div>
+                
+                <div class="pricing-item">
+                    <div class="pricing-label">
+                        <h4>Setup Fee</h4>
+                        <p>One-time investment for complete system configuration</p>
+                    </div>
+                    <div class="pricing-value">50% Upfront</div>
+                </div>
+                
+                <div class="pricing-item">
+                    <div class="pricing-label">
+                        <h4>Completion Payment</h4>
+                        <p>Final payment upon delivery and testing</p>
+                    </div>
+                    <div class="pricing-value">50% on Delivery</div>
+                </div>
+                
+                <div class="pricing-item">
+                    <div class="pricing-label">
+                        <h4>Monthly Service</h4>
+                        <p>Ongoing AI operations and system maintenance</p>
+                    </div>
+                    <div class="pricing-value">Starting at $250/mo</div>
+                </div>
+                
+                <div class="pricing-note">
+                    <p><strong>ROI Guarantee:</strong> Most clients see their investment returned within the first 30-60 days through captured leads that would have been lost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about Viora</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        How quickly can you set up our AI receptionist?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most implementations are completed within 5-7 business days for AI receptionist only, or 7-14 days for the complete growth system. We handle all technical setup and integration with your existing phone system.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        Will it work with our current phone system?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Viora integrates with virtually all phone systems including VoIP, landlines, and mobile forwarding. We'll assess your setup during the consultation call.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        How does the AI know about our business?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We create custom scripts based on your services, pricing, availability, and common customer questions. The AI is trained specifically for your business and can be updated anytime.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        What's included in the lead generation service?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our complete growth system includes LinkedIn outreach, email campaigns, prospect research, lead qualification, and appointment booking. We identify and contact your ideal customers automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Get Started?</h2>
+                <p>Book a free consultation to see how Viora can transform your business</p>
+            </div>
+            
+            <div class="form-section">
+                <div class="form-header">
+                    <h3>Schedule Your Demo</h3>
+                    <p>See Viora in action with a personalized demonstration</p>
+                </div>
+                
+                <form id="contact-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="business">Business Name *</label>
+                        <input type="text" id="business" name="business" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Industry *</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select Your Industry</option>
+                            <option value="home-services">Home Services (HVAC, Plumbing, etc.)</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="professional-services">Professional Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary form-submit">Schedule Free Demo</button>
+                </form>
+                
+                <div id="success-message" class="success-message">
+                    <h3>Thank You!</h3>
+                    <p>We'll contact you within 24 hours to schedule your personalized demo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Stop Losing Customers Today</h2>
+                <p>Join hundreds of businesses using Viora to capture every lead and maximize revenue.</p>
+                <div class="btn-group">
+                    <a href="https://calendly.com/arturo-viora" class="btn btn-primary">Start Your Free Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Viora</div>
+                <div class="footer-links">
+                    <a href="#demos">Demos</a>
+                    <a href="#features">Features</a>
+                    <a href="#service-tiers">Services</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2024 Viora AI. All rights reserved.
+                </div>
+                <div class="footer-disclaimer">
+                    Results may vary. Individual business outcomes depend on implementation and market conditions.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal()">×</button>
+            <iframe id="modal-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // ========== NAVIGATION SCROLL EFFECT ==========
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // ========== FADE-IN ANIMATIONS ==========
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ========== VIDEO FUNCTIONALITY ==========
+        function playInlineVideo(thumbnail, videoUrl) {
+            const videoWrapper = document.createElement('div');
+            videoWrapper.className = 'video-wrapper';
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = videoUrl + '?autoplay=1';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            
+            videoWrapper.appendChild(iframe);
+            thumbnail.parentNode.replaceChild(videoWrapper, thumbnail);
+        }
+
+        function openVideoModal(videoUrl) {
+            const modal = document.getElementById('video-modal');
+            const modalVideo = document.getElementById('modal-video');
+            modalVideo.src = videoUrl + '?autoplay=1';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const modalVideo = document.getElementById('modal-video');
+            modalVideo.src = '';
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('video-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+
+        // ========== FAQ FUNCTIONALITY ==========
+        function toggleFAQ(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // ========== FORM SUBMISSION ==========
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Show success message
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('success-message').classList.add('show');
+            
+            // Here you would typically send the form data to your backend
+            console.log('Form submitted');
+        }
+
+        // ========== SMOOTH SCROLLING ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ========== BOOK DEMO BUTTON FUNCTIONALITY ==========
+        document.querySelectorAll('.book-demo-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // You can add analytics tracking here
+                console.log('Demo booking clicked');
+                // The href will handle the redirect to Calendly
+            });
+        });
+    </script>
+</body>
+</html>

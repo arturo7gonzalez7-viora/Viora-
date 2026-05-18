@@ -1,0 +1,14 @@
+{
+  "created": "2026-02-12T20:02:25.577988+00:00",
+  "data": [
+    {
+      "is_image_safe": true,
+      "prompt": "A minimalist house icon with rounded corners in a red gradient (#dc2626 to #991b1b) on a white background. The icon has a professional geometric style and is scalable. The icon is centered and has a 64x64px feel.",
+      "resolution": "1024x1024",
+      "seed": 1814419347,
+      "style_type": "GENERAL",
+      "upscaled_resolution": null,
+      "url": "https://ideogram.ai/api/images/ephemeral/6eMbewczT_OgyR4wKuCD8g.png?exp=1771012964&sig=ff9fe7c61c702792623a4f92786e59347ab565aa546228d43fa506dda92e1ed8"
+    }
+  ]
+}

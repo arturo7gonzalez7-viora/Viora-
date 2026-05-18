@@ -1,0 +1,224 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-15 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-15 14:00:03,841 file_cache is only supported with oauth2client<4.0.0
+2026-04-15 14:00:03,855 🔍 Checking for replies...
+2026-04-15 14:00:04,481 📬 Found 65 inbox messages to check
+2026-04-15 14:00:18,386 
+==================================================
+2026-04-15 14:00:18,386 ✅ Reply check complete
+2026-04-15 14:00:18,386    New replies:    0
+2026-04-15 14:00:18,386    Positive:       0 ← RESPOND TO THESE!
+2026-04-15 14:00:18,386    Unsubscribes:   0
+2026-04-15 14:00:18,386    Bounces:        0
+2026-04-15 14:00:18,386 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-15 14:00:18,616 🔄 Auto-rotation day 105: medspa in Nashville, TN
+2026-04-15 14:00:18,617 
+🔍 Searching: medspa in Nashville, TN
+2026-04-15 14:00:19,462   ✅ ElaMar Nashville — (615) 235-9225 — https://elamarskin.com/locations/elamar-nashville-tn/
+2026-04-15 14:00:19,712   ✅ NSI Wellness | Aesthetics — (615) 431-3724 — http://tolmanmedical.com/
+2026-04-15 14:00:19,990   ✅ NakedMD Med Spa Nashville — (615) 988-8375 — https://www.nakedmd.com/pages/med-spa-nashville-tn
+2026-04-15 14:00:20,189   ✅ Complexion Nashville — (615) 757-8060 — http://www.complexionnashville.com/
+2026-04-15 14:00:20,400   ✅ Elevate Medical Spa — (615) 425-6340 — https://www.elevatemedispa.com/
+2026-04-15 14:00:20,613   ✅ Hi, Finch — (615) 899-2351 — https://hifinch.com/
+2026-04-15 14:00:20,895   ✅ Smiley Aesthetics Medical Spa – Botox & Weight Loss Clinic Nashville West — (629) 276-8951 — https://smileyaesthetics.com/locations/west-nashville/
+2026-04-15 14:00:21,150   ✅ The Natural Look MedSpa — (615) 321-5005 — http://www.thenaturallook.net/
+2026-04-15 14:00:21,346   ✅ Radianté Spa Nashville — (615) 239-0094 — https://radiantespa.com/?utm_source=google&utm_medium=localsearch&utm_campaign=gmb
+2026-04-15 14:00:21,552   ✅ SLK Aesthetic Medicine — (615) 647-5951 — https://slkclinic.com/slk-clinic-nashville/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_term=SLK-Aesthetic-Medicine-Nashville&utm_content=website
+2026-04-15 14:00:21,772   ✅ Elan Skin & Laser Med Spa of Nashville — (615) 814-4999 — https://www.elanskinandlaser.com/
+2026-04-15 14:00:21,924   ✅ Melrose Aesthetics — (615) 592-1989 — https://www.melroseaesthetics.com/
+2026-04-15 14:00:22,181   ✅ Lumière Aesthetics & Wellness — (615) 645-2120 — http://www.lumiereaesthetics.co/
+2026-04-15 14:00:22,371   ✅ Amálie Aesthetics and Wellness — (615) 982-0829 — http://www.amalieaesthetics.com/
+2026-04-15 14:00:22,555   ✅ OVME — (615) 270-5888 — https://ovme.com/pages/green-hills-nashville-tn
+2026-04-15 14:00:22,779   ✅ Skin MB — (615) 891-2881 — http://www.skinmb.com/
+2026-04-15 14:00:22,974   ✅ Nashville Skin Society — (615) 866-8653 — https://nashvilleskinsociety.com/
+2026-04-15 14:00:23,132   ✅ 61Five Health & Wellness — (615) 401-9380 — https://61five.com/
+2026-04-15 14:00:23,398   ✅ Hatef Aesthetics & Plastic Surgery — (615) 678-6273 — http://hatefaesthetics.com/
+2026-04-15 14:00:23,612   ✅ Genesis Lifestyle Medicine — (615) 274-1086 — https://www.genesislifestylemedicine.com/nashville/?utm_source=googlebusiness&utm_medium=profile&utm_campaign=gmb&utm_id=brandnashville
+2026-04-15 14:00:26,491   ✅ Next Health in The Gulch - Nashville — (615) 562-3717 — https://www.next-health.com/location/nashville
+2026-04-15 14:00:26,633   ✅ OVME — (615) 647-6863 — https://ovme.com/pages/the-gulch-nashville-tn
+2026-04-15 14:00:26,776   ✅ Tempo Wellness + Aesthetics — (615) 987-0188 — https://www.tempowellnessnashville.com/
+2026-04-15 14:00:26,995   ✅ ONYX WELLNESS & AESTHETICS — (615) 626-7905 — http://www.onyxwa.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-15 14:00:27,169   ✅ R3 Anti Aging & Medspa — (615) 835-2690 — https://r3antiaging.com/
+2026-04-15 14:00:27,312   ✅ Restore Hyper Wellness — (615) 987-9626 — https://www.restore.com/locations/tn-nashville-music-row-tn004?utm_source=gmb&utm_medium=Yext&y_source=1_NjMzNjcxOTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-04-15 14:00:27,538   ✅ Skin Pharm — (615) 582-6726 — https://skinpharm.com/nashville
+2026-04-15 14:00:27,786   ✅ Revive Aesthetics - Nashville — (629) 295-0548 — https://www.wereviveu.com/revive-aesthetics-nashville/
+2026-04-15 14:00:27,915   ✅ Glow Skin + Wellness Med Spa — (615) 329-3900 — https://www.glowskinmed.com/
+2026-04-15 14:00:28,164   ✅ Toxxology® — (615) 436-8699 — https://www.toxxology.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-04-15 14:00:28,329   ✅ Nash Injections by Hannah — (615) 669-6112 — https://www.injectionsbyhannah.com/
+2026-04-15 14:00:28,481   ✅ Belle Meade Medical Spa — (615) 307-7248 — https://www.bellemeademedicalspa.com/
+2026-04-15 14:00:28,699   ✅ Ona Skincare Belle Meade — (615) 810-8785 — http://www.onaskin.com/
+2026-04-15 14:00:28,869   ✅ Bare Skin — (615) 675-9655 — https://bareskintn.com/
+2026-04-15 14:00:29,048   ✅ Smiley Aesthetics Training Facility & Med Spa – Nashville — (629) 276-8944 — https://smileyaesthetics.com/?utm_source=cumulus&utm_medium=onlinepresence&utm_campaign=gbp
+2026-04-15 14:00:29,249   ✅ Gilpin Facial Plastics — (615) 942-7301 — http://www.drdavidgilpin.com/
+2026-04-15 14:00:29,455   ✅ Karee Hays Esthetics — (615) 383-5053 — https://kareehays.com/?utm_source=gmb&utm_medium=gmb&utm_campaign=business_listing
+2026-04-15 14:00:29,668   ✅ BEYOND Collective — (615) 327-0303 — https://www.yournashvilleplasticsurgeon.com/?utm_source=GBP&utm_medium=GBP&utm_campaign=GBP_Nashville&utm_id=GBP_Nashville
+2026-04-15 14:00:29,857   ✅ Nuud Skin Co. — (615) 601-0476 — http://www.nuudskin.co/
+2026-04-15 14:00:30,036   ✅ Serotonin Centers MedSpa — (615) 239-5327 — https://www.serotonincenters.com/green-hills/
+2026-04-15 14:00:33,226   ✅ Woods Aesthetics — (615) 630-6969 — https://woodsaesthetics.com/
+2026-04-15 14:00:33,417   ✅ Nurse Zan Med Spa — (615) 945-6213 — https://www.nursezan.com/
+2026-04-15 14:00:33,622   ✅ LaserAway Nashville Green Hills — (615) 510-7860 — https://www.laseraway.com/locations/tn/nashville/?utm_source=google&utm_medium=organic&utm_campaign=website-link
+2026-04-15 14:00:33,790   ✅ Jack + Jill Aesthetics — (615) 724-5232 — http://jackjillaesthetics.com/
+2026-04-15 14:00:33,926   ✅ Dr. J. J. Wendel Plastic Surgery — (615) 921-2100 — https://www.drjjwendel.com/
+2026-04-15 14:00:34,105   ✅ Ideal Image Nashville — (615) 761-9422 — https://lp.curatemedspa.com/ideal-image?utm_source=gbp&utm_medium=organic&utm_campaign=nashville_rebrand
+2026-04-15 14:00:34,346   ✅ Nashville Skin Company — (615) 997-3330 — https://www.nashvilleskincompany.com/
+2026-04-15 14:00:34,546   ✅ Ona Skincare East Nashville — (615) 810-8785 — http://www.onaskin.com/
+2026-04-15 14:00:34,680   ✅ Urban Sweat - The Nations — (629) 256-3850 — http://www.urbansweat.com/
+2026-04-15 14:00:34,854   ✅ Marvel Cosmetic MedSpa — (931) 262-2547 — https://www.marvelcosmeticmedspa.com/
+2026-04-15 14:00:34,869   📊 Found 50, 50 new (rest were duplicates)
+2026-04-15 14:00:35,870 
+==================================================
+2026-04-15 14:00:35,870 ✅ Scraping complete
+2026-04-15 14:00:35,870    Total found:  50
+2026-04-15 14:00:35,870    New leads:    50
+2026-04-15 14:00:35,870    Duplicates:   0
+2026-04-15 14:00:35,872    DB total:     730 leads (599 with emails)
+2026-04-15 14:00:35,872 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-15 14:00:36,017 🔍 Finding emails for 50 leads...
+2026-04-15 14:00:36,505 Hunter.io rate limited — pausing 60s
+2026-04-15 14:01:36,994 🔮 Guessed: info@nychiinails.com — Nychii Nails
+2026-04-15 14:01:37,770 Hunter.io rate limited — pausing 60s
+2026-04-15 14:02:38,170 🔮 Guessed: info@kouturenailpalace.com — Kouture Nail Palace
+2026-04-15 14:02:40,346 Hunter.io rate limited — pausing 60s
+2026-04-15 14:03:40,735 🔮 Guessed: info@blankcanvasstudio.glossgenius.com — Blank Canvas Studio
+2026-04-15 14:03:41,538 Hunter.io rate limited — pausing 60s
+2026-04-15 14:04:41,887 🔮 Guessed: info@brnailsindianapolis.com — B R Nails
+2026-04-15 14:04:42,634 Hunter.io rate limited — pausing 60s
+2026-04-15 14:05:43,001 🔮 Guessed: info@sundaysnailspa.com — Sundays Nail Spa
+2026-04-15 14:05:44,770 Hunter.io rate limited — pausing 60s
+2026-04-15 14:06:45,201 🔮 Guessed: info@niftynailsindianapolis.com — Nifty Nails
+2026-04-15 14:06:45,931 Hunter.io rate limited — pausing 60s
+2026-04-15 14:07:46,306 🔮 Guessed: info@vagaro.com — Lizvet Luxe Nails
+2026-04-15 14:07:47,170 Hunter.io rate limited — pausing 60s
+2026-04-15 14:08:47,531 🔮 Guessed: info@purnailspaindianapolis.com — PUR Nail Spa
+2026-04-15 14:08:48,393 Hunter.io rate limited — pausing 60s
+2026-04-15 14:09:48,785 🔮 Guessed: info@soakandsagespa.com — Soak & Sage - A Social Wellness Spa
+2026-04-15 14:09:49,642 Hunter.io rate limited — pausing 60s
+2026-04-15 14:10:50,053 🔮 Guessed: info@fourseasons.com — The Spa at Four Seasons Hotel Seattle
+2026-04-15 14:10:50,768 Hunter.io rate limited — pausing 60s
+2026-04-15 14:11:51,172 🔮 Guessed: info@salishlodge.com — Salish Lodge & Spa
+2026-04-15 14:11:52,094 Hunter.io rate limited — pausing 60s
+2026-04-15 14:12:52,457 🔮 Guessed: info@ananyaspaseattle.com — Ananya Spa
+2026-04-15 14:12:53,213 Hunter.io rate limited — pausing 60s
+2026-04-15 14:13:53,609 🔮 Guessed: info@littlereddayspa.com — Little Red Day Spa
+2026-04-15 14:13:54,496 Hunter.io rate limited — pausing 60s
+2026-04-15 14:14:54,854 🔮 Guessed: info@banya5.com — Banya 5
+2026-04-15 14:14:55,728 Hunter.io rate limited — pausing 60s
+2026-04-15 14:15:56,109 🔮 Guessed: info@hothousespa.com — Hothouse Spa & Sauna
+2026-04-15 14:15:57,096 Hunter.io rate limited — pausing 60s
+2026-04-15 14:16:57,647 🔮 Guessed: info@hyatt.com — Elaia Spa
+2026-04-15 14:16:58,619 Hunter.io rate limited — pausing 60s
+2026-04-15 14:17:59,019 🔮 Guessed: info@spanoir.net — Spa Noir
+2026-04-15 14:17:59,795 Hunter.io rate limited — pausing 60s
+2026-04-15 14:19:00,153 🔮 Guessed: info@danaheadspa.com — Dana Head Spa
+2026-04-15 14:19:01,125 Hunter.io rate limited — pausing 60s
+2026-04-15 14:20:01,742 🔮 Guessed: info@olympusspa.com — Olympus Spa
+2026-04-15 14:20:02,742 Hunter.io rate limited — pausing 60s
+2026-04-15 14:21:03,135 🔮 Guessed: info@healingspa.onbuildhealth.com — Healing Spa
+2026-04-15 14:21:03,867 Hunter.io rate limited — pausing 60s
+2026-04-15 14:22:04,499 🔮 Guessed: info@ladiesroom206.com — The Ladies Room
+2026-04-15 14:22:06,988 Hunter.io rate limited — pausing 60s
+2026-04-15 14:23:07,650 🔮 Guessed: info@qspalynnwood.com — Q Sauna & Spa
+2026-04-15 14:23:08,656 Hunter.io rate limited — pausing 60s
+2026-04-15 14:24:09,249 🔮 Guessed: info@yuanspa.com — Yuan Spa - Bellevue
+2026-04-15 14:24:10,061 Hunter.io rate limited — pausing 60s
+2026-04-15 14:25:10,546 🔮 Guessed: info@hotel1000seattle.com — The Spa at Hotel 1000
+2026-04-15 14:25:11,446 Hunter.io rate limited — pausing 60s
+2026-04-15 14:26:11,837 🔮 Guessed: info@penelopeandthebeautybar.com — Penelope & The Beauty Bar
+2026-04-15 14:26:12,620 Hunter.io rate limited — pausing 60s
+2026-04-15 14:27:13,088 🔮 Guessed: info@olympicspa.com — Olympic Spa
+2026-04-15 14:27:13,934 Hunter.io rate limited — pausing 60s
+2026-04-15 14:28:14,309 🔮 Guessed: info@fourseasons.com — Four Seasons Hotel Seattle
+2026-04-15 14:28:15,172 Hunter.io rate limited — pausing 60s
+2026-04-15 14:29:15,509 🔮 Guessed: info@cedarbrooklodge.com — Cedarbrook Lodge
+2026-04-15 14:29:16,208 Hunter.io rate limited — pausing 60s
+2026-04-15 14:30:16,643 🔮 Guessed: info@seattlewa.spaviadayspa.com — Spavia Day Spa - Greenlake
+2026-04-15 14:30:17,526 Hunter.io rate limited — pausing 60s
+2026-04-15 14:31:17,914 🔮 Guessed: info@sacredrainhealing.com — Sacred Rain Healing Center
+2026-04-15 14:31:18,798 Hunter.io rate limited — pausing 60s
+2026-04-15 14:32:19,244 🔮 Guessed: info@lespalotte.com — Le SPA de l’hôtel LOTTE
+2026-04-15 14:32:20,200 Hunter.io rate limited — pausing 60s
+2026-04-15 14:33:20,563 🔮 Guessed: info@seattleurbancalmspa.com — Urban Calm Spa Massage
+2026-04-15 14:33:21,471 Hunter.io rate limited — pausing 60s
+2026-04-15 14:34:21,896 🔮 Guessed: info@antoniothespa.com — Antonio Spa
+2026-04-15 14:34:22,756 Hunter.io rate limited — pausing 60s
+2026-04-15 14:35:23,114 🔮 Guessed: info@katesdayspa.com — Kate's Day Spa
+2026-04-15 14:35:23,995 Hunter.io rate limited — pausing 60s
+2026-04-15 14:36:24,360 🔮 Guessed: info@head2toedayspa.com — Head To Toe Day Spa
+2026-04-15 14:36:25,217 Hunter.io rate limited — pausing 60s
+2026-04-15 14:37:25,557 🔮 Guessed: info@swbaths.com — Steamworks Baths Seattle
+2026-04-15 14:37:26,400 Hunter.io rate limited — pausing 60s
+2026-04-15 14:38:26,747 🔮 Guessed: info@skinandsagespa.com — Skin & Sage
+2026-04-15 14:38:27,826 Hunter.io rate limited — pausing 60s
+2026-04-15 14:39:28,329 🔮 Guessed: info@urbanyogaspa.com — Urban Yoga Spa
+2026-04-15 14:39:29,337 Hunter.io rate limited — pausing 60s
+2026-04-15 14:40:29,575 🔮 Guessed: info@mulanspaseattle.com — Mulan Spa
+2026-04-15 14:40:30,339 Hunter.io rate limited — pausing 60s
+2026-04-15 14:41:30,774 🔮 Guessed: info@classiquespa.com — Classique Spa - The Vintage
+2026-04-15 14:41:31,279 
+==================================================
+2026-04-15 14:41:31,280 ✅ Email finder complete
+2026-04-15 14:41:31,280    API found:  0
+2026-04-15 14:41:31,280    Guessed:    40
+2026-04-15 14:41:31,280    Total:      40
+2026-04-15 14:41:31,280 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-15 14:41:31,718 ERROR 🚨 Bounce rate too high (59.9%). PAUSING all sends.
+2026-04-15 14:41:31,719 ERROR    Fix: review lead quality, remove bad emails, then restart.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-15.txt
+✅ LinkedIn DMs posted to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Wed Apr 15** (Day 3)
+
+**📋 YOUR TODO:**
+1️⃣ Send 20 LinkedIn DMs (posted above or in output/)
+3️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 20 LinkedIn DMs
+**📊 Funnel:** 730 leads → 137 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+**💼 20 LinkedIn DMs** queued — check Discord or output/ folder
+
+✅ Report sent to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Wed Apr 15 14:41:33 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-15.log

@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "Jarvis Trading Copilot",
+  "version": "1.0.0",
+  "description": "AI-powered trading assistant for beginners. Professional strategies with step-by-step guidance.",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "notifications"
+  ],
+  
+  "host_permissions": [
+    "*://finance.yahoo.com/*",
+    "*://*.tradingview.com/*",
+    "*://*.robinhood.com/*",
+    "*://*.webull.com/*",
+    "*://*.thinkorswim.com/*",
+    "*://*.interactivebrokers.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "*://finance.yahoo.com/*",
+        "*://*.tradingview.com/*",
+        "*://*.robinhood.com/*",
+        "*://*.webull.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Jarvis Trading Copilot",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "trading-engine.js",
+        "styles.css",
+        "sounds/*.mp3"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

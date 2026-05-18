@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viora Navigation Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0a0a12;
+            color: white;
+        }
+        
+        /* BEFORE - Your old navigation (spread apart) */
+        .nav-old {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(10, 10, 18, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* AFTER - Your new navigation (centered) */
+        .nav-new {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            background: rgba(10, 10, 18, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4A8FF5 0%, #9B6DD9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links a {
+            color: #C4C4D6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .comparison {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .label {
+            background: #333;
+            padding: 10px 20px;
+            margin: 20px 0 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison">
+        <h1>VIORA NAVIGATION COMPARISON</h1>
+        
+        <div class="label">BEFORE (Your Original - Spread Apart)</div>
+        <nav class="nav-old">
+            <div class="logo">Viora</div>
+            <ul class="nav-links">
+                <li><a href="#">Demos</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="label">AFTER (Fixed - Perfectly Centered)</div>
+        <nav class="nav-new">
+            <div class="logo">Viora</div>
+            <ul class="nav-links">
+                <li><a href="#">Demos</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div style="margin-top: 40px; color: #4A8FF5;">
+            <h2>✅ YOUR FULL WEBSITE IS UPDATED WITH THE "AFTER" VERSION</h2>
+            <p>This shows you exactly how the navigation centering fix looks!</p>
+        </div>
+    </div>
+</body>
+</html>

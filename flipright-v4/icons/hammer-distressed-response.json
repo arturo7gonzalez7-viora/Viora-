@@ -1,0 +1,14 @@
+{
+  "created": "2026-02-12T20:03:49.400544+00:00",
+  "data": [
+    {
+      "is_image_safe": true,
+      "prompt": "A minimalist icon with a professional, geometric style. The icon features a hammer and wrench tool with a red gradient (#dc2626 to #991b1b). The tools have rounded corners. The icon is centered and has a white background. The icon is scalable and has a 64x64px feel.",
+      "resolution": "1024x1024",
+      "seed": 1381173295,
+      "style_type": "GENERAL",
+      "upscaled_resolution": null,
+      "url": "https://ideogram.ai/api/images/ephemeral/zCXqBbTGTtK2YPo6hJOKEg.png?exp=1771013047&sig=1c571379f1295b45cd517fd46737dcbf4779817c98409104858a79e5e026f111"
+    }
+  ]
+}

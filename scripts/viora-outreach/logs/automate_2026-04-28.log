@@ -1,0 +1,184 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-28 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-28 14:00:04,591 🔄 Auto-rotation day 118: hair salon in Raleigh, NC
+2026-04-28 14:00:04,591 
+🔍 Searching: hair salon in Raleigh, NC
+2026-04-28 14:00:05,511   ✅ Village Salon & Dry Bar — (919) 840-8855 — https://villagesalonatoberlin.com/
+2026-04-28 14:00:05,817   ✅ Mane Salon — (919) 503-7755 — http://www.maneraleigh.com/
+2026-04-28 14:00:06,091   ✅ Douglas Carroll Salon, Spa and Boutique — (919) 876-5411 — http://www.douglascarrollsalon.com/
+2026-04-28 14:00:06,329   ✅ Alter EGO Salon — (984) 213-5031 — https://www.alteregoraleigh.com/
+2026-04-28 14:00:06,586   ✅ Sky Parlor Salon — (919) 747-9137 — https://skyparlorsalon.com/
+2026-04-28 14:00:06,788   ✅ The Junction Salon and Bar — (919) 449-7144 — https://www.junctionsalon.com/
+2026-04-28 14:00:07,053   ✅ R. Caspar Salon — (919) 916-5007 — http://rcasparsalon.com/
+2026-04-28 14:00:07,294   ✅ Reverie Hair Co. — (919) 747-9397 — https://www.reveriehairco.com/
+2026-04-28 14:00:07,493   ✅ Samuel Cole Salon — (919) 845-0098 — http://samuelcole.com/
+2026-04-28 14:00:07,722   ✅ Menagerie Style House — (919) 803-7144 — https://menagerienc.com/
+2026-04-28 14:00:07,994   ✅ The Hightide Salon and Suites — (919) 516-9909 — https://www.thehightidesalon.com/
+2026-04-28 14:00:08,152   ✅ Salon Deux — (919) 832-6239 — https://www.alteregoraleigh.com/locations/salon-deux/
+2026-04-28 14:00:08,382   ✅ Hush Raleigh — (919) 706-0324 — https://hush.hair/
+2026-04-28 14:00:08,648   ✅ LUX Salon - Lafayette Village — (984) 247-8600 — http://www.luxsalonspa.net/
+2026-04-28 14:00:08,860   ✅ Salon 21 — (919) 821-1516 — http://www.salon21raleigh.com/
+2026-04-28 14:00:09,005   ✅ Sweet T Salon — (919) 831-1100 — https://www.sweettsalon.com/
+2026-04-28 14:00:09,239   ✅ Blo — (919) 484-8600 — http://www.justblo.com/
+2026-04-28 14:00:09,397   ✅ Salon La Vie Raleigh — (919) 833-0107 — http://www.salonlavie.us/
+2026-04-28 14:00:09,664   ✅ Lux Salon - Towne North — (919) 676-5799 — https://www.luxsalonspa.net/
+2026-04-28 14:00:12,652   ✅ Atlantis Salon — (336) 301-0621 — http://www.atlantishairsalon.com/
+2026-04-28 14:00:12,831   ✅ The Look Salon Suites — (919) 804-8797 — https://thelooksalonsuites.com/raleigh-nc/
+2026-04-28 14:00:13,033   ✅ Moss Raleigh Salon • Master Colorist • Gray Blending • Color Corrections • Balayage • Vivids — (919) 412-6515 — http://www.mossraleigh.com/
+2026-04-28 14:00:13,228   ✅ The Legacy Salon — (919) 866-1533 — https://www.thelegacysalonraleigh.com/
+2026-04-28 14:00:13,418   ✅ Salon Blu — (919) 900-8212 — http://www.salonbluhair.com/
+2026-04-28 14:00:13,705   ✅ Tone Hair Salon — (919) 701-7027 — http://tonehairsalon.com/
+2026-04-28 14:00:13,917   ✅ RITUAL Hair Company — (919) 900-8001 — http://www.ritualhairco.com/
+2026-04-28 14:00:14,143   ✅ dsparada Color Salon — (919) 790-1707 — https://www.dsparada.com/
+2026-04-28 14:00:14,409   ✅ Atmosphere Salon Raleigh....Janet Shacklette — (919) 815-0214 — http://www.vagaro.com/atmospheresalon.janet.com
+2026-04-28 14:00:14,614   ✅ Sam and Bill's Hair Color & Design — (919) 832-6393 — https://www.samandbills.com/
+2026-04-28 14:00:14,843   ✅ A Suite Salon — (919) 670-2112 — http://www.asuitesalon.com/
+2026-04-28 14:00:15,029   ✅ Salon Veritas — (919) 601-8118 — http://www.salonveritas.com/
+2026-04-28 14:00:15,255   ✅ The Point Salon — (919) 924-5083 — https://www.pointhairsalon.com/
+2026-04-28 14:00:15,459   ✅ SMITH & CO. Hair Salon LLC — (919) 714-1173 — http://smithcosalon.com/
+2026-04-28 14:00:15,661   ✅ Salon Alchemy — (919) 852-4955 — http://salonalchemyhair.com/
+2026-04-28 14:00:15,936   ✅ Tres Hair Company — (919) 524-7071 — http://www.vagaro.com/treshairspa
+2026-04-28 14:00:16,107   ✅ Salon Blu — (919) 848-0555 — http://www.salonbluhair.com/
+2026-04-28 14:00:16,294   ✅ EA Wells Hair Design — (919) 787-7797 — http://www.eawellshair.com/
+2026-04-28 14:00:16,519   ✅ Sola Salons — (984) 370-3865 — https://www.solasalonstudios.com/locations/north-raleigh?utm_source=gmb&utm_medium=organic
+2026-04-28 14:00:16,787   ✅ Salon Lofts — (984) 222-3695 — https://salonlofts.com/salons/falls_of_neuse_olive_park?utm_source=apple_maps&utm_medium=organic&utm_campaign=yext
+2026-04-28 14:00:19,514   ✅ K. Elizabeth Salon — (984) 292-4546 — http://kelizabethsalon.com/
+2026-04-28 14:00:19,914   ✅ Salon Lofts — (984) 200-4815 — https://salonlofts.com/salons/falls_ridge?utm_source=apple_maps&utm_medium=organic&utm_campaign=yext
+2026-04-28 14:00:20,054   ✅ Moxie Salon and Beauty Bar - Raleigh — (919) 301-8525 — https://moxiesalonandbeautybar.com/raleigh-nc-ridgewood
+2026-04-28 14:00:20,247   ✅ Wave A Holistic Hair Studio — (919) 619-6002 — https://www.waveholistichair.com/
+2026-04-28 14:00:20,463   ✅ eSTee Salon — (919) 845-0006 — http://www.esteesalon.com/
+2026-04-28 14:00:20,645   ✅ KERATIN STUDIO — (864) 612-3535 — https://keratin-studio.com/
+2026-04-28 14:00:20,865   ✅ Taji Natural Hair Styling- Raleigh — (919) 332-3021 — http://www.tajisalon.com/
+2026-04-28 14:00:21,006   ✅ Throne Hair Salon — (984) 272-7567 — http://www.thronehairsalon.com/
+2026-04-28 14:00:21,216   ✅ Salon Saia — (919) 377-2554 — http://www.salonsaia.com/
+2026-04-28 14:00:21,909   ✅ Marigold Parlour — (919) 917-7008 — http://www.marigoldparlour.com/
+2026-04-28 14:00:22,086   ✅ Revive Salon Raleigh — (919) 395-0914 — http://www.revivesalonral.com/
+2026-04-28 14:00:22,109   📊 Found 50, 50 new (rest were duplicates)
+2026-04-28 14:00:23,109 
+==================================================
+2026-04-28 14:00:23,109 ✅ Scraping complete
+2026-04-28 14:00:23,109    Total found:  50
+2026-04-28 14:00:23,109    New leads:    50
+2026-04-28 14:00:23,109    Duplicates:   0
+2026-04-28 14:00:23,112    DB total:     848 leads (444 with emails)
+2026-04-28 14:00:23,112 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-28 14:00:23,337 🔍 Finding emails for 50 leads...
+2026-04-28 14:00:23,898 ✅ Hunter found: praveen@sanjivamedspa.com (score: 99) — Sanjiva Medical Spa
+2026-04-28 14:00:24,830 🔮 Guessed: info@bellamedspadfw.com — Bella MedSpa - Dallas MedSpa
+2026-04-28 14:00:25,702 ✅ Hunter found: haley.pakan@secretmedspa.com (score: 94) — It's A Secret Med Spa
+2026-04-28 14:00:26,749 🔮 Guessed: info@dallas.wellabsplus.com — Well Labs+ Medspa Dallas
+2026-04-28 14:00:27,492 🔮 Guessed: info@vitalyc.com — Vitalyc Medspa | Highland Park
+2026-04-28 14:00:28,956 ✅ Hunter found: hiddenbeauty@rejuvemedspa.com (score: 99) — Rejuve Med Spa
+2026-04-28 14:00:29,999 🔮 Guessed: info@modernmedicalspa.com — Modern Medical Spa
+2026-04-28 14:00:30,824 ✅ Hunter found: amy@umedspa.com (score: 66) — U Med Spa
+2026-04-28 14:00:31,858 ✅ Hunter found: tamara@upkeepmedspa.com (score: 92) — UPKEEP Med Spa
+2026-04-28 14:00:32,658 ✅ Hunter found: houston@nakedmd.com (score: 90) — NakedMD Med Spa Dallas
+2026-04-28 14:00:33,513 ✅ Hunter found: marie@skinspamed.com (score: 99) — SkinSpaMED
+2026-04-28 14:00:34,504 ✅ Hunter found: mick@dermanimedspa.com (score: 99) — dermani MEDSPA® Preston Hollow
+2026-04-28 14:00:35,365 🔮 Guessed: info@omnisculptmd.com — OMNI SCULPT MD: Med Spa
+2026-04-28 14:00:36,260 ✅ Hunter found: mia@dallasskincentre.com (score: 93) — ZO Skin Centre
+2026-04-28 14:00:37,252 🔮 Guessed: info@unicornmedspa.com — Unicorn MedSpa
+2026-04-28 14:00:38,131 🔮 Guessed: info@thescienceofbeauty.co — The Science of Beauty
+2026-04-28 14:00:38,958 ✅ Hunter found: alicia@dalluremedspa.com (score: 99) — D'Allure Medspa
+2026-04-28 14:00:39,764 ✅ Hunter found: ed@bodyloungeparkcities.com (score: 66) — Body Lounge Park Cities - Whole Body Wellness & Medical Aesthetics, Dallas, TX
+2026-04-28 14:00:40,583 ✅ Hunter found: erosen@skinspirit.com (score: 99) — SkinSpirit West Village Dallas
+2026-04-28 14:00:42,444 ✅ Hunter found: louise@renewbeautymedspa.com (score: 94) — Renew Beauty
+2026-04-28 14:00:43,337 ✅ Hunter found: sonya@thelabmedspa.com (score: 99) — the L.A.B. med spa Dallas
+2026-04-28 14:00:44,165 ✅ Hunter found: peyton@vivwellness.com (score: 99) — VIV Wellness
+2026-04-28 14:00:45,061 ✅ Hunter found: lauren@houseofpreservation.com (score: 99) — house of preservation
+2026-04-28 14:00:45,849 ✅ Hunter found: rjacob@totalmedsolutions.com (score: 99) — Total Med Solutions
+2026-04-28 14:00:46,599 🔮 Guessed: info@rejuviawellness.com — Rejuvia Wellness and Medical Spa
+2026-04-28 14:00:47,389 ✅ Hunter found: tara.wepking@ovme.com (score: 94) — OVME
+2026-04-28 14:00:48,177 ✅ Hunter found: rjacob@totalmedsolutions.com (score: 99) — Total Med Solutions
+2026-04-28 14:00:48,915 🔮 Guessed: info@elitemedspaoftexas.com — Elite Med Spa of Texas
+2026-04-28 14:00:49,681 🔮 Guessed: info@ultimateimagemedspa.com — Ultimate Image MedSpa
+2026-04-28 14:00:50,545 ✅ Hunter found: laurence.humphries@viomedspa.com (score: 99) — VIO Med Spa
+2026-04-28 14:00:51,484 🔮 Guessed: info@ayaskin.com — AYA Medical Spa Snider Plaza - Highland Park
+2026-04-28 14:00:52,251 🔮 Guessed: info@revivepcms.com — Revive Primary Care & Med Spa - Highland Park
+2026-04-28 14:00:53,023 🔮 Guessed: info@suremedaes.com — SureMED Aesthetics
+2026-04-28 14:00:54,010 ✅ Hunter found: minna@purespaandsalon.com (score: 42) — Pure Spa
+2026-04-28 14:00:54,782 🔮 Guessed: info@embermedspadallas.com — Ember Medical Spa
+2026-04-28 14:00:56,306 🔮 Guessed: info@thelookmedspalv.com — The Look Med Spa
+2026-04-28 14:00:57,171 ✅ Hunter found: amir.yanay@novuskin.com (score: 98) — Novuskin Med Spa
+2026-04-28 14:00:57,987 ✅ Hunter found: joi@advancedaestheticslv.com (score: 91) — Advanced Aesthetics
+2026-04-28 14:00:58,783 🔮 Guessed: info@chiclavie.com — Chic la Vie
+2026-04-28 14:00:59,561 🔮 Guessed: info@themedspalasvegas.com — The Med Spa
+2026-04-28 14:01:00,285 🔮 Guessed: info@skinlv.com — SKIN Las Vegas Med Spa
+2026-04-28 14:01:00,793 
+==================================================
+2026-04-28 14:01:00,794 ✅ Email finder complete
+2026-04-28 14:01:00,794    API found:  23
+2026-04-28 14:01:00,794    Guessed:    18
+2026-04-28 14:01:00,794    Total:      41
+2026-04-28 14:01:00,794 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-28.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue Apr 28** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 848 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue Apr 28 14:01:01 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-28.log

@@ -1,0 +1,13 @@
+2026-04-21 14:00:04,626 🔄 Auto-rotation day 111: attorney in Philadelphia, PA
+2026-04-21 14:00:04,627 
+🔍 Searching: attorney in Philadelphia, PA
+2026-04-21 14:00:08,898 API error: DEADLINE_EXCEEDED — 
+2026-04-21 14:00:09,900 
+==================================================
+2026-04-21 14:00:09,901 ✅ Scraping complete
+2026-04-21 14:00:09,901    Total found:  0
+2026-04-21 14:00:09,901    New leads:    0
+2026-04-21 14:00:09,901    Duplicates:   0
+2026-04-21 14:00:09,905    DB total:     636 leads (233 with emails)
+2026-04-21 14:00:09,906 ==================================================
+

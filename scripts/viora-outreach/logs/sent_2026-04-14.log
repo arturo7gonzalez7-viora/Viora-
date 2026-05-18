@@ -1,0 +1,52 @@
+2026-04-14 14:42:21,983 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-14 14:42:21,983 INFO    Already sent today: 0, remaining: 40
+2026-04-14 14:42:22,169 INFO file_cache is only supported with oauth2client<4.0.0
+2026-04-14 14:42:22,697 INFO ✅ Email 1 → rhatcher@aireserv.com (Aire Serv of Houston Midtown)
+2026-04-14 14:42:37,906 INFO ✅ Email 1 → jon.blitz@temperaturepro.com (TemperaturePro)
+2026-04-14 14:42:44,407 INFO ✅ Email 1 → info@premieracandheat.com (Premier Air Conditioning & Heating)
+2026-04-14 14:42:50,451 INFO ✅ Email 1 → dean.revering@hts.com (HTS Texas)
+2026-04-14 14:43:05,015 INFO ✅ Email 1 → info@callblueleafhvac.com (Blueleaf Air Conditioning & Heating)
+2026-04-14 14:43:11,538 INFO ✅ Email 1 → nleyva@alcocklaw.com (The Law Offices Of Alcock & Associates P.C.)
+2026-04-14 14:43:20,733 INFO ✅ Email 1 → tyler@allenlawaz.com (Tyler Allen Law Firm)
+2026-04-14 14:43:32,599 INFO ✅ Email 1 → johnkelly@jkphoenixpersonalinjuryattorney.com (Kelly Law Team Phoenix)
+2026-04-14 14:43:50,462 INFO ✅ Email 1 → michael@mcordova.com (Michael Cordova)
+2026-04-14 14:44:03,865 INFO ✅ Email 1 → ebull@bcattorneys.com (Burch & Cracchiolo, P.A.)
+2026-04-14 14:44:20,511 INFO ✅ Email 1 → info@husbandandwifelawteam.com (The Husband & Wife Law Team)
+2026-04-14 14:44:32,682 INFO ✅ Email 1 → sara@bigchadlaw.com (Big Chad Law)
+2026-04-14 14:44:42,481 INFO ✅ Email 1 → mpearson@azlaw.com (Curry Pearson & Wooten PLC)
+2026-04-14 14:44:58,456 INFO ✅ Email 1 → terrie@shapirolawaz.com (Shapiro Law Team)
+2026-04-14 14:45:11,901 INFO ✅ Email 1 → luisr@phillipslaw.com (Phillips Law Group - Injury Lawyers)
+2026-04-14 14:45:17,692 INFO ✅ Email 1 → juana@adelayolaw.com (Adelayo Law Firm PLLC)
+2026-04-14 14:45:30,967 INFO ✅ Email 1 → cody@dumondlawaz.com (DuMond Law Firm, PLLC)
+2026-04-14 14:45:48,897 INFO ✅ Email 1 → info@azcriminalandfamilylaw.com (Law Office of Daniel Hutto, PLLC)
+2026-04-14 14:45:58,536 INFO ✅ Email 1 → info@husbandandwifelawteam.com (The Husband & Wife Law Team)
+2026-04-14 14:46:05,095 INFO ✅ Email 1 → apeschke@weilerlaw.com (Weiler Law PLLC)
+2026-04-14 14:46:14,657 INFO ✅ Email 1 → damaris@belenlawfirm.com (Belen Law Firm, PLLC)
+2026-04-14 14:46:25,064 INFO ✅ Email 1 → info@robinsonlawoffices.com (Robinson Law Offices)
+2026-04-14 14:46:32,744 INFO ✅ Email 1 → info@rileyplc.com (Riley Law Firm, PLC)
+2026-04-14 14:46:38,711 INFO ✅ Email 1 → n.lugo@dmcantor.com (DM Cantor)
+2026-04-14 14:46:46,566 INFO ✅ Email 1 → david@dbphoenixcriminallawyer.com (Law Offices of David A. Black)
+2026-04-14 14:46:56,784 INFO ✅ Email 1 → jwilliams@litwaklawgroup.com (Litwak Law Group)
+2026-04-14 14:47:12,905 INFO ✅ Email 1 → kchana@forthepeople.com (Morgan & Morgan)
+2026-04-14 14:47:24,196 INFO ✅ Email 1 → wmartinez@torgensonlaw.com (Torgenson Law)
+2026-04-14 14:47:38,310 INFO ✅ Email 1 → info@jaburgwilk.com (Jaburg Wilk)
+2026-04-14 14:47:47,945 INFO ✅ Email 1 → info@arjashahlaw.com (Shah Law Firm, PLLC)
+2026-04-14 14:47:55,513 INFO ✅ Email 1 → info@barberlawgroup.com (Barber Law Group)
+2026-04-14 14:48:13,680 INFO ✅ Email 1 → info@cavanaghlaw.com (The Cavanagh Law Firm, P.A.)
+2026-04-14 14:48:29,308 INFO ✅ Email 1 → info@enaralaw.com (Enara Law)
+2026-04-14 14:48:46,605 INFO ✅ Email 1 → info@the-plf.com (The People's Law Firm, PLC)
+2026-04-14 14:48:53,397 INFO ✅ Email 1 → info@ongarolawoffices.com (Salvador Ongaro Law Offices)
+2026-04-14 14:49:05,316 INFO ✅ Email 1 → info@arizonalawgroup.com (Arizona Law Group, Phoenix Divorce Lawyer & Family Law Attorneys)
+2026-04-14 14:49:11,311 INFO ✅ Email 1 → info@criminallawaz.com (Gaxiola Law Group)
+2026-04-14 14:49:17,674 INFO ✅ Email 1 → info@arizdui.com (Law Offices of Brian D Sloan)
+2026-04-14 14:49:26,393 INFO ✅ Email 1 → info@lanceentrekin.com (The Entrekin Law Firm)
+2026-04-14 14:49:32,444 INFO ✅ Email 1 → info@spmoellerlaw.com (Law Offices of Samuel P. Moeller, PLLC)
+2026-04-14 14:49:49,522 INFO 
+==================================================
+2026-04-14 14:49:49,523 INFO ✅ Email sender complete [SENT]
+2026-04-14 14:49:49,523 INFO    Emails sent:     40
+2026-04-14 14:49:49,523 INFO    Daily limit:     40
+2026-04-14 14:49:49,523 INFO    Already today:   0
+2026-04-14 14:49:49,523 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-04-14.log
+2026-04-14 14:49:49,523 INFO ==================================================
+

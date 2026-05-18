@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/flyer", "dest": "/flyer.html" },
+    { "src": "/business-card", "dest": "/business-card.html" },
+    { "src": "/business-plan", "dest": "/business-plan.html" },
+    { "src": "/plan-de-negocios", "dest": "/business-plan-es.html" }
+  ]
+}

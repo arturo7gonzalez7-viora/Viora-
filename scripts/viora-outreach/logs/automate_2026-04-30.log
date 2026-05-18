@@ -1,0 +1,216 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-30 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-30 14:00:04,838 🔄 Auto-rotation day 120: beauty salon in Denver, CO
+2026-04-30 14:00:04,840 
+🔍 Searching: beauty salon in Denver, CO
+2026-04-30 14:00:05,770   ✅ Grand Salon & MedSpa ✂ — (303) 572-1435 — https://grand-salon.com/
+2026-04-30 14:00:06,099   ✅ Deseo Salon & BlowDry — (720) 662-7100 — https://www.deseosalondenver.com/
+2026-04-30 14:00:06,389   ✅ Studio: A Collective Of Stylists — (303) 623-0720 — https://www.studiosalondenver.com/
+2026-04-30 14:00:06,689   ✅ Matthew Morris Salon and Skincare - Broadway — (303) 715-4673 — https://www.matthewmorrissalon.com/locations/matthew-morris-salon-broadway/
+2026-04-30 14:00:06,862   ✅ Clementines A Boutique Salon — (720) 894-8823 — https://clementinesdenver.com/
+2026-04-30 14:00:07,061   ✅ The Glam House — (720) 484-1372 — https://theglamhouse.com/denver-head-spa?utm_source=Organic&utm_medium=GBP&utm_campaign=Ogden
+2026-04-30 14:00:07,360   ✅ Salon Lofts — (888) 295-6073 — https://salonlofts.com/salons/16th_street_mall?utm_source=apple_maps&utm_medium=organic&utm_campaign=yext
+2026-04-30 14:00:07,536   ✅ The Station Hair Studio ✂ — (720) 459-8816 — http://www.thestationhairstudio.com/
+2026-04-30 14:00:09,021   ✅ Bello Haven Salon + Extensions at Cherry Creek North ✂ — (303) 386-0767 — http://www.bellohavenhairextensions.com/
+2026-04-30 14:00:09,348   ✅ Aveda Institute Denver — (303) 567-7500 — https://avedainspiregreatness.com/denver-campus/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing
+2026-04-30 14:00:09,593   ✅ Forma Collective Salon — (720) 255-2039 — https://formacollectivesalon.com/
+2026-04-30 14:00:09,856   ✅ SALON VO | Hair Salon Denver ✂ — (303) 929-1246 — https://www.vagaro.com/tssn8e
+2026-04-30 14:00:10,058   ✅ berenices ✂ — (303) 399-9156 — https://www.berenicesdenver.com/
+2026-04-30 14:00:10,328   ✅ Fifty Two Eighty Salon ✂ — (720) 696-6161 — https://www.fiftytwoeightysalon.com/
+2026-04-30 14:00:10,562   ✅ 303 Salon Lohi — (720) 679-7944 — https://303salons.com/
+2026-04-30 14:00:10,722   ✅ Onyx and Co Salon ✂ — (720) 761-5908 — https://www.onyxandcosalon.com/
+2026-04-30 14:00:10,949   ✅ Jaded Beauty — (720) 295-0441 — https://jadedbeauty.com/
+2026-04-30 14:00:11,121   ✅ Indigo Salon — (303) 830-1115 — http://indigosalondenver.com/
+2026-04-30 14:00:11,298   ✅ Fleur Salon ✂ — (303) 955-5671 — http://www.fleursalon.com/google
+2026-04-30 14:00:11,516   ✅ Hair by Natalia ✂ — (720) 917-5165 — http://www.hairbynatalia.com/
+2026-04-30 14:00:14,333   ✅ Salon Thirty Eight — (303) 284-5339 — https://www.salonthirtyeight.com/
+2026-04-30 14:00:14,606   ✅ Arrow Beauty Denver ✂ — (303) 386-3403 — http://arrowbeautydenver.com/
+2026-04-30 14:00:14,879   ✅ The Blake Denver — (720) 877-8482 — https://theblakedenver.com/
+2026-04-30 14:00:15,138   ✅ Luxe de Vil Salon — (303) 953-9486 — https://linktr.ee/luxedevilsalon
+2026-04-30 14:00:15,294   ✅ DECO Denver Salon — (720) 390-3149 — http://decodenversalon.com/
+2026-04-30 14:00:15,442   ✅ The Organic Salon Denver — (720) 815-5701 — http://www.theorganicsalondenver.com/
+2026-04-30 14:00:15,590   ✅ Let Em Have It Salon ✂ — (720) 638-4619 — https://www.letemhaveitsalon.com/
+2026-04-30 14:00:15,794   ✅ Village Salon — (720) 892-8363 — https://www.villagesalonden.com/
+2026-04-30 14:00:15,955   ✅ Lifted Salon and Spa — (720) 510-2360 — https://liftedsalonandspa.com/
+2026-04-30 14:00:16,157   ✅ Blondies Beauty Bar — (303) 872-3009 — http://blondiessalondenver.com/
+2026-04-30 14:00:16,364   ✅ Isla Salon ✂ — (303) 928-9805 — http://www.islasalon.com/
+2026-04-30 14:00:16,544   ✅ Three Cutters Capitol Hill — (303) 733-0845 — http://www.threecutters.com/
+2026-04-30 14:00:16,907   ✅ The Factory Hair Salon ✂ — (720) 640-9801 — http://thefactoryhairsalon.com/
+2026-04-30 14:00:17,040   ✅ The Parlour Wash Park — (303) 733-0016 — http://theparlour.net/
+2026-04-30 14:00:17,212   ✅ Adorn Salon Denver ✂ — (720) 515-7818 — http://www.adorndenver.com/
+2026-04-30 14:00:17,414   ✅ THE LOOK Beauty and Med Spa — (303) 322-4902 — https://thelookbeautymedspadenver.com/
+2026-04-30 14:00:17,557   ✅ Juno Salon ✂ — (720) 542-8892 — http://junodenver.com/
+2026-04-30 14:00:17,696   ✅ Salon Moda Capelli Denver ✂ — (303) 892-8922 — http://www.salonmodacapellidenver.com/
+2026-04-30 14:00:17,853   ✅ Cult of Mane — (720) 930-8757 — https://cultofmane.salon/
+2026-04-30 14:00:20,572   ✅ 3 Little Birds Salon ✂ — (303) 861-2333 — https://3littlebirdssalon.com/
+2026-04-30 14:00:20,780   ✅ My Hair Trip ✂ — (262) 894-3977 — https://myhairtrip.com/
+2026-04-30 14:00:20,969   ✅ Flaunt Salon ✂ — (303) 297-2219 — https://flauntsalondenver.com/
+2026-04-30 14:00:21,169   ✅ Envogue Salon ✂ — (720) 613-2264 — https://www.envoguesalondenver.com/
+2026-04-30 14:00:21,361   ✅ Fluff Colour Salon — (720) 295-3583 — https://www.fluffbar.com/
+2026-04-30 14:00:21,540   ✅ Altar'd Beauty Luxury Hair Salon — (303) 437-4422 — http://www.altardbeauty.glossgenius.com/
+2026-04-30 14:00:21,715   ✅ Rebel Salon — (720) 793-4540 — http://www.rebelsalondenver.com/
+2026-04-30 14:00:21,894   ✅ Synergy Salon & Day Spa — (303) 296-2504 — http://www.synergysalonanddayspa.com/
+2026-04-30 14:00:22,196   ✅ The Bad Kittie Salon — (303) 377-4247 — http://www.thebadkittiesalon.com/
+2026-04-30 14:00:22,393   ✅ Salon Sopris — (303) 416-6572 — http://www.salonsopris.com/
+2026-04-30 14:00:22,694   ✅ Holistic Salon — (720) 955-4479 — http://holisticsalon.co/
+2026-04-30 14:00:22,728   📊 Found 50, 50 new (rest were duplicates)
+2026-04-30 14:00:23,728 
+==================================================
+2026-04-30 14:00:23,728 ✅ Scraping complete
+2026-04-30 14:00:23,728    Total found:  50
+2026-04-30 14:00:23,729    New leads:    50
+2026-04-30 14:00:23,729    Duplicates:   0
+2026-04-30 14:00:23,730    DB total:     948 leads (526 with emails)
+2026-04-30 14:00:23,730 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-30 14:00:23,953 🔍 Finding emails for 50 leads...
+2026-04-30 14:00:24,431 🔮 Guessed: info@bralmedicalspa.com — Bral Medical Spa
+2026-04-30 14:00:25,381 🔮 Guessed: info@iglowvegas.com — iGlow Aesthetics and Med Spa
+2026-04-30 14:00:26,128 🔮 Guessed: info@thechicagoaccidentattorney.net — Law Offices of Joseph Younes
+2026-04-30 14:00:27,020 ✅ Hunter found: pammenaker@cliffordlaw.com (score: 92) — Clifford Law Offices PC
+2026-04-30 14:00:27,952 ✅ Hunter found: michael@lomap.com (score: 99) — Law Office of Michael A. Perez
+2026-04-30 14:00:28,815 ✅ Hunter found: ivan@ivanrueda.com (score: 72) — Ivan Rueda & Associates – Personal Injury Attorney
+2026-04-30 14:00:29,617 🔮 Guessed: info@civilrightsattorneychicago.com — Foutris Law Office, Ltd.
+2026-04-30 14:00:30,383 🔮 Guessed: info@daveabels.com — Abels & Annes, P.C.
+2026-04-30 14:00:31,381 ✅ Hunter found: angie@keatinglegal.com (score: 99) — Keating Law Offices, P.C.
+2026-04-30 14:00:32,119 Hunter.io rate limited — pausing 60s
+2026-04-30 14:01:32,486 🔮 Guessed: info@chiattorney.com — Chicago Family Attorneys, LLC
+2026-04-30 14:01:33,217 Hunter.io rate limited — pausing 60s
+2026-04-30 14:02:33,578 🔮 Guessed: info@illinoislawyers.com — Illinois Lawyers
+2026-04-30 14:02:34,699 Hunter.io rate limited — pausing 60s
+2026-04-30 14:03:35,040 🔮 Guessed: info@jrqlaw.com — JRQ & Associates, LLC
+2026-04-30 14:03:35,911 Hunter.io rate limited — pausing 60s
+2026-04-30 14:04:36,259 🔮 Guessed: info@attorneyzim.com — Zimmerman Law Offices
+2026-04-30 14:04:36,956 Hunter.io rate limited — pausing 60s
+2026-04-30 14:05:37,178 🔮 Guessed: info@sciblolawoffice.com — Mark Sciblo Law Office
+2026-04-30 14:05:38,032 Hunter.io rate limited — pausing 60s
+2026-04-30 14:06:38,249 🔮 Guessed: info@ilwashingtonlaw.com — Washington Law Offices
+2026-04-30 14:06:38,962 Hunter.io rate limited — pausing 60s
+2026-04-30 14:07:39,284 🔮 Guessed: info@duronlaw.com — The Duron Law Firm PC
+2026-04-30 14:07:40,123 Hunter.io rate limited — pausing 60s
+2026-04-30 14:08:40,460 🔮 Guessed: info@danherbertlaw.com — Herbert Law Firm
+2026-04-30 14:08:41,275 Hunter.io rate limited — pausing 60s
+2026-04-30 14:09:41,607 🔮 Guessed: info@anselmoduranlaw.com — Law Office of Anselmo Duran P.C.
+2026-04-30 14:09:42,483 Hunter.io rate limited — pausing 60s
+2026-04-30 14:10:42,915 🔮 Guessed: info@stoltmannlaw.com — Stoltmann Law Offices
+2026-04-30 14:10:43,841 Hunter.io rate limited — pausing 60s
+2026-04-30 14:11:45,480 🔮 Guessed: info@pattersonlawfirm.com — Patterson Law Firm
+2026-04-30 14:11:46,741 Hunter.io rate limited — pausing 60s
+2026-04-30 14:12:47,271 🔮 Guessed: info@chicago-criminal-dui.com — The Law Office of Matthew Prengaman
+2026-04-30 14:12:48,319 Hunter.io rate limited — pausing 60s
+2026-04-30 14:13:48,905 🔮 Guessed: info@desilvalawoffices.com — Law Offices of R. Tamara de Silva
+2026-04-30 14:13:49,898 Hunter.io rate limited — pausing 60s
+2026-04-30 14:14:50,385 🔮 Guessed: info@studentdisciplinedefense.com — Lento Law Firm Student Defense and Title IX Attorneys
+2026-04-30 14:14:51,406 Hunter.io rate limited — pausing 60s
+2026-04-30 14:15:53,474 🔮 Guessed: info@discovercabrillo.com — Cabrillo Plumbing, Heating & Air
+2026-04-30 14:15:54,621 Hunter.io rate limited — pausing 60s
+2026-04-30 14:16:55,150 🔮 Guessed: info@sanfranciscoexprethvac.com — San Francisco Expert Heating and Air
+2026-04-30 14:16:56,010 Hunter.io rate limited — pausing 60s
+2026-04-30 14:17:56,509 🔮 Guessed: info@acostaheatingandair.com — Acosta Heating & Sheet Metal
+2026-04-30 14:17:57,580 Hunter.io rate limited — pausing 60s
+2026-04-30 14:18:58,043 🔮 Guessed: info@nexthvacrepair.com — Next HVAC and Appliance repair
+2026-04-30 14:18:58,915 Hunter.io rate limited — pausing 60s
+2026-04-30 14:19:59,430 🔮 Guessed: info@schmittheating.com — Schmitt Heating & Air Conditioning
+2026-04-30 14:20:00,266 Hunter.io rate limited — pausing 60s
+2026-04-30 14:21:00,783 🔮 Guessed: info@hometownheatingandair.com — Hometown Heating and Air Conditioning
+2026-04-30 14:21:01,648 Hunter.io rate limited — pausing 60s
+2026-04-30 14:22:02,209 🔮 Guessed: info@associatedheatingsf.com — Associated Heating of San Francisco
+2026-04-30 14:22:03,210 Hunter.io rate limited — pausing 60s
+2026-04-30 14:23:03,754 🔮 Guessed: info@magicplumbing.com — Magic Plumbing Heating & Cooling
+2026-04-30 14:23:04,616 Hunter.io rate limited — pausing 60s
+2026-04-30 14:24:05,111 🔮 Guessed: info@calljazz.com — Jazz Heating, Air Conditioning and Plumbing
+2026-04-30 14:24:05,967 Hunter.io rate limited — pausing 60s
+2026-04-30 14:25:06,486 🔮 Guessed: info@samedayhvachayward.com — Same Day Air Conditioning & Heating
+2026-04-30 14:25:07,533 Hunter.io rate limited — pausing 60s
+2026-04-30 14:26:08,022 🔮 Guessed: info@heisesplumbing.com — Heise's Plumbing
+2026-04-30 14:26:08,995 Hunter.io rate limited — pausing 60s
+2026-04-30 14:27:10,567 🔮 Guessed: info@perfectstarhvac.com — Perfect Star Heating, Cooling, & Electrical
+2026-04-30 14:27:11,611 Hunter.io rate limited — pausing 60s
+2026-04-30 14:28:12,135 🔮 Guessed: info@galaxyservices.com — Galaxy Heating & Air Conditioning
+2026-04-30 14:28:13,102 Hunter.io rate limited — pausing 60s
+2026-04-30 14:29:14,654 🔮 Guessed: info@afpheating.com — Air Flow Pros Heating and Air Conditioning
+2026-04-30 14:29:15,829 Hunter.io rate limited — pausing 60s
+2026-04-30 14:30:16,388 🔮 Guessed: info@acheatingandair.net — AC Heating and Cooling Service Inc.
+2026-04-30 14:30:27,045 Hunter domain-search failed for freonhvacservice.com: HTTPSConnectionPool(host='api.hunter.io', port=443): Read timed out. (read timeout=10)
+2026-04-30 14:30:27,045 🔮 Guessed: info@freonhvacservice.com — Freon HVAC & Electrical Service
+2026-04-30 14:30:28,379 Hunter.io rate limited — pausing 60s
+2026-04-30 14:31:29,026 🔮 Guessed: info@innersunsettophvacrepair.com — Inner Sunset Top Heating and Air
+2026-04-30 14:31:30,010 Hunter.io rate limited — pausing 60s
+2026-04-30 14:32:30,851 🔮 Guessed: info@albertnahmanplumbing.com — Albert Nahman Plumbing, Heating, and Cooling
+2026-04-30 14:32:31,357 
+==================================================
+2026-04-30 14:32:31,358 ✅ Email finder complete
+2026-04-30 14:32:31,358    API found:  4
+2026-04-30 14:32:31,358    Guessed:    37
+2026-04-30 14:32:31,358    Total:      41
+2026-04-30 14:32:31,358 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-30.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Thu Apr 30** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 948 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Thu Apr 30 14:32:31 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-30.log

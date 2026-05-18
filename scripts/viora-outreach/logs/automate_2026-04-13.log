@@ -1,0 +1,278 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-13 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-13 14:00:02,582 file_cache is only supported with oauth2client<4.0.0
+2026-04-13 14:00:02,589 🔍 Checking for replies...
+2026-04-13 14:00:03,168 📬 Found 38 inbox messages to check
+2026-04-13 14:00:13,410 
+==================================================
+2026-04-13 14:00:13,410 ✅ Reply check complete
+2026-04-13 14:00:13,410    New replies:    0
+2026-04-13 14:00:13,410    Positive:       0 ← RESPOND TO THESE!
+2026-04-13 14:00:13,410    Unsubscribes:   0
+2026-04-13 14:00:13,410    Bounces:        0
+2026-04-13 14:00:13,411 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-13 14:00:13,679 🔄 Auto-rotation day 103: nail salon in Indianapolis, IN
+2026-04-13 14:00:13,679 
+🔍 Searching: nail salon in Indianapolis, IN
+2026-04-13 14:00:14,507   ✅ Vogue Nail Spa — (317) 344-8080 — https://voguenailspaindianapolis.com/
+2026-04-13 14:00:14,808   ✅ Madame Beaute — (317) 883-5947 — https://madamebeauteindianapolis.com/
+2026-04-13 14:00:15,088   ✅ LuXe Nails — (317) 492-9696 — https://luxespanails.com/
+2026-04-13 14:00:15,261   ✅ Inspire Nail Bar — (317) 516-5999 — http://www.inspirenailbarindianapolis.com/
+2026-04-13 14:00:15,483   ✅ Diamond Nails — (317) 793-7100 — https://diamondnailsindianapolis.com/
+2026-04-13 14:00:16,065   ✅ City Nail Bar — (317) 426-3890 — https://mycitynailbar.com/#book-now
+2026-04-13 14:00:16,274   ✅ City Nail Bar — (317) 734-5105 — https://mycitynailbar.com/
+2026-04-13 14:00:16,508   ✅ Infinity Nails Spa (15% OFF New Customers) — (317) 853-6033 — https://infinitynailsspaindianapolis.com/
+2026-04-13 14:00:16,744   ✅ Castle Nails & Spa — (317) 666-6777 — https://castlenailsandspain.com/
+2026-04-13 14:00:16,977   ✅ La Brise Nail Lounge — (317) 360-8888 — https://labrisenaillounge.com/
+2026-04-13 14:00:17,141   ✅ Happy Nails LLC — (317) 777-2587 — no website
+2026-04-13 14:00:17,334   ✅ Nails 96th — (317) 798-2932 — https://www.instagram.com/nails96th_indianapolis/
+2026-04-13 14:00:17,581   ✅ PUR Nail Spa — (317) 601-8041 — https://purnailspamononcarmel.com/
+2026-04-13 14:00:17,787   ✅ Lux Nail — (317) 827-2182 — https://luxnailsin.com/
+2026-04-13 14:00:17,996   ✅ Nina Nails — (317) 875-1211 — https://ninanailsindianapolis.com/
+2026-04-13 14:00:18,169   ✅ Royal Nails & Spa 88 — (317) 734-3747 — https://royalnailsspath.com/
+2026-04-13 14:00:18,371   ✅ Polish Mi Nail Bar — (317) 893-2257 — http://polishminailbar.com/
+2026-04-13 14:00:18,631   ✅ Luxx Nail Lounge — (317) 427-5497 — https://luxxnaillounge.com/
+2026-04-13 14:00:21,709   ✅ Mi Nail Salon — (317) 842-4040 — https://minailandspaindianapolis.com/
+2026-04-13 14:00:21,962   ✅ The Nail Paige — (317) 771-6894 — https://booksy.com/en-us/1513800_the-nail-paige-llc_nail-salon_19577_indianapolis#ba_s=seo
+2026-04-13 14:00:22,179   ✅ The W Nail Bar Bottleworks — (380) 210-2719 — https://thewnailbar.com/pages/location-bottleworks?utm_source=GBP&utm_medium=organic&utm_id=Local-Listings&utm_content=bottleworks
+2026-04-13 14:00:22,424   ✅ Perfect Nails Now — (317) 766-3055 — https://perfectnailsnow.com/
+2026-04-13 14:00:22,671   ✅ The Coven Room - The Nail Witch Dani — (317) 775-5971 — https://linktr.ee/danihellmann
+2026-04-13 14:00:22,824   ✅ Fashion Nail Spa — (317) 245-7238 — https://fashionnailspaindiana.com/
+2026-04-13 14:00:23,118   ✅ V Nail Lounge — (317) 888-1111 — http://www.vnail-lounge.com/
+2026-04-13 14:00:23,571   ✅ MISSY NAIL AND SPA — (317) 537-2310 — https://missynailsalonandspa.com/
+2026-04-13 14:00:23,732   ✅ Best Nail & Spa — (317) 783-5447 — no website
+2026-04-13 14:00:23,904   ✅ L A NAILS SPA — (317) 929-1747 — https://www.lanailsspas.com/
+2026-04-13 14:00:24,070   ✅ 24K Nail Spa — (317) 974-9636 — http://24knailspainc.com/
+2026-04-13 14:00:24,300   ✅ Woodhouse Spa - Bottleworks — (317) 981-8888 — https://locations.woodhousespas.com/dir/in/indianapolis/850-massachusetts-avenue
+2026-04-13 14:00:24,545   ✅ Crystal Nails — (317) 596-9959 — no website
+2026-04-13 14:00:24,717   ✅ A Perfect Day Spa — (317) 222-5669 — https://www.perfectdayspa.net/
+2026-04-13 14:00:24,927   ✅ Nails & Lounge — (317) 288-0493 — https://nailandloungeindianapolis.com/
+2026-04-13 14:00:25,106   ✅ Nail Obsession & Beyond — (317) 893-4016 — http://nailobsessionbeyond.glossgenius.com/
+2026-04-13 14:00:25,297   ✅ Zin Nails — (317) 979-3694 — no website
+2026-04-13 14:00:25,458   ✅ Haven Nail Lounge — (317) 220-8366 — https://havennaillounge.us/
+2026-04-13 14:00:25,610   ✅ Little Nail Shop — (317) 844-9081 — http://littlenailshop.com/
+2026-04-13 14:00:28,563   ✅ World Nail Spa — (317) 245-7286 — https://worldnailspaindianapolis.com/
+2026-04-13 14:00:28,752   ✅ Revive Nails — (317) 975-3148 — https://revivenailsindy.com/
+2026-04-13 14:00:28,963   ✅ Bliss Nails — (317) 722-0855 — no website
+2026-04-13 14:00:29,183   ✅ Nychii Nails — (317) 987-2523 — https://nychiinails.com/
+2026-04-13 14:00:29,393   ✅ Signature Nails — (317) 731-5181 — no website
+2026-04-13 14:00:29,661   ✅ Kouture Nail Palace — (312) 315-4778 — https://kouturenailpalace.com/
+2026-04-13 14:00:29,822   ✅ Blank Canvas Studio — (614) 931-1812 — https://blankcanvasstudio.glossgenius.com/
+2026-04-13 14:00:29,995   ✅ B R Nails — (317) 259-9099 — https://brnailsindianapolis.com/
+2026-04-13 14:00:30,154   ✅ Sundays Nail Spa — (317) 932-5134 — https://sundaysnailspa.com/
+2026-04-13 14:00:30,420   ✅ Nifty Nails — (317) 574-0430 — http://niftynailsindianapolis.com/
+2026-04-13 14:00:30,632   ✅ Jimmy's Nail Spa — (317) 332-8460 — https://www.facebook.com/jimmysnailspaLLC/
+2026-04-13 14:00:30,784   ✅ Lizvet Luxe Nails — (317) 833-6752 — https://www.vagaro.com/lizvetluxe
+2026-04-13 14:00:30,966   ✅ PUR Nail Spa — (317) 669-2195 — https://purnailspaindianapolis.com/
+2026-04-13 14:00:30,985   📊 Found 50, 50 new (rest were duplicates)
+2026-04-13 14:00:31,986 
+==================================================
+2026-04-13 14:00:31,986 ✅ Scraping complete
+2026-04-13 14:00:31,986    Total found:  50
+2026-04-13 14:00:31,986    New leads:    50
+2026-04-13 14:00:31,986    Duplicates:   0
+2026-04-13 14:00:31,988    DB total:     630 leads (516 with emails)
+2026-04-13 14:00:31,988 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-13 14:00:32,155 🔍 Finding emails for 50 leads...
+2026-04-13 14:00:32,717 Hunter.io rate limited — pausing 60s
+2026-04-13 14:01:33,103 🔮 Guessed: info@tldaal.com — The Lions' Den, Attorneys at Law
+2026-04-13 14:01:34,023 Hunter.io rate limited — pausing 60s
+2026-04-13 14:02:34,414 🔮 Guessed: info@lowercaselaw.com — lowercase, a law firm
+2026-04-13 14:02:35,131 Hunter.io rate limited — pausing 60s
+2026-04-13 14:03:35,488 🔮 Guessed: info@wolfsonlawfirm.com — Wolfson & Leon
+2026-04-13 14:03:36,394 Hunter.io rate limited — pausing 60s
+2026-04-13 14:04:36,753 🔮 Guessed: info@miami-law.com — Miami Law®
+2026-04-13 14:04:37,457 Hunter.io rate limited — pausing 60s
+2026-04-13 14:05:37,854 🔮 Guessed: info@therussofirm.com — The Russo Firm - Miami
+2026-04-13 14:05:38,750 Hunter.io rate limited — pausing 60s
+2026-04-13 14:06:39,115 🔮 Guessed: info@knowyourdefense.com — JMLAW, P.A.
+2026-04-13 14:06:39,975 Hunter.io rate limited — pausing 60s
+2026-04-13 14:07:40,352 🔮 Guessed: info@miamilegalfirm.com — Miami Legal Firm
+2026-04-13 14:07:41,230 Hunter.io rate limited — pausing 60s
+2026-04-13 14:08:41,598 🔮 Guessed: info@josefrancisco-lawyers.com — Law Offices Of Jose M. Francisco
+2026-04-13 14:08:42,476 Hunter.io rate limited — pausing 60s
+2026-04-13 14:09:42,844 🔮 Guessed: info@ntj.law — Law Office of Natalia M. Trushin-Jimenez, P.A.
+2026-04-13 14:09:43,702 Hunter.io rate limited — pausing 60s
+2026-04-13 14:10:44,092 🔮 Guessed: info@entertainmentlawyermiami.com — ChaseLawyers
+2026-04-13 14:10:44,849 Hunter.io rate limited — pausing 60s
+2026-04-13 14:11:45,254 🔮 Guessed: info@aghlawfirm.com — Law Offices of Armando G. Hernandez
+2026-04-13 14:11:46,024 Hunter.io rate limited — pausing 60s
+2026-04-13 14:12:46,899 🔮 Guessed: info@hxl-law.com — Hentschel x Lanza PLLC
+2026-04-13 14:12:47,773 Hunter.io rate limited — pausing 60s
+2026-04-13 14:13:48,123 🔮 Guessed: info@criminaldefendant.com — Albert Quirantes, Esq. Criminal DUI & Ticket Lawyers
+2026-04-13 14:13:49,032 Hunter.io rate limited — pausing 60s
+2026-04-13 14:14:49,387 🔮 Guessed: info@svplawfirm.com — SVP Law Firm, PLLC
+2026-04-13 14:14:50,133 Hunter.io rate limited — pausing 60s
+2026-04-13 14:15:50,539 🔮 Guessed: info@cplaw-miami.com — Piotrowski Law
+2026-04-13 14:15:51,454 Hunter.io rate limited — pausing 60s
+2026-04-13 14:16:51,828 🔮 Guessed: info@jmuirandassociates.com — J Muir & Associates - Miami Business Law Firm
+2026-04-13 14:16:52,684 Hunter.io rate limited — pausing 60s
+2026-04-13 14:17:53,062 🔮 Guessed: info@epgdlaw.com — EPGD Business Law
+2026-04-13 14:17:53,927 Hunter.io rate limited — pausing 60s
+2026-04-13 14:18:54,296 🔮 Guessed: info@mirerlaw.com — Law Office of Michael Mirer, P.A.
+2026-04-13 14:18:55,187 Hunter.io rate limited — pausing 60s
+2026-04-13 14:19:55,562 🔮 Guessed: info@asilialaw.com — AsiliA Law Firm, P.A.
+2026-04-13 14:19:56,432 Hunter.io rate limited — pausing 60s
+2026-04-13 14:20:56,833 🔮 Guessed: info@guerrainjurylaw.com — Luis I Guerra - The Guerra Law Firm
+2026-04-13 14:20:57,572 Hunter.io rate limited — pausing 60s
+2026-04-13 14:21:58,069 🔮 Guessed: info@yourfloridatrialteam.com — Freidin Brown, P.A.
+2026-04-13 14:21:58,924 Hunter.io rate limited — pausing 60s
+2026-04-13 14:22:59,295 🔮 Guessed: info@dlr.law — De la Rosa Law
+2026-04-13 14:23:00,166 Hunter.io rate limited — pausing 60s
+2026-04-13 14:24:00,953 🔮 Guessed: info@redondolawfirm.com — Redondo Law
+2026-04-13 14:24:01,671 Hunter.io rate limited — pausing 60s
+2026-04-13 14:25:02,052 🔮 Guessed: info@piquetlawfirm.com — Piquet Law Firm
+2026-04-13 14:25:02,956 Hunter.io rate limited — pausing 60s
+2026-04-13 14:26:03,367 🔮 Guessed: info@peregonza.com — PereGonza The Attorneys - Los Abogados
+2026-04-13 14:26:04,220 Hunter.io rate limited — pausing 60s
+2026-04-13 14:27:04,609 🔮 Guessed: info@jaime-suarez.com — Suarez And Montero Car Accident Lawyer Miami .Com
+2026-04-13 14:27:05,346 Hunter.io rate limited — pausing 60s
+2026-04-13 14:28:05,695 🔮 Guessed: info@zayedlawoffices.com — Zayed Law Offices Miami
+2026-04-13 14:28:06,492 Hunter.io rate limited — pausing 60s
+2026-04-13 14:29:06,860 🔮 Guessed: info@855dolor55.com — Ward Law Miami
+2026-04-13 14:29:07,560 Hunter.io rate limited — pausing 60s
+2026-04-13 14:30:07,944 🔮 Guessed: info@valientelaw.com — Valiente Law, P.A.
+2026-04-13 14:30:08,678 Hunter.io rate limited — pausing 60s
+2026-04-13 14:31:09,151 🔮 Guessed: info@duimiamilawyer.com — Beckham Law Firm
+2026-04-13 14:31:10,030 Hunter.io rate limited — pausing 60s
+2026-04-13 14:32:10,436 🔮 Guessed: info@strolenylaw.com — Stroleny Law: Criminal Defense Attorney
+2026-04-13 14:32:11,339 Hunter.io rate limited — pausing 60s
+2026-04-13 14:33:11,719 🔮 Guessed: info@jmuirandassociates.com — J. Muir & Associates: Miami Business Lawyer
+2026-04-13 14:33:12,577 Hunter.io rate limited — pausing 60s
+2026-04-13 14:34:12,916 🔮 Guessed: info@leepmarks.com — Law Offices of Lee P Marks PA
+2026-04-13 14:34:13,812 Hunter.io rate limited — pausing 60s
+2026-04-13 14:35:14,179 🔮 Guessed: info@consumerattorneys.com — Consumer Attorneys
+2026-04-13 14:35:15,086 Hunter.io rate limited — pausing 60s
+2026-04-13 14:36:15,487 🔮 Guessed: info@vpplawfirm.com — VPP Law Firm
+2026-04-13 14:36:16,346 Hunter.io rate limited — pausing 60s
+2026-04-13 14:37:16,701 🔮 Guessed: info@lacayolawfirm.com — Lacayo Law Firm, P.A.
+2026-04-13 14:37:17,421 Hunter.io rate limited — pausing 60s
+2026-04-13 14:38:18,616 🔮 Guessed: info@suerolawpllc.com — Suero Law, PLLC
+2026-04-13 14:38:19,502 Hunter.io rate limited — pausing 60s
+2026-04-13 14:39:19,877 🔮 Guessed: info@barthet.com — The Barthet Construction Law Firm
+2026-04-13 14:39:20,775 Hunter.io rate limited — pausing 60s
+2026-04-13 14:40:21,209 🔮 Guessed: info@lawayala.com — Ayala Law PA
+2026-04-13 14:40:22,166 Hunter.io rate limited — pausing 60s
+2026-04-13 14:41:22,566 🔮 Guessed: info@cplawfirmpa.com — CP Law Firm PA | Personal Injury Lawyer / Attorney in Miami
+2026-04-13 14:41:23,525 Hunter.io rate limited — pausing 60s
+2026-04-13 14:42:23,906 🔮 Guessed: info@mginjuryfirm.com — Mausner Group Injury Lawyers
+2026-04-13 14:42:24,615 Hunter.io rate limited — pausing 60s
+2026-04-13 14:43:24,985 🔮 Guessed: info@ferrarolaw.com — The Ferraro Law Firm, P.A.
+2026-04-13 14:43:25,490 
+==================================================
+2026-04-13 14:43:25,490 ✅ Email finder complete
+2026-04-13 14:43:25,490    API found:  0
+2026-04-13 14:43:25,490    Guessed:    42
+2026-04-13 14:43:25,490    Total:      42
+2026-04-13 14:43:25,490 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-13 14:43:25,692 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-13 14:43:25,693 INFO    Already sent today: 0, remaining: 40
+2026-04-13 14:43:25,861 INFO file_cache is only supported with oauth2client<4.0.0
+2026-04-13 14:43:26,555 INFO ✅ Email 1 → info@vivifyaesthetics.com (Vivify Aesthetic Medspa)
+2026-04-13 14:43:34,750 INFO ✅ Email 1 → info@ckeskincare.com (CKE SKINCARE)
+2026-04-13 14:43:52,894 INFO ✅ Email 1 → info@beyondskinmedspa.com (BeyondSkin MedSpa)
+2026-04-13 14:44:06,633 INFO ✅ Email 1 → vdodd@airtechofhouston.com (Air Tech of Houston AC & Plumbing)
+2026-04-13 14:44:19,030 INFO ✅ Email 1 → rmiller@bellaireair.com (Bellaire Air Conditioning)
+2026-04-13 14:44:31,553 INFO ✅ Email 1 → info@becoolachouston.com (Be Cool AC & Heating)
+2026-04-13 14:44:44,020 INFO ✅ Email 1 → info@callhoustonhvac.com (Houston HVAC)
+2026-04-13 14:44:59,717 INFO ✅ Email 1 → info@75degreeac.com (75 Degree AC- Houston)
+2026-04-13 14:45:10,231 INFO ✅ Email 1 → marreguin@excelairconditioning.com (Excel Air)
+2026-04-13 14:45:19,384 INFO ✅ Email 1 → ruben@masteracandheat.com (Master AC and Heat, LLC- The Heights)
+2026-04-13 14:45:36,862 INFO ✅ Email 1 → abram@acecomfort-tx.com (Ace Comfort Air Conditioning & Heating)
+2026-04-13 14:45:54,740 INFO ✅ Email 1 → info@htownacrepair.com (H-Town AC Repair HVAC services Houston)
+2026-04-13 14:46:01,167 INFO ✅ Email 1 → alanoneill@abacusplumbing.net (Abacus Plumbing, Air Conditioning, & Electrical)
+2026-04-13 14:46:12,849 INFO ✅ Email 1 → info@baker-jones.com (Baker-Jones Co. Inc)
+2026-04-13 14:46:27,808 INFO ✅ Email 1 → info@callsoutherncomfort.com (Southern Comfort Heating & Air Services)
+2026-04-13 14:46:34,243 INFO ✅ Email 1 → info@airspecialist.com (Air Specialist Air Conditioning & Plumbing)
+2026-04-13 14:46:47,291 INFO ✅ Email 1 → info@airtechofhumble.com (Air Tech of Humble - Elite Comfort)
+2026-04-13 14:46:56,610 INFO ✅ Email 1 → info@ethanclark.com (Ethan Clark Air Conditioning)
+2026-04-13 14:47:14,723 INFO ✅ Email 1 → info@houstonsmartair.com (Houston Smart Air Cooling and Heating)
+2026-04-13 14:47:27,927 INFO ✅ Email 1 → angel@bayoucityac.com (Bayou City Aire, LLC)
+2026-04-13 14:47:41,921 INFO ✅ Email 1 → john@vibrantmechanical.com (Vibrant Mechanical)
+2026-04-13 14:47:53,399 INFO ✅ Email 1 → richard@nicksplumbing.com (Nick's Plumbing & Air Conditioning)
+2026-04-13 14:47:59,289 INFO ✅ Email 1 → rdume@houkac.com (Houk Air Conditioning Houston)
+2026-04-13 14:48:11,549 INFO ✅ Email 1 → rhatcher@aireserv.com (Aire Serv of Central & West Houston)
+2026-04-13 14:48:29,409 INFO ✅ Email 1 → bryan@revairtx.com (Revolution Air)
+2026-04-13 14:48:45,088 INFO ✅ Email 1 → info@punbarair.com (Punbar Air)
+2026-04-13 14:48:50,625 INFO ✅ Email 1 → info@hvac-houston-tx.com (Elite Air Conditioning & Heating Houston)
+2026-04-13 14:48:59,689 INFO ✅ Email 1 → info@asapairhoustonac.com (ASAP AIR A/C and Heating)
+2026-04-13 14:49:13,777 INFO ✅ Email 1 → info@mykellysac.com (My Kelly's AC)
+2026-04-13 14:49:22,368 INFO ✅ Email 1 → info@bsiairhouston.com (Bodensteiner Service Inc)
+2026-04-13 14:49:36,888 INFO ✅ Email 1 → nc@optimalairsolutions.com (Optimal Air Solutions)
+2026-04-13 14:49:55,066 INFO ✅ Email 1 → info@usmapid.org (HVAC Repair Champions)
+2026-04-13 14:50:08,525 INFO ✅ Email 1 → andrew@thechillbrothers.com (The Chill Brothers)
+2026-04-13 14:50:14,716 INFO ✅ Email 1 → info@aadheatingairconditioning.xyz (AAD Heating & Air Conditioning)
+2026-04-13 14:50:26,159 INFO ✅ Email 1 → info@airconditioningandheatingofhoustonco.com (Houston Air Conditioning AC & Heating Repair Co.)
+2026-04-13 14:50:38,311 INFO ✅ Email 1 → info@jordensac.com (Jorden's Air Conditioning & Heating)
+2026-04-13 14:50:50,959 INFO ✅ Email 1 → info@strivehvac.com (Strive HVAC & Construction)
+2026-04-13 14:51:06,052 INFO ✅ Email 1 → info@tempertechac.com (TEMPERTECH A/C & HEATING LLC)
+2026-04-13 14:51:22,332 INFO ✅ Email 1 → info@hvacofhouston.com (HVAC Of Houston - AC Repair Service)
+2026-04-13 14:51:40,452 INFO ✅ Email 1 → info@newmarkac.com (Newmark Air Conditioning)
+2026-04-13 14:51:50,504 INFO 
+==================================================
+2026-04-13 14:51:50,504 INFO ✅ Email sender complete [SENT]
+2026-04-13 14:51:50,504 INFO    Emails sent:     40
+2026-04-13 14:51:50,504 INFO    Daily limit:     40
+2026-04-13 14:51:50,504 INFO    Already today:   0
+2026-04-13 14:51:50,504 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-04-13.log
+2026-04-13 14:51:50,504 INFO ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-13.txt
+✅ LinkedIn DMs posted to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Mon Apr 13** (Day 1)
+
+**📋 YOUR TODO:**
+1️⃣ Send 20 LinkedIn DMs (posted above or in output/)
+3️⃣ Check calendar for demo calls
+
+**📧 Today:** 40 emails sent · 20 LinkedIn DMs
+**📊 Funnel:** 630 leads → 97 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+**💼 20 LinkedIn DMs** queued — check Discord or output/ folder
+
+✅ Report sent to Discord
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Mon Apr 13 14:51:52 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-13.log

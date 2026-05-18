@@ -1,0 +1,63 @@
+/* ========== VIORA NAVIGATION CENTERING FIX ========== */
+
+/* REPLACE your existing .nav-content CSS with this: */
+.nav-content {
+    display: flex;
+    justify-content: center; /* CHANGED: from space-between to center */
+    align-items: center;
+    gap: 80px; /* ADDED: space between logo and menu */
+    max-width: 1000px; /* ADDED: container width */
+    margin: 0 auto; /* ADDED: center the whole nav */
+}
+
+/* BETTER LOGO SPACING */
+.logo {
+    font-size: 1.625rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0; /* ADDED: prevent logo from shrinking */
+}
+
+/* CENTERED NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0; /* ADDED: reset margins */
+    padding: 0; /* ADDED: reset padding */
+}
+
+/* MOBILE FIX - hide menu on mobile, show logo centered */
+@media (max-width: 768px) {
+    .nav-content {
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .nav-links {
+        display: none; /* Hide menu on mobile - you can add hamburger later */
+    }
+    
+    .logo {
+        font-size: 1.4rem; /* Slightly smaller on mobile */
+    }
+}
+
+/* ========== EASY LOGO IMAGE ADDITION ========== */
+/* TO ADD YOUR LOGO IMAGE, replace the .logo div in HTML with: */
+/* 
+<div class="logo">
+    <img src="your-logo.png" alt="Viora" style="height: 40px; margin-right: 10px;">
+    Viora
+</div>
+*/
+
+/* OR just replace the text with an image: */
+/*
+<div class="logo">
+    <img src="viora-logo.png" alt="Viora" style="height: 40px;">
+</div>
+*/

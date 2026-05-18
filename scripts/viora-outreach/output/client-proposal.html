@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viora AI — Your Personal AI Receptionist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: rgba(255,255,255,0.03);
+    --border: rgba(255,255,255,0.06);
+    --text: #e8e8ed;
+    --text-muted: #8a8a9a;
+    --accent-1: #7c3aed;
+    --accent-2: #2563eb;
+    --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    --glow: 0 0 60px rgba(124,58,237,0.15), 0 0 120px rgba(37,99,235,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── Ambient background blobs ── */
+  body::before, body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body::before {
+    width: 600px; height: 600px;
+    background: var(--accent-1);
+    top: -200px; left: -100px;
+  }
+  body::after {
+    width: 500px; height: 500px;
+    background: var(--accent-2);
+    bottom: -150px; right: -100px;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    padding: 100px 0 80px;
+  }
+
+  .logo {
+    font-size: clamp(3.2rem, 8vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .logo-sub {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  header h2 {
+    font-size: clamp(1.1rem, 3vw, 1.55rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: var(--gradient);
+    margin: 40px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 70px 0;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  /* ── Feature list (Section 1) ── */
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .feature-icon {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+
+  /* ── Cards grid (Section 2) ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(124,58,237,0.25);
+    box-shadow: var(--glow);
+    transform: translateY(-3px);
+  }
+
+  .card-number {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── Pricing (Section 3) ── */
+  .pricing-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 40px;
+    max-width: 560px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gradient);
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .price-row:last-child { border-bottom: none; }
+
+  .price-label {
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+
+  .price-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .price-value.big {
+    font-size: 2rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .price-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  /* ── Timeline (Section 4) ── */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-1), var(--accent-2), transparent);
+    border-radius: 2px;
+  }
+
+  .timeline-step {
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .timeline-step:last-child { margin-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gradient);
+    box-shadow: 0 0 12px rgba(124,58,237,0.4);
+  }
+
+  .timeline-step h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .timeline-step p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Support (Section 5) ── */
+  .support-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .support-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.05rem;
+  }
+
+  .support-check {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 80px 0 60px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .cta-text {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 600;
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 44px;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(124,58,237,0.3);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(124,58,237,0.45);
+  }
+
+  .footer-contact {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 2;
+  }
+
+  .footer-contact a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: border-color 0.2s;
+  }
+
+  .footer-contact a:hover {
+    border-color: var(--accent-1);
+  }
+
+  .footer-brand {
+    margin-top: 48px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* ── Divider ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    header { padding: 72px 0 56px; }
+    section { padding: 50px 0; }
+    .pricing-box { padding: 32px 24px; }
+    .cards { grid-template-columns: 1fr; }
+    .price-row { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header>
+    <div class="logo">VIORA</div>
+    <div class="logo-sub">Artificial Intelligence</div>
+    <h2>Your Personal AI Receptionist — Built&nbsp;For&nbsp;You</h2>
+    <div class="header-line"></div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION 1 ═══════ -->
+  <section>
+    <div class="section-label">01 — Overview</div>
+    <h2 class="section-title">What We're Building For You</h2>
+    <p class="section-desc">A fully custom AI receptionist that works around the clock — so you never miss another opportunity.</p>
+
+    <ul class="feature-list">
+      <li>
+        <div class="feature-icon">📞</div>
+        <span><strong>AI Receptionist</strong> that answers every call, 24 hours a day, 7 days a week</span>
+      </li>
+      <li>
+        <div class="feature-icon">🌎</div>
+        <span><strong>Fluent in English &amp; Spanish</strong> — connects with every customer who calls</span>
+      </li>
+      <li>
+        <div class="feature-icon">✅</div>
+        <span><strong>Qualifies callers</strong> and books appointments automatically — no manual work</span>
+      </li>
+      <li>
+        <div class="feature-icon">📅</div>
+        <span><strong>Google Calendar integration</strong> — every appointment lands on your calendar instantly</span>
+      </li>
+      <li>
+        <div class="feature-icon">⚡</div>
+        <span><strong>Never misses a call, never takes a day off</strong> — your business is always open</span>
+      </li>
+    </ul>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION 2 ═══════ -->
+  <section>
+    <div class="section-label">02 — Deliverables</div>
+    <h2 class="section-title">Everything Included</h2>
+    <p class="section-desc">A complete package — from AI build to social media launch. Everything you need to start growing.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-number">01</div>
+        <h3>Custom AI Receptionist</h3>
+        <p>Built and trained specifically for your business, your services, and your customers.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">02</div>
+        <h3>Google Calendar Integration</h3>
+        <p>Appointments are booked automatically and land directly on your calendar — no extra steps.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">03</div>
+        <h3>Bilingual — English + Spanish</h3>
+        <p>Your AI speaks both languages fluently, so you never lose a customer over a language barrier.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">04</div>
+        <h3>Social Media Setup</h3>
+        <p>Instagram, Facebook, and Google Business pages created professionally — plus the first 5 posts on each.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">05</div>
+        <h3>Monthly AI Optimization</h3>
+        <p>We review every call and continuously make your AI smarter, sharper, and more effective.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">06</div>
+        <h3>24/7 Call Monitoring</h3>
+        <p>We watch everything behind the scenes to make sure your system runs perfectly — always.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION 3 ═══════ -->
+  <section>
+    <div class="section-label">03 — Investment</div>
+    <h2 class="section-title">Your Investment</h2>
+    <p class="section-desc">Everything above — built, launched, and managed for you. One setup fee, one simple monthly.</p>
+
+    <div class="pricing-box">
+      <div class="price-row">
+        <span class="price-label">Setup Fee <span style="opacity:0.5">(one-time)</span></span>
+        <span class="price-value big">$1,500</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">Monthly Service</span>
+        <span class="price-value">$425<span style="font-weight:400;font-size:0.85rem;color:var(--text-muted)"> /month</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">To Get Started</span>
+        <span class="price-value">$750 <span style="font-weight:400;font-size:0.85rem;color:var(--text-muted)">today</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">On Launch Day</span>
+        <span class="price-value">$750 <span style="font-weight:400;font-size:0.85rem;color:var(--text-muted)">remaining</span></span>
+      </div>
+      <p class="price-note">💡 50% today to start → 50% when your AI goes live. You don't pay the rest until everything is built, tested, and working perfectly.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION 4 ═══════ -->
+  <section>
+    <div class="section-label">04 — Timeline</div>
+    <h2 class="section-title">What Happens Next</h2>
+    <p class="section-desc">From payment to go-live in 14 days. Here's exactly what to expect.</p>
+
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <h4>Step 1 — You Send First Payment</h4>
+        <p>We start immediately. No waiting, no delays.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <h4>Days 1–2 — Build &amp; Configure</h4>
+        <p>We build your custom AI receptionist from the ground up, tailored to your business.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <h4>Days 3–5 — Calendar Integration &amp; Testing</h4>
+        <p>We connect it to your Google Calendar and test every booking flow end to end.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <h4>Days 6–10 — Training &amp; Fine-Tuning</h4>
+        <p>We run dozens of test calls, refine responses, and make sure it sounds perfect.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <h4>Days 11–14 — Final Testing &amp; Launch</h4>
+        <p>Social media pages go live. Final QA. Everything is polished and ready.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <h4>Day 14 — You're Live 🚀</h4>
+        <p>Your AI is answering calls, booking appointments, and working for you 24/7.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION 5 ═══════ -->
+  <section>
+    <div class="section-label">05 — Ongoing</div>
+    <h2 class="section-title">Ongoing Support</h2>
+    <p class="section-desc">We don't just build it and walk away. Your AI gets smarter every month.</p>
+
+    <ul class="support-list">
+      <li>
+        <div class="support-check">✓</div>
+        <span><strong>Monthly call review &amp; AI optimization</strong> — we listen, learn, and improve</span>
+      </li>
+      <li>
+        <div class="support-check">✓</div>
+        <span><strong>24/7 monitoring</strong> — if something breaks, we fix it before you notice</span>
+      </li>
+      <li>
+        <div class="support-check">✓</div>
+        <span><strong>Full transparency</strong> — you'll always know what's happening with your system</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer>
+    <p class="cta-text">Ready to get started?<br>Your first payment locks in your spot.</p>
+    <a href="mailto:arturo@viora.team" class="cta-btn">Let's Go →</a>
+    <div class="footer-contact">
+      <a href="mailto:arturo@viora.team">arturo@viora.team</a><br>
+      <a href="https://viora-co.com" target="_blank">viora-co.com</a>
+    </div>
+    <div class="footer-brand">VIORA AI — Built Different</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

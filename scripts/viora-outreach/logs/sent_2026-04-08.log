@@ -1,0 +1,25 @@
+2026-04-08 20:24:47,622 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-08 20:24:47,623 INFO    Already sent today: 0, remaining: 40
+2026-04-08 21:40:34,623 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-08 21:40:34,624 INFO    Already sent today: 0, remaining: 40
+2026-04-08 21:40:34,626 INFO 
+==================================================
+2026-04-08 21:40:34,626 INFO ✅ Email sender complete [DRY RUN]
+2026-04-08 21:40:34,626 INFO    Emails sent:     40
+2026-04-08 21:40:34,626 INFO    Daily limit:     40
+2026-04-08 21:40:34,626 INFO    Already today:   0
+2026-04-08 21:40:34,626 INFO    Log: /root/.openclaw/workspace/scripts/viora-outreach/logs/sent_2026-04-08.log
+2026-04-08 21:40:34,626 INFO ==================================================
+
+2026-04-08 21:41:13,904 INFO 📧 Email sender starting — daily limit: 40 (bounce rate: 0.0%)
+2026-04-08 21:41:13,905 INFO    Already sent today: 0, remaining: 40
+2026-04-08 21:41:14,083 INFO file_cache is only supported with oauth2client<4.0.0
+2026-04-08 21:41:14,434 INFO ✅ Email 1 → info@vivemedspadenver.com (VIVE Med Spa)
+2026-04-08 21:41:30,577 INFO ✅ Email 1 → info@thecherrycreekmedspa.com (Cherry Creek Med Spa)
+2026-04-08 21:41:43,749 INFO ✅ Email 1 → courtney@luxeroomcosmetic.com (The Luxe Room - South Denver)
+2026-04-08 21:41:58,729 INFO ✅ Email 1 → stacy@cherrymedispa.com (Cherry Medical)
+2026-04-08 21:42:11,149 INFO ✅ Email 1 → info@essemedspa.com (ESSE Med Spa + PMU)
+2026-04-08 21:42:26,202 INFO ✅ Email 1 → rose@cienegaspa.com (Cienega Medical)
+2026-04-08 21:42:35,277 INFO ✅ Email 1 → info@glowmedspaencino.com (Glow Aesthetic Center Med Spa)
+2026-04-08 21:42:52,250 INFO ✅ Email 1 → info@medbeautyla.com (MedBeautyLA)
+2026-04-08 21:43:06,677 INFO ✅ Email 1 → info@hushla.net (Hush LA Medspa)

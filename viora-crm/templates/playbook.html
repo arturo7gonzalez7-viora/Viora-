@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viora Playbook</title>
+<link rel="icon" type="image/png" href="/static/logo.png">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e8e8ed; line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+.subtitle { color: #8a8a9a; margin-bottom: 48px; font-size: 1.05rem; }
+h2 { font-size: 1.3rem; font-weight: 700; margin: 40px 0 16px; color: #e8e8ed; display: flex; align-items: center; gap: 10px; }
+h2 span.icon { font-size: 1.4rem; }
+h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 8px; color: #a78bfa; }
+p { color: #c0c0cc; margin-bottom: 12px; }
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+.card.green { border-left: 4px solid #10b981; }
+.card.blue { border-left: 4px solid #3b82f6; }
+.card.purple { border-left: 4px solid #8b5cf6; }
+.card.yellow { border-left: 4px solid #f59e0b; }
+.card.pink { border-left: 4px solid #ec4899; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; margin-bottom: 8px; }
+.badge.price { background: rgba(124,58,237,0.2); color: #a78bfa; }
+.badge.time { background: rgba(16,185,129,0.2); color: #10b981; }
+.badge.roi { background: rgba(37,99,235,0.2); color: #60a5fa; }
+.badge.easy { background: rgba(16,185,129,0.15); color: #10b981; }
+.badge.medium { background: rgba(245,158,11,0.15); color: #f59e0b; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+th { text-align: left; padding: 10px 14px; background: rgba(255,255,255,0.05); color: #8a8a9a; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; }
+td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #c0c0cc; font-size: 0.9rem; }
+.step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+.step-num { background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+.step-content h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+.step-content p { margin: 0; font-size: 0.9rem; }
+.highlight { background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+.highlight strong { color: #a78bfa; }
+.divider { height: 1px; background: rgba(255,255,255,0.07); margin: 40px 0; }
+.script-box { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 20px; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #c0c0cc; white-space: pre-wrap; margin: 12px 0; }
+ul { padding-left: 20px; color: #c0c0cc; }
+ul li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<img src="/static/logo.png" alt="Viora" style="height:50px; width:auto; margin-bottom:24px; display:block;">
+<h1>Viora Business Playbook</h1>
+<p class="subtitle">Your complete guide to running a real AI automation business. Open this anytime you need clarity.</p>
+
+<div class="divider"></div>
+
+<h2><span class="icon">🎯</span> The Business in One Sentence</h2>
+<div class="highlight">
+You help service businesses <strong>stop losing money to manual tasks</strong> by building AI automations that run 24/7. You charge a setup fee to build it and a monthly retainer to keep it running.
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">💰</span> How You Make Money</h2>
+<div class="card">
+<table>
+<tr><th>Offer</th><th>Price</th><th>When to Use</th></tr>
+<tr><td><strong>30-Day Pilot</strong></td><td>$750 flat</td><td>New prospects, removes all risk, fastest yes</td></tr>
+<tr><td><strong>AI Receptionist (Tier 1)</strong></td><td>$1,550 setup + $350/mo</td><td>Businesses that miss calls</td></tr>
+<tr><td><strong>Receptionist + Follow-Up (Tier 2)</strong></td><td>$2,575 setup + $770/mo</td><td>Businesses with lead leakage</td></tr>
+<tr><td><strong>Full AI System (Tier 3)</strong></td><td>$3,600 setup + $1,544/mo</td><td>Scaling businesses, high volume</td></tr>
+</table>
+<p style="margin-top: 12px; font-size: 0.85rem; color: #8a8a9a;">Default pitch: Start with the $750 pilot. After 30 days of results, convert to monthly. This is your fastest path to recurring revenue.</p>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">🤖</span> Automation Cheat Sheet</h2>
+<p style="color:#8a8a9a; margin-bottom: 24px;">Everything you can build, how to build it, and what to charge.</p>
+
+<div class="card green">
+<h3>1. AI Receptionist (Voice)</h3>
+<span class="badge price">$350/mo</span>
+<span class="badge time">Build time: 1-2 days</span>
+<span class="badge easy">Easy</span>
+<p><strong>What it does:</strong> Answers every phone call 24/7. Qualifies the lead. Books appointments directly into their Google Calendar. Speaks English and Spanish.</p>
+<p><strong>Build with:</strong> Retell AI + Google Calendar API</p>
+<p><strong>ROI pitch:</strong> "Missing 5 calls/week at $500 avg job = $10,000/month lost. This fixes it for $350/month."</p>
+<p><strong>Best for:</strong> HVAC, roofing, med spas, law firms, salons, gyms, anyone who gets phone calls</p>
+<p><strong>How to build:</strong></p>
+<ul>
+<li>Create agent in Retell AI dashboard</li>
+<li>Train it on their business (services, FAQs, pricing)</li>
+<li>Connect Google Calendar for booking</li>
+<li>Forward their business phone to Retell number</li>
+<li>Test 20+ call scenarios before launch</li>
+</ul>
+</div>
+
+<div class="card blue">
+<h3>2. Missed Call Text-Back</h3>
+<span class="badge price">$100/mo addon</span>
+<span class="badge time">Build time: 2 hours</span>
+<span class="badge easy">Easy</span>
+<p><strong>What it does:</strong> When someone calls and nobody answers, they get an automated text within 60 seconds: "Hey! We just missed your call. How can we help?"</p>
+<p><strong>Build with:</strong> n8n Cloud + Twilio + their phone system webhook</p>
+<p><strong>ROI pitch:</strong> "78% of customers buy from whoever responds first. You respond in 60 seconds automatically."</p>
+<p><strong>Best for:</strong> Any business that misses calls occasionally</p>
+<p><strong>How to build:</strong></p>
+<ul>
+<li>Set up Twilio phone number or use their existing number</li>
+<li>Create n8n webhook that fires on missed call event</li>
+<li>Connect to Twilio SMS node</li>
+<li>Customize message with their business name</li>
+<li>Test by calling and not answering</li>
+</ul>
+</div>
+
+<div class="card purple">
+<h3>3. Review Request Automation</h3>
+<span class="badge price">$150/mo</span>
+<span class="badge time">Build time: 3 hours</span>
+<span class="badge easy">Easy</span>
+<p><strong>What it does:</strong> After every completed job or appointment, customer automatically gets a text asking for a Google review with a direct link.</p>
+<p><strong>Build with:</strong> n8n Cloud + Twilio + their scheduling/CRM system</p>
+<p><strong>ROI pitch:</strong> "1 star increase on Google = 5-9% more revenue. Businesses using automated review requests get 3x more reviews in 60 days."</p>
+<p><strong>Best for:</strong> Local service businesses, salons, HVAC, cleaning companies, contractors</p>
+<p><strong>How to build:</strong></p>
+<ul>
+<li>Connect to their job completion trigger (Jobber, ServiceTitan, or manual webhook)</li>
+<li>Build n8n workflow: job complete → wait 2 hours → send SMS</li>
+<li>Message: "Thanks for choosing [Business]! Would you mind leaving us a quick Google review? [direct link]"</li>
+<li>Get their Google review direct link from Google Business Profile</li>
+</ul>
+</div>
+
+<div class="card yellow">
+<h3>4. Follow-Up Sequence Automation</h3>
+<span class="badge price">$200/mo</span>
+<span class="badge time">Build time: 4 hours</span>
+<span class="badge medium">Medium</span>
+<p><strong>What it does:</strong> When someone fills out a form, calls but doesn't book, or requests a quote, they automatically get a 3-touch follow-up sequence over 7 days via SMS and email.</p>
+<p><strong>Build with:</strong> n8n Cloud + Twilio + Gmail API</p>
+<p><strong>ROI pitch:</strong> "55% of sales happen after follow-up 5+. Most businesses follow up once. Automating a 3-touch sequence recovers 20-30% of lost leads."</p>
+<p><strong>Best for:</strong> Contractors, roofing, HVAC, law firms, anyone who gives quotes</p>
+<p><strong>How to build:</strong></p>
+<ul>
+<li>Trigger: new form submission or new lead in their CRM</li>
+<li>Day 1: Immediate text "Hey [name], thanks for reaching out to [business]! I will follow up with you shortly."</li>
+<li>Day 3: Email with case study or relevant proof</li>
+<li>Day 7: Final follow-up text with offer or question</li>
+<li>Stop sequence if they reply or book</li>
+</ul>
+</div>
+
+<div class="card pink">
+<h3>5. Appointment Reminder System</h3>
+<span class="badge price">$100/mo addon</span>
+<span class="badge time">Build time: 2 hours</span>
+<span class="badge easy">Easy</span>
+<p><strong>What it does:</strong> Automatically texts clients 24 hours and 2 hours before their appointment. Reduces no-shows dramatically.</p>
+<p><strong>Build with:</strong> n8n Cloud + Twilio + Google Calendar</p>
+<p><strong>ROI pitch:</strong> "Reduces no-shows by 29%. A salon with 100 appointments/month at $80 avg saves $2,300/month in lost revenue."</p>
+<p><strong>Best for:</strong> Salons, med spas, gyms, chiropractors, any appointment-based business</p>
+<p><strong>How to build:</strong></p>
+<ul>
+<li>Connect n8n to their Google Calendar</li>
+<li>Trigger: new calendar event created</li>
+<li>Schedule two texts: 24 hours before and 2 hours before</li>
+<li>Message: "Reminder: Your appointment at [Business] is tomorrow at [time]. Reply CONFIRM or CANCEL."</li>
+<li>If CANCEL: notify owner immediately</li>
+</ul>
+</div>
+
+<div class="card green">
+<h3>6. Reactivation Campaign</h3>
+<span class="badge price">$150/mo</span>
+<span class="badge time">Build time: 3 hours</span>
+<span class="badge easy">Easy</span>
+<p><strong>What it does:</strong> Automatically reaches out to past customers who haven't returned in 60-90 days with a personal message and offer to bring them back.</p>
+<p><strong>Build with:</strong> n8n Cloud + Twilio + their CRM or Google Sheets</p>
+<p><strong>ROI pitch:</strong> "Getting a past customer back costs 5x less than finding a new one. Most businesses have 200+ past customers sitting ignored in their database."</p>
+<p><strong>Best for:</strong> Salons, gyms, cleaning services, any business with repeat customers</p>
+<p><strong>How to build:</strong></p>
+<ul>
+<li>Pull customer list from their CRM or Google Sheets</li>
+<li>Filter: last visit more than 60 days ago</li>
+<li>Monthly automated text: "Hey [name], we miss you at [Business]! It has been a while. Here is 10% off your next visit: [booking link]"</li>
+</ul>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">🛠</span> Your Tech Stack</h2>
+<div class="card">
+<table>
+<tr><th>Tool</th><th>What For</th><th>Cost</th></tr>
+<tr><td><strong>Retell AI</strong></td><td>AI voice receptionist</td><td>Pay per minute (~$0.05-0.11/min)</td></tr>
+<tr><td><strong>n8n Cloud</strong></td><td>All automations and workflows</td><td>$24/mo (you already pay)</td></tr>
+<tr><td><strong>Twilio</strong></td><td>SMS sending</td><td>$15 to start, ~$0.01/text</td></tr>
+<tr><td><strong>Google Calendar API</strong></td><td>Appointment booking</td><td>Free</td></tr>
+<tr><td><strong>Gmail API</strong></td><td>Email sequences</td><td>Free</td></tr>
+<tr><td><strong>Viora CRM</strong></td><td>Your daily command center</td><td>Free (runs on your VPS)</td></tr>
+</table>
+<p style="margin-top: 12px; font-size: 0.85rem; color: #8a8a9a;">Cost to run ALL services for one client: under $30/month. You charge $350+. Excellent margin.</p>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">📅</span> How to Run the Business Daily</h2>
+
+<div class="highlight">
+<strong>The rule:</strong> Do these 3 things every single day. No exceptions. The business grows when you are consistent. It stalls when you skip days.
+</div>
+
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Morning — Open CRM, Send Audit Pitches (20 min)</h4>
+<p>Open the CRM TODAY tab. Send 40 LinkedIn DMs using the audit pitch from the queue. Copy, paste, send. That is it. 40 per day = 200 per week = 2 to 5 demos booked.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Anytime — Respond to Replies Within 1 Hour</h4>
+<p>Speed wins deals. When someone replies on LinkedIn or email, respond immediately. Book the audit call while they are still warm. The CRM Hot Leads card shows you who needs a response.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Daily — Post One Piece of Content on LinkedIn (5 min)</h4>
+<p>One post per day. Use these formats rotating through the week: Monday: case study or result, Wednesday: industry stat + what it means, Friday: behind the scenes of what you build. Content creates inbound leads that close at 50%+ because they came to you.</p>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">📞</span> The Audit Call Script</h2>
+<p>When someone books an audit, run this call. 20 minutes max.</p>
+
+<div class="script-box">OPENER (30 seconds):
+"Hey [name], appreciate you jumping on. Quick agenda — I will ask you two or three questions about your business, then I will show you exactly what I would automate and what the ROI looks like. Sound good?"
+
+DISCOVERY (3-5 minutes, ask these):
+1. "What is the number one thing eating your team's time every week?"
+2. "How many leads or calls do you think you lose every week that you never get back to?"
+3. "If you could automate just one thing in your business this month, what would make the biggest difference?"
+
+SHOW THE AUDIT (5 minutes):
+Pull up the AI Audit report you ran on their website.
+"Based on what you just told me and what I found on your site, here are the top two things I would automate for you..."
+Walk through the ROI for each.
+
+THE CLOSE:
+"Here is what I can build for you in the next two weeks. The pilot is $750. I build it, we run it for 30 days, I show you the results. If you are happy we make it permanent at $[X]/month. If not, that is it, no pressure. Want to move forward?"
+
+THEN STOP TALKING. Wait for their answer.
+
+IF YES: "Perfect. I am sending you a payment link right now." Send Stripe link. Stay on the call until it is paid.
+
+IF HESITATING: "What specifically would you need to feel good about moving forward?"
+
+IF NO: "No worries at all. If AI automation ever becomes something worth exploring, we are at viora-co.com."
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">🤝</span> How to Handle Client CRMs</h2>
+<div class="card">
+<p><strong>Key point:</strong> You do not replace their existing software. You plug AI into it.</p>
+<ul>
+<li><strong>GoHighLevel:</strong> n8n has native integration. Easy.</li>
+<li><strong>HubSpot:</strong> n8n has native integration. Easy.</li>
+<li><strong>Jobber / ServiceTitan / Housecall Pro:</strong> Webhooks available. Medium.</li>
+<li><strong>Google Sheets / Calendly / Acuity:</strong> All native n8n integrations. Easy.</li>
+<li><strong>Squire (barbershops):</strong> No public API. Workaround: missed call text-back, review automation, and follow-up sequences all still work without a direct integration.</li>
+<li><strong>Unknown / custom software:</strong> Ask "Does it have webhooks or an API?" If yes, you can connect it.</li>
+</ul>
+<p style="margin-top: 12px; color: #8a8a9a; font-size: 0.9rem;">Sales line: "We do not ask you to change anything. We plug AI into your existing setup and make it smarter."</p>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">📈</span> The Path to $20k/Month</h2>
+<div class="card">
+<table>
+<tr><th>Month</th><th>New Clients</th><th>Total MRR</th><th>Cash from Pilots/Setups</th></tr>
+<tr><td>1</td><td>2</td><td>$700</td><td>$1,500</td></tr>
+<tr><td>2</td><td>4 total</td><td>$1,400</td><td>$1,500</td></tr>
+<tr><td>3</td><td>7 total</td><td>$2,450</td><td>$2,250</td></tr>
+<tr><td>5</td><td>15 total</td><td>$5,250</td><td>$3,000</td></tr>
+<tr><td>7</td><td>25 total</td><td>$8,750</td><td>$3,000</td></tr>
+<tr><td>9</td><td>40 total</td><td>$14,000</td><td>$3,750</td></tr>
+<tr><td>10</td><td>50 total</td><td><strong>$17,500</strong></td><td><strong>$3,750</strong></td></tr>
+</table>
+<p style="margin-top: 12px; font-size: 0.85rem; color: #8a8a9a;">Based on 4 to 6 new pilots per month converting to $350/mo average. Upselling to Tier 2 ($770/mo) accelerates this significantly.</p>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">🚨</span> Rules to Never Break</h2>
+<div class="card">
+<ul>
+<li><strong>Never send cold email from your main domain.</strong> Use a separate sending domain only.</li>
+<li><strong>Never send to generic emails (info@, contact@).</strong> Owner emails only.</li>
+<li><strong>Never overpromise on delivery time.</strong> Say 14 days, deliver in 14 days.</li>
+<li><strong>Never skip a day of LinkedIn DMs.</strong> Consistency is everything.</li>
+<li><strong>Always collect payment before starting the build.</strong> 50% upfront minimum.</li>
+<li><strong>Always follow up within 1 hour of a reply.</strong> Speed wins.</li>
+<li><strong>Always show results at day 30.</strong> Numbers keep clients. Stories do not.</li>
+</ul>
+</div>
+
+<div class="divider"></div>
+
+<h2><span class="icon">📝</span> THE SCRIPTS — USE THESE EXACTLY</h2>
+<p style="color:#8a8a9a; margin-bottom: 24px;">Copy-paste ready templates for every outreach channel. Personalize the brackets and send.</p>
+
+<div class="card green">
+<h3>📱 Instagram/Facebook DM (HVAC)</h3>
+<div class="script-box">Hey [First Name] — quick question: what happens to the calls you miss when your tech is on a job? I work with HVAC companies in Colorado — built an AI that answers every call 24/7, handles emergency requests, and books the appointment before the customer calls your competitor. Running it for a Colorado contractor right now. Happy to show you a live demo. Worth a quick look?</div>
+</div>
+
+<div class="card purple">
+<h3>🇪🇸 Instagram DM (Spanish)</h3>
+<div class="script-box">Hola [Nombre] — ¿cuántas llamadas pierde cuando están en el trabajo? Construimos una IA que contesta cada llamada 24/7 en inglés y español, califica al cliente, y agenda la cita automáticamente. Tengo un demo en vivo que puedes llamar ahora mismo y escuchar cómo funciona. ¿Te interesa verlo?</div>
+</div>
+
+<div class="card blue">
+<h3>🤝 Warm Text (Personal Network)</h3>
+<div class="script-box">Hey [Name], hope you're good — are you still running [business]? I've been working with home service companies specifically, helping them stop losing calls when they're on jobs. Built something pretty cool. Would love to show you what it does if you're open to it.</div>
+</div>
+
+<div class="card yellow">
+<h3>📞 Sales Call Opener</h3>
+<div class="script-box">Thanks for jumping on — before I show you anything, I want to make sure this is actually relevant for you. Can I ask you a few quick questions?
+
+Walk me through what happens on a typical busy day when your phone rings and you or your team can't pick up.</div>
+</div>
+
+<div class="card green">
+<h3>🔁 Referral Ask (Existing Clients)</h3>
+<div class="script-box">Hey [name] — glad the system's been working well. Quick favor — do you know any other contractors in your circle dealing with the same missed call problem? Even just one name. I'd love an intro — I'll take care of them the same way I took care of you.</div>
+</div>
+
+<div class="card pink">
+<h3>💰 Pricing Anchor (On Every Sales Call)</h3>
+<div class="script-box">Here's the full system most businesses end up on — it includes the AI receptionist, automated follow-up, review management, and monthly optimization. That's $1,800/month plus a one-time setup. Most clients see ROI in the first 30 days just from recovered missed calls.
+
+Want me to show you what that looks like for your business specifically?</div>
+<p style="margin-top: 12px; font-size: 0.85rem; color: #f59e0b;"><strong>⚠️ ALWAYS present Tier 3 ($1,800/mo) first.</strong> Then offer Tier 2 ($1,200/mo) as "the deal." Never open with your cheapest option.</p>
+</div>
+
+<p style="text-align: center; color: #8a8a9a; margin-top: 48px; font-size: 0.85rem;">Viora AI — Built to win. Updated regularly.</p>
+
+</div>
+</body>
+</html>

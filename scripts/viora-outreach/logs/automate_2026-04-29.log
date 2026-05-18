@@ -1,0 +1,184 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-29 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-29 14:00:04,600 🔄 Auto-rotation day 119: barbershop in Salt Lake City, UT
+2026-04-29 14:00:04,600 
+🔍 Searching: barbershop in Salt Lake City, UT
+2026-04-29 14:00:05,530   ✅ City Barbers💈 — (801) 243-6915 — https://www.citybarbers.co/
+2026-04-29 14:00:05,840   ✅ The Dollar Barber Shop — (801) 414-9689 — https://www.facebook.com/thedollarbarbershop/
+2026-04-29 14:00:06,176   ✅ The Block Barbershop — (801) 997-0454 — https://www.blockbarbershopslc.com/
+2026-04-29 14:00:06,487   ✅ Fade District Barbershop — (385) 499-4348 — https://www.fade-district-barbershop.com/
+2026-04-29 14:00:06,716   ✅ Black Diamond Barbershop and Salon💈 — (801) 467-8104 — http://www.blackdiamondbarbershop.com/
+2026-04-29 14:00:07,047   ✅ The Block Barbershop Sugar House — (801) 997-0454 — https://www.blockbarbershopslc.com/
+2026-04-29 14:00:07,270   ✅ Wasatch Luxe Barbershop and Studio — (801) 419-1301 — https://wasatchluxestudio.godaddysites.com/
+2026-04-29 14:00:07,462   ✅ Salt Lake Proper Barber — (208) 840-0343 — http://keepitproper.co/
+2026-04-29 14:00:07,733   ✅ Break Bread Barber Co. — (385) 483-4077 — http://breakbreadbarber.com/
+2026-04-29 14:00:08,007   ✅ Trolley Square Barbers — (801) 738-1578 — http://www.trolleysquarebarbers.com/
+2026-04-29 14:00:08,270   ✅ The Salt Lake Barber Company Westside — (385) 261-2196 — https://saltlakebarberco.com/
+2026-04-29 14:00:08,459   ✅ BlessedEm Barber — (385) 388-3378 — https://www.blessedembarberco.com/
+2026-04-29 14:00:08,605   ✅ The Venue Barbershop — (385) 296-5341 — https://thevenuebarbershop.com/
+2026-04-29 14:00:08,798   ✅ The Salt Lake Barber Company — (385) 261-2196 — http://www.saltlakebarberco.com/
+2026-04-29 14:00:08,969   ✅ SLC Barbershop💈 — (385) 386-5086 — https://slcbarbershop.com/
+2026-04-29 14:00:09,216   ✅ Kaizen Barber Collective — (385) 313-0507 — http://www.kaizenbarbercollective.com/
+2026-04-29 14:00:09,408   ✅ Avenues Barber — (801) 599-7178 — http://www.avenuesbarber.com/
+2026-04-29 14:00:09,664   ✅ On The Blade Barber Company — (801) 364-1924 — https://www.onthebladebarberco.com/
+2026-04-29 14:00:09,967   ✅ Retro-Barbers — (385) 432-8254 — http://retro-barbers.com/
+2026-04-29 14:00:10,190   ✅ Honest Cuts Barbershop — (801) 441-2376 — http://www.honestcuts.com/
+2026-04-29 14:00:12,851   ✅ Fade One Barbershop — (385) 722-4449 — http://fadeonebarbershop.com/
+2026-04-29 14:00:13,060   ✅ Stef’s Place — (801) 532-4497 — http://www.slbarbershop.com/
+2026-04-29 14:00:13,423   ✅ Liberty Wells Barber Co. — (801) 649-9322 — http://libertywellsbarberco.com/
+2026-04-29 14:00:13,719   ✅ Regal Suite X Kutzz on main — (385) 388-2392 — no website
+2026-04-29 14:00:13,989   ✅ Koa’s Barbershop — (801) 359-4580 — http://www.koasbarbershop.com/
+2026-04-29 14:00:14,212   ✅ Dreclips Pro Barber — (385) 394-1679 — https://dreclipsbarberslc.com/sugarhouse
+2026-04-29 14:00:14,382   ✅ Sugar House Barber Shop — (801) 455-7583 — https://sugarhousebarber.glossgenius.com/
+2026-04-29 14:00:14,587   ✅ J. Clark Walker Barbershop💈 — (801) 726-6437 — http://www.jclarkwalker.com/
+2026-04-29 14:00:14,773   ✅ Platinum Jo’s Barbershop — (801) 259-5368 — https://platinumjosbarbershop.godaddysites.com/
+2026-04-29 14:00:14,946   ✅ Another Level Barber Shop💈 — (801) 534-1003 — http://anotherlevelbarbers.com/
+2026-04-29 14:00:15,127   ✅ Fuzzy Nates Barber Shop — (801) 948-0860 — http://www.fuzzynates.com/
+2026-04-29 14:00:15,380   ✅ Hardin's Barbershop — (801) 300-7400 — https://hardins-barbershop.square.site/
+2026-04-29 14:00:15,660   ✅ PROJECT CUTZ — (801) 979-2911 — https://getsqr.co/projectcutz
+2026-04-29 14:00:15,815   ✅ The Bureau Barber and Shop — (801) 410-4007 — http://bureaubarbershop.com/
+2026-04-29 14:00:16,005   ✅ Boba Cutz Barber shop💈 — (801) 831-8439 — https://www.bobacutz.com/
+2026-04-29 14:00:16,209   ✅ Jed's Barber Shop💈 — (801) 532-5337 — http://www.jedsbarbershop.com/
+2026-04-29 14:00:16,535   ✅ Kraken Barbers — (801) 803-1052 — http://www.krakenbarbers.com/
+2026-04-29 14:00:16,693   ✅ Pacific Barber Studio — (801) 930-0323 — https://getsquire.com/booking/book/pacific-barber-studio-salt-lake-city
+2026-04-29 14:00:16,900   ✅ IT.B Studios - Private Barbershop — (385) 343-3388 — https://imadthebarber.com/
+2026-04-29 14:00:17,167   ✅ Christina's Barber Shop — (801) 577-8968 — no website
+2026-04-29 14:00:19,860   ✅ Eves & Sons Barbers — (801) 583-7297 — http://evesandsonsbarbers.com/
+2026-04-29 14:00:20,176   ✅ Lux Barber lounge — (801) 696-6878 — http://luxslc.com/
+2026-04-29 14:00:20,329   ✅ Clean Cut Barber Shop — (801) 671-2613 — http://cleancutslc.com/
+2026-04-29 14:00:20,531   ✅ Great Clips — (801) 575-8580 — https://salons.greatclips.com/us/ut/salt-lake-city/906-e-900-s?utm_source=google&utm_medium=organic&utm_campaign=gmb
+2026-04-29 14:00:20,705   ✅ SwordKashKutz — (385) 261-2080 — no website
+2026-04-29 14:00:20,869   ✅ Fadehouse Barber and Pixies — (801) 502-8047 — http://fadehousepixies.glossgenius.com/
+2026-04-29 14:00:21,041   ✅ Faith Smith — (801) 520-0682 — no website
+2026-04-29 14:00:21,245   ✅ Perry's Barber Shop — (801) 355-8552 — http://www.perrysbarbershop.net/
+2026-04-29 14:00:21,485   ✅ Salt City Barbershop – Midvale, UT — (385) 432-9229 — https://www.saltcitybarber.com/?utm_source=gmb&utm_medium=click&utm_campaign=google_my_business
+2026-04-29 14:00:21,624   ✅ Off The Top Barbershop — (801) 660-7008 — https://instagram.com/off.the.top.barbershop.slc
+2026-04-29 14:00:21,644   📊 Found 50, 50 new (rest were duplicates)
+2026-04-29 14:00:22,645 
+==================================================
+2026-04-29 14:00:22,645 ✅ Scraping complete
+2026-04-29 14:00:22,645    Total found:  50
+2026-04-29 14:00:22,645    New leads:    50
+2026-04-29 14:00:22,645    Duplicates:   0
+2026-04-29 14:00:22,647    DB total:     898 leads (485 with emails)
+2026-04-29 14:00:22,647 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-29 14:00:22,896 🔍 Finding emails for 50 leads...
+2026-04-29 14:00:23,761 ✅ Hunter found: mkeenan@divinemedspa.com (score: 94) — Divine Aesthetics Med Spa
+2026-04-29 14:00:24,759 🔮 Guessed: info@pariemedspa.com — Parie Med Spa
+2026-04-29 14:00:25,662 🔮 Guessed: info@agelesslasvegas.com — Ageless Las Vegas
+2026-04-29 14:00:26,741 ✅ Hunter found: houston@nakedmd.com (score: 90) — NakedMD Med Spa Las Vegas
+2026-04-29 14:00:28,229 🔮 Guessed: info@flawlessmedspas.com — Flawless Medspa Las Vegas
+2026-04-29 14:00:29,613 🔮 Guessed: info@sikaramedspa.com — Sikara Medspa
+2026-04-29 14:00:30,581 🔮 Guessed: info@alenamedspa.com — Alena Medspa Las Vegas by Alonso Medical Center
+2026-04-29 14:00:31,511 ✅ Hunter found: gbrennan@kalologie.com (score: 91) — Kalologie | ARIA Resort | IV Therapy & More
+2026-04-29 14:00:32,467 🔮 Guessed: info@beautyfactorymedspa.com — Beauty Factory Medspa
+2026-04-29 14:00:33,231 🔮 Guessed: info@medspa-lv.com — Medspa LV
+2026-04-29 14:00:34,288 ✅ Hunter found: kristina@beautifulmedspa.com (score: 99) — Beautiful Med Spa
+2026-04-29 14:00:35,121 🔮 Guessed: info@modernalaser.com — Moderna Laser & Med Spa
+2026-04-29 14:00:35,923 🔮 Guessed: info@theaestheticslabmedspa.com — The Aesthetics Lab Med Spa & Wellness
+2026-04-29 14:00:36,807 ✅ Hunter found: sarah@bhrcenter.com (score: 99) — Beverly Hills Rejuvenation Center - Summerlin
+2026-04-29 14:00:37,604 🔮 Guessed: info@centerforaestheticmedicine.com — Center For Aesthetic Medicine
+2026-04-29 14:00:38,378 🔮 Guessed: info@musamedspa.com — Musa Med Spa
+2026-04-29 14:00:39,295 🔮 Guessed: info@richardscosmeticsurgery.com — Richards Cosmetic Surgery
+2026-04-29 14:00:40,130 ✅ Hunter found: peggy@simplyradiant-lv.com (score: 99) — Simply Radiant Med Spa
+2026-04-29 14:00:40,925 🔮 Guessed: info@hwmspa.com — Hollywood Wellness Med Spa
+2026-04-29 14:00:41,712 🔮 Guessed: info@elyziummedspa.com — Elyzium Med Spa
+2026-04-29 14:00:42,516 ✅ Hunter found: mgardineer@vivida.com (score: 98) — Vivida Dermatology
+2026-04-29 14:00:43,296 🔮 Guessed: info@renewmedicalspalv.com — Renew Medical Spa
+2026-04-29 14:00:44,054 🔮 Guessed: info@azzuremedspa.com — Azzure Med Spa Las Vegas
+2026-04-29 14:00:44,812 🔮 Guessed: info@bluepointmedicalspa.com — bluepoint medical spa
+2026-04-29 14:00:45,611 🔮 Guessed: info@medicismedicalspa.com — Medicis Medical Spa
+2026-04-29 14:00:47,737 🔮 Guessed: info@massage1byatouchoflasvegasspa.com — Massage1 by A Touch of Las Vegas Spa
+2026-04-29 14:00:48,563 ✅ Hunter found: gbrennan@kalologie.com (score: 91) — Kalologie | The Bellagio | IV Therapy & More
+2026-04-29 14:00:49,313 🔮 Guessed: info@inspire-medspa.com — Inspire Med Spa & Aesthetics
+2026-04-29 14:00:50,077 🔮 Guessed: info@dermabellamedicalspa.com — DermaBella Medical Spa
+2026-04-29 14:00:50,837 🔮 Guessed: info@unicornmedispa.com — Unicorn Medical Weight Loss & Medi Spa
+2026-04-29 14:00:52,363 🔮 Guessed: info@5yearsyounger.com — 5 Years Younger
+2026-04-29 14:00:53,123 🔮 Guessed: info@lasvegasskinpros.com — Las Vegas Skin Pros Med Spa
+2026-04-29 14:00:53,915 🔮 Guessed: info@regenerateme.com — Regenerate Me IV | The Venetian Grand Canal Shoppes
+2026-04-29 14:00:54,654 🔮 Guessed: info@newulasvegas.com — New U Natural Beauty
+2026-04-29 14:00:55,397 🔮 Guessed: info@luremedicalspa.com — Lure Boutique Medical Spa
+2026-04-29 14:00:56,249 ✅ Hunter found: summer@richlandmd.com (score: 95) — Richland Aesthetics Luxury Med Spa Las Vegas
+2026-04-29 14:00:57,004 🔮 Guessed: info@mayraalmontemsw.com — Mayra Almonte MedSpa & Wellness Center
+2026-04-29 14:00:57,766 🔮 Guessed: info@lybms.com — Love Your Body Medical Spa: Divina Averilla, MD
+2026-04-29 14:00:58,585 🔮 Guessed: info@imagenlaser.com — Imagen Medi Spa & Beauty Salon
+2026-04-29 14:00:59,454 ✅ Hunter found: noah@pushiv.com (score: 99) — Push IV Hydration Las Vegas
+2026-04-29 14:01:00,456 ✅ Hunter found: drez@apexmedicalspa.com (score: 60) — Apex Medical Spa
+2026-04-29 14:01:00,967 
+==================================================
+2026-04-29 14:01:00,967 ✅ Email finder complete
+2026-04-29 14:01:00,967    API found:  11
+2026-04-29 14:01:00,967    Guessed:    30
+2026-04-29 14:01:00,967    Total:      41
+2026-04-29 14:01:00,967 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-04-29.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Wed Apr 29** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 898 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Wed Apr 29 14:01:01 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-04-29.log

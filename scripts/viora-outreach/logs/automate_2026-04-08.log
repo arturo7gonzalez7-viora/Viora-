@@ -1,0 +1,175 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-04-08 20:19
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-08 20:19:35,352 🔄 Auto-rotation day 98: tattoo shop in San Jose, CA
+2026-04-08 20:19:35,352 
+🔍 Searching: tattoo shop in San Jose, CA
+2026-04-08 20:19:36,123   ✅ San Jose Tattoo — (408) 298-8430 — http://tattoojohn.com/
+2026-04-08 20:19:36,319   ✅ Players Ink — (408) 993-8282 — http://www.playersink.com/
+2026-04-08 20:19:36,517   ✅ MARS Ink Tattoo Studio & New Skin Pop-Up Clinic — (669) 342-7101 — http://www.marsinktattoo.com/
+2026-04-08 20:19:36,735   ✅ Humble Beginnings Tattoo — (408) 288-6814 — https://www.humblebeginningstattoo.com/
+2026-04-08 20:19:36,858   ✅ Marks of Art Tattoo — (408) 377-1924 — http://marksofart.com/
+2026-04-08 20:19:37,068   ✅ Eleventh Dimension Tattoo Arts — (669) 328-0506 — http://eleventhdimensiontattoo.com/
+2026-04-08 20:19:37,261   ✅ Lucky Stars Tattoo — (408) 266-1186 — no website
+2026-04-08 20:19:37,439   ✅ New Generation Tattoo — (408) 613-2115 — http://www.newgenerationtattoo.com/
+2026-04-08 20:19:37,594   ✅ Inkk Dynasty — (408) 753-2796 — https://inkk-dynasty1.odoo.com/
+2026-04-08 20:19:37,793   ✅ tattoo lifestylez — (408) 892-2960 — no website
+2026-04-08 20:19:38,007   ✅ Legacy Tattoo — (408) 352-5375 — http://www.instagram.com/legacytattoosj
+2026-04-08 20:19:38,146   ✅ Blue Rose Tattoo — (206) 913-8081 — https://www.facebook.com/Bluerosetattoosj/
+2026-04-08 20:19:38,272   ✅ Underground Creation — (408) 885-1106 — no website
+2026-04-08 20:19:38,469   ✅ Unlimited Ink Tattoo — (408) 217-9917 — https://www.unlimitedinktattoo.shop/
+2026-04-08 20:19:38,607   ✅ Taylor Ink — (669) 264-9187 — https://taylorinktattoo.com/
+2026-04-08 20:19:38,786   ✅ State of Grace — (408) 441-7770 — http://www.stateofgracetattoo.com/
+2026-04-08 20:19:38,930   ✅ Current Tattooing — (408) 288-6822 — http://current-sj.com/
+2026-04-08 20:19:39,133   ✅ Hone Piercing — (669) 699-8822 — https://www.honepiercing.com/
+2026-04-08 20:19:39,289   ✅ Vampire Battle Mansion Tattoo and Piercing — (669) 328-4125 — http://www.vampirebattlemansion.com/
+2026-04-08 20:19:39,432   ✅ Soul Imagez Tattoo — (408) 856-5221 — http://soulimagez.com/
+2026-04-08 20:19:42,021   ✅ Blacksuit Tattoo — (669) 292-5554 — https://instagram.com/blacksuittattoo
+2026-04-08 20:19:42,175   ✅ Floating House Tattoo — (408) 418-3566 — no website
+2026-04-08 20:19:42,383   ✅ The Holy Scythe Tattoo — (408) 564-8176 — https://www.theholyscythetattoo.com/
+2026-04-08 20:19:42,506   ✅ Sacred Oath Tattoos — (408) 921-7220 — https://sacredoathtattoos.com/
+2026-04-08 20:19:42,666   ✅ KT Dragon Tattoo Studio — (408) 204-3526 — http://www.ktdragon.com/
+2026-04-08 20:19:42,821   ✅ 9 Dragons Ink — (669) 350-3881 — no website
+2026-04-08 20:19:42,970   ✅ No11 Tattoo Studio — (669) 696-6868 — https://www.instagram.com/no.11_tattoostudio/profilecard/?igsh=NTc4MTIwNjQ2YQ==
+2026-04-08 20:19:43,084   ✅ Homeroom Tattoo — (669) 312-1351 — https://www.homeroomtattoo.com/
+2026-04-08 20:19:43,210   ✅ Asylum Ink — (408) 449-0031 — https://voodoovon.myonlineappointment.com/
+2026-04-08 20:19:43,390   ✅ Ink Now — (408) 504-4574 — no website
+2026-04-08 20:19:43,734   ✅ ANTS TATTOO STUDIO (SAN JOSE) — (408) 890-8261 — no website
+2026-04-08 20:19:43,901   ✅ Bulldog Lifestyles — (408) 729-3605 — no website
+2026-04-08 20:19:44,040   ✅ Solenne Piercing — (669) 455-9695 — no website
+2026-04-08 20:19:44,181   ✅ Pura Tinta Tattoo Studio — (408) 318-7629 — https://www.facebook.com/profile.php?id=100063902492650
+2026-04-08 20:19:44,303   ✅ Flourish Tattoo & Foliage — (408) 217-9164 — http://www.flourishtattoo.com/
+2026-04-08 20:19:44,497   ✅ Aces Tattoo — (408) 320-2760 — no website
+2026-04-08 20:19:44,647   ✅ Make Me Holey Body Piercing — (408) 991-2845 — http://www.makemeholeybodypiercing.com/
+2026-04-08 20:19:44,800   ✅ INKESOMNIA — (925) 255-0522 — https://www.inkesomnia.com/
+2026-04-08 20:19:44,960   ✅ D A Underground Tat-2 — (408) 259-1583 — no website
+2026-04-08 20:19:45,155   ✅ Body Exotic — (408) 993-9684 — http://www.bodyexotic.com/
+2026-04-08 20:19:47,766   ✅ Conviction Tattoo Studio — (408) 859-1406 — https://convictiontattoo.com/
+2026-04-08 20:19:47,922   ✅ Inkdica tattoo — (669) 309-2441 — https://www.inkdicatattoo.com/
+2026-04-08 20:19:48,237   ✅ Luna Tattoo Studio — (408) 835-9593 — http://lunatattoostudio.com/
+2026-04-08 20:19:48,382   ✅ Eternity Ink Tattoo — (408) 679-1010 — no website
+2026-04-08 20:19:48,505   ✅ Lucid Illusions Tattoo — (408) 298-2111 — no website
+2026-04-08 20:19:48,629   ✅ Steve Sherick Tattoo Shop — (408) 427-1683 — https://www.instagram.com/steveshericktattoo?igsh=NTc4MTIwNjQ2YQ==
+2026-04-08 20:19:48,850   ✅ Premium Clan Tattoo Studio — (669) 262-5232 — no website
+2026-04-08 20:19:49,003   ✅ Artizen Ink — (408) 816-4164 — http://www.artizenink.com/
+2026-04-08 20:19:49,123   ✅ Tattoo Nerds — (408) 747-9507 — http://www.tattoonerdssj.com/
+2026-04-08 20:19:49,238   ✅ Marfil Tattoo Studio — (925) 548-4518 — no website
+2026-04-08 20:19:49,249   📊 Found 50, 50 new (rest were duplicates)
+2026-04-08 20:19:50,249 
+==================================================
+2026-04-08 20:19:50,250 ✅ Scraping complete
+2026-04-08 20:19:50,250    Total found:  50
+2026-04-08 20:19:50,250    New leads:    50
+2026-04-08 20:19:50,250    Duplicates:   0
+2026-04-08 20:19:50,251    DB total:     259 leads (110 with emails)
+2026-04-08 20:19:50,251 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-04-08 20:19:50,406 🔍 Finding emails for 50 leads...
+2026-04-08 20:19:51,127 ✅ Hunter found: cody@dumondlawaz.com (score: 99) — DuMond Law Firm, PLLC
+2026-04-08 20:19:51,894 🔮 Guessed: info@azcriminalandfamilylaw.com — Law Office of Daniel Hutto, PLLC
+2026-04-08 20:19:52,971 🔮 Guessed: info@husbandandwifelawteam.com — The Husband & Wife Law Team
+2026-04-08 20:19:53,962 ✅ Hunter found: apeschke@weilerlaw.com (score: 98) — Weiler Law PLLC
+2026-04-08 20:19:55,304 ✅ Hunter found: damaris@belenlawfirm.com (score: 94) — Belen Law Firm, PLLC
+2026-04-08 20:19:56,220 🔮 Guessed: info@robinsonlawoffices.com — Robinson Law Offices
+2026-04-08 20:19:56,994 🔮 Guessed: info@rileyplc.com — Riley Law Firm, PLC
+2026-04-08 20:19:58,138 ✅ Hunter found: n.lugo@dmcantor.com (score: 98) — DM Cantor
+2026-04-08 20:19:58,975 ✅ Hunter found: david@dbphoenixcriminallawyer.com (score: 99) — Law Offices of David A. Black
+2026-04-08 20:19:59,917 ✅ Hunter found: jwilliams@litwaklawgroup.com (score: 93) — Litwak Law Group
+2026-04-08 20:20:01,465 ✅ Hunter found: kchana@forthepeople.com (score: 99) — Morgan & Morgan
+2026-04-08 20:20:02,548 ✅ Hunter found: wmartinez@torgensonlaw.com (score: 97) — Torgenson Law
+2026-04-08 20:20:03,611 Hunter.io rate limited — pausing 60s
+2026-04-08 20:21:04,126 🔮 Guessed: info@jaburgwilk.com — Jaburg Wilk
+2026-04-08 20:21:04,972 Hunter.io rate limited — pausing 60s
+2026-04-08 20:22:05,402 🔮 Guessed: info@arjashahlaw.com — Shah Law Firm, PLLC
+2026-04-08 20:22:06,209 Hunter.io rate limited — pausing 60s
+2026-04-08 20:23:06,680 🔮 Guessed: info@barberlawgroup.com — Barber Law Group
+2026-04-08 20:23:07,633 Hunter.io rate limited — pausing 60s
+2026-04-08 20:24:08,164 🔮 Guessed: info@cavanaghlaw.com — The Cavanagh Law Firm, P.A.
+2026-04-08 20:24:09,110 Hunter.io rate limited — pausing 60s
+2026-04-08 20:25:09,585 🔮 Guessed: info@enaralaw.com — Enara Law
+2026-04-08 20:25:10,634 Hunter.io rate limited — pausing 60s
+2026-04-08 20:26:11,058 🔮 Guessed: info@the-plf.com — The People's Law Firm, PLC
+2026-04-08 20:26:11,990 Hunter.io rate limited — pausing 60s
+2026-04-08 20:27:12,478 🔮 Guessed: info@ongarolawoffices.com — Salvador Ongaro Law Offices
+2026-04-08 20:27:13,259 Hunter.io rate limited — pausing 60s
+2026-04-08 20:28:13,724 🔮 Guessed: info@arizonalawgroup.com — Arizona Law Group, Phoenix Divorce Lawyer & Family Law Attorneys
+2026-04-08 20:28:14,492 Hunter.io rate limited — pausing 60s
+2026-04-08 20:29:14,921 🔮 Guessed: info@criminallawaz.com — Gaxiola Law Group
+2026-04-08 20:29:15,778 Hunter.io rate limited — pausing 60s
+2026-04-08 20:30:16,303 🔮 Guessed: info@arizdui.com — Law Offices of Brian D Sloan
+2026-04-08 20:30:17,293 Hunter.io rate limited — pausing 60s
+2026-04-08 20:31:17,541 🔮 Guessed: info@lanceentrekin.com — The Entrekin Law Firm
+2026-04-08 20:31:18,284 Hunter.io rate limited — pausing 60s
+2026-04-08 20:32:18,687 🔮 Guessed: info@spmoellerlaw.com — Law Offices of Samuel P. Moeller, PLLC
+2026-04-08 20:32:19,432 Hunter.io rate limited — pausing 60s
+2026-04-08 20:33:19,830 🔮 Guessed: info@merchantlawaz.com — Merchant Law Firm
+2026-04-08 20:33:20,786 Hunter.io rate limited — pausing 60s
+2026-04-08 20:34:21,268 🔮 Guessed: info@runioninjurylaw.com — Runion Personal Injury Lawyers - Phoenix Office
+2026-04-08 20:34:21,993 Hunter.io rate limited — pausing 60s
+2026-04-08 20:35:22,432 🔮 Guessed: info@suzukilawoffices.com — Suzuki Law Offices, L.L.C.
+2026-04-08 20:35:23,347 Hunter.io rate limited — pausing 60s
+2026-04-08 20:36:23,738 🔮 Guessed: info@bernardogarcialaw.com — Garcia Law Firm, PLC
+2026-04-08 20:36:24,679 Hunter.io rate limited — pausing 60s
+2026-04-08 20:37:25,076 🔮 Guessed: info@mkrfirm.com — Miller Kory Rowe
+2026-04-08 20:37:25,806 Hunter.io rate limited — pausing 60s
+2026-04-08 20:38:26,203 🔮 Guessed: info@zacharassociates.com — Zachar Law Firm, P.C.
+2026-04-08 20:38:27,130 Hunter.io rate limited — pausing 60s
+2026-04-08 20:39:27,543 🔮 Guessed: info@ferragutlaw.com — Phoenix Criminal Attorney Ferragut Law
+2026-04-08 20:39:28,331 Hunter.io rate limited — pausing 60s
+2026-04-08 20:40:28,883 🔮 Guessed: info@theattorneyjosh.com — Criminal Defense Attorney Josh - The Law Office of Joshua A. Lopez, LLC
+2026-04-08 20:40:29,908 Hunter.io rate limited — pausing 60s
+2026-04-08 20:41:30,349 🔮 Guessed: info@ballardspahr.com — Ballard Spahr LLP
+2026-04-08 20:41:31,294 Hunter.io rate limited — pausing 60s
+2026-04-08 20:42:31,718 🔮 Guessed: info@newfrontier.us — New Frontier Immigration Law
+2026-04-08 20:42:32,450 Hunter.io rate limited — pausing 60s
+2026-04-08 20:43:32,842 🔮 Guessed: info@gblaw.com — Gammage & Burnham
+2026-04-08 20:43:33,742 Hunter.io rate limited — pausing 60s
+2026-04-08 20:44:34,000 🔮 Guessed: info@ficpc.com — Federal Immigration Counselors, P.C.
+2026-04-08 20:44:34,899 Hunter.io rate limited — pausing 60s
+2026-04-08 20:45:35,133 🔮 Guessed: info@bestlawaz.com — Best Law Firm
+2026-04-08 20:45:36,029 Hunter.io rate limited — pausing 60s
+2026-04-08 20:46:36,410 🔮 Guessed: info@hairrevivalstudio.com — Hair Revival Studio
+2026-04-08 20:46:37,143 Hunter.io rate limited — pausing 60s
+2026-04-08 20:47:37,551 🔮 Guessed: info@tangerinesalon.net — Tangerine Salon
+2026-04-08 20:47:38,311 Hunter.io rate limited — pausing 60s
+2026-04-08 20:48:38,692 🔮 Guessed: info@luresalondallas.com — Lure Salon
+2026-04-08 20:48:39,607 Hunter.io rate limited — pausing 60s
+2026-04-08 20:49:39,985 🔮 Guessed: info@republichairco.com — Republic Hair Co
+2026-04-08 20:49:40,724 Hunter.io rate limited — pausing 60s
+2026-04-08 20:50:41,122 🔮 Guessed: info@houseofdearhairsalon.com — House of Dear
+2026-04-08 20:50:41,866 Hunter.io rate limited — pausing 60s
+2026-04-08 20:51:42,280 🔮 Guessed: info@salond.com — Salon D
+2026-04-08 20:51:43,078 Hunter.io rate limited — pausing 60s
+2026-04-08 20:52:43,526 🔮 Guessed: info@vosssalon.com — Voss Salon
+2026-04-08 20:52:44,302 Hunter.io rate limited — pausing 60s
+2026-04-08 20:53:44,561 🔮 Guessed: info@ritualhaircosalon.com — Ritual Hair Co. Hair salon & Hair Extensions and Headspa
+2026-04-08 20:53:45,323 Hunter.io rate limited — pausing 60s
