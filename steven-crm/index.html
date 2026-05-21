@@ -1095,7 +1095,7 @@ textarea.fi{resize:vertical;min-height:72px}
 
 <script>
 // URL param: ?clear resets session (useful for debugging)
-if(window.location.search.includes('clear')){sessionStorage.removeItem('crm_user');window.history.replaceState({},'',window.location.pathname);}
+if(window.location.search.includes('clear')){localStorage.removeItem('crm_user');window.history.replaceState({},'',window.location.pathname);}
 
 // Splash dismiss runs FIRST — independent of everything else
 setTimeout(function(){
@@ -1224,7 +1224,7 @@ async function doLogin() {
   if(!user || user.pin !== pin) { errEl.textContent = 'Wrong password. Try again.'; document.getElementById('loginPinInput').value=''; return; }
   errEl.textContent = '';
   currentUser = { id: user.id, name: user.name, role: user.role };
-  sessionStorage.setItem('crm_user', JSON.stringify(currentUser));
+  localStorage.setItem('crm_user', JSON.stringify(currentUser));
   hideLoginScreen();
   document.getElementById('sbUserName').textContent = currentUser.name;
   const roleEl = document.getElementById('sbUserRole');
@@ -1238,7 +1238,7 @@ async function doLogin() {
 }
 function doLogout() {
   currentUser = null;
-  sessionStorage.removeItem('crm_user');
+  localStorage.removeItem('crm_user');
   showLoginScreen();
 }
 // Default users — works before Supabase users table is created
@@ -3031,7 +3031,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   await loadUsers();
 
   // Check for existing session
-  const savedUser = sessionStorage.getItem('crm_user');
+  const savedUser = localStorage.getItem('crm_user');
   if(savedUser) {
     try {
       const u = JSON.parse(savedUser);
@@ -3057,7 +3057,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     console.error('CRM load error:', e);
     // If load fails, clear session and show login
     currentUser = null;
-    sessionStorage.removeItem('crm_user');
+    localStorage.removeItem('crm_user');
     showLoginScreen();
     toast('Session expired. Please log in again.', true);
   }
