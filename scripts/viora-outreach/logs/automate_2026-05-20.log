@@ -1,0 +1,213 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-20 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-20 14:00:05,027 🔄 Auto-rotation day 140: medspa in Chicago, IL
+2026-05-20 14:00:05,028 
+🔍 Searching: medspa in Chicago, IL
+2026-05-20 14:00:05,923   ✅ Dvida Spa | Med Spa Services 60654 — (312) 374-3352 — http://www.dvidaspa.com/
+2026-05-20 14:00:06,244   ✅ H Med Spa — (773) 697-8316 — http://www.hmedicalspa.com/
+2026-05-20 14:00:06,639   ✅ Pure Med Spa — (312) 312-7873 — https://www.puremedicalspa.us/locations/north-dearborn-chicago/
+2026-05-20 14:00:06,881   ✅ SpaDerma — (773) 529-5277 — https://www.spaderma.com/
+2026-05-20 14:00:07,199   ✅ VIO Med Spa | Chicago — (312) 376-4846 — https://www.viomedspa.com/locations/river-north
+2026-05-20 14:00:07,464   ✅ Viva La Med Spa-Old Town — (312) 971-5915 — http://vivalamedspa.com/
+2026-05-20 14:00:07,742   ✅ SpaDerma — (773) 529-5277 — https://www.spaderma.com/
+2026-05-20 14:00:08,027   ✅ Better Med Spa & Wellness — (312) 285-2618 — https://www.bettermedspa.com/
+2026-05-20 14:00:08,298   ✅ Luxura Med Spa — (773) 453-7500 — https://luxuramedspa.com/
+2026-05-20 14:00:08,527   ✅ Old Town Med Spa (Lincoln Park) — (312) 882-0700 — https://oldtownmedspa.com/
+2026-05-20 14:00:08,821   ✅ Natural Beauty Med Spa- Chicago — (312) 981-1291 — https://www.naturalbeautymedspa.com/
+2026-05-20 14:00:08,951   ✅ Old Town Med Spa — (312) 643-1689 — https://oldtownmedspa.com/
+2026-05-20 14:00:09,279   ✅ Express Med Spa Chicago, Mount Greenwood — (877) 363-3772 — https://expressmedspas.com/medical-spa-chicago-mount-greenwood-il/
+2026-05-20 14:00:09,580   ✅ Cadella Aesthetics — (312) 915-0195 — https://cadellaaesthetics.com/
+2026-05-20 14:00:09,856   ✅ Innovative MedSpa — (773) 657-8377 — https://www.innovative-medspa.com/
+2026-05-20 14:00:10,105   ✅ Olivo Med Spa — (872) 315-3481 — http://www.olivomedspa.com/
+2026-05-20 14:00:10,415   ✅ Derma Bliss Medical Spa — (773) 666-5037 — https://dermablissmedspa.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-05-20 14:00:10,583   ✅ Elysium Aesthetics + Longevity — (312) 888-9361 — https://elysiumchicago.com/?utm_source=google&utm_medium=localsearch&utm_campaign=gmb
+2026-05-20 14:00:10,775   ✅ Late Night Medspa, Chicago — (872) 346-2590 — https://latenightmedspa.com/
+2026-05-20 14:00:11,110   ✅ Refine by Tulsi Med Spa — (618) 298-8574 — https://refinebytulsi.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb_listing
+2026-05-20 14:00:13,847   ✅ Ageless MedSpa — (773) 205-8800 — https://agelessmedspa.com/?utm_source=GBP&utm_medium=organic
+2026-05-20 14:00:14,001   ✅ OVME — (872) 245-6863 — https://ovme.com/pages/lincoln-park-chicago-il
+2026-05-20 14:00:14,197   ✅ Innovative MedSpa — (773) 420-8571 — https://www.innovative-medspa.com/
+2026-05-20 14:00:14,357   ✅ GOLDCOAST medspa — (312) 664-2128 — https://www.goldcoastmedspa.com/
+2026-05-20 14:00:14,515   ✅ SpaDerma — (773) 529-5277 — https://spaderma.com/
+2026-05-20 14:00:14,786   ✅ Tres Jolie Medical Spa and Wellness Center — (312) 929-4508 — https://tresjoliemedicalspa.com/
+2026-05-20 14:00:14,978   ✅ Northwestern Med Spa River North — (312) 266-6240 — https://northwesternplastics.com/river-north-med-spa/
+2026-05-20 14:00:15,195   ✅ Essence Medspa & Wellness Center — (773) 763-1212 — http://www.essence-medspa.com/
+2026-05-20 14:00:15,344   ✅ The One Spa Chicago — (312) 340-6740 — https://theonespachicago.com/
+2026-05-20 14:00:15,693   ✅ Lume — (312) 285-2004 — https://lume-wellness.com/
+2026-05-20 14:00:15,963   ✅ Luxura Med Spa Lakeview — (773) 453-7500 — https://luxuramedspa.com/
+2026-05-20 14:00:16,091   ✅ Shot Bar MedSpa — (872) 273-6273 — http://shotbar.net/
+2026-05-20 14:00:16,230   ✅ Elite Chicago Spa — (312) 841-9750 — https://elitechicagospa.com/
+2026-05-20 14:00:16,416   ✅ The Fitz Aesthetic Club — (312) 643-1333 — http://www.thefitzmed.com/
+2026-05-20 14:00:16,597   ✅ HOUSE22 Med Spa in Chicago — (312) 337-0777 — https://house22.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+2026-05-20 14:00:16,815   ✅ Ethos MedSpa Chicago — (464) 219-0070 — https://ethosmedicalspa.com/
+2026-05-20 14:00:17,010   ✅ Elase Med Spa — (312) 940-3844 — https://elase.com/locations/lincoln-park/?utm_source=gmb&utm_medium=organic&utm_campaign=lincoln-park
+2026-05-20 14:00:17,173   ✅ Beautify CHI Medspa — (312) 526-3096 — http://www.beautifychi.com/?y_source=1_MjAyNDUxMjAzMS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D
+2026-05-20 14:00:17,411   ✅ Premier Med Spa — (773) 762-9304 — https://www.premiermedspachicago.com/
+2026-05-20 14:00:20,009   ✅ Opulence Chicago — (312) 340-5948 — https://www.opulencechicago.com/
+2026-05-20 14:00:20,194   ✅ SOLUX Med Spa — (312) 755-0088 — https://soluxmedspa.com/
+2026-05-20 14:00:20,444   ✅ VITAHL Medical Aesthetics — (312) 634-6100 — https://vitahlchicago.com/
+2026-05-20 14:00:20,612   ✅ Aesthetica by Dr. Adam — (312) 672-2195 — https://www.aesthetica-med.com/
+2026-05-20 14:00:20,773   ✅ Chicago Medspa — (312) 426-2033 — https://chicagomedspa.com/
+2026-05-20 14:00:20,951   ✅ Northwestern Med Spa — (312) 266-6240 — http://northwesternmedspa.com/
+2026-05-20 14:00:21,156   ✅ DEMI Med Spa — (773) 542-3053 — https://demimedspa.com/
+2026-05-20 14:00:21,553   ✅ River North Wellness and Med Spa — (312) 544-9196 — https://rnmedspa.com/
+2026-05-20 14:00:21,760   ✅ Optimal Wellness & Beauty — (312) 622-5500 — https://www.optimal-wellness-beauty.com/
+2026-05-20 14:00:21,942   ✅ New Image Works — (312) 638-4979 — https://newimageworks.com/
+2026-05-20 14:00:22,132   ✅ Solve Med Spa Chicago — (708) 575-9880 — https://solvemedspa.com/
+2026-05-20 14:00:22,158   📊 Found 50, 48 new (rest were duplicates)
+2026-05-20 14:00:23,159 
+==================================================
+2026-05-20 14:00:23,159 ✅ Scraping complete
+2026-05-20 14:00:23,159    Total found:  50
+2026-05-20 14:00:23,159    New leads:    48
+2026-05-20 14:00:23,159    Duplicates:   2
+2026-05-20 14:00:23,165    DB total:     1521 leads (1070 with emails)
+2026-05-20 14:00:23,166 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-20 14:00:23,554 🔍 Finding emails for 50 leads...
+2026-05-20 14:00:23,953 Hunter.io rate limited — pausing 60s
+2026-05-20 14:01:24,480 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Outpatient Care East
+2026-05-20 14:01:25,232 Hunter.io rate limited — pausing 60s
+2026-05-20 14:02:25,667 🔮 Guessed: info@standforanimals.org — Stand For Animals Veterinary Clinic
+2026-05-20 14:02:26,560 Hunter.io rate limited — pausing 60s
+2026-05-20 14:03:26,916 🔮 Guessed: info@charlotte.carolinavet.com — Carolina Veterinary Specialists Charlotte
+2026-05-20 14:03:27,645 Hunter.io rate limited — pausing 60s
+2026-05-20 14:04:28,092 🔮 Guessed: info@petfolk.com — Petfolk Veterinary & Urgent Care - SouthPark
+2026-05-20 14:04:28,944 Hunter.io rate limited — pausing 60s
+2026-05-20 14:05:29,357 🔮 Guessed: info@carecharlotte.com — CARE | Charlotte Animal Referral & Emergency
+2026-05-20 14:05:30,097 Hunter.io rate limited — pausing 60s
+2026-05-20 14:06:30,473 🔮 Guessed: info@independenceveterinaryclinic.com — Independence Veterinary Clinic
+2026-05-20 14:06:31,338 Hunter.io rate limited — pausing 60s
+2026-05-20 14:07:31,738 🔮 Guessed: info@armstronganimalclinic.com — Armstrong Animal Clinic
+2026-05-20 14:07:32,740 Hunter.io rate limited — pausing 60s
+2026-05-20 14:08:33,111 🔮 Guessed: info@southendvet.com — South End Veterinary Clinic
+2026-05-20 14:08:33,881 Hunter.io rate limited — pausing 60s
+2026-05-20 14:09:34,343 🔮 Guessed: info@epictailsvet.com — Epic Tails Veterinary Clinic
+2026-05-20 14:09:35,209 Hunter.io rate limited — pausing 60s
+2026-05-20 14:10:35,576 🔮 Guessed: info@goodvets.com — GoodVets Montford
+2026-05-20 14:10:36,276 Hunter.io rate limited — pausing 60s
+2026-05-20 14:11:36,731 🔮 Guessed: info@arkvetllc.com — Ark Veterinary Services PLLC
+2026-05-20 14:11:37,495 Hunter.io rate limited — pausing 60s
+2026-05-20 14:12:37,866 🔮 Guessed: info@veg.com — VEG ER for Pets
+2026-05-20 14:12:38,704 Hunter.io rate limited — pausing 60s
+2026-05-20 14:13:39,092 🔮 Guessed: info@cityvet.com — CityVet | Charlotte Uptown Veterinary Clinic & Urgent Care
+2026-05-20 14:13:39,987 Hunter.io rate limited — pausing 60s
+2026-05-20 14:14:40,333 🔮 Guessed: info@harrisblvdveterinaryclinic.com — Harris Boulevard Veterinary Clinic
+2026-05-20 14:14:41,211 Hunter.io rate limited — pausing 60s
+2026-05-20 14:15:41,628 🔮 Guessed: info@matthews.carolinavet.com — Carolina Veterinary Specialists Matthews
+2026-05-20 14:15:42,322 Hunter.io rate limited — pausing 60s
+2026-05-20 14:16:42,714 🔮 Guessed: info@spayneutercarolinas.com — Spay Neuter Clinic of the Carolinas
+2026-05-20 14:16:43,467 Hunter.io rate limited — pausing 60s
+2026-05-20 14:17:43,806 🔮 Guessed: info@cltvets.com — CLT Vets
+2026-05-20 14:17:44,724 Hunter.io rate limited — pausing 60s
+2026-05-20 14:18:45,062 🔮 Guessed: info@pinevilleanimalclinic.com — Pineville Animal Clinic
+2026-05-20 14:18:45,916 Hunter.io rate limited — pausing 60s
+2026-05-20 14:19:46,288 🔮 Guessed: info@matthewsanimalclinic.com — Matthews Animal Clinic
+2026-05-20 14:19:47,034 Hunter.io rate limited — pausing 60s
+2026-05-20 14:20:47,489 🔮 Guessed: info@charlottenaturalanimal.com — Charlotte Natural Animal Clinic
+2026-05-20 14:20:48,381 Hunter.io rate limited — pausing 60s
+2026-05-20 14:21:48,768 🔮 Guessed: info@thrivepetcare.com — Plantation Animal Clinic
+2026-05-20 14:21:49,672 Hunter.io rate limited — pausing 60s
+2026-05-20 14:22:50,102 🔮 Guessed: info@goodvets.com — GoodVets Myers Park
+2026-05-20 14:22:50,910 Hunter.io rate limited — pausing 60s
+2026-05-20 14:23:51,304 🔮 Guessed: info@goodvets.com — GoodVets Plaza Midwood
+2026-05-20 14:23:52,185 Hunter.io rate limited — pausing 60s
+2026-05-20 14:24:52,525 🔮 Guessed: info@averyanimalclinic.com — Avery Animal Clinic
+2026-05-20 14:24:53,436 Hunter.io rate limited — pausing 60s
+2026-05-20 14:25:54,126 🔮 Guessed: info@cityvet.com — CityVet | Lower South End
+2026-05-20 14:25:55,031 Hunter.io rate limited — pausing 60s
+2026-05-20 14:26:55,376 🔮 Guessed: info@mobilevet.com — Mobile Vet Clinic-Charlotte NC
+2026-05-20 14:26:56,252 Hunter.io rate limited — pausing 60s
+2026-05-20 14:27:56,660 🔮 Guessed: info@stores.petco.com — Vetco Vaccination Clinic
+2026-05-20 14:27:57,394 Hunter.io rate limited — pausing 60s
+2026-05-20 14:28:57,808 🔮 Guessed: info@longanimal.com — Dr. Brad Brown, DVM
+2026-05-20 14:28:58,696 Hunter.io rate limited — pausing 60s
+2026-05-20 14:29:59,064 🔮 Guessed: info@bigtimetattoos.com — Big Time Tattoos and Piercings
+2026-05-20 14:29:59,953 Hunter.io rate limited — pausing 60s
+2026-05-20 14:31:00,355 🔮 Guessed: info@theartistryrealm.com — The Artistry Realm Tattoo & Art Studio
+2026-05-20 14:31:01,120 Hunter.io rate limited — pausing 60s
+2026-05-20 14:32:01,481 🔮 Guessed: info@cleopatraink.com — Cleopatra Ink Tattoo & Piercing Indianapolis Studio
+2026-05-20 14:32:02,375 Hunter.io rate limited — pausing 60s
+2026-05-20 14:33:02,772 🔮 Guessed: info@indianapoliscustomtattoos.com — Flink's Ink Tattoo and Piercings
+2026-05-20 14:33:03,659 Hunter.io rate limited — pausing 60s
+2026-05-20 14:34:04,079 🔮 Guessed: info@linktr.ee — Inkfam Tattoo Gallery
+2026-05-20 14:34:04,848 Hunter.io rate limited — pausing 60s
+2026-05-20 14:35:05,245 🔮 Guessed: info@masterworktattoo.net — MASTERWORK TATTOO
+2026-05-20 14:35:05,974 Hunter.io rate limited — pausing 60s
+2026-05-20 14:36:06,345 🔮 Guessed: info@fountainsquaretattoo.com — Fountain Square Tattoo
+2026-05-20 14:36:06,854 
+==================================================
+2026-05-20 14:36:06,854 ✅ Email finder complete
+2026-05-20 14:36:06,854    API found:  0
+2026-05-20 14:36:06,854    Guessed:    35
+2026-05-20 14:36:06,854    Total:      35
+2026-05-20 14:36:06,854 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-20.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Wed May 20** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1521 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Wed May 20 14:36:07 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-20.log

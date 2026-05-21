@@ -129,6 +129,10 @@ CREATE TABLE IF NOT EXISTS users (
 -- Steven is always admin. Change the PIN below before going live!
 INSERT INTO users (id, name, pin, role) VALUES ('u_steven', 'Steven K.', '1234', 'admin') ON CONFLICT (id) DO NOTHING;
 
+-- Add seller contact fields to properties
+ALTER TABLE properties ADD COLUMN IF NOT EXISTS seller_phone TEXT DEFAULT '';
+ALTER TABLE properties ADD COLUMN IF NOT EXISTS seller_email TEXT DEFAULT '';
+
 -- Add assigned_to to leads (which team member owns this lead)
 ALTER TABLE leads ADD COLUMN IF NOT EXISTS assigned_to TEXT DEFAULT '';
 -- Add lead_id to properties so we can link property back to originating lead

@@ -1,0 +1,215 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-19 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-19 14:00:04,289 🔄 Auto-rotation day 139: spa in Atlanta, GA
+2026-05-19 14:00:04,289 
+🔍 Searching: spa in Atlanta, GA
+2026-05-19 14:00:05,174   ✅ The Spa at Four Seasons Atlanta — (404) 253-3848 — https://www.fourseasons.com/atlanta/spa/?utm_source=google&utm_medium=organicsearch&utm_campaign=tor-atl-spa-mid-seo-na&utm_content=na-na&utm_term=na
+2026-05-19 14:00:05,414   ✅ The St. Regis Atlanta Spa — (404) 563-7683 — https://www.marriott.com/en-us/hotels/atlxr-the-st-regis-atlanta/experiences/?scid=feed67b0-9a2f-4de1-8df6-114544116108
+2026-05-19 14:00:05,758   ✅ Buckhead Grand Spa — (404) 816-4511 — http://www.buckheadgrandspa.com/
+2026-05-19 14:00:06,091   ✅ Woodhouse Spa - Buckhead — (678) 391-4333 — https://buckhead.woodhousespas.com/
+2026-05-19 14:00:06,314   ✅ Waldorf Astoria Spa Atlanta Buckhead — (404) 995-7526 — https://www.hilton.com/en/hotels/atlwawa-waldorf-astoria-atlanta-buckhead/spa/?y_source=1_NDkyMjIyNDItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D
+2026-05-19 14:00:06,541   ✅ Natural Body Spa + Med Spa | Morningside — (404) 872-1039 — https://www.naturalbody.com/spa-locations/georgia-morningside
+2026-05-19 14:00:06,692   ✅ Woodhouse Spa - Dunwoody — (770) 377-3505 — http://dunwoody.woodhousespas.com/?utm_source=google&utm_medium=yext
+2026-05-19 14:00:07,009   ✅ The Wellness Spot — (404) 996-6944 — http://thewellnessspotatl.com/
+2026-05-19 14:00:07,267   ✅ Boutique Day Spa — (770) 886-0044 — http://boutiquedayspa.com/
+2026-05-19 14:00:07,572   ✅ Natural Body Spa + Med Spa | Brookhaven — (404) 816-8801 — https://www.naturalbody.com/spa-locations/georgia-brookhaven
+2026-05-19 14:00:07,837   ✅ exhale Spa — (404) 720-5000 — https://exhalespa.com/midtown-atlanta/
+2026-05-19 14:00:08,038   ✅ Spa Signia Atlanta — (404) 282-8275 — https://www.hilton.com/en/hotels/atlwcsa-signia-atlanta-georgia-world-congress-center/wellness/spa-signia/?SEO_id=GMB-AMER--S-ATLWCSA-1&y_source=1_MTA1MTUwNDY1NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D
+2026-05-19 14:00:08,179   ✅ Massage Etoile - Howell Mill Road — (770) 526-0188 — https://www.massageetoile.com/
+2026-05-19 14:00:08,443   ✅ The NOW Massage Atlanta West Midtown — (470) 474-6712 — https://www.thenowmassage.com/boutique/atlanta-west-midtown
+2026-05-19 14:00:08,612   ✅ Serene + Oasis Day Spa & Waxing Studio — (404) 590-4738 — https://www.sereneoasisdayspa.com/
+2026-05-19 14:00:08,782   ✅ Indigo Wellness — (404) 370-1151 — http://www.indigowellnessatl.com/
+2026-05-19 14:00:09,049   ✅ LumiVita Buckhead — (404) 869-7722 — https://lumivita.com/location/buckhead
+2026-05-19 14:00:13,547   ✅ The Ideal Spa — (470) 870-1851 — http://www.theidealspa.biz/
+2026-05-19 14:00:13,693   ✅ The Spa — (404) 586-6022 — https://www.marriott.com/en-us/hotels/atlmq-atlanta-marriott-marquis/experiences/?scid=feed67b0-9a2f-4de1-8df6-114544116108
+2026-05-19 14:00:16,730   ✅ Celestial Spa — (404) 691-2448 — http://celestialspa.com/
+2026-05-19 14:00:17,003   ✅ Vayu Spa: Massage & Wellness — (770) 490-0568 — http://www.vayuspa.com/
+2026-05-19 14:00:17,140   ✅ Spa At Serenbe — (770) 463-0880 — http://spaatserenbe.com/
+2026-05-19 14:00:17,320   ✅ The Rosefinch Spa — (404) 724-5811 — http://www.therosefinchspa.com/
+2026-05-19 14:00:17,618   ✅ The Whitley Spa, Atlanta Buckhead — (404) 240-7042 — https://thewhitleyhotel.com/spa/
+2026-05-19 14:00:17,752   ✅ LeHua Spa — (770) 438-8888 — http://www.lehua-spa.com/
+2026-05-19 14:00:18,006   ✅ Velour Men's Spa — (404) 333-7119 — https://www.velourmensspa.com/
+2026-05-19 14:00:18,276   ✅ Silk Spa — (404) 353-7169 — https://silkspa-atl.com/
+2026-05-19 14:00:18,519   ✅ Loews Atlanta Hotel — (404) 745-5000 — https://www.loewshotels.com/atlanta-hotel
+2026-05-19 14:00:18,697   ✅ The Art of Touch Therapeutic Massage Center — (404) 602-4054 — http://www.theartoftouchmassage.com/
+2026-05-19 14:00:18,855   ✅ Spa Sydell Integrative Aesthetics — (404) 255-7727 — https://spasydell.com/
+2026-05-19 14:00:19,028   ✅ Natural Body Spa | Snellville — (770) 985-1234 — https://www.naturalbody.com/spa-locations/georgia-snellville
+2026-05-19 14:00:19,252   ✅ The House of Wellness Med Spa — (404) 963-7531 — https://thowmedspa.org/
+2026-05-19 14:00:19,554   ✅ Heal Thyself Atlanta — (470) 558-6339 — https://www.healthyselfatl.com/
+2026-05-19 14:00:19,780   ✅ Aviary Beauty + Wellness Summerhill — (404) 313-3383 — https://www.aviarybeauty.com/
+2026-05-19 14:00:19,976   ✅ Find Your Space The Ultimate Spa — (678) 632-2326 — http://findyourspacespa.com/
+2026-05-19 14:00:20,283   ✅ TBK WELLNESS SPA — (678) 587-5019 — https://www.tbkwellness.com/
+2026-05-19 14:00:20,469   ✅ Spa at The Starling — (404) 724-2570 — https://www.thestarling.com/spa-midtown-atlanta
+2026-05-19 14:00:20,603   ✅ Blu Luxe Day Spa — (470) 374-2720 — no website
+2026-05-19 14:00:20,760   ✅ Natural Body Spa + Med Spa | Alpharetta — (678) 866-3663 — https://www.naturalbody.com/spa-locations/georgia-alpharetta
+2026-05-19 14:00:23,370   ✅ Night Shine Relaxation — (773) 705-5655 — no website
+2026-05-19 14:00:23,542   ✅ FACE FOUNDRIÉ - Atlanta West Midtown — (404) 229-2268 — https://www.facefoundrie.com/location/atlanta/
+2026-05-19 14:00:23,725   ✅ BLUE Med Center & Spa — (678) 590-5864 — https://lumivita.com/location/midtown
+2026-05-19 14:00:23,891   ✅ Melissa spa and massage wellness — (509) 746-7820 — no website
+2026-05-19 14:00:24,017   ✅ The St. Regis Atlanta — (404) 563-7900 — https://www.marriott.com/en-us/hotels/atlxr-the-st-regis-atlanta/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0
+2026-05-19 14:00:24,168   ✅ FLO2S — (678) 856-8060 — http://flo2s.com/
+2026-05-19 14:00:24,373   ✅ Graceful Glow Spa — (678) 895-5853 — http://styleseat.com/gracefulglowspa
+2026-05-19 14:00:24,576   ✅ Massage Envy — (404) 876-3689 — https://locations.massageenvy.com/georgia/atlanta/650-ponce-de-leon-ave.html?utm_source=GMB&utm_medium=useractions&utm_campaign=website
+2026-05-19 14:00:24,759   ✅ Rebalance Spa — (470) 355-9602 — https://rebalancespaa.com/
+2026-05-19 14:00:24,880   ✅ Kathleen Massage & Spa — (508) 536-7086 — no website
+2026-05-19 14:00:25,038   ✅ ATLANTA CURVES THERAPEUTIC MASSAGE — (678) 293-7513 — https://atlantacurves.com/
+2026-05-19 14:00:25,066   📊 Found 50, 50 new (rest were duplicates)
+2026-05-19 14:00:26,067 
+==================================================
+2026-05-19 14:00:26,067 ✅ Scraping complete
+2026-05-19 14:00:26,067    Total found:  50
+2026-05-19 14:00:26,067    New leads:    50
+2026-05-19 14:00:26,067    Duplicates:   0
+2026-05-19 14:00:26,072    DB total:     1473 leads (1034 with emails)
+2026-05-19 14:00:26,072 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-19 14:00:26,310 🔍 Finding emails for 50 leads...
+2026-05-19 14:00:26,792 Hunter.io rate limited — pausing 60s
+2026-05-19 14:01:27,260 🔮 Guessed: info@copcp.com — Central Ohio Primary Care Physical Therapy - Eastside
+2026-05-19 14:01:28,253 Hunter.io rate limited — pausing 60s
+2026-05-19 14:02:28,626 🔮 Guessed: info@affiliatept.com — Affiliate Physical Therapy at Crossfit Grandview
+2026-05-19 14:02:29,508 Hunter.io rate limited — pausing 60s
+2026-05-19 14:03:29,862 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Sports Medicine Therapy Jameson Crane Sports Medicine Institute
+2026-05-19 14:03:30,741 Hunter.io rate limited — pausing 60s
+2026-05-19 14:04:31,156 🔮 Guessed: info@copcp.com — Central Ohio Primary Care Physical Therapy - Polaris
+2026-05-19 14:04:32,065 Hunter.io rate limited — pausing 60s
+2026-05-19 14:05:32,468 🔮 Guessed: info@solephysicaltherapy.com — Sole Physical Therapy LLC
+2026-05-19 14:05:33,529 Hunter.io rate limited — pausing 60s
+2026-05-19 14:06:33,887 🔮 Guessed: info@athletico.com — Athletico Physical Therapy - Columbus (Hilliard)
+2026-05-19 14:06:34,735 Hunter.io rate limited — pausing 60s
+2026-05-19 14:07:35,113 🔮 Guessed: info@arsenalrehab.com — Arsenal Performance and Rehabilitation
+2026-05-19 14:07:36,012 Hunter.io rate limited — pausing 60s
+2026-05-19 14:08:36,367 🔮 Guessed: info@wexnermedical.osu.edu — OSU Sports Medicine and Rehabilitation- Campus
+2026-05-19 14:08:37,067 Hunter.io rate limited — pausing 60s
+2026-05-19 14:09:37,413 🔮 Guessed: info@p3physio.com — Peak Physiotherapy and Performance
+2026-05-19 14:09:38,146 Hunter.io rate limited — pausing 60s
+2026-05-19 14:10:38,404 🔮 Guessed: info@novacare.com — NovaCare Rehabilitation in partnership with OhioHealth - Grandview Heights
+2026-05-19 14:10:39,141 Hunter.io rate limited — pausing 60s
+2026-05-19 14:11:39,517 🔮 Guessed: info@614pelvicfloor.com — Columbus Pelvic Floor Physical Therapy
+2026-05-19 14:11:40,393 Hunter.io rate limited — pausing 60s
+2026-05-19 14:12:41,225 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Sports Medicine Rehabilitation RPAC
+2026-05-19 14:12:42,102 Hunter.io rate limited — pausing 60s
+2026-05-19 14:13:42,548 🔮 Guessed: info@botkinrehabservices.com — Botkin Rehab Services
+2026-05-19 14:13:43,297 Hunter.io rate limited — pausing 60s
+2026-05-19 14:14:44,137 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Sports Medicine Rehabilitation Jewish Community Center
+2026-05-19 14:14:45,446 Hunter.io rate limited — pausing 60s
+2026-05-19 14:15:45,829 🔮 Guessed: info@fm2us.com — Fitness Matters - Worthington
+2026-05-19 14:15:46,575 Hunter.io rate limited — pausing 60s
+2026-05-19 14:16:46,957 🔮 Guessed: info@fm2us.com — Fitness Matters - Grandview
+2026-05-19 14:16:47,850 Hunter.io rate limited — pausing 60s
+2026-05-19 14:17:48,281 🔮 Guessed: info@ptadvantage.com — Athletic Advantage Physical Therapy and Wellness Center
+2026-05-19 14:17:49,047 Hunter.io rate limited — pausing 60s
+2026-05-19 14:18:49,436 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Physical Medicine and Rehabilitation Martha Morehouse Outpatient Care
+2026-05-19 14:18:50,371 Hunter.io rate limited — pausing 60s
+2026-05-19 14:19:50,712 🔮 Guessed: info@graypt.com — Gray Performance Physio
+2026-05-19 14:19:51,411 Hunter.io rate limited — pausing 60s
+2026-05-19 14:20:52,234 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Pelvic Health Physical Therapy Outpatient Care Gahanna
+2026-05-19 14:20:53,186 Hunter.io rate limited — pausing 60s
+2026-05-19 14:21:53,568 🔮 Guessed: info@ohiohealth.com — McConnell Spine, Sport And Joint Center
+2026-05-19 14:21:54,309 Hunter.io rate limited — pausing 60s
+2026-05-19 14:22:54,699 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Orthopedic Urgent Care Jameson Crane Sports Medicine Institute
+2026-05-19 14:22:55,601 Hunter.io rate limited — pausing 60s
+2026-05-19 14:23:55,958 🔮 Guessed: info@ohiohealth.com — Ohiohealth Physical Therapy
+2026-05-19 14:23:56,718 Hunter.io rate limited — pausing 60s
+2026-05-19 14:24:57,047 🔮 Guessed: info@wexnermedical.osu.edu — Ohio State Sports Medicine Outpatient Care East
+2026-05-19 14:24:57,930 Hunter.io rate limited — pausing 60s
+2026-05-19 14:25:58,334 🔮 Guessed: info@athletico.com — Athletico Physical Therapy - Westerville
+2026-05-19 14:25:59,519 Hunter.io rate limited — pausing 60s
+2026-05-19 14:26:59,887 🔮 Guessed: info@faawc.com — Central Ohio Physical Therapy
+2026-05-19 14:27:00,651 Hunter.io rate limited — pausing 60s
+2026-05-19 14:28:01,098 🔮 Guessed: info@orthopedicone.com — Orthopedic ONE Westerville
+2026-05-19 14:28:02,095 Hunter.io rate limited — pausing 60s
+2026-05-19 14:29:02,513 🔮 Guessed: info@meyersportstherapy.com — Meyer Sports Therapy
+2026-05-19 14:29:03,423 Hunter.io rate limited — pausing 60s
+2026-05-19 14:30:03,948 🔮 Guessed: info@coremovespt.com — Core Moves Pelvic Floor PT and Pilates
+2026-05-19 14:30:04,803 Hunter.io rate limited — pausing 60s
+2026-05-19 14:31:05,177 🔮 Guessed: info@modernphysioohio.com — The Modern Physio
+2026-05-19 14:31:05,888 Hunter.io rate limited — pausing 60s
+2026-05-19 14:32:06,616 🔮 Guessed: info@orthofootankle.com — Orthopedic Foot & Ankle Center
+2026-05-19 14:32:07,518 Hunter.io rate limited — pausing 60s
+2026-05-19 14:33:07,914 🔮 Guessed: info@orthofootankle.com — Foot & Ankle Specialty Therapy
+2026-05-19 14:33:08,665 Hunter.io rate limited — pausing 60s
+2026-05-19 14:34:09,006 🔮 Guessed: info@elevateptperformance.com — Elevate Human Performance
+2026-05-19 14:34:09,945 Hunter.io rate limited — pausing 60s
+2026-05-19 14:35:10,437 🔮 Guessed: info@starrmfr.com — Starr MFR PT & Wellness
+2026-05-19 14:35:11,397 Hunter.io rate limited — pausing 60s
+2026-05-19 14:36:11,801 🔮 Guessed: info@athletico.com — Athletico Physical Therapy - Dublin
+2026-05-19 14:36:12,730 Hunter.io rate limited — pausing 60s
+2026-05-19 14:37:13,101 🔮 Guessed: info@wexnermedical.osu.edu — OSU Outpatient Rehab
+2026-05-19 14:37:13,606 
+==================================================
+2026-05-19 14:37:13,607 ✅ Email finder complete
+2026-05-19 14:37:13,607    API found:  0
+2026-05-19 14:37:13,607    Guessed:    36
+2026-05-19 14:37:13,607    Total:      36
+2026-05-19 14:37:13,607 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-19.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue May 19** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1473 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue May 19 14:37:14 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-19.log

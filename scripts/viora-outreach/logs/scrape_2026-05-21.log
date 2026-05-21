@@ -1,0 +1,13 @@
+2026-05-21 14:00:05,280 🔄 Auto-rotation day 141: medical spa in Philadelphia, PA
+2026-05-21 14:00:05,286 
+🔍 Searching: medical spa in Philadelphia, PA
+2026-05-21 14:00:05,523 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-21 14:00:06,527 
+==================================================
+2026-05-21 14:00:06,530 ✅ Scraping complete
+2026-05-21 14:00:06,531    Total found:  0
+2026-05-21 14:00:06,531    New leads:    0
+2026-05-21 14:00:06,531    Duplicates:   0
+2026-05-21 14:00:06,541    DB total:     1521 leads (1105 with emails)
+2026-05-21 14:00:06,541 ==================================================
+
