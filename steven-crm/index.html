@@ -3049,6 +3049,13 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     return; // don't load data yet
   }
 
+  // Show admin nav if applicable (restored session)
+  const navAdminEl = document.getElementById('navAdmin');
+  if(navAdminEl) navAdminEl.style.display = isAdmin() ? 'flex' : 'none';
+  // Sync sidebar role label
+  const roleElR = document.getElementById('sbUserRole');
+  if(roleElR) roleElR.textContent = currentUser.role === 'admin' ? 'Owner & Admin' : 'Team Member';
+
   // Load all data from Supabase
   try {
     await loadAll();
