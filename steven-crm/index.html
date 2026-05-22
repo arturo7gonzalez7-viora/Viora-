@@ -2548,7 +2548,7 @@ function copyTemplate(b64,name){
 // SETTINGS
 // ============================================================
 function renderSettings(){
-  document.getElementById('sbUserName').textContent=db.settings.name||'Steven K.';
+  document.getElementById('sbUserName').textContent=currentUser?currentUser.name:(db.settings.name||'Steven K.');
   const teamHtml = isAdmin() ? `
     <div class="divider" style="margin:20px 0"></div>
     <div class="sh-title mb-16">👥 Team Members</div>
@@ -2825,7 +2825,7 @@ async function saveSettings(){
   const row={name:document.getElementById('sN').value,company:document.getElementById('sCo').value,phone:document.getElementById('sPh').value,email:document.getElementById('sEm').value};
   await supabase.from('settings').upsert({id:1,...row});
   db.settings={...db.settings,...row};
-  document.getElementById('sbUserName').textContent=row.name||'Steven K.';
+  document.getElementById('sbUserName').textContent=currentUser?currentUser.name:(row.name||'Steven K.');
   renderSettings();toast('Settings saved!');
 }
 function exportData(){
