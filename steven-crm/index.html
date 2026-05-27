@@ -1646,7 +1646,7 @@ function leadForm(l){
       <option value="dead" ${l?.status==='dead'?'selected':''}>Dead</option>
     </select></div>
   </div>
-  ${isAdmin()?`<div class="fg full"><label class="flbl">Assign To</label><select class="fi" id="lAssign"><option value="">Unassigned</option>${allUsers.map(u=>`<option value="${u.id}" ${l?.assignedTo===u.id?'selected':''}>${u.name}</option>`).join('')}</select></div>`:''}
+  ${isAdmin()?`<div class="fg full"><label class="flbl">Assign To</label><select class="fi" id="lAssign"><option value="">Unassigned</option>${allUsers.map(u=>`<option value="${u.id}" ${(l?.assignedTo||currentUser?.id)===u.id?'selected':''}>${u.name}</option>`).join('')}</select></div>`:''}
   <div class="faction">
     <button type="button" class="btn btn-secondary" onclick="cm('mAddLead')">Cancel</button>
     <button type="button" class="btn btn-primary" onclick="saveLead()">Save Lead</button>
@@ -1771,7 +1771,7 @@ function propForm(p,pre){
   </div>
   <div class="fg"><label class="flbl">Concessions ($)</label><input class="fi" id="pConc" type="number" value="${fin.concessions||0}"></div>
   <div class="fg full"><label class="flbl">Notes</label><textarea class="fi" id="pNo">${p?.notes||''}</textarea></div>
-  ${isAdmin()?`<div class="fg full"><label class="flbl">Assign To</label><select class="fi" id="pAssign"><option value="">Unassigned</option>${allUsers.map(u=>`<option value="${u.id}" ${p?.assignedTo===u.id?'selected':''}>${u.name}</option>`).join('')}</select></div>`:''}
+  ${isAdmin()?`<div class="fg full"><label class="flbl">Assign To</label><select class="fi" id="pAssign"><option value="">Unassigned</option>${allUsers.map(u=>`<option value="${u.id}" ${(p?.assignedTo||currentUser?.id)===u.id?'selected':''}>${u.name}</option>`).join('')}</select></div>`:''}
   <input type="hidden" id="pLeadId" value="${p?.leadId||''}">  
   <div class="faction">
     <button type="button" class="btn btn-secondary" onclick="cm('mAddProp')">Cancel</button>
