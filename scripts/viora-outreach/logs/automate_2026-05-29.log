@@ -1,0 +1,119 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-29 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-29 14:00:05,413 🔄 Auto-rotation day 149: plastic surgeon in Salt Lake City, UT
+2026-05-29 14:00:05,414 
+🔍 Searching: plastic surgeon in Salt Lake City, UT
+2026-05-29 14:00:05,604 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-29 14:00:06,605 
+==================================================
+2026-05-29 14:00:06,606 ✅ Scraping complete
+2026-05-29 14:00:06,606    Total found:  0
+2026-05-29 14:00:06,606    New leads:    0
+2026-05-29 14:00:06,606    Duplicates:   0
+2026-05-29 14:00:06,613    DB total:     1521 leads (1244 with emails)
+2026-05-29 14:00:06,614 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-29 14:00:06,934 🔍 Finding emails for 50 leads...
+2026-05-29 14:00:07,654 🔮 Guessed: info@westmiaminailsalon.com — Fancy Nail Boutique and Spa
+2026-05-29 14:00:08,997 🔮 Guessed: info@midasnailz.square.site — Midas Nails
+2026-05-29 14:00:10,014 🔮 Guessed: info@onelnyc.com — One L Professional
+2026-05-29 14:00:11,827 🔮 Guessed: info@thepinkroombeauty.com — The Pink Room Beauty Spa
+2026-05-29 14:00:12,642 🔮 Guessed: info@glammedbychazzy.com — Glammed By Chazzy | Nails Miami
+2026-05-29 14:00:13,517 🔮 Guessed: info@manistudiomiami.com — Mani Studio
+2026-05-29 14:00:14,312 🔮 Guessed: info@rosenailloungemiami.com — Rosé Nail Lounge
+2026-05-29 14:00:16,946 ✅ Hunter found: bardia.ketabi@fourseasons.com (score: 99) — The Spa at Four Seasons Atlanta
+2026-05-29 14:00:19,555 ✅ Hunter found: beverly.union@marriott.com (score: 85) — The St. Regis Atlanta Spa
+2026-05-29 14:00:21,005 🔮 Guessed: info@buckheadgrandspa.com — Buckhead Grand Spa
+2026-05-29 14:00:21,788 🔮 Guessed: info@buckhead.woodhousespas.com — Woodhouse Spa - Buckhead
+2026-05-29 14:00:23,347 ✅ Hunter found: mariana.steetle@hilton.com (score: 85) — Waldorf Astoria Spa Atlanta Buckhead
+2026-05-29 14:00:24,223 ✅ Hunter found: rhonda.perry@naturalbody.com (score: 93) — Natural Body Spa + Med Spa | Morningside
+2026-05-29 14:00:24,992 🔮 Guessed: info@dunwoody.woodhousespas.com — Woodhouse Spa - Dunwoody
+2026-05-29 14:00:25,852 🔮 Guessed: info@thewellnessspotatl.com — The Wellness Spot
+2026-05-29 14:00:26,906 🔮 Guessed: info@boutiquedayspa.com — Boutique Day Spa
+2026-05-29 14:00:27,957 ✅ Hunter found: rhonda.perry@naturalbody.com (score: 93) — Natural Body Spa + Med Spa | Brookhaven
+2026-05-29 14:00:29,047 ✅ Hunter found: victoria.casillas@exhalespa.com (score: 98) — exhale Spa
+2026-05-29 14:00:30,133 ✅ Hunter found: mariana.steetle@hilton.com (score: 85) — Spa Signia Atlanta
+2026-05-29 14:00:30,926 🔮 Guessed: info@massageetoile.com — Massage Etoile - Howell Mill Road
+2026-05-29 14:00:31,776 ✅ Hunter found: andrews@thenowmassage.com (score: 94) — The NOW Massage Atlanta West Midtown
+2026-05-29 14:00:32,526 🔮 Guessed: info@sereneoasisdayspa.com — Serene + Oasis Day Spa & Waxing Studio
+2026-05-29 14:00:33,424 ✅ Hunter found: paris@indigowellnessatl.com (score: 99) — Indigo Wellness
+2026-05-29 14:00:34,208 🔮 Guessed: info@lumivita.com — LumiVita Buckhead
+2026-05-29 14:00:34,977 🔮 Guessed: info@theidealspa.biz — The Ideal Spa
+2026-05-29 14:00:35,868 ✅ Hunter found: beverly.union@marriott.com (score: 85) — The Spa
+2026-05-29 14:00:36,374 
+==================================================
+2026-05-29 14:00:36,375 ✅ Email finder complete
+2026-05-29 14:00:36,375    API found:  10
+2026-05-29 14:00:36,375    Guessed:    16
+2026-05-29 14:00:36,375    Total:      26
+2026-05-29 14:00:36,375 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-29.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Fri May 29** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1521 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Fri May 29 14:00:36 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-29.log

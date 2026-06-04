@@ -1,0 +1,121 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-05-26 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-26 14:00:05,931 🔄 Auto-rotation day 146: attorney in Sacramento, CA
+2026-05-26 14:00:05,931 
+🔍 Searching: attorney in Sacramento, CA
+2026-05-26 14:00:06,134 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-26 14:00:07,137 
+==================================================
+2026-05-26 14:00:07,138 ✅ Scraping complete
+2026-05-26 14:00:07,138    Total found:  0
+2026-05-26 14:00:07,138    New leads:    0
+2026-05-26 14:00:07,138    Duplicates:   0
+2026-05-26 14:00:07,144    DB total:     1521 leads (1161 with emails)
+2026-05-26 14:00:07,144 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-05-26 14:00:07,456 🔍 Finding emails for 50 leads...
+2026-05-26 14:00:08,271 ✅ Hunter found: mbell@robinsins.com (score: 94) — Robins Insurance Agency, Inc.
+2026-05-26 14:00:09,579 🔮 Guessed: info@valenciainsurance.net — Valencia Insurance
+2026-05-26 14:00:10,788 ✅ Hunter found: bbayliss@firstacceptance.com (score: 99) — First Acceptance Insurance
+2026-05-26 14:00:11,621 🔮 Guessed: info@locations.acceptance.com — Acceptance Insurance
+2026-05-26 14:00:12,495 🔮 Guessed: info@locations.acceptance.com — Acceptance Insurance
+2026-05-26 14:00:13,368 ✅ Hunter found: dstuart@swinsurancegroup.com (score: 97) — Southwestern Insurance Group
+2026-05-26 14:00:14,358 🔮 Guessed: info@insuringyouforless.com — Tennessee Auto Insurance Agency
+2026-05-26 14:00:15,176 🔮 Guessed: info@agents.allstate.com — Nashville Insurance Group, Inc.: Allstate Insurance
+2026-05-26 14:00:16,028 ✅ Hunter found: bobby@btjinsurance.com (score: 91) — BTJ Insurance Inc
+2026-05-26 14:00:17,037 ✅ Hunter found: fmedina@fiestainsurance.com (score: 92) — Fiesta Auto Insurance & Tax Service
+2026-05-26 14:00:17,864 🔮 Guessed: info@choicetn.com — Choice Insurance Agency LLC
+2026-05-26 14:00:18,762 🔮 Guessed: info@insuringyouforless.com — Tennessee Auto Insurance Agency
+2026-05-26 14:00:19,618 ✅ Hunter found: will@tuckertn.com (score: 90) — Tucker Agency, LLC
+2026-05-26 14:00:20,594 ✅ Hunter found: josh@hqinsurance.com (score: 95) — HQ Insurance
+2026-05-26 14:00:21,609 ✅ Hunter found: jdeyo@zanderins.com (score: 98) — Zander Insurance
+2026-05-26 14:00:22,357 🔮 Guessed: info@nashvilleinsuranceservices.com — Nashville Insurance Services
+2026-05-26 14:00:23,114 🔮 Guessed: info@locations.acceptance.com — Acceptance Insurance
+2026-05-26 14:00:23,969 🔮 Guessed: info@insuringyouforless.com — Tennessee Auto Insurance Agency
+2026-05-26 14:00:24,790 ✅ Hunter found: preston@heylockeland.com (score: 99) — Lockeland Insurance Advisors
+2026-05-26 14:00:25,655 ✅ Hunter found: a.delgado@myproseguros.com (score: 94) — Proseguros Insurance & Ayuda Latina - Nashville
+2026-05-26 14:00:26,844 ✅ Hunter found: chris@millsinsuranceagency.com (score: 86) — Mills Insurance Agency
+2026-05-26 14:00:27,698 🔮 Guessed: info@ssins.net — S&S Insurance Agency
+2026-05-26 14:00:28,691 ✅ Hunter found: kevin@haleinsurance.com (score: 99) — Hale Insurance
+2026-05-26 14:00:29,585 🔮 Guessed: info@greaternashvilleinsurance.com — Greater Nashville Insurance
+2026-05-26 14:00:31,380 ✅ Hunter found: jpalmer@geico.com (score: 85) — Holly Geronzin - GEICO Insurance Agent
+2026-05-26 14:00:32,291 ✅ Hunter found: jason@tuckerinsurance.com (score: 94) — Tucker Insurance
+2026-05-26 14:00:33,116 🔮 Guessed: info@jeffsummersinsurance.com — Jeff Summers - State Farm Insurance Agent
+2026-05-26 14:00:33,949 🔮 Guessed: info@eastinsurance.net — East Insurance LLC
+2026-05-26 14:00:34,456 
+==================================================
+2026-05-26 14:00:34,456 ✅ Email finder complete
+2026-05-26 14:00:34,457    API found:  14
+2026-05-26 14:00:34,457    Guessed:    14
+2026-05-26 14:00:34,457    Total:      28
+2026-05-26 14:00:34,457 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-05-26.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue May 26** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1521 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue May 26 14:00:34 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-05-26.log

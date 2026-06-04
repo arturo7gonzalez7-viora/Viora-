@@ -1,0 +1,13 @@
+2026-05-26 14:00:05,931 🔄 Auto-rotation day 146: attorney in Sacramento, CA
+2026-05-26 14:00:05,931 
+🔍 Searching: attorney in Sacramento, CA
+2026-05-26 14:00:06,134 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-26 14:00:07,137 
+==================================================
+2026-05-26 14:00:07,138 ✅ Scraping complete
+2026-05-26 14:00:07,138    Total found:  0
+2026-05-26 14:00:07,138    New leads:    0
+2026-05-26 14:00:07,138    Duplicates:   0
+2026-05-26 14:00:07,144    DB total:     1521 leads (1161 with emails)
+2026-05-26 14:00:07,144 ==================================================
+

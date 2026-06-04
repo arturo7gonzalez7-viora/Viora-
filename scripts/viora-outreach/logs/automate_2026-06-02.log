@@ -1,0 +1,130 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤖 JARVIS AUTOMATE v3 — 2026-06-02 14:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📬 STEP 0/5: Checking for replies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 234, in <module>
+    main()
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 126, in main
+    service = get_gmail_service()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/viora-outreach/reply-checker.py", line 63, in get_gmail_service
+    creds.refresh(Request())
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📍 STEP 1/5: Scraping fresh leads (auto-rotate)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-06-02 14:00:04,579 🔄 Auto-rotation day 153: hair salon in Phoenix, AZ
+2026-06-02 14:00:04,580 
+🔍 Searching: hair salon in Phoenix, AZ
+2026-06-02 14:00:04,814 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-06-02 14:00:05,816 
+==================================================
+2026-06-02 14:00:05,818 ✅ Scraping complete
+2026-06-02 14:00:05,818    Total found:  0
+2026-06-02 14:00:05,818    New leads:    0
+2026-06-02 14:00:05,818    Duplicates:   0
+2026-06-02 14:00:05,826    DB total:     1521 leads (1296 with emails)
+2026-06-02 14:00:05,826 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔍 STEP 2/5: Finding emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-06-02 14:00:06,168 🔍 Finding emails for 50 leads...
+2026-06-02 14:00:08,412 🔮 Guessed: info@atlantacurves.com — ATLANTA CURVES THERAPEUTIC MASSAGE
+2026-06-02 14:00:09,358 ✅ Hunter found: kharel@dvidaspa.com (score: 94) — Dvida Spa | Med Spa Services 60654
+2026-06-02 14:00:10,467 🔮 Guessed: info@hmedicalspa.com — H Med Spa
+2026-06-02 14:00:11,422 ✅ Hunter found: pure@puremedicalspa.us (score: 74) — Pure Med Spa
+2026-06-02 14:00:12,363 ✅ Hunter found: andrea@spaderma.com (score: 99) — SpaDerma
+2026-06-02 14:00:13,265 ✅ Hunter found: laurence.humphries@viomedspa.com (score: 99) — VIO Med Spa | Chicago
+2026-06-02 14:00:14,286 🔮 Guessed: info@vivalamedspa.com — Viva La Med Spa-Old Town
+2026-06-02 14:00:15,165 🔮 Guessed: info@bettermedspa.com — Better Med Spa & Wellness
+2026-06-02 14:00:16,049 🔮 Guessed: info@luxuramedspa.com — Luxura Med Spa
+2026-06-02 14:00:17,037 ✅ Hunter found: oldt@oldtownmedspa.com (score: 60) — Old Town Med Spa (Lincoln Park)
+2026-06-02 14:00:17,982 ✅ Hunter found: samantha@naturalbeautymedspa.com (score: 99) — Natural Beauty Med Spa- Chicago
+2026-06-02 14:00:18,828 ✅ Hunter found: oldt@oldtownmedspa.com (score: 60) — Old Town Med Spa
+2026-06-02 14:00:19,754 🔮 Guessed: info@expressmedspas.com — Express Med Spa Chicago, Mount Greenwood
+2026-06-02 14:00:20,650 🔮 Guessed: info@cadellaaesthetics.com — Cadella Aesthetics
+2026-06-02 14:00:21,539 ✅ Hunter found: lindsay@innovative-medspa.com (score: 99) — Innovative MedSpa
+2026-06-02 14:00:22,431 Hunter.io rate limited — pausing 60s
+2026-06-02 14:01:22,831 🔮 Guessed: info@olivomedspa.com — Olivo Med Spa
+2026-06-02 14:01:23,745 Hunter.io rate limited — pausing 60s
+2026-06-02 14:02:24,178 🔮 Guessed: info@dermablissmedspa.com — Derma Bliss Medical Spa
+2026-06-02 14:02:25,008 Hunter.io rate limited — pausing 60s
+2026-06-02 14:03:29,916 🔮 Guessed: info@elysiumchicago.com — Elysium Aesthetics + Longevity
+2026-06-02 14:03:36,559 Hunter.io rate limited — pausing 60s
+2026-06-02 14:04:37,179 🔮 Guessed: info@latenightmedspa.com — Late Night Medspa, Chicago
+2026-06-02 14:04:37,892 Hunter.io rate limited — pausing 60s
+2026-06-02 14:05:38,293 🔮 Guessed: info@refinebytulsi.com — Refine by Tulsi Med Spa
+2026-06-02 14:05:39,204 Hunter.io rate limited — pausing 60s
+2026-06-02 14:06:39,571 🔮 Guessed: info@agelessmedspa.com — Ageless MedSpa
+2026-06-02 14:06:40,288 Hunter.io rate limited — pausing 60s
+2026-06-02 14:07:40,709 🔮 Guessed: info@ovme.com — OVME
+2026-06-02 14:07:41,591 Hunter.io rate limited — pausing 60s
+2026-06-02 14:08:41,965 🔮 Guessed: info@innovative-medspa.com — Innovative MedSpa
+2026-06-02 14:08:42,920 Hunter.io rate limited — pausing 60s
+2026-06-02 14:09:43,254 🔮 Guessed: info@goldcoastmedspa.com — GOLDCOAST medspa
+2026-06-02 14:09:44,082 Hunter.io rate limited — pausing 60s
+2026-06-02 14:10:44,680 🔮 Guessed: info@tresjoliemedicalspa.com — Tres Jolie Medical Spa and Wellness Center
+2026-06-02 14:10:45,581 Hunter.io rate limited — pausing 60s
+2026-06-02 14:11:45,938 🔮 Guessed: info@northwesternplastics.com — Northwestern Med Spa River North
+2026-06-02 14:11:46,443 
+==================================================
+2026-06-02 14:11:46,444 ✅ Email finder complete
+2026-06-02 14:11:46,444    API found:  8
+2026-06-02 14:11:46,444    Guessed:    18
+2026-06-02 14:11:46,444    Total:      26
+2026-06-02 14:11:46,444 ==================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📧 STEP 3/5: Sending cold emails
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  💼 STEP 4/5: Generating LinkedIn DM queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ LinkedIn queue: 20 messages
+📄 Backup: /root/.openclaw/workspace/scripts/viora-outreach/output/linkedin_queue_2026-06-02.txt
+⚠️  No DISCORD_WEBHOOK set — skipping Discord post
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📊 STEP 5/5: Daily report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 VIORA REPORT — Tue Jun 02** (Day 0)
+
+**📋 YOUR TODO:**
+1️⃣ Check calendar for demo calls
+
+**📧 Today:** 0 emails sent · 0 LinkedIn DMs
+**📊 Funnel:** 1521 leads → 55 contacted → 0 replied (0.0%) → 0 demos → 0 closed
+
+**💰 MRR:** $0/mo [░░░░░░░░░░] 0% of $20k
+Need **58** more clients @ $350/mo
+
+⚠️  Set DISCORD_WEBHOOK in .env for Discord reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ JARVIS AUTOMATE v3 COMPLETE — Tue Jun  2 14:11:46 UTC 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your only jobs today:
+  1. Check email for replies (especially positive ones!)
+  2. Send LinkedIn DMs from: /root/.openclaw/workspace/scripts/viora-outreach/output/
+  3. Show up to demo calls and close
+
+📄 Full log: /root/.openclaw/workspace/scripts/viora-outreach/logs/automate_2026-06-02.log

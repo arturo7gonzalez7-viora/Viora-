@@ -1,0 +1,13 @@
+2026-05-28 14:00:05,656 🔄 Auto-rotation day 148: HVAC contractor in Raleigh, NC
+2026-05-28 14:00:05,657 
+🔍 Searching: HVAC contractor in Raleigh, NC
+2026-05-28 14:00:05,835 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-28 14:00:06,836 
+==================================================
+2026-05-28 14:00:06,837 ✅ Scraping complete
+2026-05-28 14:00:06,837    Total found:  0
+2026-05-28 14:00:06,837    New leads:    0
+2026-05-28 14:00:06,837    Duplicates:   0
+2026-05-28 14:00:06,844    DB total:     1521 leads (1217 with emails)
+2026-05-28 14:00:06,844 ==================================================
+

@@ -1,0 +1,13 @@
+2026-05-22 14:00:05,552 🔄 Auto-rotation day 142: med spa in San Francisco, CA
+2026-05-22 14:00:05,552 
+🔍 Searching: med spa in San Francisco, CA
+2026-05-22 14:00:05,773 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-22 14:00:06,789 
+==================================================
+2026-05-22 14:00:06,789 ✅ Scraping complete
+2026-05-22 14:00:06,791    Total found:  0
+2026-05-22 14:00:06,791    New leads:    0
+2026-05-22 14:00:06,791    Duplicates:   0
+2026-05-22 14:00:06,811    DB total:     1521 leads (1133 with emails)
+2026-05-22 14:00:06,811 ==================================================
+

@@ -1,0 +1,13 @@
+2026-06-03 14:00:05,033 🔄 Auto-rotation day 154: barbershop in Dallas, TX
+2026-06-03 14:00:05,034 
+🔍 Searching: barbershop in Dallas, TX
+2026-06-03 14:00:05,225 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-06-03 14:00:06,228 
+==================================================
+2026-06-03 14:00:06,229 ✅ Scraping complete
+2026-06-03 14:00:06,229    Total found:  0
+2026-06-03 14:00:06,229    New leads:    0
+2026-06-03 14:00:06,229    Duplicates:   0
+2026-06-03 14:00:06,236    DB total:     1521 leads (1322 with emails)
+2026-06-03 14:00:06,236 ==================================================
+

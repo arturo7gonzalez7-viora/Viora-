@@ -1,0 +1,13 @@
+2026-05-27 14:00:05,783 🔄 Auto-rotation day 147: HVAC company in Kansas City, MO
+2026-05-27 14:00:05,783 
+🔍 Searching: HVAC company in Kansas City, MO
+2026-05-27 14:00:06,066 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-27 14:00:07,070 
+==================================================
+2026-05-27 14:00:07,071 ✅ Scraping complete
+2026-05-27 14:00:07,071    Total found:  0
+2026-05-27 14:00:07,071    New leads:    0
+2026-05-27 14:00:07,071    Duplicates:   0
+2026-05-27 14:00:07,076    DB total:     1521 leads (1189 with emails)
+2026-05-27 14:00:07,076 ==================================================
+

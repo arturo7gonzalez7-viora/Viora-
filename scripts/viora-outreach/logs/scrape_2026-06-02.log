@@ -1,0 +1,13 @@
+2026-06-02 14:00:04,579 🔄 Auto-rotation day 153: hair salon in Phoenix, AZ
+2026-06-02 14:00:04,580 
+🔍 Searching: hair salon in Phoenix, AZ
+2026-06-02 14:00:04,814 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-06-02 14:00:05,816 
+==================================================
+2026-06-02 14:00:05,818 ✅ Scraping complete
+2026-06-02 14:00:05,818    Total found:  0
+2026-06-02 14:00:05,818    New leads:    0
+2026-06-02 14:00:05,818    Duplicates:   0
+2026-06-02 14:00:05,826    DB total:     1521 leads (1296 with emails)
+2026-06-02 14:00:05,826 ==================================================
+

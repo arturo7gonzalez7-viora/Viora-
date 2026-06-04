@@ -1,0 +1,13 @@
+2026-05-25 14:00:04,799 🔄 Auto-rotation day 145: law office in Minneapolis, MN
+2026-05-25 14:00:04,800 
+🔍 Searching: law office in Minneapolis, MN
+2026-05-25 14:00:05,130 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-05-25 14:00:06,132 
+==================================================
+2026-05-25 14:00:06,132 ✅ Scraping complete
+2026-05-25 14:00:06,132    Total found:  0
+2026-05-25 14:00:06,132    New leads:    0
+2026-05-25 14:00:06,132    Duplicates:   0
+2026-05-25 14:00:06,139    DB total:     1521 leads (1133 with emails)
+2026-05-25 14:00:06,139 ==================================================
+

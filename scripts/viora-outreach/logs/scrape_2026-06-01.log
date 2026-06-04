@@ -1,0 +1,13 @@
+2026-06-01 14:00:05,695 🔄 Auto-rotation day 152: cosmetic dentistry in Houston, TX
+2026-06-01 14:00:05,696 
+🔍 Searching: cosmetic dentistry in Houston, TX
+2026-06-01 14:00:05,922 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-06-01 14:00:06,924 
+==================================================
+2026-06-01 14:00:06,925 ✅ Scraping complete
+2026-06-01 14:00:06,925    Total found:  0
+2026-06-01 14:00:06,925    New leads:    0
+2026-06-01 14:00:06,925    Duplicates:   0
+2026-06-01 14:00:06,931    DB total:     1521 leads (1270 with emails)
+2026-06-01 14:00:06,931 ==================================================
+
