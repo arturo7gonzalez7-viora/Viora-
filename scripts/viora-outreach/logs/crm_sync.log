@@ -76,3 +76,5 @@
    Run: python3 crm-sync.py --auth
 ❌ Sheets not authorized yet.
    Run: python3 crm-sync.py --auth
+❌ Sheets not authorized yet.
+   Run: python3 crm-sync.py --auth

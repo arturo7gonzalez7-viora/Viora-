@@ -22,6 +22,12 @@ When Arturo asks for the dashboard link:
 2. Grab token from config
 3. Send combined URL with `#token=`
 
+## Vercel Deployment
+- **Project**: steven-crm (prj_HSGmw1xwDq4sM6nURmAqEOFnuOdE)
+- **Personal deploy token**: vcp_8RrVYxnuM1QCFqRx6ZcRz2gkC95E8C8ADXMCnr2EAnb7nZZDN33GdpxY
+- **Deploy command**: `cd /root/.openclaw/workspace/steven-crm && vercel --prod --yes --token vcp_8RrVYxnuM1QCFqRx6ZcRz2gkC95E8C8ADXMCnr2EAnb7nZZDN33GdpxY`
+- **Live URL**: https://steven-crm.vercel.app
+
 ## Browser Relay / Chrome Extension
 - Extension must be clicked ON while on the target tab (Google Sheets, etc.)
 - Dashboard shows "tab connected" only when port config matches actual runtime port

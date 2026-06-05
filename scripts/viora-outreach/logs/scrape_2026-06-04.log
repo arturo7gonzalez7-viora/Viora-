@@ -1,0 +1,13 @@
+2026-06-04 14:00:04,425 🔄 Auto-rotation day 155: beauty salon in San Antonio, TX
+2026-06-04 14:00:04,426 
+🔍 Searching: beauty salon in San Antonio, TX
+2026-06-04 14:00:04,619 API error: REQUEST_DENIED — You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started
+2026-06-04 14:00:05,622 
+==================================================
+2026-06-04 14:00:05,623 ✅ Scraping complete
+2026-06-04 14:00:05,623    Total found:  0
+2026-06-04 14:00:05,623    New leads:    0
+2026-06-04 14:00:05,623    Duplicates:   0
+2026-06-04 14:00:05,631    DB total:     1521 leads (1345 with emails)
+2026-06-04 14:00:05,631 ==================================================
+

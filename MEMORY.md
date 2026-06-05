@@ -30,8 +30,14 @@
 
 ## REAL ESTATE
 - FlipRight Construction & Renovation (Arturo's biz)
-- Steven CRM: https://steven-crm.vercel.app | Steven paid $2,500 | localStorage only (no DB yet)
-- Next: Supabase + auth, custom domain app.skhomesolutions.com, Twilio SMS
+- Steven CRM: https://steven-crm.vercel.app | Steven paid $2,500
+- GitHub: https://github.com/arturo7gonzalez7-viora/steven-crm (private)
+- Stack: single index.html + Supabase backend (fully connected)
+- Deploy: `cd /root/.openclaw/workspace/steven-crm && vercel --prod --yes --token vcp_8RrVYxnuM1QCFqRx6ZcRz2gkC95E8C8ADXMCnr2EAnb7nZZDN33GdpxY`
+- Supabase: malteiuhxsxrnxpyborf.supabase.co | users(5) leads(7) properties(12)
+- Features: Kanban pipeline, AI Deal Analyzer (Claude), Lead Source tracking + analytics, team auth, ARV Pro Calculator, photo/doc/notes uploads, investor tracking
+- AI Deal Analyzer: needs Anthropic key in Settings to activate (Steven's key)
+- Next: custom domain app.skhomesolutions.com, Twilio SMS
 - King Khang 2.0: AI-powered wholesaling system strategy
 
 ## TRADING

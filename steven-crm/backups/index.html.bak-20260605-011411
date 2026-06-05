@@ -949,8 +949,7 @@ textarea.fi{resize:vertical;min-height:72px}
 </div>
 
   <!-- MLS/Property Data Settings (rendered dynamically) -->
-  <div id="aiSettingsSection" style="margin-top:18px"></div>
-  <div id="mlsSettingsSection" style="margin-top:8px"></div>
+  <div id="mlsSettingsSection" style="margin-top:18px"></div>
 
 
 <!-- INVESTORS PAGE -->
@@ -1648,7 +1647,6 @@ function leadForm(l){
     </select></div>
   </div>
   ${isAdmin()?`<div class="fg full"><label class="flbl">Assign To</label><select class="fi" id="lAssign"><option value="">Unassigned</option>${allUsers.map(u=>`<option value="${u.id}" ${(l?.assignedTo||currentUser?.id)===u.id?'selected':''}>${u.name}</option>`).join('')}</select></div>`:''}
-  <div class="fg full"><label class="flbl">Lead Source</label><select class="fi" id="lSource"><option value="">— Select —</option>${['Cold Call','Facebook Ad','Google PPC','Direct Mail','Referral','Driving for Dollars','Website','Other'].map(s=>`<option value="${s}" ${(l?.lead_source||'')===(s)?'selected':''}>${s}</option>`).join('')}</select></div>
   <div class="faction">
     <button type="button" class="btn btn-secondary" onclick="cm('mAddLead')">Cancel</button>
     <button type="button" class="btn btn-primary" onclick="saveLead()">Save Lead</button>
@@ -1684,13 +1682,12 @@ async function saveLead(){
   const sc=score(sit,tl,co);
   const today=new Date().toISOString().split('T')[0];
   const assignedTo = document.getElementById('lAssign')?.value || (currentUser?currentUser.id:'');
-  const lead_source = document.getElementById('lSource')?.value || '';
-  const row={name:n,address:a,phone:document.getElementById('lPh').value,email:document.getElementById('lEm').value,ask_price:parseInt(document.getElementById('lAP').value)||0,situation:sit,timeline:tl,condition:co,score:sc,status:document.getElementById('lSt').value,last_contact:today,notes:[],assigned_to:assignedTo,lead_source};
+  const row={name:n,address:a,phone:document.getElementById('lPh').value,email:document.getElementById('lEm').value,ask_price:parseInt(document.getElementById('lAP').value)||0,situation:sit,timeline:tl,condition:co,score:sc,status:document.getElementById('lSt').value,last_contact:today,notes:[],assigned_to:assignedTo};
   if(eid){
     const {error}=await supabase.from('leads').update(row).eq('id',eid);
     if(error){toast('Save error: '+error.message,true);return;}
     const i=db.leads.findIndex(l=>l.id===eid);
-    db.leads[i]={...db.leads[i],name:n,address:a,phone:row.phone,email:row.email,askPrice:row.ask_price,situation:sit,timeline:tl,condition:co,score:sc,status:row.status,lastContact:today,assignedTo:assignedTo,lead_source};
+    db.leads[i]={...db.leads[i],name:n,address:a,phone:row.phone,email:row.email,askPrice:row.ask_price,situation:sit,timeline:tl,condition:co,score:sc,status:row.status,lastContact:today,assignedTo:assignedTo};
     addAct('✏️','Lead updated: '+n);toast('Lead updated!');
   } else {
     row.id='l'+Date.now();
@@ -1797,119 +1794,6 @@ function calcMAO(){
   const b=document.getElementById('maoBox');
   if(b)b.innerHTML=arv&&rep?`<strong>MAO = $${Math.round(arv*.7-rep).toLocaleString()}</strong> &nbsp;(${arv.toLocaleString()} × 70% − ${rep.toLocaleString()})`:' Enter ARV + Repairs to see MAO';
 }
-
-/* ============================================================
-   AI DEAL ANALYZER
-   ============================================================ */
-async function aiAnalyzeDeal(propId){
-  const p = db.properties.find(x=>x.id===propId);
-  if(!p){ toast('Property not found', true); return; }
-  const apiKey = (db.settings.anthropic_api_key||'').trim();
-  if(!apiKey){
-    toast('Add your Anthropic API key in Settings first', true);
-    go('settings', document.querySelector('[data-p="settings"]'));
-    return;
-  }
-  const btn = document.getElementById('aiAnalyzeBtn');
-  if(btn){ btn.disabled=true; btn.textContent='🤖 Analyzing…'; }
-  const out = document.getElementById('aiAnalysisOut');
-  if(out){ out.style.display='block'; out.innerHTML='<div style="padding:16px;text-align:center;color:var(--text2)">Crunching comps and running the numbers…</div>'; }
-  const prompt = `You are an expert real estate wholesaling deal analyst for the Colorado market. Analyze this property and respond ONLY with valid JSON, no markdown, no preamble.
-
-Property data:
-- Address: ${p.address||'unknown'}
-- Seller: ${p.seller||'unknown'}
-- Current ARV estimate: $${p.arv||0}
-- Estimated repairs: $${p.repairs||0}
-- Current offer price: $${p.offerPrice||0}
-- Notes: ${(p.notes||'none').slice(0,400)}
-
-Return JSON with exactly this shape:
-{
-  "arv_estimate": <number, your best ARV in dollars>,
-  "repair_bucket": "<light|medium|heavy>",
-  "repair_estimate": <number, estimated repair cost in dollars>,
-  "mao": <number, max allowable offer = arv*0.7 - repairs>,
-  "suggested_offer": <number, a smart opening offer below MAO>,
-  "spread": <number, estimated assignment spread in dollars>,
-  "verdict": "<STRONG DEAL|VIABLE|THIN|PASS>",
-  "confidence": "<high|medium|low>",
-  "reasoning": "<2-3 sentence plain-English explanation>",
-  "red_flags": ["<short flag>", "..."]
-}`;
-  try{
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body: JSON.stringify({
-        model:'claude-opus-4-20250514',
-        max_tokens:1024,
-        messages:[{role:'user', content:prompt}]
-      })
-    });
-    if(!res.ok){
-      const t = await res.text();
-      throw new Error('API '+res.status+': '+t.slice(0,200));
-    }
-    const data = await res.json();
-    let txt = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim();
-    txt = txt.replace(/```json|```/g,'').trim();
-    const a = JSON.parse(txt);
-    renderAiAnalysis(a);
-    try{
-      await supabase.from('properties').update({ai_analysis:a}).eq('id', propId);
-      p.ai_analysis = a;
-    }catch(e){ /* non-fatal */ }
-    addAct('🤖','AI analyzed '+p.address+' — '+a.verdict);
-    toast('Deal analyzed');
-  }catch(err){
-    if(out){ out.innerHTML='<div style="padding:16px;color:var(--hot)">Analysis failed: '+(err.message||err)+'</div>'; }
-    toast('Analysis failed — check your API key', true);
-  }finally{
-    if(btn){ btn.disabled=false; btn.textContent='🤖 Analyze Deal (AI)'; }
-  }
-}
-function renderAiAnalysis(a){
-  const out = document.getElementById('aiAnalysisOut');
-  if(!out) return;
-  const verdictColor = {
-    'STRONG DEAL':'#2ecc71','VIABLE':'#c8a84b','THIN':'#e67e22','PASS':'#e74c3c'
-  }[a.verdict] || '#c8a84b';
-  const fmt = n => '$'+Number(n||0).toLocaleString();
-  out.style.display='block';
-  out.innerHTML = `
-    <div style="border:1px solid ${verdictColor};border-radius:12px;padding:16px;margin-top:12px;background:rgba(200,168,75,0.04)">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:${verdictColor}">🤖 AI VERDICT: ${a.verdict}</div>
-        <div style="font-size:11px;color:var(--text2)">Confidence: ${a.confidence}</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
-        <div class="stat-card"><div class="stat-label">Est. ARV</div><div style="font-size:16px;font-weight:800">${fmt(a.arv_estimate)}</div></div>
-        <div class="stat-card"><div class="stat-label">MAO (70%)</div><div style="font-size:16px;font-weight:800">${fmt(a.mao)}</div></div>
-        <div class="stat-card"><div class="stat-label">Est. Spread</div><div style="font-size:16px;font-weight:800;color:${verdictColor}">${fmt(a.spread)}</div></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
-        <div class="stat-card"><div class="stat-label">Repairs (${a.repair_bucket})</div><div style="font-size:15px;font-weight:700">${fmt(a.repair_estimate)}</div></div>
-        <div class="stat-card"><div class="stat-label">Suggested Offer</div><div style="font-size:15px;font-weight:700">${fmt(a.suggested_offer)}</div></div>
-        <div class="stat-card"><div class="stat-label">Verdict</div><div style="font-size:13px;font-weight:700;color:${verdictColor}">${a.verdict}</div></div>
-      </div>
-      <div style="font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:10px">${a.reasoning||''}</div>
-      ${(a.red_flags&&a.red_flags.length)?`<div style="font-size:11px;color:var(--hot)"><strong>⚠ Red flags:</strong> ${a.red_flags.join(' · ')}</div>`:''}
-    </div>`;
-}
-async function saveAiKey(){
-  const key = (document.getElementById('aiApiKey')?.value||'').trim();
-  const {error} = await supabase.from('settings').upsert({id:1, anthropic_api_key:key});
-  if(error){ toast('Error: '+error.message, true); return; }
-  db.settings.anthropic_api_key = key;
-  toast('AI key saved — Deal Analyzer is live');
-}
-
 async function saveProp(){
   const a=document.getElementById('pAd').value.trim();
   if(!a){toast('Address required','err');return;}
@@ -1995,7 +1879,7 @@ function openPropD(id){
   document.getElementById('propDC').innerHTML=`
     <div style="padding:16px 20px 0">
       <div style="margin-bottom:12px">
-        <div style="font-size:17px;font-weight:800">${p.address} <button class="btn btn-secondary btn-sm" style="font-size:10px" onclick="event.stopPropagation();openMLSFor('${p.address}')">🔍 Pull Data</button> <button id="aiAnalyzeBtn" class="btn btn-secondary btn-sm" style="font-size:10px" onclick="event.stopPropagation();aiAnalyzeDeal('${p.id}')">🤖 Analyze Deal (AI)</button></div>
+        <div style="font-size:17px;font-weight:800">${p.address} <button class="btn btn-secondary btn-sm" style="font-size:10px" onclick="event.stopPropagation();openMLSFor('${p.address}')">🔍 Pull Data</button></div>
         <div style="font-size:12px;color:var(--text2);margin-top:3px">Seller: ${p.seller}${agent?' · 🤝 '+agent.name:''}${investor?' · 💼 '+investor.name:''}</div>
       </div>
       <div class="grid-3 mb-12">
@@ -2003,7 +1887,6 @@ function openPropD(id){
         <div class="stat-card gold"><div class="stat-label">Offer</div><div class="stat-value" style="font-size:19px">$${p.offerPrice.toLocaleString()}</div></div>
         <div class="stat-card blue"><div class="stat-label">ARV</div><div class="stat-value" style="font-size:19px">$${p.arv.toLocaleString()}</div></div>
       </div>
-      <div id="aiAnalysisOut" style="display:none"></div>
       ${hasFinancials?`<div class="card card-sm mb-12">
         <div style="font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;margin-bottom:9px">💵 Financial Details</div>
         <div style="display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px">
@@ -2102,7 +1985,6 @@ function openPropD(id){
   loadPropPhotos(p.id);
   loadPropDocs(p.id);
   loadPropNotes(p.id);
-  if(p.ai_analysis && p.ai_analysis.verdict){ renderAiAnalysis(p.ai_analysis); }
   om('mPropDetail');
 }
 
@@ -2383,61 +2265,6 @@ function calcRealAnalytics(){
   return {totalLeads,closedProps:closedProps.length,convRate,avgProfit,pipeVal,totalRev,totalSpend,adLeads,cpl,monthLabels,monthlyLeads,monthlyDeals,fbLeads,ttLeads,otherLeads,thisMonthRev};
 }
 
-/* ============================================================
-   LEAD SOURCE ANALYTICS + DEAL VELOCITY
-   ============================================================ */
-function drawSourceChart(){
-  const el = document.getElementById('sourceChart');
-  if(!el || typeof Chart==='undefined') return;
-  const closedProps = db.properties.filter(p=>p.stage==='closed');
-  const counts = {};
-  closedProps.forEach(p=>{
-    const lead = db.leads.find(l=>l.id===p.lead_id||l.id===p.leadId);
-    const src = (lead && lead.lead_source) ? lead.lead_source : 'Unknown';
-    counts[src] = (counts[src]||0)+1;
-  });
-  const leadCounts = {};
-  db.leads.forEach(l=>{
-    const src = l.lead_source||'Unknown';
-    leadCounts[src] = (leadCounts[src]||0)+1;
-  });
-  const labels = Array.from(new Set([...Object.keys(counts), ...Object.keys(leadCounts)]));
-  if(window._sourceChart) window._sourceChart.destroy();
-  window._sourceChart = new Chart(el, {
-    type:'bar',
-    data:{
-      labels,
-      datasets:[
-        {label:'Leads', data:labels.map(l=>leadCounts[l]||0), backgroundColor:'rgba(200,168,75,0.35)'},
-        {label:'Closed Deals', data:labels.map(l=>counts[l]||0), backgroundColor:'rgba(46,204,113,0.8)'}
-      ]
-    },
-    options:{
-      responsive:true,
-      maintainAspectRatio:false,
-      plugins:{legend:{display:true,labels:{color:'#8888aa',font:{size:10}}}},
-      scales:{
-        x:{ticks:{color:'#888'},grid:{color:'rgba(255,255,255,0.05)'}},
-        y:{ticks:{color:'#888'},grid:{color:'rgba(255,255,255,0.05)'},beginAtZero:true}
-      }
-    }
-  });
-}
-function avgDealVelocity(){
-  const closed = db.properties.filter(p=>p.stage==='closed' && p.closed_at);
-  if(!closed.length) return null;
-  let total=0, n=0;
-  closed.forEach(p=>{
-    const lead = db.leads.find(l=>l.id===p.lead_id||l.id===p.leadId);
-    const start = lead && lead.created_at ? new Date(lead.created_at) : (p.created_at?new Date(p.created_at):null);
-    if(start){
-      const days = (new Date(p.closed_at) - start) / 86400000;
-      if(days>=0){ total+=days; n++; }
-    }
-  });
-  return n ? Math.round(total/n) : null;
-}
-
 function renderAnalytics(){
   const a=calcRealAnalytics();
   const kpiEl=document.getElementById('analyticsKPI');
@@ -2456,7 +2283,6 @@ function renderAnalytics(){
     <div class="chart-card"><div class="chart-title">📢 ROI by Ad Platform</div><div class="chart-wrap"><canvas id="ch4"></canvas></div></div>
     <div class="chart-card"><div class="chart-title">🔥 Lead Heat Distribution</div><div class="chart-wrap"><canvas id="ch5"></canvas></div></div>
     <div class="chart-card"><div class="chart-title">🔄 Pipeline Stage Count</div><div class="chart-wrap"><canvas id="ch6"></canvas></div></div>
-    <div class="chart-card"><div class="chart-title">📊 Lead Source Performance</div><div class="chart-wrap"><canvas id="sourceChart"></canvas></div></div>
   `;
   const base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a2e',titleColor:'#e0e0f0',bodyColor:'#8888aa'}},scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#505070',font:{size:9}}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#505070',font:{size:9}}}}};
   Object.values(chartInst).forEach(c=>{try{c.destroy();}catch(e){}});chartInst={};
@@ -2476,7 +2302,6 @@ function renderAnalytics(){
   chartInst.c5=new Chart(document.getElementById('ch5').getContext('2d'),{type:'doughnut',data:{labels:['Hot','Warm','Cold'],datasets:[{data:[hot2,warm2,cold2],backgroundColor:['rgba(239,68,68,.7)','rgba(245,158,11,.7)','rgba(107,114,128,.5)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'right',labels:{color:'#8888aa',font:{size:10},boxWidth:12}}}}});
   const stageCnts=STAGES.slice(0,5).map(s=>db.properties.filter(p=>p.stage===s).length);
   chartInst.c6=new Chart(document.getElementById('ch6').getContext('2d'),{type:'bar',data:{labels:STAGES.slice(0,5).map(s=>SLBLS[s].replace(' 🎊','')),datasets:[{data:stageCnts,backgroundColor:'rgba(139,92,246,.6)',borderWidth:0,borderRadius:4}]},options:base});
-  drawSourceChart();
 }
 
 // ============================================================
@@ -2759,18 +2584,6 @@ function renderSettings(){
     </div>
     ${teamHtml}
   `;
-  const aiSec=document.getElementById('aiSettingsSection');
-  if(aiSec)aiSec.innerHTML=`<div class="card" style="margin-top:16px">
-    <div class="sh-title mb-16">🤖 AI Deal Analyzer</div>
-    <div style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.5">Paste your Anthropic API key to enable one-click AI deal analysis on any property. Get one at <a href="https://console.anthropic.com" target="_blank" style="color:var(--accent)">console.anthropic.com</a> → API Keys.</div>
-    <div class="mform">
-      <div class="fg">
-        <label class="flbl">Anthropic API Key</label>
-        <input class="fi" id="aiApiKey" type="password" placeholder="sk-ant-..." value="${db.settings.anthropic_api_key||''}">
-      </div>
-      <button class="btn btn-primary btn-sm" onclick="saveAiKey()">Save AI Key</button>
-    </div>
-  </div>`;
   const mlsSec=document.getElementById('mlsSettingsSection');
   if(mlsSec)mlsSec.innerHTML=`<div class="card">
     <div class="sh-title mb-16">🏘️ Property Data &amp; MLS</div>
