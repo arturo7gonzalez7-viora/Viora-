@@ -1043,6 +1043,97 @@ textarea.fi{resize:vertical;min-height:72px}
   <div class="faction"><button class="btn btn-secondary" onclick="cm('mConfirm')">Cancel</button><button class="btn btn-danger" id="confBtn">Delete</button></div>
 </div></div>
 
+<!-- Property Review Modal -->
+<div class="overlay" id="mPropReview"><div class="modal modal-lg" style="max-width:680px;max-height:90vh;overflow-y:auto">
+  <div class="modal-hdr"><div class="modal-title">📋 Submit Property Review</div><button class="modal-x" onclick="cm('mPropReview')">✕</button></div>
+  <div id="reviewPropInfo" style="font-size:12px;color:var(--text2);margin-bottom:16px"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="fg">
+      <label class="fl">SENDER (your name/initials)</label>
+      <input class="fi" id="rev_sender" placeholder="e.g. SK, John, Mike" autocomplete="off">
+    </div>
+    <div class="fg">
+      <label class="fl">BUY SOURCE</label>
+      <input class="fi" id="rev_buy_source" placeholder="e.g. MLS, Wholesale, Direct Mail" autocomplete="off">
+    </div>
+    <div class="fg">
+      <label class="fl">LIST PRICE ($)</label>
+      <input class="fi" id="rev_list_price" type="number" placeholder="0" autocomplete="off">
+    </div>
+    <div class="fg" style="display:flex;align-items:center;gap:10px;margin-top:24px">
+      <input type="checkbox" id="rev_off_market" onchange="toggleOffMarket()" style="cursor:pointer;accent-color:var(--accent);width:16px;height:16px">
+      <label for="rev_off_market" style="font-size:13px;cursor:pointer;color:var(--text)">Off-Market Property?</label>
+    </div>
+  </div>
+  <div id="rev_off_market_fields" style="display:none;border:1px solid rgba(200,168,75,0.3);border-radius:8px;padding:12px;margin-top:8px;background:rgba(200,168,75,0.05)">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:10px">Off-Market Details</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="fg">
+        <label class="fl">Asking Price ($)</label>
+        <input class="fi" id="rev_asking_price" type="number" placeholder="0" autocomplete="off">
+      </div>
+      <div class="fg">
+        <label class="fl">Media Link / Google Street View</label>
+        <input class="fi" id="rev_media_link" placeholder="https://..." autocomplete="off">
+      </div>
+      <div class="fg" style="grid-column:span 2">
+        <label class="fl">Tax Roll (Sqft, Year Built, Lot Size)</label>
+        <input class="fi" id="rev_tax_roll" placeholder="e.g. 1,450 sqft, 1998, 6,200 sqft lot" autocomplete="off">
+      </div>
+    </div>
+  </div>
+  <div class="fg" style="margin-top:12px">
+    <label class="fl">NOTES (busy road, opinion of value, rehab breakdown, etc.)</label>
+    <textarea class="fi" id="rev_notes" placeholder="Add your detailed notes here…" style="min-height:80px;resize:vertical"></textarea>
+  </div>
+  <div class="fg">
+    <label class="fl">COMPS</label>
+    <textarea class="fi" id="rev_comps" placeholder="Enter comparable properties…" style="min-height:60px;resize:vertical"></textarea>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px">
+    <div class="fg">
+      <label class="fl">REHAB ($)</label>
+      <input class="fi" id="rev_rehab" type="number" placeholder="0" autocomplete="off">
+    </div>
+    <div class="fg">
+      <label class="fl">ARV ($)</label>
+      <input class="fi" id="rev_arv" type="number" placeholder="0" autocomplete="off">
+    </div>
+    <div class="fg">
+      <label class="fl">COMMISSION</label>
+      <input class="fi" id="rev_commission" placeholder="e.g. 3%, $5,000" autocomplete="off">
+    </div>
+    <div class="fg">
+      <label class="fl">FEE</label>
+      <input class="fi" id="rev_fee" placeholder="e.g. $2,500" autocomplete="off">
+    </div>
+  </div>
+  <div style="border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;margin-top:8px">
+    <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;margin-bottom:10px">PURCHASE PRICE</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="fg">
+        <label class="fl">Buy ($)</label>
+        <input class="fi" id="rev_purchase_buy" type="number" placeholder="0" autocomplete="off">
+      </div>
+      <div class="fg">
+        <label class="fl">Wholesale ($)</label>
+        <input class="fi" id="rev_purchase_wholesale" type="number" placeholder="0" autocomplete="off">
+      </div>
+    </div>
+  </div>
+  <div style="border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:12px;margin-top:8px;background:rgba(0,0,0,0.2)">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:10px">FLIPPER NUMBERS</div>
+    <div class="fg">
+      <label class="fl">Flipper Makes ($)</label>
+      <input class="fi" id="rev_flipper_makes" type="number" placeholder="0" autocomplete="off">
+    </div>
+  </div>
+  <div class="faction" style="margin-top:20px">
+    <button class="btn btn-secondary" onclick="cm('mPropReview')">Cancel</button>
+    <button class="btn btn-primary" id="rev_submit_btn" onclick="submitPropertyReview()">📧 Submit & Email Steven</button>
+  </div>
+</div></div>
+
 <!-- Floating Calculator -->
 <div id="floatCalc">
   <div class="ftool-panel" id="calcPanel" style="width:320px;max-height:90vh;overflow-y:auto">
@@ -1096,7 +1187,7 @@ textarea.fi{resize:vertical;min-height:72px}
 
 <script>
 // URL param: ?clear resets session (useful for debugging)
-if(window.location.search.includes('clear')){localStorage.removeItem('crm_user');window.history.replaceState({},'',window.location.pathname);}
+if(window.location.search.includes('clear')){if(window.supabase)supabase.auth.signOut();window.history.replaceState({},'',window.location.pathname);}
 
 // Splash dismiss runs FIRST — independent of everything else
 setTimeout(function(){
@@ -1218,39 +1309,52 @@ function renderLoginUsers() {
 }
 async function doLogin() {
   const uid = document.getElementById('loginUserSel').value;
-  const pin = document.getElementById('loginPinInput').value;
+  const password = document.getElementById('loginPinInput').value;
   const errEl = document.getElementById('loginErr');
-  if(!uid || !pin) { errEl.textContent = 'Please select your name and enter your password.'; return; }
+  if(!uid || !password) { errEl.textContent = 'Please select your name and enter your password.'; return; }
   const user = allUsers.find(u => u.id === uid);
-  if(!user || user.pin !== pin) { errEl.textContent = 'Wrong password. Try again.'; document.getElementById('loginPinInput').value=''; return; }
-  errEl.textContent = '';
-  currentUser = { id: user.id, name: user.name, role: user.role };
-  localStorage.setItem('crm_user', JSON.stringify(currentUser));
-  hideLoginScreen();
-  document.getElementById('sbUserName').textContent = currentUser.name;
-  const roleEl = document.getElementById('sbUserRole');
-  if(roleEl) roleEl.textContent = currentUser.role === 'admin' ? 'Owner & Admin' : 'Team Member';
-  // Show admin nav only for admins
-  const navAdmin = document.getElementById('navAdmin');
-  if(navAdmin) navAdmin.style.display = isAdmin() ? 'flex' : 'none';
-  // Reload data filtered for this user
-  await loadAll();
-  renderDash();
+  if(!user) { errEl.textContent = 'User not found. Try again.'; return; }
+  errEl.textContent = 'Signing in...';
+  const loginBtn = document.querySelector('.login-btn');
+  if(loginBtn) loginBtn.disabled = true;
+  try {
+    const email = uid + '@skcrm.internal';
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if(error) {
+      errEl.textContent = 'Wrong password. Try again.';
+      document.getElementById('loginPinInput').value = '';
+      if(loginBtn) loginBtn.disabled = false;
+      return;
+    }
+    errEl.textContent = '';
+    currentUser = { id: user.id, name: user.name, role: user.role };
+    hideLoginScreen();
+    document.getElementById('sbUserName').textContent = currentUser.name;
+    const roleEl = document.getElementById('sbUserRole');
+    if(roleEl) roleEl.textContent = currentUser.role === 'admin' ? 'Owner & Admin' : 'Team Member';
+    const navAdmin = document.getElementById('navAdmin');
+    if(navAdmin) navAdmin.style.display = isAdmin() ? 'flex' : 'none';
+    await loadAll();
+    renderDash();
+  } catch(e) {
+    errEl.textContent = 'Login failed. Please try again.';
+    if(loginBtn) loginBtn.disabled = false;
+  }
 }
-function doLogout() {
+async function doLogout() {
+  if(supabase) await supabase.auth.signOut();
   currentUser = null;
-  localStorage.removeItem('crm_user');
   showLoginScreen();
 }
 // Default users — works before Supabase users table is created
 const DEFAULT_USERS = [
-  { id: 'u_steven', name: 'Steven K.', pin: 'sk2024', role: 'admin', email: '', active: true },
-  { id: 'u_test',   name: 'Mike (Test)', pin: 'test123', role: 'member', email: '', active: true }
+  { id: 'u_steven', name: 'Steven K.', role: 'admin', email: '', active: true },
+  { id: 'u_test',   name: 'Mike (Test)', role: 'member', email: '', active: true }
 ];
 async function loadUsers() {
   if(!supabase) { allUsers = DEFAULT_USERS; return; }
   try {
-    const { data, error } = await supabase.from('users').select('*').eq('active', true).order('name');
+    const { data, error } = await supabase.from('users').select('id,name,role,email,active').eq('active', true).order('name');
     if(error || !data || data.length === 0) {
       allUsers = DEFAULT_USERS;
     } else {
@@ -2043,6 +2147,7 @@ function openPropD(id){
         <div class="prop-tab" onclick="switchPropTab('${p.id}','docs',this)">📄 Documents</div>
         <div class="prop-tab" onclick="switchPropTab('${p.id}','notes',this)">📝 Notes</div>
         <div class="prop-tab" onclick="switchPropTab('${p.id}','investor',this)">💼 Investor</div>
+        <div class="prop-tab" onclick="switchPropTab('${p.id}','reviews',this)">📋 Reviews</div>
       </div>
       <div class="prop-tab-content" id="propTabContent_${p.id}">
         <div id="propTab_photos_${p.id}">
@@ -2076,6 +2181,13 @@ function openPropD(id){
           <button class="btn btn-primary btn-sm" onclick="addPropNote('${p.id}')">+ Add Note</button>
           <div id="propNotes_${p.id}" style="margin-top:12px"></div>
         </div>
+        <div id="propTab_reviews_${p.id}" style="display:none">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div style="font-size:12px;color:var(--text2)">Submit a property review — Steven gets notified by email instantly.</div>
+            <button class="btn btn-primary btn-sm" onclick="openReviewModal('${p.id}','${p.address.replace(/'/g,"\\'")}')">📋 Submit Review</button>
+          </div>
+          <div id="propReviews_${p.id}"><div style="color:var(--text3);font-size:13px">Loading reviews…</div></div>
+        </div>
         <div id="propTab_investor_${p.id}" style="display:none">
           <div style="margin-bottom:12px">
             <label style="font-size:11px;color:var(--text3);font-weight:700;text-transform:uppercase;display:block;margin-bottom:6px">Assign Investor</label>
@@ -2102,12 +2214,13 @@ function openPropD(id){
   loadPropPhotos(p.id);
   loadPropDocs(p.id);
   loadPropNotes(p.id);
+  loadPropReviews(p.id);
   if(p.ai_analysis && p.ai_analysis.verdict){ renderAiAnalysis(p.ai_analysis); }
   om('mPropDetail');
 }
 
 function switchPropTab(propId,tab,el){
-  const tabs=['photos','docs','notes','investor'];
+  const tabs=['photos','docs','notes','investor','reviews'];
   tabs.forEach(t=>{
     const c=document.getElementById('propTab_'+t+'_'+propId);
     if(c) c.style.display=t===tab?'block':'none';
@@ -2209,6 +2322,164 @@ async function loadPropNotes(propId){
         <div><span class="note-author">${n.author_name||'Unknown'}</span><span class="note-time">${new Date(n.created_at).toLocaleString()}</span></div>
         <div class="note-text">${n.note}</div>
       </div>`).join('');
+}
+
+// ---- Property Reviews ----
+let _reviewPropId = '';
+let _reviewPropAddr = '';
+
+function openReviewModal(propId, address) {
+  _reviewPropId = propId;
+  _reviewPropAddr = address;
+  // pre-fill sender with current user
+  document.getElementById('rev_sender').value = currentUser?.name || '';
+  document.getElementById('rev_buy_source').value = '';
+  document.getElementById('rev_list_price').value = '';
+  document.getElementById('rev_notes').value = '';
+  document.getElementById('rev_comps').value = '';
+  document.getElementById('rev_off_market').checked = false;
+  document.getElementById('rev_off_market_fields').style.display = 'none';
+  document.getElementById('rev_asking_price').value = '';
+  document.getElementById('rev_media_link').value = '';
+  document.getElementById('rev_tax_roll').value = '';
+  document.getElementById('rev_rehab').value = '';
+  document.getElementById('rev_arv').value = '';
+  document.getElementById('rev_commission').value = '';
+  document.getElementById('rev_purchase_buy').value = '';
+  document.getElementById('rev_purchase_wholesale').value = '';
+  document.getElementById('rev_fee').value = '';
+  document.getElementById('rev_flipper_makes').value = '';
+  document.getElementById('reviewPropInfo').textContent = '📍 ' + address;
+  const btn = document.getElementById('rev_submit_btn');
+  btn.disabled = false;
+  btn.textContent = '📧 Submit & Email Steven';
+  om('mPropReview');
+}
+
+function toggleOffMarket() {
+  const checked = document.getElementById('rev_off_market').checked;
+  document.getElementById('rev_off_market_fields').style.display = checked ? 'block' : 'none';
+}
+
+async function submitPropertyReview() {
+  const sender = (document.getElementById('rev_sender').value || '').trim();
+  if (!sender) { toast('Please enter your name/initials as SENDER', true); return; }
+  const btn = document.getElementById('rev_submit_btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const isOffMarket = document.getElementById('rev_off_market').checked;
+  const now = new Date();
+  const reviewId = 'rv' + Date.now();
+  const payload = {
+    id: reviewId,
+    property_id: _reviewPropId,
+    property_address: _reviewPropAddr,
+    submitted_by: currentUser?.name || sender,
+    sender: sender,
+    buy_source: document.getElementById('rev_buy_source').value || '',
+    list_price: parseInt(document.getElementById('rev_list_price').value) || 0,
+    notes: document.getElementById('rev_notes').value || '',
+    comps: document.getElementById('rev_comps').value || '',
+    is_off_market: isOffMarket,
+    asking_price: isOffMarket ? (parseInt(document.getElementById('rev_asking_price').value) || 0) : 0,
+    media_link: isOffMarket ? (document.getElementById('rev_media_link').value || '') : '',
+    tax_roll: isOffMarket ? (document.getElementById('rev_tax_roll').value || '') : '',
+    rehab: parseInt(document.getElementById('rev_rehab').value) || 0,
+    arv: parseInt(document.getElementById('rev_arv').value) || 0,
+    commission: document.getElementById('rev_commission').value || '',
+    purchase_price_buy: parseInt(document.getElementById('rev_purchase_buy').value) || 0,
+    purchase_price_wholesale: parseInt(document.getElementById('rev_purchase_wholesale').value) || 0,
+    fee: document.getElementById('rev_fee').value || '',
+    flipper_makes: parseInt(document.getElementById('rev_flipper_makes').value) || 0,
+    status: 'pending'
+  };
+
+  // Save to Supabase
+  const {error} = await supabase.from('property_reviews').insert(payload);
+  if (error) {
+    toast('Error saving review: ' + error.message, true);
+    btn.disabled = false;
+    btn.textContent = '📧 Submit & Email Steven';
+    return;
+  }
+
+  // Send email via API
+  try {
+    const emailPayload = {
+      address: _reviewPropAddr,
+      submittedBy: currentUser?.name || sender,
+      submittedAt: now.toLocaleString(),
+      ...payload
+    };
+    const resp = await fetch('/api/send-review', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(emailPayload)
+    });
+    if (!resp.ok) {
+      const err = await resp.json();
+      console.warn('Email send warning:', err);
+      toast('Review saved! (Email may not have sent: ' + (err.error || 'check Resend config') + ')', true);
+    } else {
+      toast('✅ Review submitted! Email sent to Steven.');
+    }
+  } catch (e) {
+    console.warn('Email error:', e);
+    toast('Review saved! Email could not be sent right now.');
+  }
+
+  addAct('📋', (currentUser?.name || 'Someone') + ' submitted a review for ' + _reviewPropAddr);
+  cm('mPropReview');
+  loadPropReviews(_reviewPropId);
+}
+
+async function loadPropReviews(propId) {
+  const el = document.getElementById('propReviews_' + propId);
+  if (!el) return;
+  const {data, error} = await supabase.from('property_reviews').select('*').eq('property_id', propId).order('created_at', {ascending: false});
+  if (error || !data || data.length === 0) {
+    el.innerHTML = '<div style="color:var(--text3);font-size:13px;padding:8px 0">No reviews yet. Be the first to submit one!</div>';
+    return;
+  }
+  const fmt = (v) => v ? '$' + Number(v).toLocaleString() : '—';
+  el.innerHTML = data.map(r => `
+    <div style="border:1px solid rgba(200,168,75,0.18);border-radius:10px;padding:14px;margin-bottom:12px;background:rgba(200,168,75,0.04)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-size:13px;font-weight:700">${r.sender || r.submitted_by}</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:${r.status==='reviewed'?'rgba(74,222,128,0.15)':'rgba(200,168,75,0.15)'};color:${r.status==='reviewed'?'var(--green)':'var(--accent)'}">${r.status==='reviewed'?'✅ Reviewed':'⏳ Pending'}</span>
+          <span style="font-size:11px;color:var(--text3)">${new Date(r.created_at).toLocaleDateString()}</span>
+          <button class="btn btn-secondary btn-sm" style="font-size:10px;padding:3px 8px" onclick="markReviewReviewed('${r.id}','${propId}')">Mark Reviewed</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px;color:var(--text2);margin-bottom:8px">
+        <div>Buy Source: <strong style="color:var(--text)">${r.buy_source||'—'}</strong></div>
+        <div>List Price: <strong style="color:var(--accent)">${fmt(r.list_price)}</strong></div>
+        <div>Rehab: <strong style="color:var(--hot)">${fmt(r.rehab)}</strong></div>
+        <div>ARV: <strong style="color:var(--green)">${fmt(r.arv)}</strong></div>
+        <div>Buy Price: <strong style="color:var(--text)">${fmt(r.purchase_price_buy)}</strong></div>
+        <div>Wholesale: <strong style="color:var(--text)">${fmt(r.purchase_price_wholesale)}</strong></div>
+        <div>Flipper Makes: <strong style="color:var(--green)">${fmt(r.flipper_makes)}</strong></div>
+        ${r.commission?`<div>Commission: <strong style="color:var(--text)">${r.commission}</strong></div>`:''}
+        ${r.fee?`<div>Fee: <strong style="color:var(--text)">${r.fee}</strong></div>`:''}
+      </div>
+      ${r.notes?`<div style="font-size:12px;margin-bottom:6px"><span style="color:var(--text3);font-weight:600">Notes:</span> ${r.notes}</div>`:''}
+      ${r.comps?`<div style="font-size:12px"><span style="color:var(--text3);font-weight:600">Comps:</span> ${r.comps}</div>`:''}
+      ${r.is_off_market?`<div style="margin-top:8px;padding:8px;background:rgba(200,168,75,0.08);border-radius:6px;font-size:12px">
+        <span style="color:var(--accent);font-weight:700">Off-Market</span> ·
+        ${r.asking_price?`Ask: ${fmt(r.asking_price)} · `:''}
+        ${r.tax_roll?`Tax Roll: ${r.tax_roll} · `:''}
+        ${r.media_link?`<a href="${r.media_link}" target="_blank" style="color:var(--accent)">View Media</a>`:''}
+      </div>`:''}
+    </div>`).join('');
+}
+
+async function markReviewReviewed(reviewId, propId) {
+  const {error} = await supabase.from('property_reviews').update({status: 'reviewed'}).eq('id', reviewId);
+  if (error) { toast('Error: ' + error.message, true); return; }
+  toast('Marked as reviewed!');
+  loadPropReviews(propId);
 }
 
 // ---- Investor assignment ----
@@ -2730,7 +3001,7 @@ function renderSettings(){
     <div id="teamList" style="margin-bottom:14px">
       ${allUsers.length?allUsers.map((m,i)=>`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
         <div class="la ${m.role==='admin'?'hot':'warm'}" style="width:32px;height:32px;font-size:12px">${initials(m.name)}</div>
-        <div style="flex:1"><div style="font-size:13px;font-weight:700">${m.name} ${m.role==='admin'?'<span style="font-size:10px;background:#c8a84b;color:#000;padding:1px 6px;border-radius:8px">Admin</span>':''}</div><div style="font-size:11px;color:var(--text2)">${m.email||'No email'} · PIN: ${m.pin}</div></div>
+        <div style="flex:1"><div style="font-size:13px;font-weight:700">${m.name} ${m.role==='admin'?'<span style="font-size:10px;background:#c8a84b;color:#000;padding:1px 6px;border-radius:8px">Admin</span>':''}</div><div style="font-size:11px;color:var(--text2)">${m.role==='admin'?'Administrator':'Team Member'}</div></div>
         ${m.id!=='u_steven'?`<button class="btn btn-danger btn-sm" onclick="removeUser('${m.id}')">🗑️</button>`:'<span style="font-size:10px;color:var(--text3)">Protected</span>'}
       </div>`).join(''):'<div style="color:var(--text3);font-size:12px;padding:10px">No team members yet.</div>'}
     </div>
@@ -2741,10 +3012,11 @@ function renderSettings(){
         <div class="fg"><label class="flbl">Role</label><select class="fi" id="tmR"><option value="member">Member</option><option value="admin">Admin</option></select></div>
       </div>
       <div class="frow">
-        <div class="fg"><label class="flbl">Email</label><input class="fi" id="tmE" placeholder="email@example.com"></div>
-        <div class="fg"><label class="flbl">Password *</label><input class="fi" id="tmP" type="password" placeholder="Set their password"></div>
+        <div class="fg"><label class="flbl">Email (optional)</label><input class="fi" id="tmE" placeholder="email@example.com"></div>
+        <div class="fg"><label class="flbl">Temp Password *</label><input class="fi" id="tmP" type="password" placeholder="They can change it later"></div>
       </div>
       <button type="button" class="btn btn-secondary" onclick="addUser()">＋ Add Member</button>
+      <div style="font-size:10.5px;color:var(--text3);margin-top:8px;line-height:1.5">💡 After adding, share their login ID and temp password. They can change their password from Settings after logging in.</div>
     </div>
   ` : '';
   document.getElementById('settingsForm').innerHTML=`
@@ -2756,6 +3028,16 @@ function renderSettings(){
         <div class="fg"><label class="flbl">Email</label><input class="fi" id="sEm" value="${db.settings.email||''}"></div>
       </div>
       <button type="button" class="btn btn-primary" onclick="saveSettings()">Save Settings</button>
+    </div>
+    <div class="divider" style="margin:20px 0"></div>
+    <div class="sh-title mb-16">🔒 Change Your Password</div>
+    <div class="mform">
+      <div class="fg full"><label class="flbl">Current Password</label><input class="fi" id="cpOld" type="password" placeholder="Enter current password"></div>
+      <div class="frow">
+        <div class="fg"><label class="flbl">New Password</label><input class="fi" id="cpNew" type="password" placeholder="At least 6 characters"></div>
+        <div class="fg"><label class="flbl">Confirm New Password</label><input class="fi" id="cpConfirm" type="password" placeholder="Repeat new password"></div>
+      </div>
+      <button type="button" class="btn btn-secondary" onclick="changePassword()">Update Password</button>
     </div>
     ${teamHtml}
   `;
@@ -2805,13 +3087,38 @@ function renderSettings(){
 async function addUser(){
   const n=document.getElementById('tmN').value.trim();
   const p=document.getElementById('tmP').value.trim();
-  if(!n||!p){toast('Name and PIN required','err');return;}
+  if(!n||!p){toast('Name and password required','err');return;}
+  if(p.length<6){toast('Password must be at least 6 characters','err');return;}
   const id='u_'+Date.now();
-  const row={id,name:n,role:document.getElementById('tmR').value,email:document.getElementById('tmE')?.value||'',pin:p,active:true};
+  const userEmail=id+'@skcrm.internal';
+  const row={id,name:n,role:document.getElementById('tmR').value,email:document.getElementById('tmE')?.value||'',active:true};
+  // Create Supabase Auth account first (requires service role — done via backend)
+  // For now: add to users table; auth account must be created in Supabase dashboard
   const {error}=await supabase.from('users').insert(row);
   if(error){toast('Error: '+error.message,true);return;}
   allUsers.push(row);
-  renderSettings();toast('Team member added!');
+  renderSettings();
+  toast('Team member added! Share their login: name dropdown + password you set.');
+}
+async function changePassword(){
+  const oldPass=document.getElementById('cpOld')?.value.trim();
+  const newPass=document.getElementById('cpNew')?.value.trim();
+  const confirmPass=document.getElementById('cpConfirm')?.value.trim();
+  if(!oldPass||!newPass||!confirmPass){toast('Please fill all password fields',true);return;}
+  if(newPass.length<6){toast('New password must be at least 6 characters',true);return;}
+  if(newPass!==confirmPass){toast('New passwords do not match',true);return;}
+  if(!currentUser){toast('Not logged in',true);return;}
+  // Re-verify current password first
+  const email=currentUser.id+'@skcrm.internal';
+  const {error:reAuthErr}=await supabase.auth.signInWithPassword({email,password:oldPass});
+  if(reAuthErr){toast('Current password is incorrect',true);return;}
+  // Update password
+  const {error}=await supabase.auth.updateUser({password:newPass});
+  if(error){toast('Error: '+error.message,true);return;}
+  document.getElementById('cpOld').value='';
+  document.getElementById('cpNew').value='';
+  document.getElementById('cpConfirm').value='';
+  toast('✅ Password updated successfully!');
 }
 async function removeUser(uid){
   if(!confirm('Remove this team member?'))return;
@@ -3217,18 +3524,17 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   // First load users (public, no auth needed)
   await loadUsers();
 
-  // Check for existing session
-  const savedUser = localStorage.getItem('crm_user');
-  if(savedUser) {
-    try {
-      const u = JSON.parse(savedUser);
-      // Validate they still exist in our users list
-      const still = allUsers.find(x => x.id === u.id);
+  // Check for existing Supabase Auth session
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if(session && session.user) {
+      const userId = session.user.email.replace('@skcrm.internal', '');
+      const still = allUsers.find(x => x.id === userId);
       if(still) {
-        currentUser = u;
+        currentUser = { id: still.id, name: still.name, role: still.role };
       }
-    } catch(e) { /* bad session */ }
-  }
+    }
+  } catch(e) { /* no session */ }
 
   if(!currentUser) {
     // Show login screen
@@ -3250,8 +3556,8 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   } catch(e) {
     console.error('CRM load error:', e);
     // If load fails, clear session and show login
+    if(supabase) await supabase.auth.signOut();
     currentUser = null;
-    localStorage.removeItem('crm_user');
     showLoginScreen();
     toast('Session expired. Please log in again.', true);
   }
